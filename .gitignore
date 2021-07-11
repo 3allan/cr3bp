@@ -3,3 +3,8 @@ _site
 .jekyll-cache
 .jekyll-metadata
 vendor
+
+# Ignore all latex files except .tex and .svg
+/latex/*
+!latex/*.tex
+!latex/*.svg

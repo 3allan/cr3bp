@@ -1,0 +1,51 @@
+\documentclass[crop,tikz]{standalone}
+\makeatletter
+%\usetikzlibrary{...}% tikz package already loaded by 'tikz' option
+\begin{document}
+
+
+% kepler_2_particles
+  \begin{tikzpicture}[scale=4]
+    \coordinate (O) at (0,0,0);
+    \draw[dashed, thick] (-1.1,0,0) -- (O);
+    \draw[dashed, thick] (0,-0.75,0) -- (O);
+    \draw[dashed, thick] (0,0,-1) -- (O);
+    \draw[->, >=latex, thick] (O) -- (1.1,0,0) node[right]{$y$};
+    \draw[->, >=latex, thick] (O) -- (0,1,0) node[left]{$z$};
+    \draw[->, >=latex, thick] (O) -- (0,0,1) node[left]{$x$};
+    
+    % Define coordinates of the two bodies
+    \pgfmathsetmacro{\px}{-1};
+    \pgfmathsetmacro{\py}{0.5};
+    \pgfmathsetmacro{\pz}{0.5};
+    \pgfmathsetmacro{\dx}{1};
+    \pgfmathsetmacro{\dy}{0.3};
+    \pgfmathsetmacro{\dz}{-1};
+    \coordinate (M1) at (\px,\py,\pz);
+    \coordinate (M2) at (\dx,\dy,\dz);
+    
+    % Draw the bodies
+    \fill[fill=blue!50!black!50] (M1) circle (1pt);
+    \fill[fill=red!50!black!50] (M2) circle (1pt);
+    
+    % Draw the positions of each body relative to the origin
+    \draw[->,>=stealth] (O) -- (M1) node[pos=0.7, above, yshift=1mm]{$\vec{r}_1$};
+    \draw[->,>=stealth] (O) -- (M2) node[pos=0.7, above, yshift=1mm]{$\vec{r}_2$};
+    
+    % Draw the projections of both bodies onto the plane
+    \draw[dashed] (M1) -- (\px, 0, \pz);
+    \draw[dashed] (\px, 0, \pz) -- (\px, 0, 0);
+    %\draw[dashed] (\px, 0, \pz) -- (0, 0, \pz);
+    \draw[dashed] (M2) -- (\dx, 0, \dz);
+    \draw[dashed] (\dx, 0, \dz) -- (\dx, 0, 0);
+    %\draw[dashed] (\dx, 0, \dz) -- (0, 0, \dz);
+    
+    
+    %% Draw the vector from body 1 to body 2
+    %\draw[->,>=stealth] (M1) -- (M2) node[pos=0.6, above]{$\vec{r}$};
+    
+    % Provide the masses
+    \node at (M1) [left, xshift=-0.75mm]{$m_1$};
+    \node at (M2) [right, xshift=1mm]{$m_2$};
+  \end{tikzpicture}
+\end{document}
