@@ -5,7 +5,9 @@ permalink: /kepler/
 sidebar_link: true
 ---
 [//]: # (Include MathJax on this page)
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
 [//]: # (Page content)
 The *Kepler* (2-body) problem is fundamental to the study of astrodynamics, especially so for analyzing the more general 3-body problem.
