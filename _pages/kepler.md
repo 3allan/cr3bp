@@ -27,7 +27,7 @@ The *Kepler* (2-body) problem is fundamental to the study of astrodynamics, espe
 It consists of determining the positions of 2 bodies under mutual Newtonian gravitational attraction with respect to an inertial frame.
 
 [//]: # Draw inertial coordinate frame with masses
-<img style="display: block; margin: auto;" src="../latex/kepler_2_particles.svg" alt="Two point masses in an inertial frame" width="700"/>
+<img style="display: block; margin: auto;" src="../images/kepler_2_particles.svg" alt="Two point masses in an inertial frame" width="700"/>
 
 Here, we assume (without loss of generality) that $$m_1 \geqslant m_2$$ are the body masses.
 
