@@ -1,8 +1,7 @@
-_site
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-vendor
+# Ignore the source _build directory. The files that Sphinx generates here
+# are copied and pasted into /docs/, which is what GitHub uses to build
+# the site
+docsrc/_build/
 
 # Ignore all latex files except .tex and .svg
 /latex/*

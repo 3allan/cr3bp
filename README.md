@@ -1,2 +1,1 @@
-# cr3bp
-Personal website regarding the circular restricted 3-body problem
+Personal website for the circular restricted 3-body problem
