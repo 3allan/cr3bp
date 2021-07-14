@@ -1,1 +1,1 @@
-# sphinxtest
+Personal website for the circular restricted 3-body problem
