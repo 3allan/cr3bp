@@ -91,7 +91,15 @@
               <p class="caption" role="heading"><span class="caption-text">The Kepler (2-body) Problem</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#overview-2">Overview 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#equations-of-motion">Equations of Motion</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#newton-s-laws">Newton’s Laws</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lagrangian-function">Lagrangian Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hamiltonian-function">Hamiltonian Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#relative-form">Relative Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#standard-form">Standard Form</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -163,12 +171,156 @@
             
   <div class="section" id="overview">
 <h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="overview-2">
-<h2>Overview 2<a class="headerlink" href="#overview-2" title="Permalink to this headline">¶</a></h2>
-<p>The <em>Kepler</em> (2-body) problem is fundamental to the study of astrodynamics, especially so for analyzing the more general 3-body problem. It consists of determining the positions of 2 bodies under mutual Newtonian gravitational attraction with respect to an inertial frame.</p>
-<p>&lt;picture&gt;</p>
-<p>Here, we assume (without loss of generality) that <span class="math notranslate nohighlight">\(m_1 \geqslant m_2\)</span> are the body masses.</p>
-<p>The equations of motion for the general 2-body problem are derived below using a variety of methods.</p>
+<div class="admonition-plan-of-action admonition">
+<p class="admonition-title">Plan of Action</p>
+<p>The equations of motion for the general 2-body problem are derived
+using a variety of methods. Finally, the full equations are placed
+into their “relative” and “standard” forms, providing a simpler and more
+direct expression for each body’s position relative to one another.</p>
+</div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The <em>Kepler</em> (2-body) problem is fundamental to the study of astrodynamics,
+especially so for analyzing the more general 3-body problem. It consists of
+determining the positions of 2 bodies under mutual Newtonian gravitational
+attraction with respect to an inertial frame.</p>
+<a class="reference internal image-reference" href="../_images/kepler_2_particles.svg"><img alt="Diagram of the 2-body problem with respect to an inertial frame" class="align-center" height="382px" src="../_images/kepler_2_particles.svg" width="633px" /></a>
+<p>Here, we assume (without loss of generality) that <span class="math notranslate nohighlight">\(m_1 \geqslant m_2\)</span>
+are the body masses and a general position vector <span class="math notranslate nohighlight">\(\mathbf{r}\)</span> is
+represented</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{r} = \begin{pmatrix}x &amp; y &amp; z\end{pmatrix}^T\]</div>
+<p>with basis elements provided by the inertial coordinate system.</p>
+</div>
+<div class="section" id="equations-of-motion">
+<h2>Equations of Motion<a class="headerlink" href="#equations-of-motion" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="newton-s-laws">
+<h3>Newton’s Laws<a class="headerlink" href="#newton-s-laws" title="Permalink to this headline">¶</a></h3>
+<p>Applying Newton’s 2<sup>nd</sup> law to each body under mutual Newtonian
+gravitational attraction directly provides</p>
+<div class="math notranslate nohighlight" id="equation-newton">
+<span class="eqno">(1)<a class="headerlink" href="#equation-newton" title="Permalink to this equation">¶</a></span>\[\begin{split}\ddot{\mathbf{r}}_1 &amp;= -\frac{G m_2}{|\mathbf{r}_1 - \mathbf{r}_2|^3}(\mathbf{r}_1 - \mathbf{r}_2) \\
+\ddot{\mathbf{r}}_2 &amp;= -\frac{G m_1}{|\mathbf{r}_2 - \mathbf{r}_1|^3}(\mathbf{r}_2 - \mathbf{r}_1),\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(G\)</span> is the gravitational constant.</p>
+</div>
+<div class="section" id="lagrangian-function">
+<h3>Lagrangian Function<a class="headerlink" href="#lagrangian-function" title="Permalink to this headline">¶</a></h3>
+<p>We can write the system’s Lagrangian as simply the difference between
+total kinetic energy and total potential energy.</p>
+<div class="math notranslate nohighlight" id="equation-lagrangian">
+<span class="eqno">(2)<a class="headerlink" href="#equation-lagrangian" title="Permalink to this equation">¶</a></span>\[\begin{split}\mathcal{L} &amp;= T - V \\
+&amp;= \frac{1}{2}\left(m_1 |\dot{\mathbf{r}}_1|^2 + m_2|\dot{\mathbf{r}}_2|^2\right) + \frac{G m_1 m_2}{|\mathbf{r}_2 - \mathbf{r_1}|}\end{split}\]</div>
+<p>Since gravity is conservative and the system is unconstrained, the
+corresponding Euler-Lagrange equations (6 of them) are written</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{0} &amp;= \frac{d}{dt}\frac{\partial\mathcal{L}}{\partial\dot{\mathbf{r}}_i} - \frac{\partial\mathcal{L}}{\partial\mathbf{r}_i} &amp;&amp; (i = 1,2) \\
+&amp;= \frac{d}{dt} (m_i \dot{\mathbf{r}}_i) - \frac{G m_1 m_2}{|\mathbf{r}_j - \mathbf{r}_i|^3} (\mathbf{r}_j - \mathbf{r}_i) \qquad\quad &amp;&amp; (j \neq i) \\
+&amp;= m_i \ddot{\mathbf{r}}_i + \frac{G m_1 m_2}{|\mathbf{r}_i - \mathbf{r}_j|^3} (\mathbf{r}_i - \mathbf{r}_j).\end{split}\]</div>
+<p>Applying <span class="math notranslate nohighlight">\(i = 1,2\)</span> produces the equations of motion for each of the
+two bodies.</p>
+<div class="math notranslate nohighlight" id="equation-lagrange">
+<span class="eqno">(3)<a class="headerlink" href="#equation-lagrange" title="Permalink to this equation">¶</a></span>\[\begin{split}\ddot{\mathbf{r}}_1 &amp;= -\frac{G m_2}{|\mathbf{r}_1 - \mathbf{r}_2|^3}(\mathbf{r}_1 - \mathbf{r}_2) \\
+\ddot{\mathbf{r}}_2 &amp;= -\frac{G m_1}{|\mathbf{r}_2 - \mathbf{r}_1|^3}(\mathbf{r}_2 - \mathbf{r}_1),\end{split}\]</div>
+</div>
+<div class="section" id="hamiltonian-function">
+<h3>Hamiltonian Function<a class="headerlink" href="#hamiltonian-function" title="Permalink to this headline">¶</a></h3>
+<p>Using the Lagrangian <a class="reference internal" href="#equation-lagrangian">(2)</a>, the Hamiltonian function is defined</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathcal{H} &amp;= \sum_{i = 1}^2 \dot{\mathbf{q}}_i \cdot \mathbf{p}_i - \mathcal{L} \\
+&amp;= \sum_{i = 1}^2 \frac{\mathbf{p}_i}{m_i} \cdot \mathbf{p}_i - \left[\frac{1}{2}\left(\frac{|\mathbf{p}_1|^2}{m_1} + \frac{|\mathbf{p}_2|^2}{m_2}\right) + \frac{G m_1 m_2}{|\mathbf{q}_2 - \mathbf{q}_1|}\right] \\
+&amp;= \frac{1}{2}\left(\frac{|\mathbf{p}_1|^2}{m_1} + \frac{|\mathbf{p}_2|^2}{m_2}\right) - \frac{G m_1 m_2}{|\mathbf{q}_2 - \mathbf{q}_1|},\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{q}_i = \mathbf{r}_i\)</span> are the generalized coordinates
+and <span class="math notranslate nohighlight">\(\mathbf{p}_i = m_i\dot{\mathbf{r}}_i\)</span> are the generalized momenta
+for each body (<span class="math notranslate nohighlight">\(i = 1,2\)</span>).
+Hamilton’s canonical equations (12 of them) then require</p>
+<div class="math notranslate nohighlight" id="equation-hamilton">
+<span class="eqno">(4)<a class="headerlink" href="#equation-hamilton" title="Permalink to this equation">¶</a></span>\[\begin{split}\dot{\mathbf{q}}_i &amp;= \frac{\mathbf{p}_i}{m_i} \\
+\dot{\mathbf{p}}_i &amp;= -\frac{G m_1 m_2}{|\mathbf{q}_i - \mathbf{q}_j|^3} (\mathbf{q}_i - \mathbf{q}_j),\end{split}\]</div>
+<p>for <span class="math notranslate nohighlight">\(j \neq i = 1,2\)</span>.</p>
+<div class="admonition-recall admonition">
+<p class="admonition-title">Recall</p>
+<p>Hamilton’s canonical equations are</p>
+<div class="math notranslate nohighlight">
+\[\dot{q} = +\frac{\partial\mathcal{H}}{\partial p} \qquad \text{and} \qquad \dot{p} = -\frac{\partial\mathcal{H}}{\partial q}\]</div>
+<p>for generalized coordinates and momenta <span class="math notranslate nohighlight">\(q,p \in \mathbb{R}^n\)</span>,
+where <span class="math notranslate nohighlight">\(n\)</span> is the number of degrees of freedom in the system.
+(Here, <span class="math notranslate nohighlight">\(n = 6\)</span>.)</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hamilton’s equations <a class="reference internal" href="#equation-hamilton">(4)</a> are the first-order form of
+<a class="reference internal" href="#equation-newton">(1)</a> and <a class="reference internal" href="#equation-lagrange">(3)</a> as seen by</p>
+<div class="math notranslate nohighlight">
+\[\ddot{\mathbf{q}}_i = \frac{\dot{\mathbf{p}}_i}{m_i} = -\frac{G m_j}{|\mathbf{q}_i - \mathbf{q}_j|^3} (\mathbf{q}_i - \mathbf{q}_j),\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{q}_i \equiv \mathbf{r}_i\)</span>.</p>
+</div>
+</div>
+<div class="section" id="relative-form">
+<h3>Relative Form<a class="headerlink" href="#relative-form" title="Permalink to this headline">¶</a></h3>
+<p>The Newtonian, Lagrangian, and Hamiltonian formalisms all provide the same
+system of equations for the motion of two particles under mutual Newtonian
+gravitational attraction. To reduce the complexity of the system (as we
+will see), we can define the <em>relative</em> distance between each body as</p>
+<div class="math notranslate nohighlight">
+\[\boxed{\mathbf{r} = \mathbf{r}_2 - \mathbf{r}_1}.\]</div>
+<p>Doing this is beneficial because it exploits a symmetry in the full system,
+halving the number of equations by creating a new coordinate system aligned
+with the inertial coordinate system but whose origin is always located at
+<span class="math notranslate nohighlight">\(\mathbf{r}_1\)</span>.
+That is, this definition provides <strong>direct</strong> information of <strong>both</strong> bodies
+(relative to each other) rather than relying on the position of the
+otherwise arbitrarily defined (inertial) coordinate system’s origin.</p>
+<p>The equations of motion for <span class="math notranslate nohighlight">\(\mathbf{r}\)</span> may be calculated directly
+since</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\ddot{\mathbf{r}} &amp;= \ddot{\mathbf{r}}_2 - \ddot{\mathbf{r}}_1 \\
+&amp;= -\frac{G(m_1 + m_2)}{r^3}\mathbf{r},\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(r = |\mathbf{r}|\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The same result is achieved had we used Newton’s 3<sup>rd</sup> law
+since</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\ddot{\mathbf{r}} &amp;= \ddot{\mathbf{r}}_2 - \ddot{\mathbf{r}}_1 \\
+&amp;= \ddot{\mathbf{r}}_2 + \frac{m_2}{m_1}\ddot{\mathbf{r}}_2 \\
+&amp;= \left(1 + \frac{m_2}{m_1}\right) \ddot{\mathbf{r}}_2 \\
+&amp;= \left(\frac{m_1 + m_2}{m_1}\right)\left(-\frac{G m_1}{r^3}\mathbf{r}\right) \\
+&amp;= -\frac{G(m_1 + m_2)}{r^3}\mathbf{r}.\end{split}\]</div>
+</div>
+</div>
+<div class="section" id="standard-form">
+<h3>Standard Form<a class="headerlink" href="#standard-form" title="Permalink to this headline">¶</a></h3>
+<p>The standard form of the Kepler problem is achieved after defining the
+<em>mass parameter</em></p>
+<div class="math notranslate nohighlight">
+\[\boxed{\mu = G(m_1 + m_2)}\]</div>
+<p>such that the equations of motion for the relative motion of one body about
+the other are</p>
+<div class="math notranslate nohighlight">
+\[\ddot{\mathbf{r}} = -\frac{\mu}{r^3}\mathbf{r}\]</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>In astrophysical applications, <span class="math notranslate nohighlight">\(\mu\)</span> can be viewed as
+a quantity of two (generally) unknown parameters <span class="math notranslate nohighlight">\(m_1\)</span> and
+<span class="math notranslate nohighlight">\(m_2\)</span> whose values are to be determined.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>In some dynamical astronomy and nearly all engineering
+applications, <span class="math notranslate nohighlight">\(\mu\)</span> can be easily regarded as being identified
+exactly with</p>
+<div class="math notranslate nohighlight">
+\[\mu = GM,\]</div>
+<p>where <span class="math notranslate nohighlight">\(M = m_1\)</span> is the mass of a central body much more massive
+than the other, i.e. <span class="math notranslate nohighlight">\(m_1 \ggg m_2\)</span>. (This is the case where
+<span class="math notranslate nohighlight">\(m_2\)</span> represents spacecraft, comets, etc.)</p>
+<p>The effective statement of taking <span class="math notranslate nohighlight">\(\mu\)</span> this way is that the
+central body of mass <span class="math notranslate nohighlight">\(m_1\)</span> moves in a <em>straight line</em> (or not at
+all) relative to the inertial frame (all in accordance with Newton’s
+1<sup>st</sup> law), but the motion of the smaller body of mass
+<span class="math notranslate nohighlight">\(m_2\)</span> <em>is still affected by the presence of the central body</em>.</p>
+</div>
+</div>
 </div>
 </div>
 
