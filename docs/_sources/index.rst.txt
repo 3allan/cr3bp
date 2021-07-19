@@ -17,4 +17,6 @@ foundations and advancing towards applications and results.
    :maxdepth: 3
    :caption: The Kepler (2-body) Problem
    
-   kepler/Overview
+   kepler/overview
+   kepler/properties
+   kepler/solution

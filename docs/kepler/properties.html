@@ -1,0 +1,442 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Properties &mdash; CR3BP  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Solution" href="solution.html" />
+    <link rel="prev" title="Overview" href="overview.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> CR3BP
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">The Kepler (2-body) Problem</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Properties</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#relative-form">Relative Form</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conserved-quantities">Conserved Quantities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#linear-momentum">Linear Momentum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#angular-momentum">Angular Momentum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#energy">Energy</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#further-reduction">Further Reduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#standard-form">Standard Form</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sources">Sources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="solution.html">Solution</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CR3BP</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Properties</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/kepler/properties.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="properties">
+<h1>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-plan-of-action admonition">
+<p class="admonition-title">Plan of Action</p>
+<p>The general 2-body problem may be simplified greatly by utilizing
+several special properties admitted by the system. In light of these
+properties, new equations of motion are developed that <em>will</em> enable a
+full solution of the general problem to be determined analytically.</p>
+</div>
+<div class="admonition-recall admonition">
+<p class="admonition-title">Recall</p>
+<p>The equations of motion of the general 2-body problem determined by the
+Newtonian, Lagrangian, and Hamiltonian formalisms are</p>
+<div class="math notranslate nohighlight" id="equation-general2bp">
+<span class="eqno">(1)<a class="headerlink" href="#equation-general2bp" title="Permalink to this equation">¶</a></span>\[\begin{split}\ddot{\mathbf{r}}_1 &amp;= -\frac{G m_2}{|\mathbf{r}_1 - \mathbf{r}_2|^3}(\mathbf{r}_1 - \mathbf{r}_2) \\
+\ddot{\mathbf{r}}_2 &amp;= -\frac{G m_1}{|\mathbf{r}_2 - \mathbf{r}_1|^3}(\mathbf{r}_2 - \mathbf{r}_1).\end{split}\]</div>
+</div>
+<p>Amazingly, this system <a class="reference internal" href="#equation-general2bp">(1)</a> has a closed-form solution. Obtaining this solution,
+however, is made significantly easier once several properties are known.</p>
+<div class="section" id="relative-form">
+<h2>Relative Form<a class="headerlink" href="#relative-form" title="Permalink to this headline">¶</a></h2>
+<p>The Newtonian, Lagrangian, and Hamiltonian formalisms all provide the same
+system of equations for the motion of two particles under mutual Newtonian
+gravitational attraction with respect to the origin of the inertial
+coordinate system given by <a class="reference internal" href="#equation-general2bp">(1)</a>. To reduce the complexity of
+this system (as we will see), we can define the <em>relative</em> distance between
+each body as</p>
+<div class="math notranslate nohighlight" id="equation-relative">
+<span class="eqno">(2)<a class="headerlink" href="#equation-relative" title="Permalink to this equation">¶</a></span>\[\mathbf{r} = \mathbf{r}_2 - \mathbf{r}_1.\]</div>
+<p>The equations of motion may be calculated directly since</p>
+<div class="math notranslate nohighlight" id="equation-relativeeom">
+<span class="eqno">(3)<a class="headerlink" href="#equation-relativeeom" title="Permalink to this equation">¶</a></span>\[\begin{split}\ddot{\mathbf{r}} &amp;= \ddot{\mathbf{r}}_2 - \ddot{\mathbf{r}}_1 \\
+&amp;= -\frac{G(m_1 + m_2)}{r^3}\mathbf{r},\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(r = |\mathbf{r}|\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The same result is achieved had we used Newton’s 3<sup>rd</sup> law
+since <span class="math notranslate nohighlight">\(m_1 \ddot{\mathbf{r}}_1 = -m_2\ddot{\mathbf{r}}_2\)</span>, i.e.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\ddot{\mathbf{r}} &amp;= \ddot{\mathbf{r}}_2 - \ddot{\mathbf{r}}_1 \\
+&amp;= \ddot{\mathbf{r}}_2 + \frac{m_2}{m_1}\ddot{\mathbf{r}}_2 \\
+&amp;= \left(1 + \frac{m_2}{m_1}\right) \ddot{\mathbf{r}}_2 \\
+&amp;= \left(\frac{m_1 + m_2}{m_1}\right)\left(-\frac{G m_1}{r^3}\mathbf{r}\right) \\
+&amp;= -\frac{G(m_1 + m_2)}{r^3}\mathbf{r}.\end{split}\]</div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Doing this is beneficial because it exploits a symmetry in
+the full system of equations, essentially <strong>halving</strong> the number of
+equations to be solved in order to obtain <em>any</em> information about
+<em>either</em> body.</p>
+</div>
+</div>
+<div class="section" id="conserved-quantities">
+<h2>Conserved Quantities<a class="headerlink" href="#conserved-quantities" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="linear-momentum">
+<h3>Linear Momentum<a class="headerlink" href="#linear-momentum" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-recall admonition">
+<p class="admonition-title">Recall</p>
+<p>For any <span class="math notranslate nohighlight">\(x_1, x_2 \in \mathbb{R}^3\)</span>, the center of mass for a
+system of two particles with respect to an inertial coordinate system is</p>
+<div class="math notranslate nohighlight">
+\[x_{cm} \equiv \frac{m_1 x_1 + m_2 x_2}{m_1 + m_2},\]</div>
+<p>where <span class="math notranslate nohighlight">\(m_1\)</span> and <span class="math notranslate nohighlight">\(m_2\)</span> are the masses of each body located
+(instantaneously) at <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span>, respectively.</p>
+</div>
+<p>The two bodies are <em>isolated</em> – that is, the center of mass satisfies</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{r}_{cm} = \dot{\mathbf{r}}_{cm}(0) t + \mathbf{r}_{cm}(0)\]</div>
+<p>since there is no external forcing to the system.
+As such, the center of mass moves in a straight line (or not at all) in
+accordance with Newton’s 1<sup>st</sup> law. Further, we have <em>explicitly</em>
+that</p>
+<div class="math notranslate nohighlight" id="equation-positionsfromcenterofmass">
+<span class="eqno">(4)<a class="headerlink" href="#equation-positionsfromcenterofmass" title="Permalink to this equation">¶</a></span>\[\mathbf{r}_1 = \mathbf{r}_{cm} - \frac{m_2}{m_1 + m_2}\mathbf{r} \qquad \text{and} \qquad \mathbf{r}_2 = \mathbf{r}_{cm} + \frac{m_1}{m_1 + m_2}\mathbf{r}.\]</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><a class="reference internal" href="#equation-relative">(2)</a> provides <strong>direct</strong>
+information of both bodies (relative to each other) through
+<a class="reference internal" href="#equation-relativeeom">(3)</a> <em>and</em> enables the inertial positions of both bodies to
+be <em>calculated</em> from <a class="reference internal" href="#equation-positionsfromcenterofmass">(4)</a> rather than directly
+solved from <a class="reference internal" href="#equation-general2bp">(1)</a>.</p>
+<p>This solidifies the idea that only half of the amount of equations
+have to be solved with <a class="reference internal" href="#equation-relativeeom">(3)</a>, but now <em>all</em> information about
+<em>both</em> bodies is known.</p>
+</div>
+</div>
+<div class="section" id="angular-momentum">
+<h3>Angular Momentum<a class="headerlink" href="#angular-momentum" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-recall admonition">
+<p class="admonition-title">Recall</p>
+<p>For any <span class="math notranslate nohighlight">\(x \in \mathbb{R}^3\)</span>, the cross-product of <span class="math notranslate nohighlight">\(x\)</span> with
+itself vanishes (i.e., <span class="math notranslate nohighlight">\(x \times x \equiv 0\)</span>).</p>
+</div>
+<p>Rewriting the Kepler problem in a convenient form,</p>
+<div class="math notranslate nohighlight">
+\[\ddot{\mathbf{r}} + \frac{G(m_1 + m_2)}{r^3}\mathbf{r} = \mathbf{0},\]</div>
+<p>lets us immediately show</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{0} &amp;= \left(\ddot{\mathbf{r}} + \frac{G(m_1 + m_2)}{r^3}\mathbf{r}\right) \!\times \mathbf{r} \\
+&amp;= \ddot{\mathbf{r}} \times \mathbf{r} + \left(\frac{G(m_1 + m_2)}{r^3}\mathbf{r}\right) \!\times \mathbf{r} \\
+&amp;= \ddot{\mathbf{r}} \times \mathbf{r} + \frac{G(m_1 + m_2)}{r^3}\left(\mathbf{r} \times \mathbf{r}\right) \\
+&amp;= \ddot{\mathbf{r}} \times \mathbf{r} \\
+&amp;= \ddot{\mathbf{r}} \times \mathbf{r} + \dot{\mathbf{r}} \times \dot{\mathbf{r}} \\
+&amp;= \frac{d}{dt}(\dot{\mathbf{r}} \times \mathbf{r}).\end{split}\]</div>
+<p>Consequently, we conclude that the angular momentum is conserved under the
+dynamics of the 2-body problem.</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{r} \times \dot{\mathbf{r}} \equiv \mathrm{const.}\]</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The motion of the two bodies <strong>must</strong> be <strong>planar</strong>.</p>
+</div>
+</div>
+<div class="section" id="energy">
+<h3>Energy<a class="headerlink" href="#energy" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-recall admonition">
+<p class="admonition-title">Recall</p>
+<p>For <span class="math notranslate nohighlight">\(q,p \in \mathbb{R}^n\)</span>, a canonical Hamiltonian system
+satisfies <span class="math notranslate nohighlight">\(\dot{q} = \mathcal{H}_p\)</span> and
+<span class="math notranslate nohighlight">\(\dot{p} = -\mathcal{H}_q\)</span> for which</p>
+<div class="math notranslate nohighlight">
+\[\frac{d\mathcal{H}}{dt} = \frac{\partial\mathcal{H}}{\partial t}.\]</div>
+</div>
+<p>The Hamiltonian is explicitly independent of time <span class="math notranslate nohighlight">\(t\)</span>. That is,</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{H} \equiv \mathrm{const.}\]</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The Hamiltonian itself (representitive of the total energy in
+the system) is conserved under the dynamics of the 2-body problem.</p>
+</div>
+</div>
+</div>
+<div class="section" id="further-reduction">
+<h2>Further Reduction<a class="headerlink" href="#further-reduction" title="Permalink to this headline">¶</a></h2>
+<p>The system <a class="reference internal" href="#equation-relativeeom">(3)</a> is writable as</p>
+<div class="math notranslate nohighlight">
+\[\underbrace{\frac{m_1 m_2}{m_1 + m_2}}_{\mu^*}\ddot{\mathbf{r}} = \underbrace{-\frac{G m_1 m_2}{r^3}\mathbf{r}}_{-\nabla V(r)},\]</div>
+<p>which is in the form of Newton’s 2<sup>nd</sup> law for a <strong>single</strong> particle
+of mass <span class="math notranslate nohighlight">\(\mu^*\)</span> being tracked in an inertial coordinate system with
+position <span class="math notranslate nohighlight">\(\mathbf{r}\)</span> under the influence of a potential <span class="math notranslate nohighlight">\(V\)</span>.
+More clearly, we can write</p>
+<div class="math notranslate nohighlight">
+\[\mu^* \ddot{\mathbf{r}} = -\frac{G(m_1 + m_2)\mu^*}{r^3}\mathbf{r}\]</div>
+<p>The 2-body system <a class="reference internal" href="#equation-relativeeom">(3)</a> <em>can</em> therefore be treated like it
+describes a <strong>single</strong> particle<a class="footnote-reference brackets" href="#id2" id="id1">1</a>.
+(The quantity <span class="math notranslate nohighlight">\(\mu^*\)</span> that makes this purely mathematical
+simplification possible is called the <em>reduced mass</em>.)</p>
+<a class="reference internal image-reference" href="../_images/reduced_mass_system.svg"><img alt="Example of a trajectory taken by the reduced mass in a general system" class="align-center" height="382px" src="../_images/reduced_mass_system.svg" width="633px" /></a>
+<div class="admonition-fact admonition">
+<p class="admonition-title">Fact</p>
+<p>For any <span class="math notranslate nohighlight">\(m_1, m_2 &gt; 0\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\mu^* &lt; m_1 + m_2.\]</div>
+<p><em>Proof:</em> Suppose the opposite. Then
+<span class="math notranslate nohighlight">\((m_1 + m_2)^2 = m_1^2 + 2m_1 m_2 + m_2^2 &lt; m_1 m_2\)</span>, but this
+means <span class="math notranslate nohighlight">\(m_1^2 + m_2^2 &lt; -m_1 m_2\)</span> — a contradiction.
+<span class="math notranslate nohighlight">\(\blacksquare\)</span></p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The resulting trajectory of a <strong>single</strong> body of mass
+<span class="math notranslate nohighlight">\(\mu^*\)</span> under the influence of the potential from a <em>static</em> body
+of mass <span class="math notranslate nohighlight">\(m_1 + m_2\)</span> is the <strong>same</strong> trajectory experienced by the
+<strong>relative motion</strong> of two bodies under mutual Newtonian gravitational
+attraction. This trajectory for both cases is <span class="math notranslate nohighlight">\(\mathbf{r}\)</span>.</p>
+</div>
+</div>
+<div class="section" id="standard-form">
+<h2>Standard Form<a class="headerlink" href="#standard-form" title="Permalink to this headline">¶</a></h2>
+<p>The standard form of the Kepler problem is achieved after defining the
+<em>gravitational parameter</em></p>
+<div class="math notranslate nohighlight">
+\[\mu = G(m_1 + m_2)\]</div>
+<p>such that the equations of motion for the relative motion of one body about
+the other are</p>
+<div class="math notranslate nohighlight">
+\[\ddot{\mathbf{r}} = -\frac{\mu}{r^3}\mathbf{r}\]</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>In astrophysical applications, <span class="math notranslate nohighlight">\(\mu\)</span> can be viewed as
+a quantity of two (generally) unknown parameters <span class="math notranslate nohighlight">\(m_1\)</span> and
+<span class="math notranslate nohighlight">\(m_2\)</span> whose values are to be determined.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>In some dynamical astronomy and nearly all engineering
+applications, <span class="math notranslate nohighlight">\(\mu\)</span> can be easily regarded as being identified
+exactly with</p>
+<div class="math notranslate nohighlight">
+\[\mu = GM,\]</div>
+<p>where <span class="math notranslate nohighlight">\(M = m_1\)</span> is the mass of a central body much more massive
+than the other, i.e. <span class="math notranslate nohighlight">\(m_1 \ggg m_2\)</span>. (This is the case where
+<span class="math notranslate nohighlight">\(m_2\)</span> represents spacecraft, comets, etc.)</p>
+<p>The effective statement of taking <span class="math notranslate nohighlight">\(\mu\)</span> this way is that the
+central body of mass <span class="math notranslate nohighlight">\(m_1\)</span> moves in a <em>straight line</em> (or not at
+all) relative to the inertial frame (all in accordance with Newton’s
+1<sup>st</sup> law), but the motion of the smaller body of mass
+<span class="math notranslate nohighlight">\(m_2\)</span> <em>is still affected by the presence of the central body</em>.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do <strong>not</strong> confuse the 2-body gravitational parameter
+<span class="math notranslate nohighlight">\(\mu\)</span> with the 3-body mass parameter <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
+<p class="centered">
+<strong><strong>These quantities, though sharing the same symbol, are different</strong>.</strong></p></div>
+</div>
+<div class="section" id="sources">
+<h2>Sources<a class="headerlink" href="#sources" title="Permalink to this headline">¶</a></h2>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p><a class="reference external" href="http://web.physics.ucsb.edu/~fratus/phys103/LN/TBP.pdf">The Two-Body Problem - UCSB Physics</a></p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="solution.html" class="btn btn-neutral float-right" title="Solution" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="overview.html" class="btn btn-neutral float-left" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Matt Werner.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
