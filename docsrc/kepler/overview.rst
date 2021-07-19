@@ -4,9 +4,8 @@ Overview
 .. admonition:: Plan of Action
 
     The equations of motion for the general 2-body problem are derived
-    using a variety of methods. Finally, the full equations are placed
-    into their "relative" and "standard" forms, providing a simpler and more
-    direct expression for each body's position relative to one another.
+    using the Newtonian, Lagrangian, and Hamiltonian approaches, showing
+    that each method provides the same system using different methods.
 
 Introduction
 ------------
@@ -120,76 +119,4 @@ for :math:`j \neq i = 1,2`.
 
     where :math:`\mathbf{q}_i \equiv \mathbf{r}_i`.
 
-Relative Form
-~~~~~~~~~~~~~
 
-The Newtonian, Lagrangian, and Hamiltonian formalisms all provide the same
-system of equations for the motion of two particles under mutual Newtonian
-gravitational attraction. To reduce the complexity of the system (as we
-will see), we can define the *relative* distance between each body as
-
-.. math::
-    \boxed{\mathbf{r} = \mathbf{r}_2 - \mathbf{r}_1}.
-
-Doing this is beneficial because it exploits a symmetry in the full system,
-halving the number of equations by creating a new coordinate system aligned
-with the inertial coordinate system but whose origin is always located at
-:math:`\mathbf{r}_1`.
-That is, this definition provides **direct** information of **both** bodies
-(relative to each other) rather than relying on the position of the
-otherwise arbitrarily defined (inertial) coordinate system's origin.
-
-The equations of motion for :math:`\mathbf{r}` may be calculated directly
-since
-
-.. math::
-    \ddot{\mathbf{r}} &= \ddot{\mathbf{r}}_2 - \ddot{\mathbf{r}}_1 \\
-    &= -\frac{G(m_1 + m_2)}{r^3}\mathbf{r},
-
-where :math:`r = |\mathbf{r}|`.
-
-.. Note:: The same result is achieved had we used Newton's 3\ :sup:`rd` law
-    since
-
-    .. math::
-        \ddot{\mathbf{r}} &= \ddot{\mathbf{r}}_2 - \ddot{\mathbf{r}}_1 \\
-        &= \ddot{\mathbf{r}}_2 + \frac{m_2}{m_1}\ddot{\mathbf{r}}_2 \\
-        &= \left(1 + \frac{m_2}{m_1}\right) \ddot{\mathbf{r}}_2 \\
-        &= \left(\frac{m_1 + m_2}{m_1}\right)\left(-\frac{G m_1}{r^3}\mathbf{r}\right) \\
-        &= -\frac{G(m_1 + m_2)}{r^3}\mathbf{r}.
-
-Standard Form
-~~~~~~~~~~~~~
-
-The standard form of the Kepler problem is achieved after defining the
-*mass parameter*
-
-.. math::
-    \boxed{\mu = G(m_1 + m_2)}
-
-such that the equations of motion for the relative motion of one body about
-the other are
-
-.. math::
-    \ddot{\mathbf{r}} = -\frac{\mu}{r^3}\mathbf{r}
-
-.. Important:: In astrophysical applications, :math:`\mu` can be viewed as
-    a quantity of two (generally) unknown parameters :math:`m_1` and
-    :math:`m_2` whose values are to be determined.
-
-.. Important:: In some dynamical astronomy and nearly all engineering
-    applications, :math:`\mu` can be easily regarded as being identified
-    exactly with
-
-    .. math::
-        \mu = GM,
-
-    where :math:`M = m_1` is the mass of a central body much more massive
-    than the other, i.e. :math:`m_1 \ggg m_2`. (This is the case where
-    :math:`m_2` represents spacecraft, comets, etc.)
-
-    The effective statement of taking :math:`\mu` this way is that the
-    central body of mass :math:`m_1` moves in a *straight line* (or not at
-    all) relative to the inertial frame (all in accordance with Newton's
-    1\ :sup:`st` law), but the motion of the smaller body of mass
-    :math:`m_2` *is still affected by the presence of the central body*.
