@@ -3,9 +3,9 @@ Properties
 .. admonition:: Plan of Action
 
     The general 2-body problem may be simplified greatly by utilizing
-    several special properties admitted by the system. In light of these
-    properties, new equations of motion are developed that *will* enable a
-    full solution of the general problem to be determined analytically.
+    several special properties admitted by the system. These properties
+    *will* enable a full solution of the general problem to be determined
+    analytically.
 
 .. admonition:: Recall
 
@@ -62,6 +62,28 @@ where :math:`r = |\mathbf{r}|`.
 
 Conserved Quantities
 --------------------
+Energy
+~~~~~~
+.. admonition:: Recall
+
+    For :math:`q,p \in \mathbb{R}^n`, a canonical Hamiltonian system
+    satisfies :math:`\dot{q} = \mathcal{H}_p` and
+    :math:`\dot{p} = -\mathcal{H}_q` for which, along a trajectory,
+
+    .. math::
+        \frac{d\mathcal{H}}{dt} = \frac{\partial\mathcal{H}}{\partial t}.
+
+The Hamiltonian is explicitly independent of time :math:`t`. That is,
+
+.. math::
+    \mathcal{H} \equiv \mathrm{const.}
+
+along trajectories of the system.
+
+.. Important::
+    The Hamiltonian itself is conserved under the dynamics of the 2-body
+    problem.
+
 Linear Momentum
 ~~~~~~~~~~~~~~~
 .. admonition:: Recall
@@ -105,8 +127,11 @@ Angular Momentum
 ~~~~~~~~~~~~~~~~
 .. admonition:: Recall
 
-    For any :math:`x \in \mathbb{R}^3`, the cross-product of :math:`x` with
-    itself vanishes (i.e., :math:`x \times x \equiv 0`).
+    #. For any :math:`x \in \mathbb{R}^3`, the cross-product of :math:`x`
+       with itself vanishes (i.e., :math:`x \times x \equiv 0`).
+
+    #. For any :math:`x,y \in \mathbb{R}^3`, the cross-product is
+       anticommutative (i.e. :math:`x \times y + y \times x \equiv 0`).
 
 Rewriting the Kepler problem in a convenient form,
 
@@ -121,40 +146,53 @@ lets us immediately show
     &= \ddot{\mathbf{r}} \times \mathbf{r} + \frac{G(m_1 + m_2)}{r^3}\left(\mathbf{r} \times \mathbf{r}\right) \\
     &= \ddot{\mathbf{r}} \times \mathbf{r} \\
     &= \ddot{\mathbf{r}} \times \mathbf{r} + \dot{\mathbf{r}} \times \dot{\mathbf{r}} \\
-    &= \frac{d}{dt}(\dot{\mathbf{r}} \times \mathbf{r}).
+    &= \frac{d}{dt}\underbrace{(\dot{\mathbf{r}} \times \mathbf{r})}_{-\mathbf{h}}.
 
-Consequently, we conclude that the angular momentum is conserved under the
-dynamics of the 2-body problem.
+Consequently, we conclude that the (specific) angular momentum
+:math:`\mathbf{h}` is conserved under the dynamics of the 2-body problem.
 
 .. math::
-    \mathbf{r} \times \dot{\mathbf{r}} \equiv \mathrm{const.}
+    \mathbf{h} = \mathbf{r} \times \dot{\mathbf{r}} \equiv \mathrm{const.}
 
 .. Important::
     The motion of the two bodies **must** be **planar**.
 
-Energy
-~~~~~~
+The Laplace-Runge-Lenz Vector
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. admonition:: Recall
 
-    For :math:`q,p \in \mathbb{R}^n`, a canonical Hamiltonian system
-    satisfies :math:`\dot{q} = \mathcal{H}_p` and
-    :math:`\dot{p} = -\mathcal{H}_q` for which
+    For any :math:`x,y,z \in \mathbb{R}^3`, the vector triple product
+    satisfies
 
     .. math::
-        \frac{d\mathcal{H}}{dt} = \frac{\partial\mathcal{H}}{\partial t}.
+        x \times (y \times z) = (x \cdot z) y - (x \cdot y) z.
 
-The Hamiltonian is explicitly independent of time :math:`t`. That is,
+Knowing that the angular momentum :math:`h` is conserved, consider the
+following.
 
 .. math::
-    \mathcal{H} \equiv \mathrm{const.}
+    \frac{d}{dt}(\dot{\mathbf{r}} \times  \mathbf{h}) &= \ddot{\mathbf{r}} \times \mathbf{h} \\
+    &= \left(-\frac{G(m_1 + m_2)}{r^3} \mathbf{r}\right) \times (\mathbf{r} \times \dot{\mathbf{r}}) \\
+    &= -\frac{G(m_1 + m_2)}{r^3} \big(\mathbf{r} \times (\mathbf{r} \times \dot{\mathbf{r}})\big) \\
+    &= -\frac{G(m_1 + m_2)}{r^3} \big((\mathbf{r} \cdot \dot{\mathbf{r}})\mathbf{r} - (\mathbf{r} \cdot \mathbf{r})\dot{\mathbf{r}}\big) \\
+    &= -\frac{G(m_1 + m_2)}{r^3} \big(r\dot{r} \mathbf{r} - r^2 \dot{\mathbf{r}}\big) && \quad \left(\mathbf{r} \cdot \dot{\mathbf{r}} = \frac{1}{2}\frac{d}{dt}(\mathbf{r} \cdot \mathbf{r})\right)\\
+    &= -G(m_1 + m_2) \left(\frac{\dot{r}}{r^2} \mathbf{r} - \frac{1}{r}\dot{\mathbf{r}}\right) \\
+    &= G(m_1 + m_2) \left(\frac{r \dot{\mathbf{r}} - \dot{r} \mathbf{r}}{r^2}\right) \\
+    &= G(m_1 + m_2) \frac{d}{dt}\left(\frac{\mathbf{r}}{r}\right) \\
+    &= \frac{d}{dt}\left(\frac{G(m_1 + m_2)}{r}\mathbf{r}\right).
+
+Finally, exploiting linearity of the differential operator provides the
+conserved quantity, :math:`\mathbf{A}`, referred to as the
+Laplace-Runge-Lenz vector.
+
+.. math::
+    \mathbf{A} = \dot{\mathbf{r}} \times \mathbf{h} - \frac{G(m_1 + m_2)}{r}\mathbf{r} \equiv \mathrm{const.}
 
 .. Important::
-    The Hamiltonian itself (representitive of the total energy in
-    the system) is conserved under the dynamics of the 2-body problem.
+    The Laplace-Runge-Lenz vector provides a **constant direction** *in the plane of motion of the two bodies.*
 
-
-Further Reduction
------------------
+The Reduced Mass
+----------------
 The system :eq:`relativeEOM` is writable as
 
 .. math::
@@ -169,7 +207,7 @@ More clearly, we can write
     \mu^* \ddot{\mathbf{r}} = -\frac{G(m_1 + m_2)\mu^*}{r^3}\mathbf{r}
 
 The 2-body system :eq:`relativeEOM` *can* therefore be treated like it
-describes a **single** particle\ [1]_.
+describes a **single** particle\ :sup:`[`\ [1]_:sup:`]`.
 (The quantity :math:`\mu^*` that makes this purely mathematical
 simplification possible is called the *reduced mass*.)
 
@@ -232,6 +270,9 @@ the other are
     all) relative to the inertial frame (all in accordance with Newton's
     1\ :sup:`st` law), but the motion of the smaller body of mass
     :math:`m_2` *is still affected by the presence of the central body*.
+    (This scenario **is** that of the reduced mass, where
+    :math:`\mu^* \approx m_2` is the mass of the particle in motion and
+    :math:`m_1 + m_2 \approx M` is the central body's mass.)
 
 .. Warning:: Do **not** confuse the 2-body gravitational parameter
     :math:`\mu` with the 3-body mass parameter :math:`\mu`.
@@ -242,3 +283,5 @@ the other are
 Sources
 -------
 .. [1] `The Two-Body Problem - UCSB Physics <http://web.physics.ucsb.edu/~fratus/phys103/LN/TBP.pdf>`_
+
+.. [2] Goldstein, Poole, Safko. Classical Mechanics, 3rd Edition. Pgs. 102-103

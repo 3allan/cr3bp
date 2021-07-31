@@ -95,12 +95,13 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Properties</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#relative-form">Relative Form</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#conserved-quantities">Conserved Quantities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#energy">Energy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#linear-momentum">Linear Momentum</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#angular-momentum">Angular Momentum</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#energy">Energy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-laplace-runge-lenz-vector">The Laplace-Runge-Lenz Vector</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#further-reduction">Further Reduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-reduced-mass">The Reduced Mass</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#standard-form">Standard Form</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sources">Sources</a></li>
 </ul>
@@ -178,9 +179,9 @@
 <div class="admonition-plan-of-action admonition">
 <p class="admonition-title">Plan of Action</p>
 <p>The general 2-body problem may be simplified greatly by utilizing
-several special properties admitted by the system. In light of these
-properties, new equations of motion are developed that <em>will</em> enable a
-full solution of the general problem to be determined analytically.</p>
+several special properties admitted by the system. These properties
+<em>will</em> enable a full solution of the general problem to be determined
+analytically.</p>
 </div>
 <div class="admonition-recall admonition">
 <p class="admonition-title">Recall</p>
@@ -228,6 +229,26 @@ equations to be solved in order to obtain <em>any</em> information about
 </div>
 <div class="section" id="conserved-quantities">
 <h2>Conserved Quantities<a class="headerlink" href="#conserved-quantities" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="energy">
+<h3>Energy<a class="headerlink" href="#energy" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-recall admonition">
+<p class="admonition-title">Recall</p>
+<p>For <span class="math notranslate nohighlight">\(q,p \in \mathbb{R}^n\)</span>, a canonical Hamiltonian system
+satisfies <span class="math notranslate nohighlight">\(\dot{q} = \mathcal{H}_p\)</span> and
+<span class="math notranslate nohighlight">\(\dot{p} = -\mathcal{H}_q\)</span> for which, along a trajectory,</p>
+<div class="math notranslate nohighlight">
+\[\frac{d\mathcal{H}}{dt} = \frac{\partial\mathcal{H}}{\partial t}.\]</div>
+</div>
+<p>The Hamiltonian is explicitly independent of time <span class="math notranslate nohighlight">\(t\)</span>. That is,</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{H} \equiv \mathrm{const.}\]</div>
+<p>along trajectories of the system.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The Hamiltonian itself is conserved under the dynamics of the 2-body
+problem.</p>
+</div>
+</div>
 <div class="section" id="linear-momentum">
 <h3>Linear Momentum<a class="headerlink" href="#linear-momentum" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-recall admonition">
@@ -264,8 +285,12 @@ have to be solved with <a class="reference internal" href="#equation-relativeeom
 <h3>Angular Momentum<a class="headerlink" href="#angular-momentum" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-recall admonition">
 <p class="admonition-title">Recall</p>
-<p>For any <span class="math notranslate nohighlight">\(x \in \mathbb{R}^3\)</span>, the cross-product of <span class="math notranslate nohighlight">\(x\)</span> with
-itself vanishes (i.e., <span class="math notranslate nohighlight">\(x \times x \equiv 0\)</span>).</p>
+<ol class="arabic simple">
+<li><p>For any <span class="math notranslate nohighlight">\(x \in \mathbb{R}^3\)</span>, the cross-product of <span class="math notranslate nohighlight">\(x\)</span>
+with itself vanishes (i.e., <span class="math notranslate nohighlight">\(x \times x \equiv 0\)</span>).</p></li>
+<li><p>For any <span class="math notranslate nohighlight">\(x,y \in \mathbb{R}^3\)</span>, the cross-product is
+anticommutative (i.e. <span class="math notranslate nohighlight">\(x \times y + y \times x \equiv 0\)</span>).</p></li>
+</ol>
 </div>
 <p>Rewriting the Kepler problem in a convenient form,</p>
 <div class="math notranslate nohighlight">
@@ -277,38 +302,50 @@ itself vanishes (i.e., <span class="math notranslate nohighlight">\(x \times x \
 &amp;= \ddot{\mathbf{r}} \times \mathbf{r} + \frac{G(m_1 + m_2)}{r^3}\left(\mathbf{r} \times \mathbf{r}\right) \\
 &amp;= \ddot{\mathbf{r}} \times \mathbf{r} \\
 &amp;= \ddot{\mathbf{r}} \times \mathbf{r} + \dot{\mathbf{r}} \times \dot{\mathbf{r}} \\
-&amp;= \frac{d}{dt}(\dot{\mathbf{r}} \times \mathbf{r}).\end{split}\]</div>
-<p>Consequently, we conclude that the angular momentum is conserved under the
-dynamics of the 2-body problem.</p>
+&amp;= \frac{d}{dt}\underbrace{(\dot{\mathbf{r}} \times \mathbf{r})}_{-\mathbf{h}}.\end{split}\]</div>
+<p>Consequently, we conclude that the (specific) angular momentum
+<span class="math notranslate nohighlight">\(\mathbf{h}\)</span> is conserved under the dynamics of the 2-body problem.</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{r} \times \dot{\mathbf{r}} \equiv \mathrm{const.}\]</div>
+\[\mathbf{h} = \mathbf{r} \times \dot{\mathbf{r}} \equiv \mathrm{const.}\]</div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>The motion of the two bodies <strong>must</strong> be <strong>planar</strong>.</p>
 </div>
 </div>
-<div class="section" id="energy">
-<h3>Energy<a class="headerlink" href="#energy" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="the-laplace-runge-lenz-vector">
+<h3>The Laplace-Runge-Lenz Vector<a class="headerlink" href="#the-laplace-runge-lenz-vector" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-recall admonition">
 <p class="admonition-title">Recall</p>
-<p>For <span class="math notranslate nohighlight">\(q,p \in \mathbb{R}^n\)</span>, a canonical Hamiltonian system
-satisfies <span class="math notranslate nohighlight">\(\dot{q} = \mathcal{H}_p\)</span> and
-<span class="math notranslate nohighlight">\(\dot{p} = -\mathcal{H}_q\)</span> for which</p>
+<p>For any <span class="math notranslate nohighlight">\(x,y,z \in \mathbb{R}^3\)</span>, the vector triple product
+satisfies</p>
 <div class="math notranslate nohighlight">
-\[\frac{d\mathcal{H}}{dt} = \frac{\partial\mathcal{H}}{\partial t}.\]</div>
+\[x \times (y \times z) = (x \cdot z) y - (x \cdot y) z.\]</div>
 </div>
-<p>The Hamiltonian is explicitly independent of time <span class="math notranslate nohighlight">\(t\)</span>. That is,</p>
+<p>Knowing that the angular momentum <span class="math notranslate nohighlight">\(h\)</span> is conserved, consider the
+following.</p>
 <div class="math notranslate nohighlight">
-\[\mathcal{H} \equiv \mathrm{const.}\]</div>
+\[\begin{split}\frac{d}{dt}(\dot{\mathbf{r}} \times  \mathbf{h}) &amp;= \ddot{\mathbf{r}} \times \mathbf{h} \\
+&amp;= \left(-\frac{G(m_1 + m_2)}{r^3} \mathbf{r}\right) \times (\mathbf{r} \times \dot{\mathbf{r}}) \\
+&amp;= -\frac{G(m_1 + m_2)}{r^3} \big(\mathbf{r} \times (\mathbf{r} \times \dot{\mathbf{r}})\big) \\
+&amp;= -\frac{G(m_1 + m_2)}{r^3} \big((\mathbf{r} \cdot \dot{\mathbf{r}})\mathbf{r} - (\mathbf{r} \cdot \mathbf{r})\dot{\mathbf{r}}\big) \\
+&amp;= -\frac{G(m_1 + m_2)}{r^3} \big(r\dot{r} \mathbf{r} - r^2 \dot{\mathbf{r}}\big) &amp;&amp; \quad \left(\mathbf{r} \cdot \dot{\mathbf{r}} = \frac{1}{2}\frac{d}{dt}(\mathbf{r} \cdot \mathbf{r})\right)\\
+&amp;= -G(m_1 + m_2) \left(\frac{\dot{r}}{r^2} \mathbf{r} - \frac{1}{r}\dot{\mathbf{r}}\right) \\
+&amp;= G(m_1 + m_2) \left(\frac{r \dot{\mathbf{r}} - \dot{r} \mathbf{r}}{r^2}\right) \\
+&amp;= G(m_1 + m_2) \frac{d}{dt}\left(\frac{\mathbf{r}}{r}\right) \\
+&amp;= \frac{d}{dt}\left(\frac{G(m_1 + m_2)}{r}\mathbf{r}\right).\end{split}\]</div>
+<p>Finally, exploiting linearity of the differential operator provides the
+conserved quantity, <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>, referred to as the
+Laplace-Runge-Lenz vector.</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{A} = \dot{\mathbf{r}} \times \mathbf{h} - \frac{G(m_1 + m_2)}{r}\mathbf{r} \equiv \mathrm{const.}\]</div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>The Hamiltonian itself (representitive of the total energy in
-the system) is conserved under the dynamics of the 2-body problem.</p>
+<p>The Laplace-Runge-Lenz vector provides a <strong>constant direction</strong> <em>in the plane of motion of the two bodies.</em></p>
 </div>
 </div>
 </div>
-<div class="section" id="further-reduction">
-<h2>Further Reduction<a class="headerlink" href="#further-reduction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-reduced-mass">
+<h2>The Reduced Mass<a class="headerlink" href="#the-reduced-mass" title="Permalink to this headline">¶</a></h2>
 <p>The system <a class="reference internal" href="#equation-relativeeom">(3)</a> is writable as</p>
 <div class="math notranslate nohighlight">
 \[\underbrace{\frac{m_1 m_2}{m_1 + m_2}}_{\mu^*}\ddot{\mathbf{r}} = \underbrace{-\frac{G m_1 m_2}{r^3}\mathbf{r}}_{-\nabla V(r)},\]</div>
@@ -319,7 +356,7 @@ More clearly, we can write</p>
 <div class="math notranslate nohighlight">
 \[\mu^* \ddot{\mathbf{r}} = -\frac{G(m_1 + m_2)\mu^*}{r^3}\mathbf{r}\]</div>
 <p>The 2-body system <a class="reference internal" href="#equation-relativeeom">(3)</a> <em>can</em> therefore be treated like it
-describes a <strong>single</strong> particle<a class="footnote-reference brackets" href="#id2" id="id1">1</a>.
+describes a <strong>single</strong> particle<sup>[</sup><a class="footnote-reference brackets" href="#id2" id="id1">1</a><sup>]</sup>.
 (The quantity <span class="math notranslate nohighlight">\(\mu^*\)</span> that makes this purely mathematical
 simplification possible is called the <em>reduced mass</em>.)</p>
 <a class="reference internal image-reference" href="../_images/reduced_mass_system.svg"><img alt="Example of a trajectory taken by the reduced mass in a general system" class="align-center" height="382px" src="../_images/reduced_mass_system.svg" width="633px" /></a>
@@ -372,7 +409,10 @@ than the other, i.e. <span class="math notranslate nohighlight">\(m_1 \ggg m_2\)
 central body of mass <span class="math notranslate nohighlight">\(m_1\)</span> moves in a <em>straight line</em> (or not at
 all) relative to the inertial frame (all in accordance with Newton’s
 1<sup>st</sup> law), but the motion of the smaller body of mass
-<span class="math notranslate nohighlight">\(m_2\)</span> <em>is still affected by the presence of the central body</em>.</p>
+<span class="math notranslate nohighlight">\(m_2\)</span> <em>is still affected by the presence of the central body</em>.
+(This scenario <strong>is</strong> that of the reduced mass, where
+<span class="math notranslate nohighlight">\(\mu^* \approx m_2\)</span> is the mass of the particle in motion and
+<span class="math notranslate nohighlight">\(m_1 + m_2 \approx M\)</span> is the central body’s mass.)</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -386,6 +426,9 @@ all) relative to the inertial frame (all in accordance with Newton’s
 <dl class="footnote brackets">
 <dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p><a class="reference external" href="http://web.physics.ucsb.edu/~fratus/phys103/LN/TBP.pdf">The Two-Body Problem - UCSB Physics</a></p>
+</dd>
+<dt class="label" id="id3"><span class="brackets">2</span></dt>
+<dd><p>Goldstein, Poole, Safko. Classical Mechanics, 3rd Edition. Pgs. 102-103</p>
 </dd>
 </dl>
 </div>

@@ -22,9 +22,8 @@ attraction with respect to an inertial frame.
    :alt: Diagram of the 2-body problem with respect to an inertial frame
    :align: center
 
-Here, we assume (without loss of generality) that :math:`m_1 \geqslant m_2`
-are the body masses and a general position vector :math:`\mathbf{r}` is
-represented
+Here, :math:`m_1` and :math:`m_2` are the body masses and a general position
+vector :math:`\mathbf{r}` is represented
 
 .. math::
 
@@ -51,6 +50,17 @@ where :math:`G` is the gravitational constant.
 Lagrangian Function
 ~~~~~~~~~~~~~~~~~~~
 
+.. admonition:: Recall
+
+    Lagrange's (conservative) equations are
+
+    .. math::
+        \frac{d}{dt}\frac{\partial\mathcal{L}}{\partial \dot{q}} - \frac{\partial\mathcal{L}}{\partial q} = 0,
+
+    for generalized coordinates :math:`q \in \mathbb{R}^n`, where :math:`n`
+    is the number of degrees of freedom in the system. (Here,
+    :math:`n = 6`.)
+
 We can write the system's Lagrangian as simply the difference between
 total kinetic energy and total potential energy.
 
@@ -68,6 +78,12 @@ corresponding Euler-Lagrange equations (6 of them) are written
     &= \frac{d}{dt} (m_i \dot{\mathbf{r}}_i) - \frac{G m_1 m_2}{|\mathbf{r}_j - \mathbf{r}_i|^3} (\mathbf{r}_j - \mathbf{r}_i) \qquad\quad && (j \neq i) \\
     &= m_i \ddot{\mathbf{r}}_i + \frac{G m_1 m_2}{|\mathbf{r}_i - \mathbf{r}_j|^3} (\mathbf{r}_i - \mathbf{r}_j).
 
+Writing the the above result of Lagrange's in their most compact form
+provides
+
+.. math::
+    \ddot{\mathbf{r}}_i = -\frac{G m_j}{|\mathbf{r}_i - \mathbf{r}_j|^3}(\mathbf{r}_i - \mathbf{r}_j).
+
 Applying :math:`i = 1,2` produces the equations of motion for each of the
 two bodies.
 
@@ -79,6 +95,17 @@ two bodies.
 
 Hamiltonian Function
 ~~~~~~~~~~~~~~~~~~~~
+
+.. admonition:: Recall
+
+    Hamilton's canonical equations are
+
+    .. math::
+        \dot{q} = +\frac{\partial\mathcal{H}}{\partial p} \qquad \text{and} \qquad \dot{p} = -\frac{\partial\mathcal{H}}{\partial q}
+
+    for generalized coordinates and momenta :math:`q,p \in \mathbb{R}^n`,
+    where :math:`n` is the number of degrees of freedom in the system.
+    (Here, :math:`n = 6`.)
 
 Using the Lagrangian :eq:`Lagrangian`, the Hamiltonian function is defined
 
@@ -99,17 +126,6 @@ Hamilton's canonical equations (12 of them) then require
     \dot{\mathbf{p}}_i &= -\frac{G m_1 m_2}{|\mathbf{q}_i - \mathbf{q}_j|^3} (\mathbf{q}_i - \mathbf{q}_j),
 
 for :math:`j \neq i = 1,2`.
-
-.. admonition:: Recall
-
-    Hamilton's canonical equations are
-
-    .. math::
-        \dot{q} = +\frac{\partial\mathcal{H}}{\partial p} \qquad \text{and} \qquad \dot{p} = -\frac{\partial\mathcal{H}}{\partial q}
-
-    for generalized coordinates and momenta :math:`q,p \in \mathbb{R}^n`,
-    where :math:`n` is the number of degrees of freedom in the system.
-    (Here, :math:`n = 6`.)
 
 .. Note:: Hamilton's equations :eq:`Hamilton` are the first-order form of
     :eq:`Newton` and :eq:`Lagrange` as seen by

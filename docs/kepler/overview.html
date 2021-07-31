@@ -185,9 +185,8 @@ especially so for analyzing the more general 3-body problem. It consists of
 determining the positions of 2 bodies under mutual Newtonian gravitational
 attraction with respect to an inertial frame.</p>
 <a class="reference internal image-reference" href="../_images/kepler_2_particles.svg"><img alt="Diagram of the 2-body problem with respect to an inertial frame" class="align-center" height="382px" src="../_images/kepler_2_particles.svg" width="633px" /></a>
-<p>Here, we assume (without loss of generality) that <span class="math notranslate nohighlight">\(m_1 \geqslant m_2\)</span>
-are the body masses and a general position vector <span class="math notranslate nohighlight">\(\mathbf{r}\)</span> is
-represented</p>
+<p>Here, <span class="math notranslate nohighlight">\(m_1\)</span> and <span class="math notranslate nohighlight">\(m_2\)</span> are the body masses and a general position
+vector <span class="math notranslate nohighlight">\(\mathbf{r}\)</span> is represented</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{r} = \begin{pmatrix}x &amp; y &amp; z\end{pmatrix}^T\]</div>
 <p>with basis elements provided by the inertial coordinate system.</p>
@@ -205,6 +204,15 @@ gravitational attraction directly provides</p>
 </div>
 <div class="section" id="lagrangian-function">
 <h3>Lagrangian Function<a class="headerlink" href="#lagrangian-function" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-recall admonition">
+<p class="admonition-title">Recall</p>
+<p>Lagrange’s (conservative) equations are</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dt}\frac{\partial\mathcal{L}}{\partial \dot{q}} - \frac{\partial\mathcal{L}}{\partial q} = 0,\]</div>
+<p>for generalized coordinates <span class="math notranslate nohighlight">\(q \in \mathbb{R}^n\)</span>, where <span class="math notranslate nohighlight">\(n\)</span>
+is the number of degrees of freedom in the system. (Here,
+<span class="math notranslate nohighlight">\(n = 6\)</span>.)</p>
+</div>
 <p>We can write the system’s Lagrangian as simply the difference between
 total kinetic energy and total potential energy.</p>
 <div class="math notranslate nohighlight" id="equation-lagrangian">
@@ -216,6 +224,10 @@ corresponding Euler-Lagrange equations (6 of them) are written</p>
 \[\begin{split}\mathbf{0} &amp;= \frac{d}{dt}\frac{\partial\mathcal{L}}{\partial\dot{\mathbf{r}}_i} - \frac{\partial\mathcal{L}}{\partial\mathbf{r}_i} &amp;&amp; (i = 1,2) \\
 &amp;= \frac{d}{dt} (m_i \dot{\mathbf{r}}_i) - \frac{G m_1 m_2}{|\mathbf{r}_j - \mathbf{r}_i|^3} (\mathbf{r}_j - \mathbf{r}_i) \qquad\quad &amp;&amp; (j \neq i) \\
 &amp;= m_i \ddot{\mathbf{r}}_i + \frac{G m_1 m_2}{|\mathbf{r}_i - \mathbf{r}_j|^3} (\mathbf{r}_i - \mathbf{r}_j).\end{split}\]</div>
+<p>Writing the the above result of Lagrange’s in their most compact form
+provides</p>
+<div class="math notranslate nohighlight">
+\[\ddot{\mathbf{r}}_i = -\frac{G m_j}{|\mathbf{r}_i - \mathbf{r}_j|^3}(\mathbf{r}_i - \mathbf{r}_j).\]</div>
 <p>Applying <span class="math notranslate nohighlight">\(i = 1,2\)</span> produces the equations of motion for each of the
 two bodies.</p>
 <div class="math notranslate nohighlight" id="equation-lagrange">
@@ -224,6 +236,15 @@ two bodies.</p>
 </div>
 <div class="section" id="hamiltonian-function">
 <h3>Hamiltonian Function<a class="headerlink" href="#hamiltonian-function" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-recall admonition">
+<p class="admonition-title">Recall</p>
+<p>Hamilton’s canonical equations are</p>
+<div class="math notranslate nohighlight">
+\[\dot{q} = +\frac{\partial\mathcal{H}}{\partial p} \qquad \text{and} \qquad \dot{p} = -\frac{\partial\mathcal{H}}{\partial q}\]</div>
+<p>for generalized coordinates and momenta <span class="math notranslate nohighlight">\(q,p \in \mathbb{R}^n\)</span>,
+where <span class="math notranslate nohighlight">\(n\)</span> is the number of degrees of freedom in the system.
+(Here, <span class="math notranslate nohighlight">\(n = 6\)</span>.)</p>
+</div>
 <p>Using the Lagrangian <a class="reference internal" href="#equation-lagrangian">(2)</a>, the Hamiltonian function is defined</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\mathcal{H} &amp;= \sum_{i = 1}^2 \dot{\mathbf{q}}_i \cdot \mathbf{p}_i - \mathcal{L} \\
@@ -237,15 +258,6 @@ Hamilton’s canonical equations (12 of them) then require</p>
 <span class="eqno">(4)<a class="headerlink" href="#equation-hamilton" title="Permalink to this equation">¶</a></span>\[\begin{split}\dot{\mathbf{q}}_i &amp;= \frac{\mathbf{p}_i}{m_i} \\
 \dot{\mathbf{p}}_i &amp;= -\frac{G m_1 m_2}{|\mathbf{q}_i - \mathbf{q}_j|^3} (\mathbf{q}_i - \mathbf{q}_j),\end{split}\]</div>
 <p>for <span class="math notranslate nohighlight">\(j \neq i = 1,2\)</span>.</p>
-<div class="admonition-recall admonition">
-<p class="admonition-title">Recall</p>
-<p>Hamilton’s canonical equations are</p>
-<div class="math notranslate nohighlight">
-\[\dot{q} = +\frac{\partial\mathcal{H}}{\partial p} \qquad \text{and} \qquad \dot{p} = -\frac{\partial\mathcal{H}}{\partial q}\]</div>
-<p>for generalized coordinates and momenta <span class="math notranslate nohighlight">\(q,p \in \mathbb{R}^n\)</span>,
-where <span class="math notranslate nohighlight">\(n\)</span> is the number of degrees of freedom in the system.
-(Here, <span class="math notranslate nohighlight">\(n = 6\)</span>.)</p>
-</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Hamilton’s equations <a class="reference internal" href="#equation-hamilton">(4)</a> are the first-order form of
