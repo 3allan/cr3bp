@@ -183,7 +183,7 @@ following.
 
 Finally, exploiting linearity of the differential operator provides the
 conserved quantity, :math:`\mathbf{A}`, referred to as the
-Laplace-Runge-Lenz vector.
+Laplace-Runge-Lenz vector\ :sup:`[`\ [2]_:sup:`]`.
 
 .. math::
     \mathbf{A} = \dot{\mathbf{r}} \times \mathbf{h} - \frac{G(m_1 + m_2)}{r}\mathbf{r} \equiv \mathrm{const.}
@@ -211,9 +211,9 @@ describes a **single** particle\ :sup:`[`\ [1]_:sup:`]`.
 (The quantity :math:`\mu^*` that makes this purely mathematical
 simplification possible is called the *reduced mass*.)
 
-.. image:: ../../images/reduced_mass_system.svg
-   :width: 422px
-   :height: 255px
+.. image:: ../../images/kepler_reduced_mass_system.svg
+   :width: 299px
+   :height: 221px
    :scale: 150 %
    :alt: Example of a trajectory taken by the reduced mass in a general system
    :align: center
@@ -282,6 +282,5 @@ the other are
 
 Sources
 -------
-.. [1] `The Two-Body Problem - UCSB Physics <http://web.physics.ucsb.edu/~fratus/phys103/LN/TBP.pdf>`_
-
+.. [1] :download:`The Two-Body Problem - UCSB Physics <http://web.physics.ucsb.edu/~fratus/phys103/LN/TBP.pdf>`
 .. [2] Goldstein, Poole, Safko. Classical Mechanics, 3rd Edition. Pgs. 102-103

@@ -92,7 +92,10 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="properties.html">Properties</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Solution</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Solution</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#coordinate-rotation">Coordinate Rotation</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -162,11 +165,23 @@
             
   <div class="section" id="solution">
 <h1>Solution<a class="headerlink" href="#solution" title="Permalink to this headline">¶</a></h1>
-<p>Knowing that the motion must be 2-dimensional, we can redefine our inertial
-coordinate system such that motion takes place entirely in the
-<span class="math notranslate nohighlight">\(xy\)</span> plane.</p>
+<div class="admonition-plan-of-action admonition">
+<p class="admonition-title">Plan of Action</p>
+<p>The solution of the <em>general</em> 2-body problem is developed several
+different ways utilizing the now known special
+<a class="reference internal" href="properties.html#properties"><span class="std std-ref">properties</span></a> admitted by the system.</p>
+</div>
+<div class="section" id="coordinate-rotation">
+<h2>Coordinate Rotation<a class="headerlink" href="#coordinate-rotation" title="Permalink to this headline">¶</a></h2>
+<p>Knowing that the motion <strong>must</strong> be 2-dimensional, we can choose a more
+convenient coordinate system via a coordinate rotation. Let this rotation
+be denoted <span class="math notranslate nohighlight">\(\mathbf{R} \in \mathrm{SO}(3)\)</span> such that</p>
 <div class="math notranslate nohighlight">
-\[\]</div>
+\[\begin{split}\begin{pmatrix}x \\ y \\ z\end{pmatrix} = \mathbf{R} \begin{pmatrix}X \\ Y \\ Z\end{pmatrix}.\end{split}\]</div>
+<p>Note that the vectors on the LHS and RHS both represent the <strong>same</strong> object
+<span class="math notranslate nohighlight">\(\mathbf{r}\)</span>, just that the expressions are different because of the
+object being described by two different coordinate systems.</p>
+</div>
 </div>
 
 

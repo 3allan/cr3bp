@@ -16,8 +16,8 @@ determining the positions of 2 bodies under mutual Newtonian gravitational
 attraction with respect to an inertial frame.
 
 .. image:: ../../images/kepler_2_particles.svg
-   :width: 422px
-   :height: 255px
+   :width: 355px
+   :height: 209px
    :scale: 150 %
    :alt: Diagram of the 2-body problem with respect to an inertial frame
    :align: center
