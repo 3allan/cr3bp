@@ -15,19 +15,24 @@ especially so for analyzing the more general 3-body problem. It consists of
 determining the positions of 2 bodies under mutual Newtonian gravitational
 attraction with respect to an inertial frame.
 
-.. image:: ../../images/kepler_2_particles.svg
-   :width: 355px
-   :height: 209px
-   :scale: 150 %
-   :alt: Diagram of the 2-body problem with respect to an inertial frame
-   :align: center
+.. figure:: ../../images/kepler_2_particles.svg
+    :width: 355px
+    :height: 209px
+    :scale: 150 %
+    :alt: Diagram of the 2-body problem with respect to a general, inertial coordinate system
+    :align: center
+
+    The most general setup of the Kepler (2-body) problem. The problem
+    consists of two masses, :math:`m_1` and :math:`m_2`, gravitationally
+    attracted to one another whose positions, :math:`\mathbf{r}_1` and
+    :math:`\mathbf{r}_2`, are tracked in an inertial coordinate system.
 
 Here, :math:`m_1` and :math:`m_2` are the body masses and a general position
 vector :math:`\mathbf{r}` is represented
 
 .. math::
 
-    \mathbf{r} = \begin{pmatrix}x & y & z\end{pmatrix}^T
+    \mathbf{r} = \begin{pmatrix}X & Y & Z\end{pmatrix}^T
 
 with basis elements provided by the inertial coordinate system.
 

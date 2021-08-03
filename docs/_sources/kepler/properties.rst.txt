@@ -46,14 +46,7 @@ The equations of motion may be calculated directly since
 where :math:`r = |\mathbf{r}|`.
 
 .. Note:: The same result is achieved had we used Newton's 3\ :sup:`rd` law
-    since :math:`m_1 \ddot{\mathbf{r}}_1 = -m_2\ddot{\mathbf{r}}_2`, i.e.
-
-    .. math::
-        \ddot{\mathbf{r}} &= \ddot{\mathbf{r}}_2 - \ddot{\mathbf{r}}_1 \\
-        &= \ddot{\mathbf{r}}_2 + \frac{m_2}{m_1}\ddot{\mathbf{r}}_2 \\
-        &= \left(1 + \frac{m_2}{m_1}\right) \ddot{\mathbf{r}}_2 \\
-        &= \left(\frac{m_1 + m_2}{m_1}\right)\left(-\frac{G m_1}{r^3}\mathbf{r}\right) \\
-        &= -\frac{G(m_1 + m_2)}{r^3}\mathbf{r}.
+    since :math:`m_1 \ddot{\mathbf{r}}_1 = -m_2\ddot{\mathbf{r}}_2`.
 
 .. Important:: Doing this is beneficial because it exploits a symmetry in
     the full system of equations, essentially **halving** the number of
@@ -62,28 +55,6 @@ where :math:`r = |\mathbf{r}|`.
 
 Conserved Quantities
 --------------------
-Energy
-~~~~~~
-.. admonition:: Recall
-
-    For :math:`q,p \in \mathbb{R}^n`, a canonical Hamiltonian system
-    satisfies :math:`\dot{q} = \mathcal{H}_p` and
-    :math:`\dot{p} = -\mathcal{H}_q` for which, along a trajectory,
-
-    .. math::
-        \frac{d\mathcal{H}}{dt} = \frac{\partial\mathcal{H}}{\partial t}.
-
-The Hamiltonian is explicitly independent of time :math:`t`. That is,
-
-.. math::
-    \mathcal{H} \equiv \mathrm{const.}
-
-along trajectories of the system.
-
-.. Important::
-    The Hamiltonian itself is conserved under the dynamics of the 2-body
-    problem.
-
 Linear Momentum
 ~~~~~~~~~~~~~~~
 .. admonition:: Recall
@@ -127,11 +98,17 @@ Angular Momentum
 ~~~~~~~~~~~~~~~~
 .. admonition:: Recall
 
-    #. For any :math:`x \in \mathbb{R}^3`, the cross-product of :math:`x`
-       with itself vanishes (i.e., :math:`x \times x \equiv 0`).
+    #.  For any :math:`x \in \mathbb{R}^3`, the cross-product of :math:`x`
+        with itself vanishes.
 
-    #. For any :math:`x,y \in \mathbb{R}^3`, the cross-product is
-       anticommutative (i.e. :math:`x \times y + y \times x \equiv 0`).
+        .. math::
+            x \times x \equiv 0
+
+    #.  For any :math:`x,y \in \mathbb{R}^3`, the cross-product is
+        anticommutative.
+
+        .. math::
+            x \times y + y \times x \equiv 0
 
 Rewriting the Kepler problem in a convenient form,
 
@@ -167,7 +144,7 @@ The Laplace-Runge-Lenz Vector
     .. math::
         x \times (y \times z) = (x \cdot z) y - (x \cdot y) z.
 
-Knowing that the angular momentum :math:`h` is conserved, consider the
+Knowing that the angular momentum :math:`\mathbf{h}` is conserved, consider the
 following.
 
 .. math::
@@ -191,6 +168,35 @@ Laplace-Runge-Lenz vector\ :sup:`[`\ [2]_:sup:`]`.
 .. Important::
     The Laplace-Runge-Lenz vector provides a **constant direction** *in the plane of motion of the two bodies.*
 
+Energy
+~~~~~~
+Manipulating the relative form of the equations of motion provides
+
+.. math::
+    \mathbf{0} &= \left(\ddot{\mathbf{r}} + \frac{G(m_1 + m_2)}{r^3}\mathbf{r}\right) \cdot \dot{\mathbf{r}} \\
+    &= \ddot{\mathbf{r}} \cdot \dot{\mathbf{r}} + \left(\frac{G(m_1 + m_2)}{r^3}\mathbf{r}\right) \cdot \dot{\mathbf{r}} \\
+    &= \frac{1}{2}\frac{d}{dt}(\dot{\mathbf{r}} \cdot \dot{\mathbf{r}}) + \frac{G(m_1 + m_2)}{r^3}(\mathbf{r} \cdot \dot{\mathbf{r}}) \\
+    &= \frac{1}{2}\frac{d}{dt}(\dot{\mathbf{r}} \cdot \dot{\mathbf{r}}) + \frac{G(m_1 + m_2)}{r^2}\dot{r} \\
+    &= \frac{1}{2}\frac{d}{dt}(\dot{\mathbf{r}} \cdot \dot{\mathbf{r}}) + \frac{d}{dt}\left(-\frac{G(m_1 + m_2)}{r}\right) \\
+    &= \frac{d}{dt}\left(\frac{\dot{\mathbf{r}} \cdot \dot{\mathbf{r}}}{2} - \frac{G(m_1 + m_2)}{r}\right).
+
+This quantity can be easily identified as a sort of total specific
+mechanical energy --- that is, the total mechanical energy per unit mass.
+
+.. math::
+    E = \frac{v^2}{2} - \frac{G(m_1 + m_2)}{r} \equiv \mathrm{const.}
+
+Here, :math:`v = |\dot{\mathbf{r}}|` is the magnitude of the (inertial)
+velocity.
+Note that the gravitational potential is appearing to come from a body of
+mass :math:`m_1 + m_2`.
+
+.. important::
+    The relative motion of the two bodies **must** be such that the relative
+    orbital velocity :math:`v` and relative orbital radius :math:`r`
+    interplay with an inverse relationship for a given, fixed energy
+    :math:`E`.
+
 The Reduced Mass
 ----------------
 The system :eq:`relativeEOM` is writable as
@@ -211,12 +217,15 @@ describes a **single** particle\ :sup:`[`\ [1]_:sup:`]`.
 (The quantity :math:`\mu^*` that makes this purely mathematical
 simplification possible is called the *reduced mass*.)
 
-.. image:: ../../images/kepler_reduced_mass_system.svg
-   :width: 299px
-   :height: 221px
-   :scale: 150 %
-   :alt: Example of a trajectory taken by the reduced mass in a general system
-   :align: center
+.. figure:: ../../images/kepler_reduced_mass_system.svg
+    :width: 299px
+    :height: 221px
+    :scale: 150 %
+    :alt: Example of a trajectory taken by the reduced mass in a general, inertial coordinate system
+    :align: center
+
+    A "trajectory" of the reduced mass :math:`\mu^*` in the presence of the
+    potential :math:`V`.
 
 .. admonition:: Fact
 

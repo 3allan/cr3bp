@@ -95,10 +95,10 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Properties</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#relative-form">Relative Form</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#conserved-quantities">Conserved Quantities</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#energy">Energy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#linear-momentum">Linear Momentum</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#angular-momentum">Angular Momentum</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#the-laplace-runge-lenz-vector">The Laplace-Runge-Lenz Vector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#energy">Energy</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#the-reduced-mass">The Reduced Mass</a></li>
@@ -211,13 +211,7 @@ each body as</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The same result is achieved had we used Newton’s 3<sup>rd</sup> law
-since <span class="math notranslate nohighlight">\(m_1 \ddot{\mathbf{r}}_1 = -m_2\ddot{\mathbf{r}}_2\)</span>, i.e.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\ddot{\mathbf{r}} &amp;= \ddot{\mathbf{r}}_2 - \ddot{\mathbf{r}}_1 \\
-&amp;= \ddot{\mathbf{r}}_2 + \frac{m_2}{m_1}\ddot{\mathbf{r}}_2 \\
-&amp;= \left(1 + \frac{m_2}{m_1}\right) \ddot{\mathbf{r}}_2 \\
-&amp;= \left(\frac{m_1 + m_2}{m_1}\right)\left(-\frac{G m_1}{r^3}\mathbf{r}\right) \\
-&amp;= -\frac{G(m_1 + m_2)}{r^3}\mathbf{r}.\end{split}\]</div>
+since <span class="math notranslate nohighlight">\(m_1 \ddot{\mathbf{r}}_1 = -m_2\ddot{\mathbf{r}}_2\)</span>.</p>
 </div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -229,26 +223,6 @@ equations to be solved in order to obtain <em>any</em> information about
 </div>
 <div class="section" id="conserved-quantities">
 <h2>Conserved Quantities<a class="headerlink" href="#conserved-quantities" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="energy">
-<h3>Energy<a class="headerlink" href="#energy" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-recall admonition">
-<p class="admonition-title">Recall</p>
-<p>For <span class="math notranslate nohighlight">\(q,p \in \mathbb{R}^n\)</span>, a canonical Hamiltonian system
-satisfies <span class="math notranslate nohighlight">\(\dot{q} = \mathcal{H}_p\)</span> and
-<span class="math notranslate nohighlight">\(\dot{p} = -\mathcal{H}_q\)</span> for which, along a trajectory,</p>
-<div class="math notranslate nohighlight">
-\[\frac{d\mathcal{H}}{dt} = \frac{\partial\mathcal{H}}{\partial t}.\]</div>
-</div>
-<p>The Hamiltonian is explicitly independent of time <span class="math notranslate nohighlight">\(t\)</span>. That is,</p>
-<div class="math notranslate nohighlight">
-\[\mathcal{H} \equiv \mathrm{const.}\]</div>
-<p>along trajectories of the system.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>The Hamiltonian itself is conserved under the dynamics of the 2-body
-problem.</p>
-</div>
-</div>
 <div class="section" id="linear-momentum">
 <h3>Linear Momentum<a class="headerlink" href="#linear-momentum" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-recall admonition">
@@ -285,11 +259,17 @@ have to be solved with <a class="reference internal" href="#equation-relativeeom
 <h3>Angular Momentum<a class="headerlink" href="#angular-momentum" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-recall admonition">
 <p class="admonition-title">Recall</p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>For any <span class="math notranslate nohighlight">\(x \in \mathbb{R}^3\)</span>, the cross-product of <span class="math notranslate nohighlight">\(x\)</span>
-with itself vanishes (i.e., <span class="math notranslate nohighlight">\(x \times x \equiv 0\)</span>).</p></li>
+with itself vanishes.</p>
+<div class="math notranslate nohighlight">
+\[x \times x \equiv 0\]</div>
+</li>
 <li><p>For any <span class="math notranslate nohighlight">\(x,y \in \mathbb{R}^3\)</span>, the cross-product is
-anticommutative (i.e. <span class="math notranslate nohighlight">\(x \times y + y \times x \equiv 0\)</span>).</p></li>
+anticommutative.</p>
+<div class="math notranslate nohighlight">
+\[x \times y + y \times x \equiv 0\]</div>
+</li>
 </ol>
 </div>
 <p>Rewriting the Kepler problem in a convenient form,</p>
@@ -321,7 +301,7 @@ satisfies</p>
 <div class="math notranslate nohighlight">
 \[x \times (y \times z) = (x \cdot z) y - (x \cdot y) z.\]</div>
 </div>
-<p>Knowing that the angular momentum <span class="math notranslate nohighlight">\(h\)</span> is conserved, consider the
+<p>Knowing that the angular momentum <span class="math notranslate nohighlight">\(\mathbf{h}\)</span> is conserved, consider the
 following.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\frac{d}{dt}(\dot{\mathbf{r}} \times  \mathbf{h}) &amp;= \ddot{\mathbf{r}} \times \mathbf{h} \\
@@ -343,6 +323,32 @@ Laplace-Runge-Lenz vector<sup>[</sup><a class="footnote-reference brackets" href
 <p>The Laplace-Runge-Lenz vector provides a <strong>constant direction</strong> <em>in the plane of motion of the two bodies.</em></p>
 </div>
 </div>
+<div class="section" id="energy">
+<h3>Energy<a class="headerlink" href="#energy" title="Permalink to this headline">¶</a></h3>
+<p>Manipulating the relative form of the equations of motion provides</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{0} &amp;= \left(\ddot{\mathbf{r}} + \frac{G(m_1 + m_2)}{r^3}\mathbf{r}\right) \cdot \dot{\mathbf{r}} \\
+&amp;= \ddot{\mathbf{r}} \cdot \dot{\mathbf{r}} + \left(\frac{G(m_1 + m_2)}{r^3}\mathbf{r}\right) \cdot \dot{\mathbf{r}} \\
+&amp;= \frac{1}{2}\frac{d}{dt}(\dot{\mathbf{r}} \cdot \dot{\mathbf{r}}) + \frac{G(m_1 + m_2)}{r^3}(\mathbf{r} \cdot \dot{\mathbf{r}}) \\
+&amp;= \frac{1}{2}\frac{d}{dt}(\dot{\mathbf{r}} \cdot \dot{\mathbf{r}}) + \frac{G(m_1 + m_2)}{r^2}\dot{r} \\
+&amp;= \frac{1}{2}\frac{d}{dt}(\dot{\mathbf{r}} \cdot \dot{\mathbf{r}}) + \frac{d}{dt}\left(-\frac{G(m_1 + m_2)}{r}\right) \\
+&amp;= \frac{d}{dt}\left(\frac{\dot{\mathbf{r}} \cdot \dot{\mathbf{r}}}{2} - \frac{G(m_1 + m_2)}{r}\right).\end{split}\]</div>
+<p>This quantity can be easily identified as a sort of total specific
+mechanical energy — that is, the total mechanical energy per unit mass.</p>
+<div class="math notranslate nohighlight">
+\[E = \frac{v^2}{2} - \frac{G(m_1 + m_2)}{r} \equiv \mathrm{const.}\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(v = |\dot{\mathbf{r}}|\)</span> is the magnitude of the (inertial)
+velocity.
+Note that the gravitational potential is appearing to come from a body of
+mass <span class="math notranslate nohighlight">\(m_1 + m_2\)</span>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The relative motion of the two bodies <strong>must</strong> be such that the relative
+orbital velocity <span class="math notranslate nohighlight">\(v\)</span> and relative orbital radius <span class="math notranslate nohighlight">\(r\)</span>
+interplay with an inverse relationship for a given, fixed energy
+<span class="math notranslate nohighlight">\(E\)</span>.</p>
+</div>
+</div>
 </div>
 <div class="section" id="the-reduced-mass">
 <h2>The Reduced Mass<a class="headerlink" href="#the-reduced-mass" title="Permalink to this headline">¶</a></h2>
@@ -359,7 +365,11 @@ More clearly, we can write</p>
 describes a <strong>single</strong> particle<sup>[</sup><a class="footnote-reference brackets" href="#id3" id="id2">1</a><sup>]</sup>.
 (The quantity <span class="math notranslate nohighlight">\(\mu^*\)</span> that makes this purely mathematical
 simplification possible is called the <em>reduced mass</em>.)</p>
-<a class="reference internal image-reference" href="../_images/kepler_reduced_mass_system.svg"><img alt="Example of a trajectory taken by the reduced mass in a general system" class="align-center" height="331px" src="../_images/kepler_reduced_mass_system.svg" width="448px" /></a>
+<div class="figure align-center" id="id5">
+<a class="reference internal image-reference" href="../_images/kepler_reduced_mass_system.svg"><img alt="Example of a trajectory taken by the reduced mass in a general, inertial coordinate system" height="331px" src="../_images/kepler_reduced_mass_system.svg" width="448px" /></a>
+<p class="caption"><span class="caption-text">A “trajectory” of the reduced mass <span class="math notranslate nohighlight">\(\mu^*\)</span> in the presence of the
+potential <span class="math notranslate nohighlight">\(V\)</span>.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
 <div class="admonition-fact admonition">
 <p class="admonition-title">Fact</p>
 <p>For any <span class="math notranslate nohighlight">\(m_1, m_2 &gt; 0\)</span>,</p>

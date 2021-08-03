@@ -93,7 +93,20 @@
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="properties.html">Properties</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Solution</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#coordinate-rotation">Coordinate Rotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#coordinate-rotation">Coordinate Rotation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#defining-new-coordinates">Defining New Coordinates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#polar-coordinates">Polar Coordinates</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#differential-equations">Differential Equations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#conserved-quantities">Conserved Quantities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#the-orbital-radius">The Orbital Radius</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#from-the-laplace-runge-lenz-vector">From the Laplace-Runge-Lenz Vector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#from-differential-equations">From Differential Equations</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -178,9 +191,201 @@ convenient coordinate system via a coordinate rotation. Let this rotation
 be denoted <span class="math notranslate nohighlight">\(\mathbf{R} \in \mathrm{SO}(3)\)</span> such that</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{pmatrix}x \\ y \\ z\end{pmatrix} = \mathbf{R} \begin{pmatrix}X \\ Y \\ Z\end{pmatrix}.\end{split}\]</div>
-<p>Note that the vectors on the LHS and RHS both represent the <strong>same</strong> object
-<span class="math notranslate nohighlight">\(\mathbf{r}\)</span>, just that the expressions are different because of the
-object being described by two different coordinate systems.</p>
+<p>These two quantities both represent the <strong>same</strong> object <span class="math notranslate nohighlight">\(\mathbf{r}\)</span>.
+This rotation is <strong>not</strong> time-dependent — that is, <span class="math notranslate nohighlight">\(\mathbf{R}\)</span> is
+a static rotation between the two coordinate systems such that</p>
+<div class="math notranslate nohighlight">
+\[\dot{\mathbf{R}} \equiv 0.\]</div>
+<p>As such, the standard form of the equations of motion are <em>unchanged</em>.</p>
+<div class="section" id="defining-new-coordinates">
+<h3>Defining New Coordinates<a class="headerlink" href="#defining-new-coordinates" title="Permalink to this headline">¶</a></h3>
+<p>It is most convenient to utilize the conservation of angular momentum and
+the Laplace-Runge-Lenz vector to define the precise action of
+<span class="math notranslate nohighlight">\(\mathbf{R}\)</span> on the two coordinate systems of variables
+<span class="math notranslate nohighlight">\((X, Y, Z)\)</span> and <span class="math notranslate nohighlight">\((x, y, z)\)</span>.</p>
+<p>By choosing to orient the <span class="math notranslate nohighlight">\(z\)</span> axis in the same direction of the
+angular momentum and the <span class="math notranslate nohighlight">\(x\)</span> axis in the same direction of the
+Laplace-Runge-Lenz vector, we reduce the solution of the Kepler problem to
+determining just 2 unknown quantities. These two quantities are the
+parameterizations of polar coordinates,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x &amp;= r \cos\theta \\
+y &amp;= r \sin\theta \\
+z &amp;= 0,\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(r = |\mathbf{r}|\)</span> as usual and <span class="math notranslate nohighlight">\(\theta\)</span> is the angle made
+between the reduced mass particle and the <span class="math notranslate nohighlight">\(x\)</span> axis.</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/kepler_coordinate_rotation.svg"><img alt="Example of a planar trajectory taken by the reduced mass in an inertial, but specially chosen, coordinate system" height="310px" src="../_images/kepler_coordinate_rotation.svg" width="543px" /></a>
+<p class="caption"><span class="caption-text">A “trajectory” in the new coordinates <span class="math notranslate nohighlight">\((x, y, z)\)</span> utilizing polar
+coordinates <span class="math notranslate nohighlight">\((r,\theta)\)</span>. Note that this trajectory is actually
+impossible since there is a change in the sign of angular momentum, a
+constant of motion.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The trajectory of the relative motion of the two bodies
+(<span class="math notranslate nohighlight">\(\mathbf{r}\)</span>) <em>in the orbital plane</em> is fully determined by the
+set of polar coordinates <span class="math notranslate nohighlight">\((r, \theta)\)</span>. The 2-body problem has
+been reduced from determining all 6 variables to only 2 by using
+properties admitted by the conserved quantities.</p>
+</div>
+</div>
+<div class="section" id="polar-coordinates">
+<h3>Polar Coordinates<a class="headerlink" href="#polar-coordinates" title="Permalink to this headline">¶</a></h3>
+<p>With polar coordinates <span class="math notranslate nohighlight">\((r, \theta)\)</span> being used to describe position
+within the orbit, it is <em>extremely</em> convenient to develop a new set of
+differential equations in the polar basis. That is, exchange the inertial
+basis for the noninertial polar basis</p>
+<div class="math notranslate nohighlight">
+\[\{\hat{\mathbf{e}}_x,\hat{\mathbf{e}}_y, \hat{\mathbf{e}}_z\} \longrightarrow \{\hat{\mathbf{e}}_r,\hat{\mathbf{e}}_\theta, \hat{\mathbf{e}}_z\}\]</div>
+<p>and insert the resulting object describing relative positions of the two
+bodies (<span class="math notranslate nohighlight">\(\mathbf{r}\)</span>) into the standard form of the 2-body problem.</p>
+<p>This transformation is useful as the expression for the position
+simplifies dramatically to</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{r} = r\,\hat{\mathbf{e}}_r.\]</div>
+<div class="section" id="differential-equations">
+<h4>Differential Equations<a class="headerlink" href="#differential-equations" title="Permalink to this headline">¶</a></h4>
+<div class="admonition-recall admonition">
+<p class="admonition-title">Recall</p>
+<p>The time rates of change of a vector <span class="math notranslate nohighlight">\(x \in \mathbb{R}^3\)</span> that’s
+expressed in a coordinate system <span class="math notranslate nohighlight">\(\mathcal{B}\)</span> rotating with
+angular velocity <span class="math notranslate nohighlight">\(\Omega\)</span> relative to another coordinate system
+<span class="math notranslate nohighlight">\(\mathcal{A}\)</span> follow</p>
+<div class="math notranslate nohighlight">
+\[\frac{dx^\mathcal{A}}{dt} = \frac{dx^\mathcal{B}}{dt} + \Omega \times x^\mathcal{B}\]</div>
+</div>
+<p>In calculating the <strong>inertial</strong> velocity and acceleration, the time
+derivatives <strong>must</strong> be calculated relative to the inertial frame.
+Here, the polar coordinate system is rotating with respect to the inertial
+coordinate system at the rate <span class="math notranslate nohighlight">\(\dot{\theta}\)</span> along the axis of
+rotation <span class="math notranslate nohighlight">\(\hat{\mathbf{e}}_z\)</span>. As such,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\dot{\mathbf{r}} &amp;= \dot{r}\,\hat{\mathbf{e}}_r + r \dot{\theta}\,\hat{\mathbf{e}}_\theta \\
+\ddot{\mathbf{r}} &amp;= (\ddot{r} - r\dot{\theta}^2)\hat{\mathbf{e}}_r + (r\ddot{\theta} + 2\dot{r}\dot{\theta})\hat{\mathbf{e}}_\theta.\end{split}\]</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Inserting the inertial acceleration into the standard form equations of
+motion provide a set of only two differential equations for the two
+unknowns <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\ddot{r} - r\dot{\theta}^2 &amp;= -\frac{\mu}{r^2} \\
+r\ddot{\theta} + 2\dot{r}\dot{\theta} &amp;= 0\end{split}\]</div>
+</div>
+</div>
+<div class="section" id="conserved-quantities">
+<h4>Conserved Quantities<a class="headerlink" href="#conserved-quantities" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="angular-momentum">
+<h5>Angular Momentum<a class="headerlink" href="#angular-momentum" title="Permalink to this headline">¶</a></h5>
+<p>The angular momentum <span class="math notranslate nohighlight">\(\mathbf{h}\)</span> expressed in polar coordinates is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{h} &amp;= \mathbf{r} \times \dot{\mathbf{r}} \\
+&amp;= \left(r\,\hat{\mathbf{e}}_r\right) \times \left(\dot{r}\,\hat{\mathbf{e}}_r + r \dot{\theta}\,\hat{\mathbf{e}}_\theta\right) \\
+&amp;= r\dot{r} (\hat{\mathbf{e}}_r \times \hat{\mathbf{e}}_r) + r^2\dot{\theta} (\hat{\mathbf{e}}_r \times \hat{\mathbf{e}}_\theta) \\
+&amp;= r^2\dot{\theta}\,\hat{\mathbf{e}}_z.\end{split}\]</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The conservation of angular momentum provides</p>
+<div class="math notranslate nohighlight">
+\[r^2\dot{\theta} = h,\]</div>
+<p>where <span class="math notranslate nohighlight">\(h = |\mathbf{h}|\)</span> is a constant of motion.</p>
+<p>Since <span class="math notranslate nohighlight">\(h \geqslant 0\)</span> and <span class="math notranslate nohighlight">\(r^2 &gt; 0\)</span>, we know that
+<span class="math notranslate nohighlight">\(\dot{\theta} \geqslant 0\)</span> <strong>always</strong>. Note that if
+<span class="math notranslate nohighlight">\(\dot{\theta} \equiv 0\)</span>, then <span class="math notranslate nohighlight">\(\ddot{r} &lt; 0\)</span>, which means
+<span class="math notranslate nohighlight">\(r \to 0\)</span> in <em>finite</em> time — a finite-time singularity.
+Interesting motion therefore takes place for <span class="math notranslate nohighlight">\(\dot{\theta} &gt; 0\)</span>.</p>
+</div>
+</div>
+<div class="section" id="the-laplace-runge-lenz-vector">
+<h5>The Laplace-Runge-Lenz Vector<a class="headerlink" href="#the-laplace-runge-lenz-vector" title="Permalink to this headline">¶</a></h5>
+<p>The Lorenz-Runge-Lenz vector <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> expressed in polar
+coordinates is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{A} &amp;= \dot{\mathbf{r}} \times \mathbf{h} - \frac{\mu}{r}\mathbf{r} \\
+&amp;= (\dot{r}\,\hat{\mathbf{e}}_r + r\dot{\theta}\,\hat{\mathbf{e}}_\theta) \times (r^2\dot{\theta}\,\hat{\mathbf{e}}_z) - \frac{\mu}{r} (r \,\hat{\mathbf{e}}_r) \\
+&amp;= r^2\dot{r}\dot{\theta}(\hat{\mathbf{e}}_r \times \hat{\mathbf{e}}_z) + r^3\dot{\theta}^2(\hat{\mathbf{e}}_\theta \times \hat{\mathbf{e}}_z) - \mu\,\hat{\mathbf{e}}_r \\
+&amp;= r^2\dot{r}\dot{\theta}(-\hat{\mathbf{e}}_\theta) + r^3\dot{\theta}^2(\hat{\mathbf{e}}_r) - \mu\,\hat{\mathbf{e}}_r \\
+&amp;= (r^3\dot{\theta}^2 - \mu)\hat{\mathbf{e}}_r - r^2\dot{r}\dot{\theta}\,\hat{\mathbf{e}}_\theta \\
+&amp;= A\,\hat{\mathbf{e}}_x \\
+&amp;= A (\cos\theta\,\hat{\mathbf{e}}_r - \sin\theta\,\hat{\mathbf{e}}_\theta).\end{split}\]</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The Lorenz-Runge-Lenz vector provides</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}r^3\dot{\theta}^2 - \mu &amp;= A\cos\theta \\
+r^2\dot{r}\dot{\theta} &amp;= A\sin\theta,\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(A = |\mathbf{A}|\)</span> is a constant of motion.</p>
+<p>Paired with the conservation of angular momentum, these two
+expressions provide <em>very</em> direct expressions of <span class="math notranslate nohighlight">\(r\)</span> and
+<span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+</div>
+</div>
+<div class="section" id="energy">
+<h5>Energy<a class="headerlink" href="#energy" title="Permalink to this headline">¶</a></h5>
+<p>The energy <span class="math notranslate nohighlight">\(E\)</span> expressed in polar coordinates is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}E &amp;= \frac{v^2}{2} - \frac{\mu}{r} \\
+&amp;= \frac{\dot{\mathbf{r}} \cdot \dot{\mathbf{r}}}{2} - \frac{\mu}{r} \\
+&amp;= \frac{1}{2}(\dot{r}^2 + r^2\dot{\theta}^2) - \frac{\mu}{r}.\end{split}\]</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The conservation of energy provides</p>
+<div class="math notranslate nohighlight">
+\[E = \frac{1}{2}(\dot{r}^2 + r^2\dot{\theta}^2) - \frac{\mu}{r},\]</div>
+<p>where <span class="math notranslate nohighlight">\(E\)</span> is a constant of motion.</p>
+<p>Paired with angular momentum, this expression “integrates” the
+<span class="math notranslate nohighlight">\(\ddot{r}\)</span> equation of motion with integration constant
+<span class="math notranslate nohighlight">\(E\)</span>.
+Similarly, this relation provides another expression for
+<span class="math notranslate nohighlight">\(\dot{\theta}\)</span> in addition to that from the conservation of
+angular momentum using the knowledge that <span class="math notranslate nohighlight">\(\dot{\theta} &gt; 0\)</span>
+for interesting motion.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-orbital-radius">
+<h3>The Orbital Radius<a class="headerlink" href="#the-orbital-radius" title="Permalink to this headline">¶</a></h3>
+<p>In this coordinate system with variables <span class="math notranslate nohighlight">\((x, y, z)\)</span>, the orbital
+radius <span class="math notranslate nohighlight">\(r\)</span> is obtainable using several different methods.</p>
+<div class="section" id="from-the-laplace-runge-lenz-vector">
+<h4>From the Laplace-Runge-Lenz Vector<a class="headerlink" href="#from-the-laplace-runge-lenz-vector" title="Permalink to this headline">¶</a></h4>
+<div class="admonition-recall admonition">
+<p class="admonition-title">Recall</p>
+<ol class="arabic">
+<li><p>For any <span class="math notranslate nohighlight">\(x,y \in \mathbb{R}^3\)</span>, the scalar product satisfies</p>
+<div class="math notranslate nohighlight">
+\[x \cdot y = |x| |y| \cos\theta,\]</div>
+<p>where <span class="math notranslate nohighlight">\(\theta\)</span> is the angle between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
+</li>
+<li><p>For any <span class="math notranslate nohighlight">\(x, y, z \in \mathbb{R}^3\)</span>, the scalar triple product
+satisfies</p>
+<div class="math notranslate nohighlight">
+\[x \cdot (y \times z) = y \cdot (z \times x) = z \cdot (x \times y).\]</div>
+</li>
+</ol>
+</div>
+<p>The Laplace-Runge-Lenz vector can be used to obtain an expression for the
+orbital radius <span class="math notranslate nohighlight">\(r\)</span> as a function of the polar coordinate
+<span class="math notranslate nohighlight">\(\theta\)</span> <em>very</em> directly.</p>
+<p>Since <span class="math notranslate nohighlight">\(\theta\)</span> is measured from the <span class="math notranslate nohighlight">\(x\)</span> axis, which is aligned
+with the Laplace-Runge-Lenz vector, then one can see that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{A} \cdot \mathbf{r} &amp;= \left(\dot{\mathbf{r}} \times \mathbf{h} - \frac{\mu}{r}\mathbf{r}\right) \cdot \mathbf{r} \\
+&amp;= (\dot{\mathbf{r}} \times \mathbf{h}) \cdot \mathbf{r} - \left(\frac{\mu}{r}\mathbf{r}\right) \cdot \mathbf{r} \\
+&amp;= \mathbf{r} \cdot (\dot{\mathbf{r}} \times \mathbf{h}) - \frac{\mu}{r} (\mathbf{r} \cdot \mathbf{r}) \\
+&amp;= \mathbf{h} \cdot (\mathbf{r} \times \dot{\mathbf{r}}) - \mu r \\
+&amp;= \mathbf{h} \cdot \mathbf{h} - \mu r \\
+&amp;= h^2 - \mu r \\
+&amp;= A r \cos\theta.\end{split}\]</div>
+<p>Thus, the orbital radius is expressed</p>
+<div class="math notranslate nohighlight">
+\[r = \frac{h^2}{\mu + A \cos\theta} = \frac{h^2/\mu}{1 + (A/\mu) \cos\theta}.\]</div>
+</div>
+<div class="section" id="from-differential-equations">
+<h4>From Differential Equations<a class="headerlink" href="#from-differential-equations" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
 </div>
 </div>
 
