@@ -63,12 +63,12 @@ between the reduced mass particle and the :math:`x` axis.
     been reduced from determining all 6 variables to only 2 by using
     properties admitted by the conserved quantities.
 
-Polar Coordinates
------------------
+Cylindrical Coordinates
+-----------------------
 With polar coordinates :math:`(r, \theta)` being used to describe position
 within the orbit, it is *extremely* convenient to develop a new set of
-differential equations in the polar basis. That is, exchange the inertial
-basis for the noninertial polar basis
+differential equations in the cylindrical basis. That is, exchange the
+inertial basis for the noninertial cylindrical basis
 
 .. math::
     \{\hat{\mathbf{e}}_x,\hat{\mathbf{e}}_y, \hat{\mathbf{e}}_z\} \longrightarrow \{\hat{\mathbf{e}}_r,\hat{\mathbf{e}}_\theta, \hat{\mathbf{e}}_z\}
@@ -115,6 +115,12 @@ rotation :math:`\hat{\mathbf{e}}_z`. As such,
 
 Conserved Quantities
 ~~~~~~~~~~~~~~~~~~~~
+The angular momentum :math:`\mathbf{h}`,
+the Lorenz-Runge-Lenz vector :math:`\mathbf{A}`, and
+the energy :math:`E` are expressed in the polar coordinates
+:math:`(r, \theta)`, providing useful relations for analyzing the
+relative trajectory of the two bodies.
+
 Angular Momentum
 ^^^^^^^^^^^^^^^^
 The angular momentum :math:`\mathbf{h}` expressed in polar coordinates is
@@ -164,7 +170,7 @@ coordinates is
 
     Paired with the conservation of angular momentum, these two
     expressions provide *very* direct expressions of :math:`r` and
-    :math:`\theta`.
+    :math:`\dot{r}`.
 
 Energy
 ^^^^^^
@@ -185,19 +191,19 @@ The energy :math:`E` expressed in polar coordinates is
 
     Paired with angular momentum, this expression "integrates" the
     :math:`\ddot{r}` equation of motion with integration constant
-    :math:`E`.
+    :math:`2E`.
     Similarly, this relation provides another expression for
     :math:`\dot{\theta}` in addition to that from the conservation of
     angular momentum using the knowledge that :math:`\dot{\theta} > 0`
     for interesting motion.
 
 The Orbital Radius
-------------------
+==================
 In this coordinate system with variables :math:`(x, y, z)`, the orbital
 radius :math:`r` is obtainable using several different methods.
 
 From the Laplace-Runge-Lenz Vector
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------
 .. admonition:: Recall
 
     #.  For any :math:`x,y \in \mathbb{R}^3`, the scalar product satisfies
@@ -229,12 +235,147 @@ with the Laplace-Runge-Lenz vector, then one can see that
     &= h^2 - \mu r \\
     &= A r \cos\theta.
 
-Thus, the orbital radius is expressed
+.. important::
+    The orbital radius :math:`r` found directly from manipulating the
+    expression of the Laplace-Runge-Lenz vector expressed in polar
+    coordinates is
+
+    .. math::
+        r = \frac{h^2}{\mu + A\cos\theta}.
+
+From Conserved Quantities
+-------------------------
+Knowing from the conservation of angular momentum that
+:math:`r^2\dot{\theta} = h`, the :math:`\hat{\mathbf{e}}_r` component of
+the Laplace-Runge-Lenz vector allows one to algebraically solve for the
+radius. That is,
 
 .. math::
-    r = \frac{h^2}{\mu + A \cos\theta} = \frac{h^2/\mu}{1 + (A/\mu) \cos\theta}.
+    0 &= r^3\dot{\theta}^2 - \mu - A\cos\theta \\
+    &= \frac{h^2}{r} - \mu - A\cos\theta.
+
+.. important::
+    The orbital radius :math:`r` found from analyzing a conserved component
+    of the Laplace-Runge-Lenz vector expressed in polar coordinates,
+    combined with the conservation of angular momentum in polar
+    coordinates, is
+
+    .. math::
+        r = \frac{h^2}{\mu + A\cos\theta}.
 
 From Differential Equations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------
+Using the conservation of angular momentum, the :math:`\ddot{r}` equation
+of motion provides
 
+.. math::
+    \ddot{r} &= r\dot{\theta}^2 - \frac{\mu}{r^2} \\
+    &= \frac{h^2}{r^3} - \frac{\mu}{r^2}.
 
+We wish to convert the derivatives in time :math:`t` to those in the angular
+coordinate :math:`\theta` to understand the geometry of the trajectory in
+polar coordinates. Using the conservation of angular momentum again, we see
+
+.. math::
+    \frac{d^2 r}{d\theta^2} &= \frac{d}{d\theta}\left(\frac{dr}{d\theta}\right) \\
+    &= \frac{d}{d\theta}\left(\frac{\dot{r}}{\dot{\theta}}\right) \\
+    &= \frac{d}{d\theta}\left(\frac{r^2\dot{r}}{h}\right) \\
+    &= \frac{1}{\dot{\theta}}\frac{d}{dt}\left(\frac{r^2\dot{r}}{h}\right) \\
+    &= \frac{r^2}{h^2}(2r\dot{r}^2 + r^2 \ddot{r}) \\
+    &= \frac{r^2}{h^2}\left(2r\left[\frac{h}{r^2}\frac{dr}{d\theta}\right]^2 + r^2 \left[\frac{h^2}{r^3} - \frac{\mu}{r^2}\right]\right) \\
+    &= \frac{r^2}{h^2}\left(2\frac{h^2}{r^3}\left[\frac{dr}{d\theta}\right]^2 - \mu + \frac{h^2}{r}\right) \\
+    &= \frac{2}{r}\left[\frac{dr}{d\theta}\right]^2 - \frac{\mu r^2}{h^2} + r.
+
+Despite offering a description of the trajectory's geometry in space as
+opposed to time, *this* differential equation still proves to be formidable
+in obtaining a solution. However, a final, clever change of variables *will*
+yield a useful relation. Let :math:`\eta = 1/r`. Then
+
+.. math::
+    \frac{d^2\eta}{d\theta^2} &= \frac{d}{d\theta}\left(\frac{d\eta}{d\theta}\right) \\
+    &= \frac{d}{d\theta}\left(-\frac{1}{r^2}\frac{dr}{d\theta}\right) \\
+    &= \frac{d}{d\theta}\left(-\frac{1}{r^2}\left[\frac{r^2\dot{r}}{h}\right]\right) \\
+    &= -\frac{1}{h}\frac{d\dot{r}}{d\theta} \\
+    &= -\frac{1}{h}\frac{d}{d\theta}\left(\frac{dr}{d\theta}\dot{\theta}\right) \\
+    &= -\frac{1}{h}\frac{d}{d\theta}\left(\frac{dr}{d\theta}\frac{h}{r^2}\right) \\
+    &= -\frac{1}{r^2}\frac{d^2r}{d\theta^2} + \frac{2}{r^2}\left[\frac{dr}{d\theta}\right]^2 \\
+    &= -\frac{1}{r^2}\left[\frac{2}{r}\left[\frac{dr}{d\theta}\right]^2 - \frac{\mu r^2}{h^2} + r\right] + \frac{2}{r^3}\left[\frac{dr}{d\theta}\right]^2 \\
+    &= \frac{\mu}{h^2} - \frac{1}{r} \\
+    &= \frac{\mu}{h^2} - \eta.
+
+With this transformation, we see that we are offered an equation describing
+a linear oscillator as
+
+.. math::
+    \frac{d^2\eta}{d\theta^2} + \eta = \frac{\mu}{h^2},
+
+where both :math:`\mu` and :math:`h` are constants. We can therefore
+immediately write the general solution as
+
+.. math:: \eta = \frac{\mu}{h^2} + C \cos(\theta - \omega),
+
+where both :math:`C` and :math:`\omega` are new constants of integration.
+Note that :math:`C` represents an amplitude and, as such, satisfies
+:math:`C \geqslant 0`.
+The orbital radius (:math:`r = 1/\eta`) is then
+
+.. math::
+    r = \frac{h^2}{\mu + (C/h^2) \cos(\theta - \omega)}.
+
+Since :math:`\mathbf{A}` already provides a constant direction in the
+orbital plane from which :math:`\theta` is measured, we do not wish to
+shift the angle :math:`\theta` to be measured with respect to anything else
+(yet). Thus, we can take
+
+.. math::
+    \omega = 0
+
+without loss of generality in *this* coordinate frame.
+(This quantity :math:`\omega` is called the *argument of periapsis*, which
+is naturally useful for the transformation between the :math:`(X, Y, Z)`
+and :math:`(x, y, z)` coordinate systems.)
+
+Note that derivatives of :math:`r` may now be evaluated exactly.
+
+.. math::
+    \dot{r} &= \frac{C\sin\theta}{(\mu + (C/h^2) \cos\theta)^2}\dot{\theta} \\
+    &= \left(\frac{r^2}{h^4}C\sin\theta\right)\left(\frac{h}{r^2}\right) \\
+    &= \frac{C}{h^3}\sin\theta.
+
+To determine the constant :math:`C`, we can turn to the conservation of
+energy.
+
+.. math::
+    E &= \frac{1}{2}(\dot{r}^2 + r^2\dot{\theta}^2) - \frac{\mu}{r} \\
+    &= \frac{1}{2}\left(\left[\frac{C}{h^3}\sin\theta\right]^2 + \frac{h^2}{r^2}\right) - \frac{\mu}{r} \\
+    &= \frac{1}{2}\left(\frac{C^2}{h^6}\sin^2\theta + \left[\frac{(C\cos\theta + \mu h^2)^2}{h^6}\right]\right) - \frac{\mu}{r} \\
+    &= \frac{1}{2}\left(\frac{C^2}{h^6}\sin^2\theta + \frac{C^2\cos^2\theta + 2\mu h^2 C\cos\theta + \mu^2 h^4}{h^6}\right) - \frac{\mu}{r} \\
+    &= \frac{1}{2}\left(\frac{C^2}{h^6}(\sin^2\theta + \cos^2\theta) + \frac{2\mu C\cos\theta}{h^4} + \frac{\mu^2}{h^2}\right) - \frac{\mu}{r} \\
+    &= \frac{1}{2}\left(\frac{C^2}{h^6} + \frac{\mu^2}{h^2}\right) + \frac{\mu C \cos\theta}{h^4} - \frac{\mu}{r} \\
+    &= \frac{1}{2}\left(\frac{C^2}{h^6} + \frac{\mu^2}{h^2}\right) + \frac{\mu C \cos\theta}{h^4} - \mu\left[\frac{\mu + (C/h^2)\cos\theta}{h^2}\right] \\
+    &= \frac{1}{2}\left(\frac{C^2}{h^6} + \frac{\mu^2}{h^2}\right) + \frac{\mu C \cos\theta}{h^4} - \frac{\mu^2}{h^2} - \frac{\mu C\cos\theta}{h^4} \\
+    &= \frac{1}{2}\left(\frac{C^2}{h^6} - \frac{\mu^2}{h^2}\right).
+
+Thus, we see that the integration constant is related to the energy
+according to
+
+.. math::
+    C = \mu h^2 \sqrt{1 + \frac{2Eh^2}{\mu^2}}.
+
+We choose the positive branch (as opposed to the negative branch) of the
+square root since :math:`C` represents an amplitude --- an explicitly
+nonnegative quantity. For brevity, we write :math:`C = \mu h^2 e`, where
+
+.. math::
+    e = \sqrt{1 + \frac{2Eh^2}{\mu^2}}.
+
+.. important::
+    The orbital radius :math:`r` found directly from solving the governing
+    differential equation, utilizing the conservation of angular momentum
+    and energy, and evaluating the two constants of integration yields
+
+    .. math::
+        r = \frac{h^2/\mu}{1 + e\cos\theta},
+
+    where :math:`e = C/\mu h^2` is dependent upon the energy :math:`E` of
+    the relative motion of the two bodies.

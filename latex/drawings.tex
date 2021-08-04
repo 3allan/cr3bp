@@ -130,38 +130,7 @@
     \node at (M) [left]{$\mu^*$};
   \end{tikzpicture}
 
-\newpage
-% kepler_solution
-  \begin{tikzpicture}[scale=4]
-    \coordinate (O) at (0,0);
-    \draw[thick] (-0.1,0) -- (O);
-    \draw[thick] (0,-0.1) -- (O);
-    \draw[->, >=latex, thick] (O) -- (1,0) node[right]{$x$};
-    \draw[->, >=latex, thick] (O) -- (0,1) node[left]{$y$};
-    
-    % Define coordinates of the two bodies
-    \pgfmathsetmacro{\px}{0.85};
-    \pgfmathsetmacro{\py}{0.25};
-    \pgfmathsetmacro{\dx}{0.4};
-    \pgfmathsetmacro{\dy}{0.85};
-    \coordinate (M1) at (\px,\py);
-    \coordinate (M2) at (\dx,\dy);
-    
-    % Draw the bodies
-    \fill[fill=blue!50!black!50] (M1) circle (1pt);
-    \fill[fill=red!50!black!50] (M2) circle (1pt);
-    
-    % Draw the positions of each body relative to the origin
-    \draw[->,>=stealth] (O) -- (M1) node[pos=0.6, below, yshift=0mm]{$\mathbf{r}_1$};
-    \draw[->,>=stealth] (O) -- (M2) node[pos=0.6, left, yshift=-1mm]{$\mathbf{r}_2$};
-    
-    % Draw the vector from body 1 to body 2
-    \draw[->,>=stealth] (M1) -- (M2) node[pos=0.55, right]{$\mathbf{r}$};
-    
-    % Provide the masses
-    \node at (M1) [right, xshift=1mm]{$m_1$};
-    \node at (M2) [left, xshift=-1mm]{$m_2$};
-  \end{tikzpicture}
+
 
 \newpage
 % Kepler coordinate rotation
@@ -236,12 +205,88 @@
   	\node at (O) [anchor=south east, xshift=-1mm, rotate=-6]{$m_1 + m_2$};
     \node at (M) [right]{$\mu^*$};
   \end{tikzpicture}
-
-\newpage
-% Kepler polar coordinates
-\tdplotsetmaincoords{70}{110}
-  \begin{tikzpicture}[scale=4, tdplot_main_coords]
-  	
-  \end{tikzpicture}
-
 \end{document}
+
+% GRAVEYARD
+%\newpage
+%% kepler_solution
+%  \begin{tikzpicture}[scale=4]
+%    \coordinate (O) at (0,0);
+%    \draw[thick] (-0.1,0) -- (O);
+%    \draw[thick] (0,-0.1) -- (O);
+%    \draw[->, >=latex, thick] (O) -- (1,0) node[right]{$x$};
+%    \draw[->, >=latex, thick] (O) -- (0,1) node[left]{$y$};
+%    
+%    % Define coordinates of the two bodies
+%    \pgfmathsetmacro{\px}{0.85};
+%    \pgfmathsetmacro{\py}{0.25};
+%    \pgfmathsetmacro{\dx}{0.4};
+%    \pgfmathsetmacro{\dy}{0.85};
+%    \coordinate (M1) at (\px,\py);
+%    \coordinate (M2) at (\dx,\dy);
+%    
+%    % Draw the bodies
+%    \fill[fill=blue!50!black!50] (M1) circle (1pt);
+%    \fill[fill=red!50!black!50] (M2) circle (1pt);
+%    
+%    % Draw the positions of each body relative to the origin
+%    \draw[->,>=stealth] (O) -- (M1) node[pos=0.6, below, yshift=0mm]{$\mathbf{r}_1$};
+%    \draw[->,>=stealth] (O) -- (M2) node[pos=0.6, left, yshift=-1mm]{$\mathbf{r}_2$};
+%    
+%    % Draw the vector from body 1 to body 2
+%    \draw[->,>=stealth] (M1) -- (M2) node[pos=0.55, right]{$\mathbf{r}$};
+%    
+%    % Provide the masses
+%    \node at (M1) [right, xshift=1mm]{$m_1$};
+%    \node at (M2) [left, xshift=-1mm]{$m_2$};
+%  \end{tikzpicture}
+
+
+
+
+%\newpage
+%% Kepler cylindrical coordinates
+%\tdplotsetmaincoords{70}{110}
+%  \begin{tikzpicture}[scale=4, tdplot_main_coords]
+%	\coordinate (O) at (0,0,0);
+%  	\pgfmathsetmacro{\x}{1.5}
+%  	\pgfmathsetmacro{\y}{1}
+%
+%%	% Draw grid to show plane
+%%	\begin{scope}[canvas is xy plane at z=0]
+%%		\draw[step=0.25,black!20,thin,xshift=0.5cm,yshift=0.5cm] (-1.5*\x,-\y) grid (\x,\y);
+%%	\end{scope}    	
+%  	
+%    \draw[->, >=latex, thick] (O) -- (\x,0,0) node[anchor=north east, yshift=1mm]{$\hat{\mathbf{e}}_x$};
+%    \draw[->, >=latex, thick] (O) -- (0,\y,0) node[right]{$\hat{\mathbf{e}}_y$};
+%    \draw[->, >=latex, thick] (O) -- (0,0,0.75) node[left]{$\hat{\mathbf{e}}_z$};
+%    
+%    % Draw polar basis
+%    \pgfmathsetmacro{\t}{55}
+%    \pgfmathsetmacro{\cost}{cos(\t)}
+%    \pgfmathsetmacro{\sint}{sin(\t)}
+%    
+%    \draw[->, >=latex, thick] (O) -- (\x*\cost,\y*\sint,0) node[anchor=north east, yshift=1mm]{$\hat{\mathbf{e}}_r$};
+%    \draw[->, >=latex, thick] (O) -- (-\x*\sint,\y*\cost,0) node[right]{$\hat{\mathbf{e}}_\theta$};
+%    
+%    \tdplotdefinepoints(0,0,0)(0.5,0,0)(\x*\cost,\y*\sint,0)
+%	\tdplotdrawpolytopearc[->, >=stealth]{0.5}{anchor=north,xshift=-0mm, yshift=-0.5mm}{$\theta$}
+%  \end{tikzpicture}
+
+
+
+
+
+%\newpage
+%\begin{tikzpicture}[scale=4]
+%	\draw[->, >=latex, thick] (0,0) -- (1,0) node[right]{$\hat{\mathbf{e}}_x$};
+%	\draw[->, >=latex, thick] (0,0) -- (0,1) node[left]{$\hat{\mathbf{e}}_y$};
+%	
+%	% Draw polar basis
+%    \pgfmathsetmacro{\t}{55}
+%    \pgfmathsetmacro{\cost}{cos(\t)}
+%    \pgfmathsetmacro{\sint}{sin(\t)}
+%    
+%    \draw[->, >=latex, thick] (0,0) -- (\cost,\sint) node[anchor=south west, yshift=0mm]{$\hat{\mathbf{e}}_r$};
+%    \draw[->, >=latex, thick] (0,0) -- (-\sint,\cost) node[left]{$\hat{\mathbf{e}}_\theta$};
+%\end{tikzpicture}
