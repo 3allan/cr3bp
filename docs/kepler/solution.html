@@ -43,6 +43,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Orbital Elements" href="orbital-elements.html" />
     <link rel="prev" title="Properties" href="properties.html" /> 
 </head>
 
@@ -95,7 +96,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Solution</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#coordinate-rotation">Coordinate Rotation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#defining-new-coordinates">Defining New Coordinates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cylindrical-coordinates">Cylindrical Coordinates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#polar-coordinates">Polar Coordinates</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#differential-equations">Differential Equations</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#conserved-quantities">Conserved Quantities</a></li>
 </ul>
@@ -105,11 +106,22 @@
 <li class="toctree-l2"><a class="reference internal" href="#the-orbital-radius">The Orbital Radius</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#from-the-laplace-runge-lenz-vector">From the Laplace-Runge-Lenz Vector</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#from-conserved-quantities">From Conserved Quantities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#from-differential-equations">From Differential Equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#from-the-radial-differential-equation">From the Radial Differential Equation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#the-orbital-angle">The Orbital Angle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#from-angular-momentum">From Angular Momentum</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#closed-orbits">Closed Orbits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#open-orbits">Open Orbits</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#from-the-angular-differential-equation">From the Angular Differential Equation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#kepler-s-equation">Kepler’s Equation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="orbital-elements.html">Orbital Elements</a></li>
 </ul>
 
             
@@ -196,7 +208,7 @@ be denoted <span class="math notranslate nohighlight">\(\mathbf{R} \in \mathrm{S
 This rotation is <strong>not</strong> time-dependent — that is, <span class="math notranslate nohighlight">\(\mathbf{R}\)</span> is
 a static rotation between the two coordinate systems such that</p>
 <div class="math notranslate nohighlight">
-\[\dot{\mathbf{R}} \equiv 0.\]</div>
+\[\dot{\mathbf{R}} \equiv \mathbf{0}.\]</div>
 <p>As such, the standard form of the equations of motion are <em>unchanged</em>.</p>
 <div class="section" id="defining-new-coordinates">
 <h3>Defining New Coordinates<a class="headerlink" href="#defining-new-coordinates" title="Permalink to this headline">¶</a></h3>
@@ -231,8 +243,8 @@ been reduced from determining all 6 variables to only 2 by using
 properties admitted by the conserved quantities.</p>
 </div>
 </div>
-<div class="section" id="cylindrical-coordinates">
-<h3>Cylindrical Coordinates<a class="headerlink" href="#cylindrical-coordinates" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="polar-coordinates">
+<h3>Polar Coordinates<a class="headerlink" href="#polar-coordinates" title="Permalink to this headline">¶</a></h3>
 <p>With polar coordinates <span class="math notranslate nohighlight">\((r, \theta)\)</span> being used to describe position
 within the orbit, it is <em>extremely</em> convenient to develop a new set of
 differential equations in the cylindrical basis. That is, exchange the
@@ -413,8 +425,8 @@ coordinates, is</p>
 \[r = \frac{h^2}{\mu + A\cos\theta}.\]</div>
 </div>
 </div>
-<div class="section" id="from-differential-equations">
-<h3>From Differential Equations<a class="headerlink" href="#from-differential-equations" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="from-the-radial-differential-equation">
+<h3>From the Radial Differential Equation<a class="headerlink" href="#from-the-radial-differential-equation" title="Permalink to this headline">¶</a></h3>
 <p>Using the conservation of angular momentum, the <span class="math notranslate nohighlight">\(\ddot{r}\)</span> equation
 of motion provides</p>
 <div class="math notranslate nohighlight">
@@ -443,19 +455,17 @@ yield a useful relation. Let <span class="math notranslate nohighlight">\(\eta =
 &amp;= -\frac{1}{h}\frac{d\dot{r}}{d\theta} \\
 &amp;= -\frac{1}{h}\frac{d}{d\theta}\left(\frac{dr}{d\theta}\dot{\theta}\right) \\
 &amp;= -\frac{1}{h}\frac{d}{d\theta}\left(\frac{dr}{d\theta}\frac{h}{r^2}\right) \\
-&amp;= -\frac{1}{r^2}\frac{d^2r}{d\theta^2} + \frac{2}{r^2}\left[\frac{dr}{d\theta}\right]^2 \\
+&amp;= -\frac{1}{r^2}\frac{d^2r}{d\theta^2} + \frac{2}{r^3}\left[\frac{dr}{d\theta}\right]^2 \\
 &amp;= -\frac{1}{r^2}\left[\frac{2}{r}\left[\frac{dr}{d\theta}\right]^2 - \frac{\mu r^2}{h^2} + r\right] + \frac{2}{r^3}\left[\frac{dr}{d\theta}\right]^2 \\
 &amp;= \frac{\mu}{h^2} - \frac{1}{r} \\
 &amp;= \frac{\mu}{h^2} - \eta.\end{split}\]</div>
 <p>With this transformation, we see that we are offered an equation describing
-a linear oscillator as</p>
-<div class="math notranslate nohighlight">
-\[\frac{d^2\eta}{d\theta^2} + \eta = \frac{\mu}{h^2},\]</div>
-<p>where both <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(h\)</span> are constants. We can therefore
-immediately write the general solution as</p>
+a linear oscillator,
+where both <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(h\)</span> are (positive) constants. We can
+therefore immediately write the general solution as</p>
 <div class="math notranslate nohighlight">
 \[\eta = \frac{\mu}{h^2} + C \cos(\theta - \omega),\]</div>
-<p>where both <span class="math notranslate nohighlight">\(C\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span> are new constants of integration.
+<p>where both <span class="math notranslate nohighlight">\(C\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span> are constants of integration.
 Note that <span class="math notranslate nohighlight">\(C\)</span> represents an amplitude and, as such, satisfies
 <span class="math notranslate nohighlight">\(C \geqslant 0\)</span>.
 The orbital radius (<span class="math notranslate nohighlight">\(r = 1/\eta\)</span>) is then</p>
@@ -471,43 +481,195 @@ shift the angle <span class="math notranslate nohighlight">\(\theta\)</span> to 
 (This quantity <span class="math notranslate nohighlight">\(\omega\)</span> is called the <em>argument of periapsis</em>, which
 is naturally useful for the transformation between the <span class="math notranslate nohighlight">\((X, Y, Z)\)</span>
 and <span class="math notranslate nohighlight">\((x, y, z)\)</span> coordinate systems.)</p>
-<p>Note that derivatives of <span class="math notranslate nohighlight">\(r\)</span> may now be evaluated exactly.</p>
+<p>To determine the constant <span class="math notranslate nohighlight">\(C\)</span>, we can calculate the time derivative
+of the orbital radius exactly and then turn to the
+<span class="math notranslate nohighlight">\(\hat{\mathbf{e}}_\theta\)</span> component of the Laplace-Runge-Lenz vector
+to compare expressions for <span class="math notranslate nohighlight">\(\dot{r}.\)</span></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\dot{r} &amp;= \frac{C\sin\theta}{(\mu + (C/h^2) \cos\theta)^2}\dot{\theta} \\
 &amp;= \left(\frac{r^2}{h^4}C\sin\theta\right)\left(\frac{h}{r^2}\right) \\
-&amp;= \frac{C}{h^3}\sin\theta.\end{split}\]</div>
-<p>To determine the constant <span class="math notranslate nohighlight">\(C\)</span>, we can turn to the conservation of
-energy.</p>
+&amp;= \frac{C}{h^3}\sin\theta \\
+&amp;= \frac{A}{h}\sin\theta\end{split}\]</div>
+<p>We therefore immediately conclude that the integration constant <span class="math notranslate nohighlight">\(C\)</span>
+is expressed in terms of known quantities as</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}E &amp;= \frac{1}{2}(\dot{r}^2 + r^2\dot{\theta}^2) - \frac{\mu}{r} \\
-&amp;= \frac{1}{2}\left(\left[\frac{C}{h^3}\sin\theta\right]^2 + \frac{h^2}{r^2}\right) - \frac{\mu}{r} \\
-&amp;= \frac{1}{2}\left(\frac{C^2}{h^6}\sin^2\theta + \left[\frac{(C\cos\theta + \mu h^2)^2}{h^6}\right]\right) - \frac{\mu}{r} \\
-&amp;= \frac{1}{2}\left(\frac{C^2}{h^6}\sin^2\theta + \frac{C^2\cos^2\theta + 2\mu h^2 C\cos\theta + \mu^2 h^4}{h^6}\right) - \frac{\mu}{r} \\
-&amp;= \frac{1}{2}\left(\frac{C^2}{h^6}(\sin^2\theta + \cos^2\theta) + \frac{2\mu C\cos\theta}{h^4} + \frac{\mu^2}{h^2}\right) - \frac{\mu}{r} \\
-&amp;= \frac{1}{2}\left(\frac{C^2}{h^6} + \frac{\mu^2}{h^2}\right) + \frac{\mu C \cos\theta}{h^4} - \frac{\mu}{r} \\
-&amp;= \frac{1}{2}\left(\frac{C^2}{h^6} + \frac{\mu^2}{h^2}\right) + \frac{\mu C \cos\theta}{h^4} - \mu\left[\frac{\mu + (C/h^2)\cos\theta}{h^2}\right] \\
-&amp;= \frac{1}{2}\left(\frac{C^2}{h^6} + \frac{\mu^2}{h^2}\right) + \frac{\mu C \cos\theta}{h^4} - \frac{\mu^2}{h^2} - \frac{\mu C\cos\theta}{h^4} \\
-&amp;= \frac{1}{2}\left(\frac{C^2}{h^6} - \frac{\mu^2}{h^2}\right).\end{split}\]</div>
-<p>Thus, we see that the integration constant is related to the energy
-according to</p>
-<div class="math notranslate nohighlight">
-\[C = \mu h^2 \sqrt{1 + \frac{2Eh^2}{\mu^2}}.\]</div>
-<p>We choose the positive branch (as opposed to the negative branch) of the
-square root since <span class="math notranslate nohighlight">\(C\)</span> represents an amplitude — an explicitly
-nonnegative quantity. For brevity, we write <span class="math notranslate nohighlight">\(C = \mu h^2 e\)</span>, where</p>
-<div class="math notranslate nohighlight">
-\[e = \sqrt{1 + \frac{2Eh^2}{\mu^2}}.\]</div>
+\[C = A h^2.\]</div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>The orbital radius <span class="math notranslate nohighlight">\(r\)</span> found directly from solving the governing
-differential equation, utilizing the conservation of angular momentum
-and energy, and evaluating the two constants of integration yields</p>
+<p>The orbital radius <span class="math notranslate nohighlight">\(r\)</span> found directly from utilizing the
+conservation of angular momentum to solve its governing differential
+equation and evaluating the two constants of integration using the
+Laplace-Runge-Lenz vector yields</p>
 <div class="math notranslate nohighlight">
-\[r = \frac{h^2/\mu}{1 + e\cos\theta},\]</div>
-<p>where <span class="math notranslate nohighlight">\(e = C/\mu h^2\)</span> is dependent upon the energy <span class="math notranslate nohighlight">\(E\)</span> of
-the relative motion of the two bodies.</p>
+\[r = \frac{h^2}{\mu + A\cos\theta}.\]</div>
 </div>
 </div>
+</div>
+<div class="section" id="the-orbital-angle">
+<h2>The Orbital Angle<a class="headerlink" href="#the-orbital-angle" title="Permalink to this headline">¶</a></h2>
+<p>Knowing the orbital radius <span class="math notranslate nohighlight">\(r\)</span> to be a function of <span class="math notranslate nohighlight">\(\theta\)</span>,
+we would most like to know the angular coordinate <span class="math notranslate nohighlight">\(\theta\)</span> as a
+function of time <span class="math notranslate nohighlight">\(t\)</span>. This would fully complete the parameterization
+as then <span class="math notranslate nohighlight">\(\mathbf{r} = \mathbf{r}(t)\)</span> would be a known function for all
+time.</p>
+<p>Like the orbital radius, the angular coordinate <span class="math notranslate nohighlight">\(\theta\)</span> is
+expressible using several different methods.
+However, unlike the orbital radius, these expressions prove to be
+difficult in obtaining <span class="math notranslate nohighlight">\(\theta = \theta(t).\)</span> Instead, we can obtain
+<span class="math notranslate nohighlight">\(t = t(\theta).\)</span>
+As we shall see, inverting this function <span class="math notranslate nohighlight">\(t\)</span> is, indeed, difficult.</p>
+<div class="section" id="from-angular-momentum">
+<h3>From Angular Momentum<a class="headerlink" href="#from-angular-momentum" title="Permalink to this headline">¶</a></h3>
+<p>The conservation of angular momentum states <span class="math notranslate nohighlight">\(r^2\dot{\theta} = h,\)</span>
+but the orbital radius <span class="math notranslate nohighlight">\(r\)</span> is now a <strong>known</strong> function of <strong>only</strong>
+<span class="math notranslate nohighlight">\(\theta.\)</span> Thus, we can write</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\dot{\theta} &amp;= \frac{h}{r^2} \\
+&amp;= \frac{h}{h^4/(\mu + A\cos\theta)^2} \\
+&amp;= \frac{\mu^2}{h^3} \big(1 + (A/\mu)\cos\theta\big)^2 \\
+&amp;= \frac{\mu^2}{h^3} \big(1 + e\cos\theta\big)^2,\end{split}\]</div>
+<p>where, for brevity, we have defined <span class="math notranslate nohighlight">\(e = A/\mu.\)</span>
+(This quantity <span class="math notranslate nohighlight">\(e\)</span> is called the <em>orbital eccentricity</em>, which
+describes the geometry of the trajectory traced by <span class="math notranslate nohighlight">\(r\)</span> as we will
+see.)</p>
+<p>Now, naively integrating the conservation of angular momentum obtains</p>
+<div class="math notranslate nohighlight">
+\[\int_{\theta_0}^\theta \frac{d\theta}{(1 + e\cos\theta)^2} = \frac{\mu^2}{h^3}\int_{t_0}^t dt,\]</div>
+<p>but this expression turns out <em>not</em> to be entirely true for <em>any</em> arbitrary
+<span class="math notranslate nohighlight">\(\theta\)</span> since we only know that <span class="math notranslate nohighlight">\(e \geqslant 0\)</span> (i.e. it is
+possible that <span class="math notranslate nohighlight">\(e \geqslant 1,\)</span> in which case the integrand becomes
+periodically undefined).</p>
+<div class="section" id="closed-orbits">
+<h4>Closed Orbits<a class="headerlink" href="#closed-orbits" title="Permalink to this headline">¶</a></h4>
+<p>With this restriction in mind (<span class="math notranslate nohighlight">\(e &lt; 1\)</span>), we can evaluate this integral
+in terms of elementary functions.</p>
+<div class="math notranslate nohighlight">
+\[\int^\theta\frac{d\theta}{(1 + e\cos\theta)^2} = \underbrace{\frac{2}{(1 - e^2)^{3/2}}\,\tan^{-1}\!\left(\sqrt{\frac{1 - e}{1 + e}}\tan\frac{\theta}{2}\right) - \frac{e\sin\theta}{(1 - e^2)(1 + e\cos\theta)}}_{\large\chi_e(\theta)}\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\chi\)</span> is an odd function in <span class="math notranslate nohighlight">\(\theta,\)</span> it’s
+convenient to choose <span class="math notranslate nohighlight">\(\theta_0 = 0\)</span> at time <span class="math notranslate nohighlight">\(t_0 = 0\)</span>. That is,
+begin counting positive time the instant that the (positive) <span class="math notranslate nohighlight">\(x\)</span> axis
+is crossed.
+Using this choice, we can now safely integrate the conservation of
+angular momentum and write for <span class="math notranslate nohighlight">\(|\theta| &lt; \pi\)</span> and <span class="math notranslate nohighlight">\(e &lt; 1\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\chi_e(\theta) = \frac{\mu^2}{h^3}t.\]</div>
+<p>In this case, <span class="math notranslate nohighlight">\(\chi\)</span> being odd also implies that the time
+<span class="math notranslate nohighlight">\(t\)</span> to transit over <span class="math notranslate nohighlight">\([0, \vartheta]\)</span> is exactly the same amount
+of time (in absolute value) to transit <span class="math notranslate nohighlight">\([-\vartheta, 0]\)</span>, where
+<span class="math notranslate nohighlight">\(\vartheta \in (0, \pi).\)</span>
+Thus, <strong>motion is both spatially and temporally symmetric about the</strong> <span class="math notranslate nohighlight">\(x\)</span> <strong>axis.</strong>
+Consequently, we now know that <em>all</em> trajectories with <span class="math notranslate nohighlight">\(e &lt; 1\)</span> are
+<em>closed</em> and complete an orbit with period</p>
+<div class="math notranslate nohighlight">
+\[T = \lim_{\theta \to \pi^-} 2t = \frac{2\pi h^3/\mu^2}{(1 - e^2)^{3/2}}.\]</div>
+<p>Our objective would be accomplished <em>if</em> we could so easily write</p>
+<div class="math notranslate nohighlight">
+\[\theta = \chi_e^{-1}\!\left(\frac{\mu^2}{h^3}t\right),\]</div>
+<p>but unfortunately, we cannot find an analytical expression for such an
+inverse function for <em>any</em> <span class="math notranslate nohighlight">\(e &lt; 1\)</span>.
+It is, however, possible (very easy in fact) in the special case of
+<span class="math notranslate nohighlight">\(e = 0\)</span> since <span class="math notranslate nohighlight">\(\chi_0(\theta) = \theta,\)</span> which indeed abides by
+the conservation of angular momentum.
+The motion in this case has a constant radius (<span class="math notranslate nohighlight">\(h^2/\mu\)</span>) and
+a constant angular rate (<span class="math notranslate nohighlight">\(\mu^2/h^3\)</span>) — a circle.</p>
+</div>
+<div class="section" id="open-orbits">
+<h4>Open Orbits<a class="headerlink" href="#open-orbits" title="Permalink to this headline">¶</a></h4>
+<p>For other trajectories (<span class="math notranslate nohighlight">\(e \geqslant 1\)</span>), the domain of <span class="math notranslate nohighlight">\(\theta\)</span>
+is necessarily restricted to maintain physical meaning such that</p>
+<div class="math notranslate nohighlight">
+\[1 + e\cos\theta &gt; 0 \implies |\theta| &lt; \cos^{-1}(-e^{-1})\]</div>
+<p>With this restriction in mind, we can still use the same function
+<span class="math notranslate nohighlight">\(\chi_e\)</span> that was developed for closed orbits, though it would be
+convenient to rewrite it to make sense for <span class="math notranslate nohighlight">\(e \geqslant 1.\)</span></p>
+<div class="math notranslate nohighlight">
+\[\chi_e(\theta) = \frac{e\sin\theta}{(e^2 - 1)(1 + e\cos\theta)} - \frac{2}{(e^2 - 1)^{3/2}}\tanh^{-1}\left(\sqrt{\frac{e - 1}{e + 1}}\tan\frac{\theta}{2}\right)\]</div>
+<p>Similarly to the closed orbits, we can choose to define <span class="math notranslate nohighlight">\(\theta_0 = 0\)</span>
+at time <span class="math notranslate nohighlight">\(t_0 = 0\)</span> such that the motion obeys</p>
+<div class="math notranslate nohighlight">
+\[\chi_e(\theta) = \frac{\mu^2}{h^3} t.\]</div>
+<p>Since this really is the same function <span class="math notranslate nohighlight">\(\chi\)</span> that described closed
+orbits, <strong>the trajectory is spatially and temporally symmetric about the</strong> <span class="math notranslate nohighlight">\(x\)</span> <strong>axis.</strong>
+That said, it is still impossible to solve analytically for the angular
+coordinate as a function of time, even when <span class="math notranslate nohighlight">\(e\)</span> uniformly approaches
+unity.</p>
+<div class="math notranslate nohighlight">
+\[\lim_{e \to 1} \chi_e(\theta) = \frac{1}{12}\sec^3\frac{\theta}{2}\left(3\sin\frac{\theta}{2} + \sin\frac{3\theta}{2}\right)\]</div>
+<p>Note that since the trajectory is open, it takes <em>infinite</em> time to reach
+the maximum angle (corresponding to an infinite distance from the origin)
+starting from the <span class="math notranslate nohighlight">\(x\)</span> axis. <em>However,</em></p>
+<div class="math notranslate nohighlight">
+\[\lim_{e\to\infty}\chi_e(\theta) = 0.\]</div>
+<p>This means that as <span class="math notranslate nohighlight">\(e\)</span> gets very large, the elapsed time to cover the
+interval <span class="math notranslate nohighlight">\((-\pi/2, \pi/2)\)</span> is <em>nothing.</em> This happens because
+trajectories with finite <span class="math notranslate nohighlight">\(e\)</span> approach the maximum angles
+<em>asymptotically</em> whereas those with very large <span class="math notranslate nohighlight">\(e\)</span> basically start
+at one limit, <span class="math notranslate nohighlight">\(\theta = -\pi/2,\)</span> and pass through immediately to the
+other limit, <span class="math notranslate nohighlight">\(\theta = \pi/2.\)</span> Such a trajectory is characteristic of
+a <em>straight line along the</em> <span class="math notranslate nohighlight">\(y\)</span> <em>axis.</em> (Like having <span class="math notranslate nohighlight">\(h = 0\)</span>,
+this trajectory results in a collision — a finite-time singularity.)</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The trajectory of the reduced mass can be either <strong>closed</strong> or <strong>open</strong>
+depending on the (nonnegative) parameter <span class="math notranslate nohighlight">\(e = A/\mu.\)</span></p>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>Closed orbits occur when <span class="math notranslate nohighlight">\(e &lt; 1.\)</span></dt><dd><ol class="arabic simple">
+<li><p><strong>Period</strong>: <span class="math notranslate nohighlight">\(T = 2\pi h^3/\big(\mu^2(1 - e^2)^{3/2}\big)\)</span></p></li>
+<li><p><strong>Simplest</strong>: Circle</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Open orbits occur when <span class="math notranslate nohighlight">\(e \geqslant 1.\)</span></dt><dd><ol class="arabic simple">
+<li><p><strong>Period</strong>: <span class="math notranslate nohighlight">\(T = \infty\)</span> if <span class="math notranslate nohighlight">\(e &lt; \infty.\)</span> Otherwise, <span class="math notranslate nohighlight">\(T = 0.\)</span></p></li>
+<li><p><strong>Simplest</strong>: Straight line (collision)</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+</ol>
+<p>In both cases, we cannot obtain an analytical expression for
+<span class="math notranslate nohighlight">\(\theta = \theta(t),\)</span> but we can obtain an expression for
+<span class="math notranslate nohighlight">\(t = t(\theta).\)</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="from-the-angular-differential-equation">
+<h3>From the Angular Differential Equation<a class="headerlink" href="#from-the-angular-differential-equation" title="Permalink to this headline">¶</a></h3>
+<p>Using the known solution for the orbital radius <span class="math notranslate nohighlight">\(r\)</span> and the
+conservation of the Lorenz-Runge-Lenz vector <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> along
+with the conservation of angular momentum, the
+<span class="math notranslate nohighlight">\(\ddot{\theta}\)</span> equation of motion provides</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}0 &amp;= \ddot{\theta} + 2\frac{\dot{r}}{r}\dot{\theta} \\
+&amp;= \ddot{\theta} + 2\frac{(A/h)\sin\theta}{h^2/(\mu + A\cos\theta)}\dot{\theta} \\
+&amp;= \ddot{\theta} + 2\frac{A}{h^3}(\mu + A\cos\theta)\sin\theta\dot{\theta} \\
+&amp;= \ddot{\theta} + 2\frac{\mu^2 e}{h^3}(1 + e\cos\theta)\sin\theta\dot{\theta} \\
+&amp;= \frac{d}{dt}\left(\dot{\theta} - 2\frac{\mu^2}{h^3}\left(e\cos\theta + \frac{e^2}{2}\cos^2\theta\right)\right).\end{split}\]</div>
+<p>We have effectively integrated the equation of motion once, picking up an
+integration constant <span class="math notranslate nohighlight">\(C,\)</span> which we can evaluate using the
+conservation of angular momentum.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\dot{\theta} &amp;= 2\frac{\mu^2}{h^3}\left(e\cos\theta + \frac{e^2}{2}\cos^2\theta\right) + C \\
+&amp;= \frac{h}{r^2} \\
+&amp;= \frac{\mu^2}{h^3}(1 + e\cos\theta)^2 \\
+&amp;= \frac{\mu^2}{h^3}(1 + 2e\cos\theta + e^2\cos^2\theta) \\
+&amp;= 2\frac{\mu^2}{h^3}\left(e\cos\theta + \frac{e^2}{2}\cos^2\theta\right) + \frac{\mu^2}{h^3}.\end{split}\]</div>
+<p>Thus, the constant is <span class="math notranslate nohighlight">\(C = \mu^2/h^3,\)</span> providing</p>
+<div class="math notranslate nohighlight">
+\[\dot{\theta} = \frac{\mu^2}{h^3}(1 + e\cos\theta)^2.\]</div>
+<p>The outcome is identical to that obtained from analyzing the conservation
+of angular momentum directly.</p>
+</div>
+</div>
+<div class="section" id="kepler-s-equation">
+<h2>Kepler’s Equation<a class="headerlink" href="#kepler-s-equation" title="Permalink to this headline">¶</a></h2>
+<p>Unfortunately, we cannot express <span class="math notranslate nohighlight">\(\theta = \theta(t)\)</span> analytically
+for any general <span class="math notranslate nohighlight">\(e\)</span> analyzing conserved quantities and the governing
+differential equation. We are therefore forced to turn to other methods.</p>
+<p>…</p>
 </div>
 </div>
 
@@ -517,6 +679,7 @@ the relative motion of the two bodies.</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="orbital-elements.html" class="btn btn-neutral float-right" title="Orbital Elements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="properties.html" class="btn btn-neutral float-left" title="Properties" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
