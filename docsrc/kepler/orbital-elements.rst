@@ -1,5 +1,8 @@
 Orbital Elements
 ****************
+
+:Author: M. Werner
+
 .. contents:: Table of contents
    :local:
    :backlinks: none

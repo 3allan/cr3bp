@@ -1,7 +1,11 @@
 .. default-role:: math
 
+========
 Solution
-********
+========
+
+:Author: M. Werner
+
 .. admonition:: Plan of Action
 
     The solution of the *general* 2-body problem is developed several
@@ -28,8 +32,8 @@ a static rotation between the two coordinate systems such that
 
 The standard form of the equations of motion are consequently *unchanged*.
 
-Defining New Coordinates
-------------------------
+Defining a New Coordinate System
+--------------------------------
 It is most convenient to utilize the conservation of angular momentum and
 the Laplace-Runge-Lenz vector to define the precise action of
 :math:`\mathbf{R}` on the two coordinate systems of variables

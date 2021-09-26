@@ -4,6 +4,8 @@
 Overview
 ========
 
+:Author: M. Werner
+
 .. admonition:: Plan of Action
 
     The equations of motion for the general 2-body problem are derived

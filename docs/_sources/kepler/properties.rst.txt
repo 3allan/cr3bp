@@ -1,5 +1,9 @@
+==========
 Properties
 ==========
+
+:Author: M. Werner
+
 .. admonition:: Plan of Action
 
     The general 2-body problem may be simplified greatly by utilizing
@@ -19,7 +23,7 @@ has a closed-form solution. Obtaining this solution, however, is made
 significantly easier once several properties are known.
 
 Relative Form
--------------
+=============
 The Newtonian, Lagrangian, and Hamiltonian formalisms all provide the same
 system of equations for the motion of two particles under mutual Newtonian
 gravitational attraction with respect to the origin of the inertial
@@ -51,9 +55,9 @@ where :math:`r = |\mathbf{r}|`.
     *either* body.
 
 Conserved Quantities
---------------------
+====================
 Linear Momentum
-~~~~~~~~~~~~~~~
+---------------
 .. admonition:: Recall
 
     For any :math:`x_1, x_2 \in \mathbb{R}^3`, the center of mass for a
@@ -92,7 +96,7 @@ that
     *both* bodies is known.
 
 Angular Momentum
-~~~~~~~~~~~~~~~~
+----------------
 .. admonition:: Recall
 
     #.  For any :math:`x \in \mathbb{R}^3`, the cross-product of :math:`x`
@@ -132,7 +136,7 @@ Consequently, we conclude that the (specific) angular momentum
     The motion of the two bodies **must** be **planar**.
 
 The Laplace-Runge-Lenz Vector
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------
 .. admonition:: Recall
 
     For any :math:`x,y,z \in \mathbb{R}^3`, the vector triple product
@@ -166,7 +170,7 @@ Laplace-Runge-Lenz vector\ :sup:`[`\ [2]_:sup:`]`.
     The Laplace-Runge-Lenz vector provides a **constant direction** *in the plane of motion of the two bodies.*
 
 Energy
-~~~~~~
+------
 Manipulating the relative form of the equations of motion provides
 
 .. math::
@@ -195,7 +199,7 @@ mass :math:`m_1 + m_2`.
     :math:`E`.
 
 The Reduced Mass
-----------------
+================
 The system :eq:`eq:relativeEOM` is writable as
 
 .. math::
@@ -243,7 +247,7 @@ simplification possible is called the *reduced mass*.)
     attraction. This trajectory for both cases is :math:`\mathbf{r}`.
 
 Standard Form
--------------
+=============
 The standard form of the Kepler problem is achieved after defining the
 *gravitational parameter*
 
@@ -287,6 +291,6 @@ the other are
         **These quantities, though sharing the same symbol, are different**.
 
 Sources
--------
+=======
 .. [1] :download:`The Two-Body Problem - UCSB Physics <http://web.physics.ucsb.edu/~fratus/phys103/LN/TBP.pdf>`
 .. [2] Goldstein, Poole, Safko. Classical Mechanics, 3rd Edition. Pgs. 102-103
