@@ -1,3 +1,6 @@
+.. default-role:: math
+
+========
 Overview
 ========
 
@@ -8,7 +11,7 @@ Overview
     that each method provides the same system using different methods.
 
 Introduction
-------------
+============
 
 The *Kepler* (2-body) problem is fundamental to the study of astrodynamics,
 especially so for analyzing the more general 3-body problem. It consists of
@@ -37,10 +40,10 @@ vector :math:`\mathbf{r}` is represented
 with basis elements provided by the inertial coordinate system.
 
 Equations of Motion
--------------------
+===================
 
 Newton's Laws
-~~~~~~~~~~~~~
+-------------
 Applying Newton's 2\ :sup:`nd` law to each body under mutual Newtonian
 gravitational attraction directly provides
 
@@ -53,7 +56,7 @@ gravitational attraction directly provides
 where :math:`G` is the gravitational constant.
 
 Lagrangian Function
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 .. admonition:: Recall
 
@@ -99,7 +102,7 @@ two bodies.
     \ddot{\mathbf{r}}_2 &= -\frac{G m_1}{|\mathbf{r}_2 - \mathbf{r}_1|^3}(\mathbf{r}_2 - \mathbf{r}_1),
 
 Hamiltonian Function
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 .. admonition:: Recall
 
@@ -139,5 +142,3 @@ for :math:`j \neq i = 1,2`.
         \ddot{\mathbf{q}}_i = \frac{\dot{\mathbf{p}}_i}{m_i} = -\frac{G m_j}{|\mathbf{q}_i - \mathbf{q}_j|^3} (\mathbf{q}_i - \mathbf{q}_j),
 
     where :math:`\mathbf{q}_i \equiv \mathbf{r}_i`.
-
-

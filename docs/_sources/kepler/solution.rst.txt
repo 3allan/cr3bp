@@ -1,3 +1,5 @@
+.. default-role:: math
+
 Solution
 ********
 .. admonition:: Plan of Action
@@ -5,6 +7,8 @@ Solution
     The solution of the *general* 2-body problem is developed several
     different ways utilizing the now known special
     :ref:`properties<Properties>` admitted by the system.
+
+
 
 Coordinate Rotation
 ===================
@@ -22,7 +26,7 @@ a static rotation between the two coordinate systems such that
 .. math::
     \dot{\mathbf{R}} \equiv \mathbf{0}.
 
-As such, the standard form of the equations of motion are *unchanged*.
+The standard form of the equations of motion are consequently *unchanged*.
 
 Defining New Coordinates
 ------------------------
@@ -41,6 +45,7 @@ parameterizations of polar coordinates,
     x &= r \cos\theta \\
     y &= r \sin\theta \\
     z &= 0,
+    :label: polarCoordinates
 
 where :math:`r = |\mathbf{r}|` as usual and :math:`\theta` is the angle made
 between the reduced mass particle and the :math:`x` axis.
@@ -71,7 +76,7 @@ differential equations in the cylindrical basis. That is, exchange the
 inertial basis for the noninertial cylindrical basis
 
 .. math::
-    \{\hat{\mathbf{e}}_x,\hat{\mathbf{e}}_y, \hat{\mathbf{e}}_z\} \longrightarrow \{\hat{\mathbf{e}}_r,\hat{\mathbf{e}}_\theta, \hat{\mathbf{e}}_z\}
+    \{\mathbf{e}_x,\mathbf{e}_y, \mathbf{e}_z\} \longrightarrow \{\mathbf{e}_r,\mathbf{e}_\theta, \mathbf{e}_z\}
 
 and insert the resulting object describing relative positions of the two
 bodies (:math:`\mathbf{r}`) into the standard form of the 2-body problem.
@@ -80,7 +85,7 @@ This transformation is useful as the expression for the position
 simplifies dramatically to
 
 .. math::
-    \mathbf{r} = r\,\hat{\mathbf{e}}_r.
+    \mathbf{r} = r\,\mathbf{e}_r.
 
 Differential Equations
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -98,20 +103,21 @@ In calculating the **inertial** velocity and acceleration, the time
 derivatives **must** be calculated relative to the inertial frame.
 Here, the polar coordinate system is rotating with respect to the inertial
 coordinate system at the rate :math:`\dot{\theta}` along the axis of
-rotation :math:`\hat{\mathbf{e}}_z`. As such,
+rotation :math:`\mathbf{e}_z`. As such,
 
 .. math::
-    \dot{\mathbf{r}} &= \dot{r}\,\hat{\mathbf{e}}_r + r \dot{\theta}\,\hat{\mathbf{e}}_\theta \\
-    \ddot{\mathbf{r}} &= (\ddot{r} - r\dot{\theta}^2)\hat{\mathbf{e}}_r + (r\ddot{\theta} + 2\dot{r}\dot{\theta})\hat{\mathbf{e}}_\theta.
+    \dot{\mathbf{r}} &= \dot{r}\,\mathbf{e}_r + r \dot{\theta}\,\mathbf{e}_\theta \\
+    \ddot{\mathbf{r}} &= (\ddot{r} - r\dot{\theta}^2)\mathbf{e}_r + (r\ddot{\theta} + 2\dot{r}\dot{\theta})\mathbf{e}_\theta.
 
-.. important::
-    Inserting the inertial acceleration into the standard form equations of
-    motion provide a set of only two differential equations for the two
-    unknowns :math:`r` and :math:`\theta`.
+Inserting the inertial acceleration into the standard form equations of
+motion provide a set of only two differential equations for the two
+unknowns :math:`r` and :math:`\theta`.
 
-    .. math::
-        \ddot{r} - r\dot{\theta}^2 &= -\frac{\mu}{r^2} \\
-        r\ddot{\theta} + 2\dot{r}\dot{\theta} &= 0
+.. math::
+    \ddot{r} - r\dot{\theta}^2 &= -\frac{\mu}{r^2} \\
+    r\ddot{\theta} + 2\dot{r}\dot{\theta} &= 0
+    :label: polarEOM
+
 
 Conserved Quantities
 ~~~~~~~~~~~~~~~~~~~~
@@ -127,23 +133,24 @@ The angular momentum :math:`\mathbf{h}` expressed in polar coordinates is
 
 .. math::
     \mathbf{h} &= \mathbf{r} \times \dot{\mathbf{r}} \\
-    &= \left(r\,\hat{\mathbf{e}}_r\right) \times \left(\dot{r}\,\hat{\mathbf{e}}_r + r \dot{\theta}\,\hat{\mathbf{e}}_\theta\right) \\
-    &= r\dot{r} (\hat{\mathbf{e}}_r \times \hat{\mathbf{e}}_r) + r^2\dot{\theta} (\hat{\mathbf{e}}_r \times \hat{\mathbf{e}}_\theta) \\
-    &= r^2\dot{\theta}\,\hat{\mathbf{e}}_z.
+    &= \left(r\,\mathbf{e}_r\right) \times \left(\dot{r}\,\mathbf{e}_r + r \dot{\theta}\,\mathbf{e}_\theta\right) \\
+    &= r\dot{r} (\mathbf{e}_r \times \mathbf{e}_r) + r^2\dot{\theta} (\mathbf{e}_r \times \mathbf{e}_\theta) \\
+    &= r^2\dot{\theta}\,\mathbf{e}_z.
 
-.. important::
-    The conservation of angular momentum provides
+Since :math:`\mathbf{h} = h \mathbf{e}_z`, the conservation of angular 
+momentum provides
 
     .. math::
         r^2\dot{\theta} = h,
+        :label: AMconservation
 
-    where :math:`h = |\mathbf{h}|` is a constant of motion.
+where :math:`h = |\mathbf{h}|` is a constant of motion.
 
-    Since :math:`h \geqslant 0` and :math:`r^2 > 0`, we know that
-    :math:`\dot{\theta} \geqslant 0` **always**. Note that if
-    :math:`\dot{\theta} \equiv 0`, then :math:`\ddot{r} < 0`, which means
-    :math:`r \to 0` in *finite* time --- a finite-time singularity.
-    Interesting motion therefore takes place for :math:`\dot{\theta} > 0`.
+Since :math:`h \geqslant 0` and :math:`r^2 > 0`, we know that
+:math:`\dot{\theta} \geqslant 0` **always**. Note that if
+:math:`\dot{\theta} \equiv 0`, then :math:`\ddot{r} < 0`, which means
+:math:`r \to 0` in *finite* time --- a finite-time singularity.
+Interesting motion therefore takes place for :math:`\dot{\theta} > 0`.
 
 The Laplace-Runge-Lenz Vector
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -152,12 +159,12 @@ coordinates is
 
 .. math::
     \mathbf{A} &= \dot{\mathbf{r}} \times \mathbf{h} - \frac{\mu}{r}\mathbf{r} \\
-    &= (\dot{r}\,\hat{\mathbf{e}}_r + r\dot{\theta}\,\hat{\mathbf{e}}_\theta) \times (r^2\dot{\theta}\,\hat{\mathbf{e}}_z) - \frac{\mu}{r} (r \,\hat{\mathbf{e}}_r) \\
-    &= r^2\dot{r}\dot{\theta}(\hat{\mathbf{e}}_r \times \hat{\mathbf{e}}_z) + r^3\dot{\theta}^2(\hat{\mathbf{e}}_\theta \times \hat{\mathbf{e}}_z) - \mu\,\hat{\mathbf{e}}_r \\
-    &= r^2\dot{r}\dot{\theta}(-\hat{\mathbf{e}}_\theta) + r^3\dot{\theta}^2(\hat{\mathbf{e}}_r) - \mu\,\hat{\mathbf{e}}_r \\
-    &= (r^3\dot{\theta}^2 - \mu)\hat{\mathbf{e}}_r - r^2\dot{r}\dot{\theta}\,\hat{\mathbf{e}}_\theta \\
-    &= A\,\hat{\mathbf{e}}_x \\
-    &= A (\cos\theta\,\hat{\mathbf{e}}_r - \sin\theta\,\hat{\mathbf{e}}_\theta).
+    &= (\dot{r}\,\mathbf{e}_r + r\dot{\theta}\,\mathbf{e}_\theta) \times (r^2\dot{\theta}\,\mathbf{e}_z) - \frac{\mu}{r} (r \,\mathbf{e}_r) \\
+    &= r^2\dot{r}\dot{\theta}(\mathbf{e}_r \times \mathbf{e}_z) + r^3\dot{\theta}^2(\mathbf{e}_\theta \times \mathbf{e}_z) - \mu\,\mathbf{e}_r \\
+    &= r^2\dot{r}\dot{\theta}(-\mathbf{e}_\theta) + r^3\dot{\theta}^2(\mathbf{e}_r) - \mu\,\mathbf{e}_r \\
+    &= (r^3\dot{\theta}^2 - \mu)\mathbf{e}_r - r^2\dot{r}\dot{\theta}\,\mathbf{e}_\theta \\
+    &= A\,\mathbf{e}_x \\
+    &= A (\cos\theta\,\mathbf{e}_r - \sin\theta\,\mathbf{e}_\theta).
 
 .. important::
     The Lorenz-Runge-Lenz vector provides
@@ -168,9 +175,9 @@ coordinates is
 
     where :math:`A = |\mathbf{A}|` is a constant of motion.
 
-    Paired with the conservation of angular momentum, these two
-    expressions provide *very* direct expressions of :math:`r` and
-    :math:`\dot{r}`.
+Paired with the conservation of angular momentum, these two
+statements provide *very* direct expressions of :math:`r` and
+:math:`\dot{r}`.
 
 Energy
 ^^^^^^
@@ -189,13 +196,13 @@ The energy :math:`E` expressed in polar coordinates is
 
     where :math:`E` is a constant of motion.
 
-    Paired with angular momentum, this expression "integrates" the
-    :math:`\ddot{r}` equation of motion with integration constant
-    :math:`2E`.
-    Similarly, this relation provides another expression for
-    :math:`\dot{\theta}` in addition to that from the conservation of
-    angular momentum using the knowledge that :math:`\dot{\theta} > 0`
-    for interesting motion.
+Paired with angular momentum, this expression "integrates" the
+:math:`\ddot{r}` equation of motion with integration constant
+:math:`2E`.
+Similarly, this relation provides another expression for
+:math:`\dot{\theta}` in addition to that from the conservation of
+angular momentum using the knowledge that :math:`\dot{\theta} > 0`
+for interesting motion.
 
 The Orbital Radius
 ==================
@@ -206,18 +213,11 @@ From the Laplace-Runge-Lenz Vector
 ----------------------------------
 .. admonition:: Recall
 
-    #.  For any :math:`x,y \in \mathbb{R}^3`, the scalar product satisfies
+    For any :math:`x, y, z \in \mathbb{R}^3`, the scalar triple product
+    satisfies
 
-        .. math::
-            x \cdot y = |x| |y| \cos\theta,
-
-        where :math:`\theta` is the angle between :math:`x` and :math:`y`.
-
-    #.  For any :math:`x, y, z \in \mathbb{R}^3`, the scalar triple product
-        satisfies
-
-        .. math::
-            x \cdot (y \times z) = y \cdot (z \times x) = z \cdot (x \times y).
+    .. math::
+        x \cdot (y \times z) = y \cdot (z \times x) = z \cdot (x \times y).
 
 The Laplace-Runge-Lenz vector can be used to obtain an expression for the
 orbital radius :math:`r` as a function of the polar coordinate
@@ -246,7 +246,7 @@ with the Laplace-Runge-Lenz vector, then one can see that
 From Conserved Quantities
 -------------------------
 Knowing from the conservation of angular momentum that
-:math:`r^2\dot{\theta} = h`, the :math:`\hat{\mathbf{e}}_r` component of
+:math:`r^2\dot{\theta} = h`, the :math:`\mathbf{e}_r` component of
 the Laplace-Runge-Lenz vector allows one to algebraically solve for the
 radius. That is,
 
@@ -283,18 +283,17 @@ polar coordinates. Using the conservation of angular momentum again, we see
     &= \frac{1}{\dot{\theta}}\frac{d}{dt}\left(\frac{r^2\dot{r}}{h}\right) \\
     &= \frac{r^2}{h^2}(2r\dot{r}^2 + r^2 \ddot{r}) \\
     &= \frac{r^2}{h^2}\left(2r\left[\frac{h}{r^2}\frac{dr}{d\theta}\right]^2 + r^2 \left[\frac{h^2}{r^3} - \frac{\mu}{r^2}\right]\right) \\
-    &= \frac{r^2}{h^2}\left(2\frac{h^2}{r^3}\left[\frac{dr}{d\theta}\right]^2 - \mu + \frac{h^2}{r}\right) \\
+    &= \frac{r^2}{h^2}\left(2\frac{h^2}{r^3}\left[\frac{dr}{d\theta}\right]^2 + \frac{h^2}{r} - \mu\right) \\
     &= \frac{2}{r}\left[\frac{dr}{d\theta}\right]^2 - \frac{\mu r^2}{h^2} + r.
 
 Despite offering a description of the trajectory's geometry in space as
 opposed to time, *this* differential equation still proves to be formidable
 in obtaining a solution. However, a final, clever change of variables *will*
-yield a useful relation. Let :math:`\eta = 1/r`. Then
+yield a useful relation by letting :math:`\eta = 1/r`. In this case,
 
 .. math::
     \frac{d^2\eta}{d\theta^2} &= \frac{d}{d\theta}\left(\frac{d\eta}{d\theta}\right) \\
     &= \frac{d}{d\theta}\left(-\frac{1}{r^2}\frac{dr}{d\theta}\right) \\
-    &= \frac{d}{d\theta}\left(-\frac{1}{r^2}\left[\frac{r^2\dot{r}}{h}\right]\right) \\
     &= -\frac{1}{h}\frac{d\dot{r}}{d\theta} \\
     &= -\frac{1}{h}\frac{d}{d\theta}\left(\frac{dr}{d\theta}\dot{\theta}\right) \\
     &= -\frac{1}{h}\frac{d}{d\theta}\left(\frac{dr}{d\theta}\frac{h}{r^2}\right) \\
@@ -303,7 +302,7 @@ yield a useful relation. Let :math:`\eta = 1/r`. Then
     &= \frac{\mu}{h^2} - \frac{1}{r} \\
     &= \frac{\mu}{h^2} - \eta.
 
-With this transformation, we see that we are offered an equation describing
+With this transformation, we see that we are offered something describing
 a linear oscillator,
 where both :math:`\mu` and :math:`h` are (positive) constants. We can
 therefore immediately write the general solution as
@@ -333,7 +332,7 @@ and :math:`(x, y, z)` coordinate systems.)
 
 To determine the constant :math:`C`, we can calculate the time derivative
 of the orbital radius exactly and then turn to the
-:math:`\hat{\mathbf{e}}_\theta` component of the Laplace-Runge-Lenz vector
+:math:`\mathbf{e}_\theta` component of the Laplace-Runge-Lenz vector
 to compare expressions for :math:`\dot{r}.`
 
 .. math::

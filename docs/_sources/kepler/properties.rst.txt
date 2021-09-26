@@ -7,19 +7,16 @@ Properties
     *will* enable a full solution of the general problem to be determined
     analytically.
 
-.. admonition:: Recall
+Amazingly, the general system
 
-    The equations of motion of the general 2-body problem determined by the
-    Newtonian, Lagrangian, and Hamiltonian formalisms are
+.. math::
+    :label: general2bp
 
-    .. math::
-        :label: general2bp
+    \ddot{\mathbf{r}}_1 &= -\frac{G m_2}{|\mathbf{r}_1 - \mathbf{r}_2|^3}(\mathbf{r}_1 - \mathbf{r}_2) \\
+    \ddot{\mathbf{r}}_2 &= -\frac{G m_1}{|\mathbf{r}_2 - \mathbf{r}_1|^3}(\mathbf{r}_2 - \mathbf{r}_1).
 
-        \ddot{\mathbf{r}}_1 &= -\frac{G m_2}{|\mathbf{r}_1 - \mathbf{r}_2|^3}(\mathbf{r}_1 - \mathbf{r}_2) \\
-        \ddot{\mathbf{r}}_2 &= -\frac{G m_1}{|\mathbf{r}_2 - \mathbf{r}_1|^3}(\mathbf{r}_2 - \mathbf{r}_1).
-
-Amazingly, this system :eq:`general2bp` has a closed-form solution. Obtaining this solution,
-however, is made significantly easier once several properties are known.
+has a closed-form solution. Obtaining this solution, however, is made
+significantly easier once several properties are known.
 
 Relative Form
 -------------
@@ -38,15 +35,15 @@ each body as
 The equations of motion may be calculated directly since
 
 .. math::
-    :label: relativeEOM
+    :label: eq:relativeEOM
 
     \ddot{\mathbf{r}} &= \ddot{\mathbf{r}}_2 - \ddot{\mathbf{r}}_1 \\
     &= -\frac{G(m_1 + m_2)}{r^3}\mathbf{r},
 
 where :math:`r = |\mathbf{r}|`.
 
-.. Note:: The same result is achieved had we used Newton's 3\ :sup:`rd` law
-    since :math:`m_1 \ddot{\mathbf{r}}_1 = -m_2\ddot{\mathbf{r}}_2`.
+(The same result is achieved had we used Newton's 3\ :sup:`rd` law since
+:math:`m_1 \ddot{\mathbf{r}}_1 = -m_2\ddot{\mathbf{r}}_2`.)
 
 .. Important:: Doing this is beneficial because it exploits a symmetry in
     the full system of equations, essentially **halving** the number of
@@ -86,12 +83,12 @@ that
 .. Important::
     :eq:`relative` provides **direct**
     information of both bodies (relative to each other) through
-    :eq:`relativeEOM` *and* enables the inertial positions of both bodies to
+    :eq:`eq:relativeEOM` *and* enables the inertial positions of both bodies to
     be *calculated* from :eq:`positionsFromCenterOfMass` rather than directly
     solved from :eq:`general2bp`.
 
     This solidifies the idea that only half of the amount of equations
-    have to be solved with :eq:`relativeEOM`, but now *all* information about
+    have to be solved with :eq:`eq:relativeEOM`, but now *all* information about
     *both* bodies is known.
 
 Angular Momentum
@@ -199,7 +196,7 @@ mass :math:`m_1 + m_2`.
 
 The Reduced Mass
 ----------------
-The system :eq:`relativeEOM` is writable as
+The system :eq:`eq:relativeEOM` is writable as
 
 .. math::
     \underbrace{\frac{m_1 m_2}{m_1 + m_2}}_{\mu^*}\ddot{\mathbf{r}} = \underbrace{-\frac{G m_1 m_2}{r^3}\mathbf{r}}_{-\nabla V(r)},
@@ -212,7 +209,7 @@ More clearly, we can write
 .. math::
     \mu^* \ddot{\mathbf{r}} = -\frac{G(m_1 + m_2)\mu^*}{r^3}\mathbf{r}
 
-The 2-body system :eq:`relativeEOM` *can* therefore be treated like it
+The 2-body system :eq:`eq:relativeEOM` *can* therefore be treated like it
 describes a **single** particle\ :sup:`[`\ [1]_:sup:`]`.
 (The quantity :math:`\mu^*` that makes this purely mathematical
 simplification possible is called the *reduced mass*.)

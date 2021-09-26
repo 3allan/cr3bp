@@ -1,0 +1,29 @@
+/* 
+The sphinx css files for each theme are located at:
+	/usr/share/sphinx/themes/sphinxdoc/static/
+
+This is useful in that page properties can be known and edited manually.
+*/
+
+/* "To change the document background from white to black, add the following
+lines to style.css:" */
+body {
+    background-color: white;
+    color: black;
+}
+div.document {
+    background-color: white;
+}
+
+/* "To add the ability to center your code using the 
+.. rst-class:: centered 
+directive, add the following lines:" */
+.centered {
+    text-align: center;
+}
+
+/* Example of how to change sphinxdoc sidebar
+div.sphinxsidebar {
+	float: right
+}
+*/
