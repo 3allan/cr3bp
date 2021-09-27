@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Solution &mdash; CR3BP  documentation</title>
+  <title>3 Solution &mdash; CR3BP  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/rtd_eq.css" type="text/css" />
@@ -22,8 +22,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Orbital Elements" href="orbital-elements.html" />
-    <link rel="prev" title="Properties" href="properties.html" /> 
+    <link rel="next" title="4 Orbital Elements" href="orbital-elements.html" />
+    <link rel="prev" title="2 Properties" href="properties.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -43,37 +43,43 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">The Kepler (2-body) Problem</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="properties.html">Properties</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Solution</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#coordinate-rotation">Coordinate Rotation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#defining-a-new-coordinate-system">Defining a New Coordinate System</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#polar-coordinates">Polar Coordinates</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#differential-equations">Differential Equations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#conserved-quantities">Conserved Quantities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html"><span class="sectnum">1</span> Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="properties.html"><span class="sectnum">2</span> Properties</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="sectnum">3</span> Solution</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#defining-a-new-coordinate-system"><span class="sectnum">3.1</span> Defining a New Coordinate System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#polar-coordinates-r-theta"><span class="sectnum">3.2</span> Polar Coordinates <span class="math notranslate nohighlight">\((r, \theta)\)</span></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#differential-equations-for-r-and-theta"><span class="sectnum">3.2.1</span> Differential Equations for <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rewriting-the-conserved-quantities-mathbf-h-mathbf-a-and-e"><span class="sectnum">3.2.2</span> Rewriting the Conserved Quantities <span class="math notranslate nohighlight">\(\mathbf{h}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>, and <span class="math notranslate nohighlight">\(E\)</span></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#angular-momentum-mathbf-h">Angular Momentum <span class="math notranslate nohighlight">\(\mathbf{h}\)</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#laplace-runge-lenz-vector-mathbf-a">Laplace-Runge-Lenz Vector <span class="math notranslate nohighlight">\(\mathbf{A}\)</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#energy-e">Energy <span class="math notranslate nohighlight">\(E\)</span></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#the-orbital-radius">The Orbital Radius</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#from-the-laplace-runge-lenz-vector">From the Laplace-Runge-Lenz Vector</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#from-conserved-quantities">From Conserved Quantities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#from-the-radial-differential-equation">From the Radial Differential Equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-orbital-radius-r"><span class="sectnum">3.3</span> The Orbital Radius <span class="math notranslate nohighlight">\(r\)</span></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#from-the-laplace-runge-lenz-vector-mathbf-a"><span class="sectnum">3.3.1</span> From the Laplace-Runge-Lenz Vector <span class="math notranslate nohighlight">\(\mathbf{A}\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#from-the-ddot-r-equation"><span class="sectnum">3.3.2</span> From the <span class="math notranslate nohighlight">\(\ddot{r}\)</span> Equation</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#the-orbital-angle">The Orbital Angle</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#from-angular-momentum">From Angular Momentum</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#closed-orbits">Closed Orbits</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#open-orbits">Open Orbits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-orbital-angle-theta"><span class="sectnum">3.4</span> The Orbital Angle <span class="math notranslate nohighlight">\(\theta\)</span></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#from-angular-momentum-mathbf-h"><span class="sectnum">3.4.1</span> From Angular Momentum <span class="math notranslate nohighlight">\(\mathbf{h}\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#from-the-ddot-theta-equation"><span class="sectnum">3.4.2</span> From the <span class="math notranslate nohighlight">\(\ddot{\theta}\)</span> Equation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#using-angular-momentum-mathbf-h">Using Angular Momentum <span class="math notranslate nohighlight">\(\mathbf{h}\)</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-a-total-derivative">Using a Total Derivative</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#from-the-angular-differential-equation">From the Angular Differential Equation</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#kepler-s-equation">Kepler’s Equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trajectory-geometry"><span class="sectnum">3.5</span> Trajectory Geometry</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#closed-orbits-0-leqslant-e-1"><span class="sectnum">3.5.1</span> Closed Orbits <span class="math notranslate nohighlight">\((0 \leqslant e &lt; 1)\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#open-orbits-e-1"><span class="sectnum">3.5.2</span> Open Orbits <span class="math notranslate nohighlight">\((e &gt; 1)\)</span></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="orbital-elements.html">Orbital Elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#kepler-s-equation"><span class="sectnum">3.6</span> Kepler’s Equation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="orbital-elements.html"><span class="sectnum">4</span> Orbital Elements</a></li>
 </ul>
 
         </div>
@@ -90,7 +96,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Solution</li>
+      <li><span class="sectnum">3</span> Solution</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/kepler/solution.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -101,7 +107,7 @@
            <div itemprop="articleBody">
              
   <section id="solution">
-<h1>Solution<a class="headerlink" href="#solution" title="Permalink to this headline"></a></h1>
+<h1><span class="sectnum">3</span> Solution<a class="headerlink" href="#solution" title="Permalink to this headline"></a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">Author</dt>
 <dd class="field-odd"><ol class="upperalpha simple" start="13">
@@ -115,8 +121,50 @@
 different ways utilizing the now known special
 <a class="reference internal" href="properties.html#properties"><span class="std std-ref">properties</span></a> admitted by the system.</p>
 </div>
-<section id="coordinate-rotation">
-<h2>Coordinate Rotation<a class="headerlink" href="#coordinate-rotation" title="Permalink to this headline"></a></h2>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="auto-toc simple">
+<li><p><a class="reference internal" href="#defining-a-new-coordinate-system" id="id2"><span class="sectnum">3.1</span> Defining a New Coordinate System</a></p></li>
+<li><p><a class="reference internal" href="#polar-coordinates-r-theta" id="id3"><span class="sectnum">3.2</span> Polar Coordinates <span class="math notranslate nohighlight">\((r, \theta)\)</span></a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#differential-equations-for-r-and-theta" id="id4"><span class="sectnum">3.2.1</span> Differential Equations for <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span></a></p></li>
+<li><p><a class="reference internal" href="#rewriting-the-conserved-quantities-mathbf-h-mathbf-a-and-e" id="id5"><span class="sectnum">3.2.2</span> Rewriting the Conserved Quantities <span class="math notranslate nohighlight">\(\mathbf{h}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>, and <span class="math notranslate nohighlight">\(E\)</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#angular-momentum-mathbf-h" id="id6">Angular Momentum <span class="math notranslate nohighlight">\(\mathbf{h}\)</span></a></p></li>
+<li><p><a class="reference internal" href="#laplace-runge-lenz-vector-mathbf-a" id="id7">Laplace-Runge-Lenz Vector <span class="math notranslate nohighlight">\(\mathbf{A}\)</span></a></p></li>
+<li><p><a class="reference internal" href="#energy-e" id="id8">Energy <span class="math notranslate nohighlight">\(E\)</span></a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#the-orbital-radius-r" id="id9"><span class="sectnum">3.3</span> The Orbital Radius <span class="math notranslate nohighlight">\(r\)</span></a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#from-the-laplace-runge-lenz-vector-mathbf-a" id="id10"><span class="sectnum">3.3.1</span> From the Laplace-Runge-Lenz Vector <span class="math notranslate nohighlight">\(\mathbf{A}\)</span></a></p></li>
+<li><p><a class="reference internal" href="#from-the-ddot-r-equation" id="id11"><span class="sectnum">3.3.2</span> From the <span class="math notranslate nohighlight">\(\ddot{r}\)</span> Equation</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#the-orbital-angle-theta" id="id12"><span class="sectnum">3.4</span> The Orbital Angle <span class="math notranslate nohighlight">\(\theta\)</span></a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#from-angular-momentum-mathbf-h" id="id13"><span class="sectnum">3.4.1</span> From Angular Momentum <span class="math notranslate nohighlight">\(\mathbf{h}\)</span></a></p></li>
+<li><p><a class="reference internal" href="#from-the-ddot-theta-equation" id="id14"><span class="sectnum">3.4.2</span> From the <span class="math notranslate nohighlight">\(\ddot{\theta}\)</span> Equation</a></p>
+<ul>
+<li><p><a class="reference internal" href="#using-angular-momentum-mathbf-h" id="id15">Using Angular Momentum <span class="math notranslate nohighlight">\(\mathbf{h}\)</span></a></p></li>
+<li><p><a class="reference internal" href="#using-a-total-derivative" id="id16">Using a Total Derivative</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#trajectory-geometry" id="id17"><span class="sectnum">3.5</span> Trajectory Geometry</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#closed-orbits-0-leqslant-e-1" id="id18"><span class="sectnum">3.5.1</span> Closed Orbits <span class="math notranslate nohighlight">\((0 \leqslant e &lt; 1)\)</span></a></p></li>
+<li><p><a class="reference internal" href="#open-orbits-e-1" id="id19"><span class="sectnum">3.5.2</span> Open Orbits <span class="math notranslate nohighlight">\((e &gt; 1)\)</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#kepler-s-equation" id="id20"><span class="sectnum">3.6</span> Kepler’s Equation</a></p></li>
+</ul>
+</div>
+<section id="defining-a-new-coordinate-system">
+<h2><span class="sectnum">3.1</span> Defining a New Coordinate System<a class="headerlink" href="#defining-a-new-coordinate-system" title="Permalink to this headline"></a></h2>
 <p>Knowing that the motion <strong>must</strong> be 2-dimensional, we can choose a more
 convenient coordinate system via a coordinate rotation. Let this rotation
 be denoted <span class="math notranslate nohighlight">\(\mathbf{R} \in \mathrm{SO}(3)\)</span> such that</p>
@@ -128,8 +176,9 @@ a static rotation between the two coordinate systems such that</p>
 <div class="math notranslate nohighlight">
 \[\dot{\mathbf{R}} \equiv \mathbf{0}.\]</div>
 <p>The standard form of the equations of motion are consequently <em>unchanged</em>.</p>
-<section id="defining-a-new-coordinate-system">
-<h3>Defining a New Coordinate System<a class="headerlink" href="#defining-a-new-coordinate-system" title="Permalink to this headline"></a></h3>
+</section>
+<section id="polar-coordinates-r-theta">
+<h2><span class="sectnum">3.2</span> Polar Coordinates <span class="math notranslate nohighlight">\((r, \theta)\)</span><a class="headerlink" href="#polar-coordinates-r-theta" title="Permalink to this headline"></a></h2>
 <p>It is most convenient to utilize the conservation of angular momentum and
 the Laplace-Runge-Lenz vector to define the precise action of
 <span class="math notranslate nohighlight">\(\mathbf{R}\)</span> on the two coordinate systems of variables
@@ -162,9 +211,17 @@ set of polar coordinates <span class="math notranslate nohighlight">\((r, \theta
 been reduced from determining all 6 variables to only 2 by using
 properties admitted by the conserved quantities.</p>
 </div>
-</section>
-<section id="polar-coordinates">
-<h3>Polar Coordinates<a class="headerlink" href="#polar-coordinates" title="Permalink to this headline"></a></h3>
+<section id="differential-equations-for-r-and-theta">
+<h3><span class="sectnum">3.2.1</span> Differential Equations for <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span><a class="headerlink" href="#differential-equations-for-r-and-theta" title="Permalink to this headline"></a></h3>
+<div class="admonition-recall admonition">
+<p class="admonition-title">Recall</p>
+<p>The time rates of change of a vector <span class="math notranslate nohighlight">\(x \in \mathbb{R}^3\)</span> that’s
+expressed in a coordinate system <span class="math notranslate nohighlight">\(\mathcal{B}\)</span> rotating with
+angular velocity <span class="math notranslate nohighlight">\(\Omega\)</span> relative to another coordinate system
+<span class="math notranslate nohighlight">\(\mathcal{A}\)</span> follow</p>
+<div class="math notranslate nohighlight">
+\[\frac{dx^\mathcal{A}}{dt} = \frac{dx^\mathcal{B}}{dt} + \Omega \times x^\mathcal{B}\]</div>
+</div>
 <p>With polar coordinates <span class="math notranslate nohighlight">\((r, \theta)\)</span> being used to describe position
 within the orbit, it is <em>extremely</em> convenient to develop a new set of
 differential equations in the cylindrical basis. That is, exchange the
@@ -177,17 +234,6 @@ bodies (<span class="math notranslate nohighlight">\(\mathbf{r}\)</span>) into t
 simplifies dramatically to</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{r} = r\,\mathbf{e}_r.\]</div>
-<section id="differential-equations">
-<h4>Differential Equations<a class="headerlink" href="#differential-equations" title="Permalink to this headline"></a></h4>
-<div class="admonition-recall admonition">
-<p class="admonition-title">Recall</p>
-<p>The time rates of change of a vector <span class="math notranslate nohighlight">\(x \in \mathbb{R}^3\)</span> that’s
-expressed in a coordinate system <span class="math notranslate nohighlight">\(\mathcal{B}\)</span> rotating with
-angular velocity <span class="math notranslate nohighlight">\(\Omega\)</span> relative to another coordinate system
-<span class="math notranslate nohighlight">\(\mathcal{A}\)</span> follow</p>
-<div class="math notranslate nohighlight">
-\[\frac{dx^\mathcal{A}}{dt} = \frac{dx^\mathcal{B}}{dt} + \Omega \times x^\mathcal{B}\]</div>
-</div>
 <p>In calculating the <strong>inertial</strong> velocity and acceleration, the time
 derivatives <strong>must</strong> be calculated relative to the inertial frame.
 Here, the polar coordinate system is rotating with respect to the inertial
@@ -203,89 +249,107 @@ unknowns <span class="math notranslate nohighlight">\(r\)</span> and <span class
 <span class="eqno">(2)<a class="headerlink" href="#equation-polareom" title="Permalink to this equation"></a></span>\[\begin{split}\ddot{r} - r\dot{\theta}^2 &amp;= -\frac{\mu}{r^2} \\
 r\ddot{\theta} + 2\dot{r}\dot{\theta} &amp;= 0\end{split}\]</div>
 </section>
-<section id="conserved-quantities">
-<h4>Conserved Quantities<a class="headerlink" href="#conserved-quantities" title="Permalink to this headline"></a></h4>
+<section id="rewriting-the-conserved-quantities-mathbf-h-mathbf-a-and-e">
+<h3><span class="sectnum">3.2.2</span> Rewriting the Conserved Quantities <span class="math notranslate nohighlight">\(\mathbf{h}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>, and <span class="math notranslate nohighlight">\(E\)</span><a class="headerlink" href="#rewriting-the-conserved-quantities-mathbf-h-mathbf-a-and-e" title="Permalink to this headline"></a></h3>
 <p>The angular momentum <span class="math notranslate nohighlight">\(\mathbf{h}\)</span>,
-the Lorenz-Runge-Lenz vector <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>, and
+the Laplace-Runge-Lenz vector <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>, and
 the energy <span class="math notranslate nohighlight">\(E\)</span> are expressed in the polar coordinates
 <span class="math notranslate nohighlight">\((r, \theta)\)</span>, providing useful relations for analyzing the
 relative trajectory of the two bodies.</p>
-<section id="angular-momentum">
-<h5>Angular Momentum<a class="headerlink" href="#angular-momentum" title="Permalink to this headline"></a></h5>
+<section id="angular-momentum-mathbf-h">
+<h4>Angular Momentum <span class="math notranslate nohighlight">\(\mathbf{h}\)</span><a class="headerlink" href="#angular-momentum-mathbf-h" title="Permalink to this headline"></a></h4>
 <p>The angular momentum <span class="math notranslate nohighlight">\(\mathbf{h}\)</span> expressed in polar coordinates is</p>
-<div class="math notranslate nohighlight">
+<blockquote>
+<div><div class="math notranslate nohighlight">
 \[\begin{split}\mathbf{h} &amp;= \mathbf{r} \times \dot{\mathbf{r}} \\
 &amp;= \left(r\,\mathbf{e}_r\right) \times \left(\dot{r}\,\mathbf{e}_r + r \dot{\theta}\,\mathbf{e}_\theta\right) \\
 &amp;= r\dot{r} (\mathbf{e}_r \times \mathbf{e}_r) + r^2\dot{\theta} (\mathbf{e}_r \times \mathbf{e}_\theta) \\
 &amp;= r^2\dot{\theta}\,\mathbf{e}_z.\end{split}\]</div>
-<p>Since <span class="math notranslate nohighlight">\(\mathbf{h} = h \mathbf{e}_z\)</span>, the conservation of angular
-momentum provides</p>
+</div></blockquote>
+<p>Since <span class="math notranslate nohighlight">\(\mathbf{h} = h \mathbf{e}_z\)</span> by construction of <span class="math notranslate nohighlight">\(\mathbf{R}\)</span>, the conservation of angular momentum provides</p>
 <blockquote>
 <div><div class="math notranslate nohighlight" id="equation-amconservation">
 <span class="eqno">(3)<a class="headerlink" href="#equation-amconservation" title="Permalink to this equation"></a></span>\[r^2\dot{\theta} = h,\]</div>
 </div></blockquote>
 <p>where <span class="math notranslate nohighlight">\(h = |\mathbf{h}|\)</span> is a constant of motion.</p>
-<p>Since <span class="math notranslate nohighlight">\(h \geqslant 0\)</span> and <span class="math notranslate nohighlight">\(r^2 &gt; 0\)</span>, we know that
-<span class="math notranslate nohighlight">\(\dot{\theta} \geqslant 0\)</span> <strong>always</strong>. Note that if
-<span class="math notranslate nohighlight">\(\dot{\theta} \equiv 0\)</span>, then <span class="math notranslate nohighlight">\(\ddot{r} &lt; 0\)</span>, which means
-<span class="math notranslate nohighlight">\(r \to 0\)</span> in <em>finite</em> time — a finite-time singularity.
-Interesting motion therefore takes place for <span class="math notranslate nohighlight">\(\dot{\theta} &gt; 0\)</span>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="simple">
+<li><p>Since <span class="math notranslate nohighlight">\(h \geqslant 0\)</span> and <span class="math notranslate nohighlight">\(r^2 &gt; 0\)</span>, we know that
+<span class="math notranslate nohighlight">\(\dot{\theta} \geqslant 0\)</span> <strong>always</strong>.</p>
+<ul>
+<li><p>If <span class="math notranslate nohighlight">\(\dot{\theta} \equiv 0\)</span>, then <span class="math notranslate nohighlight">\(h \equiv 0\)</span> <a class="reference internal" href="#equation-amconservation">(3)</a> and <span class="math notranslate nohighlight">\(\ddot{r} &lt; 0\)</span> <a class="reference internal" href="#equation-polareom">(2)</a>,
+which means <span class="math notranslate nohighlight">\(r \to 0\)</span> in <em>finite</em> time.</p></li>
+</ul>
+</li>
+<li><p>Interesting motion therefore takes place for <span class="math notranslate nohighlight">\(\dot{\theta} &gt; 0\)</span>.</p></li>
+</ul>
+</div>
 </section>
-<section id="the-laplace-runge-lenz-vector">
-<h5>The Laplace-Runge-Lenz Vector<a class="headerlink" href="#the-laplace-runge-lenz-vector" title="Permalink to this headline"></a></h5>
-<p>The Lorenz-Runge-Lenz vector <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> expressed in polar
-coordinates is</p>
+<section id="laplace-runge-lenz-vector-mathbf-a">
+<h4>Laplace-Runge-Lenz Vector <span class="math notranslate nohighlight">\(\mathbf{A}\)</span><a class="headerlink" href="#laplace-runge-lenz-vector-mathbf-a" title="Permalink to this headline"></a></h4>
+<dl class="simple">
+<dt>The Laplace-Runge-Lenz vector <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> expressed in polar</dt><dd><p>coordinates is</p>
+</dd>
+</dl>
 <div class="math notranslate nohighlight">
 \[\begin{split}\mathbf{A} &amp;= \dot{\mathbf{r}} \times \mathbf{h} - \frac{\mu}{r}\mathbf{r} \\
 &amp;= (\dot{r}\,\mathbf{e}_r + r\dot{\theta}\,\mathbf{e}_\theta) \times (r^2\dot{\theta}\,\mathbf{e}_z) - \frac{\mu}{r} (r \,\mathbf{e}_r) \\
 &amp;= r^2\dot{r}\dot{\theta}(\mathbf{e}_r \times \mathbf{e}_z) + r^3\dot{\theta}^2(\mathbf{e}_\theta \times \mathbf{e}_z) - \mu\,\mathbf{e}_r \\
 &amp;= r^2\dot{r}\dot{\theta}(-\mathbf{e}_\theta) + r^3\dot{\theta}^2(\mathbf{e}_r) - \mu\,\mathbf{e}_r \\
 &amp;= (r^3\dot{\theta}^2 - \mu)\mathbf{e}_r - r^2\dot{r}\dot{\theta}\,\mathbf{e}_\theta \\
-&amp;= A\,\mathbf{e}_x \\
-&amp;= A (\cos\theta\,\mathbf{e}_r - \sin\theta\,\mathbf{e}_\theta).\end{split}\]</div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>The Lorenz-Runge-Lenz vector provides</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}r^3\dot{\theta}^2 - \mu &amp;= A\cos\theta \\
+&amp;= A \underbrace{(\cos\theta\,\mathbf{e}_r - \sin\theta\,\mathbf{e}_\theta)}_{\mathbf{e}_x}.\end{split}\]</div>
+<p>The last equality holds by construction of <span class="math notranslate nohighlight">\(\mathbf{R}\)</span>.</p>
+<p>To summarize, we get two scalar equations from the invariance of the Laplace-Runge-Lenz vector,</p>
+<div class="math notranslate nohighlight" id="equation-laplacerungelenz">
+<span class="eqno">(4)<a class="headerlink" href="#equation-laplacerungelenz" title="Permalink to this equation"></a></span>\[\begin{split}r^3\dot{\theta}^2 - \mu &amp;= A\cos\theta \\
 r^2\dot{r}\dot{\theta} &amp;= A\sin\theta,\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(A = |\mathbf{A}|\)</span> is a constant of motion.</p>
-</div>
-<p>Paired with the conservation of angular momentum, these two
-statements provide <em>very</em> direct expressions of <span class="math notranslate nohighlight">\(r\)</span> and
-<span class="math notranslate nohighlight">\(\dot{r}\)</span>.</p>
-</section>
-<section id="energy">
-<h5>Energy<a class="headerlink" href="#energy" title="Permalink to this headline"></a></h5>
-<p>The energy <span class="math notranslate nohighlight">\(E\)</span> expressed in polar coordinates is</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}E &amp;= \frac{v^2}{2} - \frac{\mu}{r} \\
-&amp;= \frac{\dot{\mathbf{r}} \cdot \dot{\mathbf{r}}}{2} - \frac{\mu}{r} \\
-&amp;= \frac{1}{2}(\dot{r}^2 + r^2\dot{\theta}^2) - \frac{\mu}{r}.\end{split}\]</div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>The conservation of energy provides</p>
-<div class="math notranslate nohighlight">
-\[E = \frac{1}{2}(\dot{r}^2 + r^2\dot{\theta}^2) - \frac{\mu}{r},\]</div>
-<p>where <span class="math notranslate nohighlight">\(E\)</span> is a constant of motion.</p>
+<p>Paired with the conservation of angular momentum <a class="reference internal" href="#equation-amconservation">(3)</a>,
+these two statements provide <em>very</em> direct expressions of <span class="math notranslate nohighlight">\(r\)</span> and
+<span class="math notranslate nohighlight">\(\dot{r}\)</span>.</p>
 </div>
-<p>Paired with angular momentum, this expression “integrates” the
+</section>
+<section id="energy-e">
+<h4>Energy <span class="math notranslate nohighlight">\(E\)</span><a class="headerlink" href="#energy-e" title="Permalink to this headline"></a></h4>
+<p>The energy <span class="math notranslate nohighlight">\(E\)</span> expressed in polar coordinates is</p>
+<div class="math notranslate nohighlight" id="equation-eq-energy">
+<span class="eqno">(5)<a class="headerlink" href="#equation-eq-energy" title="Permalink to this equation"></a></span>\[E = \frac{1}{2}\underbrace{(\dot{r}^2 + r^2\dot{\theta}^2)}_{v^2 = \dot{\mathbf{r}} \cdot \dot{\mathbf{r}}} - \frac{\mu}{r}.\]</div>
+<p>where <span class="math notranslate nohighlight">\(E\)</span> is a constant of motion.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="simple">
+<li><p>Paired with angular momentum <a class="reference internal" href="#equation-amconservation">(3)</a>, this expression “integrates” the
 <span class="math notranslate nohighlight">\(\ddot{r}\)</span> equation of motion with integration constant
-<span class="math notranslate nohighlight">\(2E\)</span>.
-Similarly, this relation provides another expression for
+<span class="math notranslate nohighlight">\(2E\)</span>.</p></li>
+<li><p>Similarly, this relation provides another expression for
 <span class="math notranslate nohighlight">\(\dot{\theta}\)</span> in addition to that from the conservation of
 angular momentum using the knowledge that <span class="math notranslate nohighlight">\(\dot{\theta} &gt; 0\)</span>
-for interesting motion.</p>
+for interesting motion.</p></li>
+</ul>
+</div>
 </section>
 </section>
 </section>
-</section>
-<section id="the-orbital-radius">
-<h2>The Orbital Radius<a class="headerlink" href="#the-orbital-radius" title="Permalink to this headline"></a></h2>
+<section id="the-orbital-radius-r">
+<h2><span class="sectnum">3.3</span> The Orbital Radius <span class="math notranslate nohighlight">\(r\)</span><a class="headerlink" href="#the-orbital-radius-r" title="Permalink to this headline"></a></h2>
 <p>In this coordinate system with variables <span class="math notranslate nohighlight">\((x, y, z)\)</span>, the orbital
-radius <span class="math notranslate nohighlight">\(r\)</span> is obtainable using several different methods.</p>
-<section id="from-the-laplace-runge-lenz-vector">
-<h3>From the Laplace-Runge-Lenz Vector<a class="headerlink" href="#from-the-laplace-runge-lenz-vector" title="Permalink to this headline"></a></h3>
+radius <span class="math notranslate nohighlight">\(r\)</span> is obtainable using several different methods.
+In all cases, the orbital radius is</p>
+<div class="math notranslate nohighlight" id="equation-orbitalradius">
+<span class="eqno">(6)<a class="headerlink" href="#equation-orbitalradius" title="Permalink to this equation"></a></span>\[r = \frac{h^2}{\mu + A\cos\theta},\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mu\)</span> depends only on the masses of the two bodies and <span class="math notranslate nohighlight">\(h\)</span>, <span class="math notranslate nohighlight">\(A\)</span> are
+constants of motion.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The radius <span class="math notranslate nohighlight">\(r\)</span> is a <strong>known</strong> function of the angle <span class="math notranslate nohighlight">\(\theta\)</span> and is
+parameterized by constants determined by the system (<span class="math notranslate nohighlight">\(\mu\)</span>) and
+initial conditions (<span class="math notranslate nohighlight">\(h\)</span> and <span class="math notranslate nohighlight">\(A\)</span>).</p>
+</div>
+<section id="from-the-laplace-runge-lenz-vector-mathbf-a">
+<h3><span class="sectnum">3.3.1</span> From the Laplace-Runge-Lenz Vector <span class="math notranslate nohighlight">\(\mathbf{A}\)</span><a class="headerlink" href="#from-the-laplace-runge-lenz-vector-mathbf-a" title="Permalink to this headline"></a></h3>
 <div class="admonition-recall admonition">
 <p class="admonition-title">Recall</p>
 <p>For any <span class="math notranslate nohighlight">\(x, y, z \in \mathbb{R}^3\)</span>, the scalar triple product
@@ -297,7 +361,7 @@ satisfies</p>
 orbital radius <span class="math notranslate nohighlight">\(r\)</span> as a function of the polar coordinate
 <span class="math notranslate nohighlight">\(\theta\)</span> <em>very</em> directly.</p>
 <p>Since <span class="math notranslate nohighlight">\(\theta\)</span> is measured from the <span class="math notranslate nohighlight">\(x\)</span> axis, which is aligned
-with the Laplace-Runge-Lenz vector, then one can see that</p>
+with the Laplace-Runge-Lenz vector <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>, one can see that</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\mathbf{A} \cdot \mathbf{r} &amp;= \left(\dot{\mathbf{r}} \times \mathbf{h} - \frac{\mu}{r}\mathbf{r}\right) \cdot \mathbf{r} \\
 &amp;= (\dot{\mathbf{r}} \times \mathbf{h}) \cdot \mathbf{r} - \left(\frac{\mu}{r}\mathbf{r}\right) \cdot \mathbf{r} \\
@@ -306,53 +370,31 @@ with the Laplace-Runge-Lenz vector, then one can see that</p>
 &amp;= \mathbf{h} \cdot \mathbf{h} - \mu r \\
 &amp;= h^2 - \mu r \\
 &amp;= A r \cos\theta.\end{split}\]</div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>The orbital radius <span class="math notranslate nohighlight">\(r\)</span> found directly from manipulating the
-expression of the Laplace-Runge-Lenz vector expressed in polar
-coordinates is</p>
+<p>Alternatively, knowing <a class="reference internal" href="#equation-amconservation">(3)</a> and combining it with <a class="reference internal" href="#equation-laplacerungelenz">(4)</a>
+yields the radius <span class="math notranslate nohighlight">\(r\)</span> even more simply.</p>
 <div class="math notranslate nohighlight">
-\[r = \frac{h^2}{\mu + A\cos\theta}.\]</div>
-</div>
+\[\begin{split}A\cos\theta &amp;= r^3\dot{\theta}^2 - \mu \\
+&amp;= \frac{h^2}{r} - \mu.\end{split}\]</div>
+<p>In either approach, the radius <span class="math notranslate nohighlight">\(r\)</span> is obtained as a function of the angle <span class="math notranslate nohighlight">\(\theta\)</span> in accordance with <a class="reference internal" href="#equation-orbitalradius">(6)</a>. <span class="math notranslate nohighlight">\(\blacksquare\)</span></p>
 </section>
-<section id="from-conserved-quantities">
-<h3>From Conserved Quantities<a class="headerlink" href="#from-conserved-quantities" title="Permalink to this headline"></a></h3>
-<p>Knowing from the conservation of angular momentum that
-<span class="math notranslate nohighlight">\(r^2\dot{\theta} = h\)</span>, the <span class="math notranslate nohighlight">\(\mathbf{e}_r\)</span> component of
-the Laplace-Runge-Lenz vector allows one to algebraically solve for the
-radius. That is,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}0 &amp;= r^3\dot{\theta}^2 - \mu - A\cos\theta \\
-&amp;= \frac{h^2}{r} - \mu - A\cos\theta.\end{split}\]</div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>The orbital radius <span class="math notranslate nohighlight">\(r\)</span> found from analyzing a conserved component
-of the Laplace-Runge-Lenz vector expressed in polar coordinates,
-combined with the conservation of angular momentum in polar
-coordinates, is</p>
-<div class="math notranslate nohighlight">
-\[r = \frac{h^2}{\mu + A\cos\theta}.\]</div>
-</div>
-</section>
-<section id="from-the-radial-differential-equation">
-<h3>From the Radial Differential Equation<a class="headerlink" href="#from-the-radial-differential-equation" title="Permalink to this headline"></a></h3>
-<p>Using the conservation of angular momentum, the <span class="math notranslate nohighlight">\(\ddot{r}\)</span> equation
-of motion provides</p>
+<section id="from-the-ddot-r-equation">
+<h3><span class="sectnum">3.3.2</span> From the <span class="math notranslate nohighlight">\(\ddot{r}\)</span> Equation<a class="headerlink" href="#from-the-ddot-r-equation" title="Permalink to this headline"></a></h3>
+<p>Combined with the conservation of angular momentum <a class="reference internal" href="#equation-amconservation">(3)</a>, the <span class="math notranslate nohighlight">\(\ddot{r}\)</span> equation of motion <a class="reference internal" href="#equation-polareom">(2)</a> provides</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\ddot{r} &amp;= r\dot{\theta}^2 - \frac{\mu}{r^2} \\
 &amp;= \frac{h^2}{r^3} - \frac{\mu}{r^2}.\end{split}\]</div>
 <p>We wish to convert the derivatives in time <span class="math notranslate nohighlight">\(t\)</span> to those in the angular
 coordinate <span class="math notranslate nohighlight">\(\theta\)</span> to understand the geometry of the trajectory in
-polar coordinates. Using the conservation of angular momentum again, we see</p>
+polar coordinates. Using the conservation of angular momentum <a class="reference internal" href="#equation-amconservation">(3)</a> repeatedly, we see</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\frac{d^2 r}{d\theta^2} &amp;= \frac{d}{d\theta}\left(\frac{dr}{d\theta}\right) \\
 &amp;= \frac{d}{d\theta}\left(\frac{\dot{r}}{\dot{\theta}}\right) \\
 &amp;= \frac{d}{d\theta}\left(\frac{r^2\dot{r}}{h}\right) \\
 &amp;= \frac{1}{\dot{\theta}}\frac{d}{dt}\left(\frac{r^2\dot{r}}{h}\right) \\
 &amp;= \frac{r^2}{h^2}(2r\dot{r}^2 + r^2 \ddot{r}) \\
-&amp;= \frac{r^2}{h^2}\left(2r\left[\frac{h}{r^2}\frac{dr}{d\theta}\right]^2 + r^2 \left[\frac{h^2}{r^3} - \frac{\mu}{r^2}\right]\right) \\
-&amp;= \frac{r^2}{h^2}\left(2\frac{h^2}{r^3}\left[\frac{dr}{d\theta}\right]^2 + \frac{h^2}{r} - \mu\right) \\
-&amp;= \frac{2}{r}\left[\frac{dr}{d\theta}\right]^2 - \frac{\mu r^2}{h^2} + r.\end{split}\]</div>
+&amp;= \frac{r^2}{h^2}\left(2r\left(\frac{h}{r^2}\frac{dr}{d\theta}\right)^{\!2} + r^2 \left(\frac{h^2}{r^3} - \frac{\mu}{r^2}\right)\right) \\
+&amp;= \frac{r^2}{h^2}\left(2\frac{h^2}{r^3}\left(\frac{dr}{d\theta}\right)^{\!2} + \frac{h^2}{r} - \mu\right) \\
+&amp;= \frac{2}{r}\left(\frac{dr}{d\theta}\right)^{\!2} - \frac{\mu r^2}{h^2} + r.\end{split}\]</div>
 <p>Despite offering a description of the trajectory’s geometry in space as
 opposed to time, <em>this</em> differential equation still proves to be formidable
 in obtaining a solution. However, a final, clever change of variables <em>will</em>
@@ -363,8 +405,8 @@ yield a useful relation by letting <span class="math notranslate nohighlight">\(
 &amp;= -\frac{1}{h}\frac{d\dot{r}}{d\theta} \\
 &amp;= -\frac{1}{h}\frac{d}{d\theta}\left(\frac{dr}{d\theta}\dot{\theta}\right) \\
 &amp;= -\frac{1}{h}\frac{d}{d\theta}\left(\frac{dr}{d\theta}\frac{h}{r^2}\right) \\
-&amp;= -\frac{1}{r^2}\frac{d^2r}{d\theta^2} + \frac{2}{r^3}\left[\frac{dr}{d\theta}\right]^2 \\
-&amp;= -\frac{1}{r^2}\left[\frac{2}{r}\left[\frac{dr}{d\theta}\right]^2 - \frac{\mu r^2}{h^2} + r\right] + \frac{2}{r^3}\left[\frac{dr}{d\theta}\right]^2 \\
+&amp;= -\frac{1}{r^2}\frac{d^2r}{d\theta^2} + \frac{2}{r^3}\left(\frac{dr}{d\theta}\right)^{\!2} \\
+&amp;= -\frac{1}{r^2}\left(\frac{2}{r}\left(\frac{dr}{d\theta}\right)^{\!2} - \frac{\mu r^2}{h^2} + r\right) + \frac{2}{r^3}\left(\frac{dr}{d\theta}\right)^{\!2} \\
 &amp;= \frac{\mu}{h^2} - \frac{1}{r} \\
 &amp;= \frac{\mu}{h^2} - \eta.\end{split}\]</div>
 <p>With this transformation, we see that we are offered something describing
@@ -390,9 +432,10 @@ shift the angle <span class="math notranslate nohighlight">\(\theta\)</span> to 
 is naturally useful for the transformation between the <span class="math notranslate nohighlight">\((X, Y, Z)\)</span>
 and <span class="math notranslate nohighlight">\((x, y, z)\)</span> coordinate systems.)</p>
 <p>To determine the constant <span class="math notranslate nohighlight">\(C\)</span>, we can calculate the time derivative
-of the orbital radius exactly and then turn to the
-<span class="math notranslate nohighlight">\(\mathbf{e}_\theta\)</span> component of the Laplace-Runge-Lenz vector
-to compare expressions for <span class="math notranslate nohighlight">\(\dot{r}.\)</span></p>
+of the orbital radius exactly and then turn to the invariance of the
+Laplace-Runge-Lenz vector <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> <a class="reference internal" href="#equation-laplacerungelenz">(4)</a> combined with
+conservation of angular momentum <a class="reference internal" href="#equation-amconservation">(3)</a> to compare expressions
+for <span class="math notranslate nohighlight">\(\dot{r}.\)</span></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\dot{r} &amp;= \frac{C\sin\theta}{(\mu + (C/h^2) \cos\theta)^2}\dot{\theta} \\
 &amp;= \left(\frac{r^2}{h^4}C\sin\theta\right)\left(\frac{h}{r^2}\right) \\
@@ -402,19 +445,11 @@ to compare expressions for <span class="math notranslate nohighlight">\(\dot{r}.
 is expressed in terms of known quantities as</p>
 <div class="math notranslate nohighlight">
 \[C = A h^2.\]</div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>The orbital radius <span class="math notranslate nohighlight">\(r\)</span> found directly from utilizing the
-conservation of angular momentum to solve its governing differential
-equation and evaluating the two constants of integration using the
-Laplace-Runge-Lenz vector yields</p>
-<div class="math notranslate nohighlight">
-\[r = \frac{h^2}{\mu + A\cos\theta}.\]</div>
-</div>
+<p>From an analysis of pure differential equations using only the conservation of momentum <a class="reference internal" href="#equation-amconservation">(3)</a>, the orbital radius <span class="math notranslate nohighlight">\(r\)</span> is obtained as a function of the angle <span class="math notranslate nohighlight">\(\theta\)</span> in accordance with <a class="reference internal" href="#equation-orbitalradius">(6)</a>. <span class="math notranslate nohighlight">\(\blacksquare\)</span></p>
 </section>
 </section>
-<section id="the-orbital-angle">
-<h2>The Orbital Angle<a class="headerlink" href="#the-orbital-angle" title="Permalink to this headline"></a></h2>
+<section id="the-orbital-angle-theta">
+<h2><span class="sectnum">3.4</span> The Orbital Angle <span class="math notranslate nohighlight">\(\theta\)</span><a class="headerlink" href="#the-orbital-angle-theta" title="Permalink to this headline"></a></h2>
 <p>Knowing the orbital radius <span class="math notranslate nohighlight">\(r\)</span> to be a function of <span class="math notranslate nohighlight">\(\theta\)</span>,
 we would most like to know the angular coordinate <span class="math notranslate nohighlight">\(\theta\)</span> as a
 function of time <span class="math notranslate nohighlight">\(t\)</span>. This would fully complete the parameterization
@@ -426,29 +461,64 @@ However, unlike the orbital radius, these expressions prove to be
 difficult in obtaining <span class="math notranslate nohighlight">\(\theta = \theta(t).\)</span> Instead, we can obtain
 <span class="math notranslate nohighlight">\(t = t(\theta).\)</span>
 As we shall see, inverting this function <span class="math notranslate nohighlight">\(t\)</span> is, indeed, difficult.</p>
-<section id="from-angular-momentum">
-<h3>From Angular Momentum<a class="headerlink" href="#from-angular-momentum" title="Permalink to this headline"></a></h3>
+<section id="from-angular-momentum-mathbf-h">
+<h3><span class="sectnum">3.4.1</span> From Angular Momentum <span class="math notranslate nohighlight">\(\mathbf{h}\)</span><a class="headerlink" href="#from-angular-momentum-mathbf-h" title="Permalink to this headline"></a></h3>
 <p>The conservation of angular momentum states <span class="math notranslate nohighlight">\(r^2\dot{\theta} = h,\)</span>
 but the orbital radius <span class="math notranslate nohighlight">\(r\)</span> is now a <strong>known</strong> function of <strong>only</strong>
 <span class="math notranslate nohighlight">\(\theta.\)</span> Thus, we can write</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\dot{\theta} &amp;= \frac{h}{r^2} \\
-&amp;= \frac{h}{h^4/(\mu + A\cos\theta)^2} \\
-&amp;= \frac{\mu^2}{h^3} \big(1 + (A/\mu)\cos\theta\big)^2 \\
-&amp;= \frac{\mu^2}{h^3} \big(1 + e\cos\theta\big)^2,\end{split}\]</div>
-<p>where, for brevity, we have defined <span class="math notranslate nohighlight">\(e = A/\mu.\)</span>
-(This quantity <span class="math notranslate nohighlight">\(e\)</span> is called the <em>orbital eccentricity</em>, which
-describes the geometry of the trajectory traced by <span class="math notranslate nohighlight">\(r\)</span> as we will
-see.)</p>
-<p>Now, naively integrating the conservation of angular momentum obtains</p>
-<div class="math notranslate nohighlight">
-\[\int_{\theta_0}^\theta \frac{d\theta}{(1 + e\cos\theta)^2} = \frac{\mu^2}{h^3}\int_{t_0}^t dt,\]</div>
+&amp;= \frac{(\mu + A\cos\theta)^2}{h^3},\end{split}\]</div>
+<p>which provides a separable equation for <span class="math notranslate nohighlight">\(\theta\)</span>.
+Naively integrating obtains</p>
+<div class="math notranslate nohighlight" id="equation-eq-naiveintegration">
+<span class="eqno">(7)<a class="headerlink" href="#equation-eq-naiveintegration" title="Permalink to this equation"></a></span>\[\int_{\theta_0}^\theta \frac{d\theta'}{(\mu + A\cos\theta')^2} = \frac{1}{h^3}\int_{t_0}^t dt',\]</div>
 <p>but this expression turns out <em>not</em> to be entirely true for <em>any</em> arbitrary
-<span class="math notranslate nohighlight">\(\theta\)</span> since we only know that <span class="math notranslate nohighlight">\(e \geqslant 0\)</span> (i.e. it is
-possible that <span class="math notranslate nohighlight">\(e \geqslant 1,\)</span> in which case the integrand becomes
+<span class="math notranslate nohighlight">\(\theta\)</span> since we only know that <span class="math notranslate nohighlight">\(\mu, A \geqslant 0\)</span> (i.e. it is
+possible that <span class="math notranslate nohighlight">\(A \geqslant \mu,\)</span> in which case the integrand becomes
 periodically undefined).</p>
-<section id="closed-orbits">
-<h4>Closed Orbits<a class="headerlink" href="#closed-orbits" title="Permalink to this headline"></a></h4>
+<p>This relation is developed further when exploring the <a class="reference internal" href="#trajectory-geometry"><span class="std std-ref">trajectory’s geometry</span></a>.</p>
+</section>
+<section id="from-the-ddot-theta-equation">
+<h3><span class="sectnum">3.4.2</span> From the <span class="math notranslate nohighlight">\(\ddot{\theta}\)</span> Equation<a class="headerlink" href="#from-the-ddot-theta-equation" title="Permalink to this headline"></a></h3>
+<p>Equation <a class="reference internal" href="#equation-polareom">(2)</a> provides several different ways to go about
+trying to obtain <span class="math notranslate nohighlight">\(\theta = \theta(t)\)</span>.</p>
+<section id="using-angular-momentum-mathbf-h">
+<h4>Using Angular Momentum <span class="math notranslate nohighlight">\(\mathbf{h}\)</span><a class="headerlink" href="#using-angular-momentum-mathbf-h" title="Permalink to this headline"></a></h4>
+</section>
+<section id="using-a-total-derivative">
+<h4>Using a Total Derivative<a class="headerlink" href="#using-a-total-derivative" title="Permalink to this headline"></a></h4>
+<p>Using the known solution for the orbital radius <span class="math notranslate nohighlight">\(r\)</span> and the
+conservation of the Laplace-Runge-Lenz vector <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> along
+with the conservation of angular momentum, the
+<span class="math notranslate nohighlight">\(\ddot{\theta}\)</span> equation of motion provides</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}0 &amp;= \ddot{\theta} + 2\frac{\dot{r}}{r}\dot{\theta} \\
+&amp;= \ddot{\theta} + 2\frac{(A/h)\sin\theta}{h^2/(\mu + A\cos\theta)}\dot{\theta} \\
+&amp;= \ddot{\theta} + 2\frac{A}{h^3}(\mu + A\cos\theta)\sin\theta\dot{\theta} \\
+&amp;= \ddot{\theta} + 2\frac{\mu^2 e}{h^3}(1 + e\cos\theta)\sin\theta\dot{\theta} \\
+&amp;= \frac{d}{dt}\left(\dot{\theta} - 2\frac{\mu^2}{h^3}\left(e\cos\theta + \frac{e^2}{2}\cos^2\theta\right)\right).\end{split}\]</div>
+<p>We have effectively integrated the equation of motion once, picking up an
+integration constant <span class="math notranslate nohighlight">\(C,\)</span> which we can evaluate using the
+conservation of angular momentum or the conservation of energy.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\dot{\theta} &amp;= 2\frac{\mu^2}{h^3}\left(e\cos\theta + \frac{e^2}{2}\cos^2\theta\right) + C \\
+&amp;= \frac{h}{r^2} \\
+&amp;= \frac{\mu^2}{h^3}(1 + e\cos\theta)^2 \\
+&amp;= \frac{\mu^2}{h^3}(1 + 2e\cos\theta + e^2\cos^2\theta) \\
+&amp;= 2\frac{\mu^2}{h^3}\left(e\cos\theta + \frac{e^2}{2}\cos^2\theta\right) + \frac{\mu^2}{h^3}.\end{split}\]</div>
+<p>Thus, the constant is <span class="math notranslate nohighlight">\(C = \mu^2/h^3,\)</span> providing</p>
+<div class="math notranslate nohighlight">
+\[\dot{\theta} = \frac{\mu^2}{h^3}(1 + e\cos\theta)^2.\]</div>
+<p>The outcome is identical to that obtained from analyzing the conservation
+of angular momentum directly.</p>
+</section>
+</section>
+</section>
+<section id="trajectory-geometry">
+<h2><span class="sectnum">3.5</span> Trajectory Geometry<a class="headerlink" href="#trajectory-geometry" title="Permalink to this headline"></a></h2>
+<section id="closed-orbits-0-leqslant-e-1">
+<h3><span class="sectnum">3.5.1</span> Closed Orbits <span class="math notranslate nohighlight">\((0 \leqslant e &lt; 1)\)</span><a class="headerlink" href="#closed-orbits-0-leqslant-e-1" title="Permalink to this headline"></a></h3>
 <p>With this restriction in mind (<span class="math notranslate nohighlight">\(e &lt; 1\)</span>), we can evaluate this integral
 in terms of elementary functions.</p>
 <div class="math notranslate nohighlight">
@@ -481,8 +551,8 @@ the conservation of angular momentum.
 The motion in this case has a constant radius (<span class="math notranslate nohighlight">\(h^2/\mu\)</span>) and
 a constant angular rate (<span class="math notranslate nohighlight">\(\mu^2/h^3\)</span>) — a circle.</p>
 </section>
-<section id="open-orbits">
-<h4>Open Orbits<a class="headerlink" href="#open-orbits" title="Permalink to this headline"></a></h4>
+<section id="open-orbits-e-1">
+<h3><span class="sectnum">3.5.2</span> Open Orbits <span class="math notranslate nohighlight">\((e &gt; 1)\)</span><a class="headerlink" href="#open-orbits-e-1" title="Permalink to this headline"></a></h3>
 <p>For other trajectories (<span class="math notranslate nohighlight">\(e \geqslant 1\)</span>), the domain of <span class="math notranslate nohighlight">\(\theta\)</span>
 is necessarily restricted to maintain physical meaning such that</p>
 <div class="math notranslate nohighlight">
@@ -544,36 +614,8 @@ depending on the (nonnegative) parameter <span class="math notranslate nohighlig
 </div>
 </section>
 </section>
-<section id="from-the-angular-differential-equation">
-<h3>From the Angular Differential Equation<a class="headerlink" href="#from-the-angular-differential-equation" title="Permalink to this headline"></a></h3>
-<p>Using the known solution for the orbital radius <span class="math notranslate nohighlight">\(r\)</span> and the
-conservation of the Lorenz-Runge-Lenz vector <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> along
-with the conservation of angular momentum, the
-<span class="math notranslate nohighlight">\(\ddot{\theta}\)</span> equation of motion provides</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}0 &amp;= \ddot{\theta} + 2\frac{\dot{r}}{r}\dot{\theta} \\
-&amp;= \ddot{\theta} + 2\frac{(A/h)\sin\theta}{h^2/(\mu + A\cos\theta)}\dot{\theta} \\
-&amp;= \ddot{\theta} + 2\frac{A}{h^3}(\mu + A\cos\theta)\sin\theta\dot{\theta} \\
-&amp;= \ddot{\theta} + 2\frac{\mu^2 e}{h^3}(1 + e\cos\theta)\sin\theta\dot{\theta} \\
-&amp;= \frac{d}{dt}\left(\dot{\theta} - 2\frac{\mu^2}{h^3}\left(e\cos\theta + \frac{e^2}{2}\cos^2\theta\right)\right).\end{split}\]</div>
-<p>We have effectively integrated the equation of motion once, picking up an
-integration constant <span class="math notranslate nohighlight">\(C,\)</span> which we can evaluate using the
-conservation of angular momentum.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\dot{\theta} &amp;= 2\frac{\mu^2}{h^3}\left(e\cos\theta + \frac{e^2}{2}\cos^2\theta\right) + C \\
-&amp;= \frac{h}{r^2} \\
-&amp;= \frac{\mu^2}{h^3}(1 + e\cos\theta)^2 \\
-&amp;= \frac{\mu^2}{h^3}(1 + 2e\cos\theta + e^2\cos^2\theta) \\
-&amp;= 2\frac{\mu^2}{h^3}\left(e\cos\theta + \frac{e^2}{2}\cos^2\theta\right) + \frac{\mu^2}{h^3}.\end{split}\]</div>
-<p>Thus, the constant is <span class="math notranslate nohighlight">\(C = \mu^2/h^3,\)</span> providing</p>
-<div class="math notranslate nohighlight">
-\[\dot{\theta} = \frac{\mu^2}{h^3}(1 + e\cos\theta)^2.\]</div>
-<p>The outcome is identical to that obtained from analyzing the conservation
-of angular momentum directly.</p>
-</section>
-</section>
 <section id="kepler-s-equation">
-<h2>Kepler’s Equation<a class="headerlink" href="#kepler-s-equation" title="Permalink to this headline"></a></h2>
+<h2><span class="sectnum">3.6</span> Kepler’s Equation<a class="headerlink" href="#kepler-s-equation" title="Permalink to this headline"></a></h2>
 <p>Unfortunately, we cannot express <span class="math notranslate nohighlight">\(\theta = \theta(t)\)</span> analytically
 for any general <span class="math notranslate nohighlight">\(e\)</span> analyzing conserved quantities and the governing
 differential equation. We are therefore forced to turn to other methods.</p>
@@ -585,8 +627,8 @@ differential equation. We are therefore forced to turn to other methods.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="properties.html" class="btn btn-neutral float-left" title="Properties" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="orbital-elements.html" class="btn btn-neutral float-right" title="Orbital Elements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="properties.html" class="btn btn-neutral float-left" title="2 Properties" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="orbital-elements.html" class="btn btn-neutral float-right" title="4 Orbital Elements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

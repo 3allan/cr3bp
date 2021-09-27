@@ -1,5 +1,8 @@
 .. default-role:: math
 
+.. sectnum::
+    :start: 1
+
 ========
 Overview
 ========
