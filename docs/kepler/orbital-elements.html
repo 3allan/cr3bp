@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>4 Orbital Elements &mdash; CR3BP  documentation</title>
+  <title>5 Orbital Elements &mdash; CR3BP  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/rtd_eq.css" type="text/css" />
@@ -22,7 +22,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="3 Solution" href="solution.html" /> 
+    <link rel="next" title="1 Overview" href="../multibody/overview.html" />
+    <link rel="prev" title="4 Trajectory Geometry" href="trajectory-geometry.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -45,7 +46,12 @@
 <li class="toctree-l1"><a class="reference internal" href="overview.html"><span class="sectnum">1</span> Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="properties.html"><span class="sectnum">2</span> Properties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="solution.html"><span class="sectnum">3</span> Solution</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="sectnum">4</span> Orbital Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trajectory-geometry.html"><span class="sectnum">4</span> Trajectory Geometry</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="sectnum">5</span> Orbital Elements</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Multibody Dynamics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../multibody/overview.html"><span class="sectnum">1</span> Overview</a></li>
 </ul>
 
         </div>
@@ -62,7 +68,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li><span class="sectnum">4</span> Orbital Elements</li>
+      <li><span class="sectnum">5</span> Orbital Elements</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/kepler/orbital-elements.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -73,7 +79,7 @@
            <div itemprop="articleBody">
              
   <section id="orbital-elements">
-<h1><span class="sectnum">4</span> Orbital Elements<a class="headerlink" href="#orbital-elements" title="Permalink to this headline"></a></h1>
+<h1><span class="sectnum">5</span> Orbital Elements<a class="headerlink" href="#orbital-elements" title="Permalink to this headline"></a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">Author</dt>
 <dd class="field-odd"><ol class="upperalpha simple" start="13">
@@ -97,19 +103,19 @@ according to</p>
 <div class="math notranslate nohighlight">
 \[A = \mu \sqrt{1 + \frac{2Eh^2}{\mu^2}}.\]</div>
 <p>We choose the positive branch (as opposed to the negative branch) of the
-square root since <span class="math notranslate nohighlight">\(A = |\mathbf{A}|\)</span> — an explicitly nonnegative
-quantity. For brevity, we write <span class="math notranslate nohighlight">\(A = \mu e\)</span>, where</p>
+square root since <cite>A = |mathbf{A}|</cite> — an explicitly nonnegative
+quantity. For brevity, we write <cite>A = mu e</cite>, where</p>
 <div class="math notranslate nohighlight">
 \[e = \sqrt{1 + \frac{2Eh^2}{\mu^2}}.\]</div>
-<p>This quantity <span class="math notranslate nohighlight">\(e\)</span> is called the orbital eccentricity.</p>
+<p>This quantity <cite>e</cite> is called the orbital eccentricity.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>The orbital radius <span class="math notranslate nohighlight">\(r\)</span> found directly from solving the governing
+<p>The orbital radius <cite>r</cite> found directly from solving the governing
 differential equation, utilizing the conservation of angular momentum
 and energy, and evaluating the two constants of integration yields</p>
 <div class="math notranslate nohighlight">
 \[r = \frac{h^2/\mu}{1 + e\cos\theta},\]</div>
-<p>where <span class="math notranslate nohighlight">\(e = A/\mu\)</span> is dependent upon the energy <span class="math notranslate nohighlight">\(E\)</span> of
+<p>where <cite>e = A/mu</cite> is dependent upon the energy <cite>E</cite> of
 the relative motion of the two bodies.</p>
 </div>
 </section>
@@ -118,7 +124,8 @@ the relative motion of the two bodies.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="solution.html" class="btn btn-neutral float-left" title="3 Solution" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="trajectory-geometry.html" class="btn btn-neutral float-left" title="4 Trajectory Geometry" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../multibody/overview.html" class="btn btn-neutral float-right" title="1 Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4 Trajectory Geometry &mdash; CR3BP  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/rtd_eq.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5 Orbital Elements" href="orbital-elements.html" />
+    <link rel="prev" title="3 Solution" href="solution.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> CR3BP
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The Kepler (2-body) Problem</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html"><span class="sectnum">1</span> Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="properties.html"><span class="sectnum">2</span> Properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solution.html"><span class="sectnum">3</span> Solution</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="sectnum">4</span> Trajectory Geometry</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#closed-orbits-0-leqslant-e-1"><span class="sectnum">4.1</span> Closed Orbits <span class="math notranslate nohighlight">\((0 \leqslant e &lt; 1)\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#open-orbits-e-1"><span class="sectnum">4.2</span> Open Orbits <span class="math notranslate nohighlight">\((e &gt; 1)\)</span></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="orbital-elements.html"><span class="sectnum">5</span> Orbital Elements</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Multibody Dynamics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../multibody/overview.html"><span class="sectnum">1</span> Overview</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CR3BP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><span class="sectnum">4</span> Trajectory Geometry</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/kepler/trajectory-geometry.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="trajectory-geometry">
+<h1><span class="sectnum">4</span> Trajectory Geometry<a class="headerlink" href="#trajectory-geometry" title="Permalink to this headline"></a></h1>
+<section id="closed-orbits-0-leqslant-e-1">
+<h2><span class="sectnum">4.1</span> Closed Orbits <span class="math notranslate nohighlight">\((0 \leqslant e &lt; 1)\)</span><a class="headerlink" href="#closed-orbits-0-leqslant-e-1" title="Permalink to this headline"></a></h2>
+<p>With this restriction in mind (<span class="math notranslate nohighlight">\(e &lt; 1\)</span>), we can evaluate this integral
+in terms of elementary functions.</p>
+<div class="math notranslate nohighlight">
+\[\int^\theta\frac{d\theta}{(1 + e\cos\theta)^2} = \underbrace{\frac{2}{(1 - e^2)^{3/2}}\,\tan^{-1}\!\left(\sqrt{\frac{1 - e}{1 + e}}\tan\frac{\theta}{2}\right) - \frac{e\sin\theta}{(1 - e^2)(1 + e\cos\theta)}}_{\large\chi_e(\theta)}\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\chi\)</span> is an odd function in <span class="math notranslate nohighlight">\(\theta,\)</span> it’s
+convenient to choose <span class="math notranslate nohighlight">\(\theta_0 = 0\)</span> at time <span class="math notranslate nohighlight">\(t_0 = 0\)</span>. That is,
+begin counting positive time the instant that the (positive) <span class="math notranslate nohighlight">\(x\)</span> axis
+is crossed.
+Using this choice, we can now safely integrate the conservation of
+angular momentum and write for <span class="math notranslate nohighlight">\(|\theta| &lt; \pi\)</span> and <span class="math notranslate nohighlight">\(e &lt; 1\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\chi_e(\theta) = \frac{\mu^2}{h^3}t.\]</div>
+<p>In this case, <span class="math notranslate nohighlight">\(\chi\)</span> being odd also implies that the time
+<span class="math notranslate nohighlight">\(t\)</span> to transit over <span class="math notranslate nohighlight">\([0, \vartheta]\)</span> is exactly the same amount
+of time (in absolute value) to transit <span class="math notranslate nohighlight">\([-\vartheta, 0]\)</span>, where
+<span class="math notranslate nohighlight">\(\vartheta \in (0, \pi).\)</span>
+Thus, <strong>motion is both spatially and temporally symmetric about the</strong> <span class="math notranslate nohighlight">\(x\)</span> <strong>axis.</strong>
+Consequently, we now know that <em>all</em> trajectories with <span class="math notranslate nohighlight">\(e &lt; 1\)</span> are
+<em>closed</em> and complete an orbit with period</p>
+<div class="math notranslate nohighlight">
+\[T = \lim_{\theta \to \pi^-} 2t = \frac{2\pi h^3/\mu^2}{(1 - e^2)^{3/2}}.\]</div>
+<p>Our objective would be accomplished <em>if</em> we could so easily write</p>
+<div class="math notranslate nohighlight">
+\[\theta = \chi_e^{-1}\!\left(\frac{\mu^2}{h^3}t\right),\]</div>
+<p>but unfortunately, we cannot find an analytical expression for such an
+inverse function for <em>any</em> <span class="math notranslate nohighlight">\(e &lt; 1\)</span>.
+It is, however, possible (very easy in fact) in the special case of
+<span class="math notranslate nohighlight">\(e = 0\)</span> since <span class="math notranslate nohighlight">\(\chi_0(\theta) = \theta,\)</span> which indeed abides by
+the conservation of angular momentum.
+The motion in this case has a constant radius (<span class="math notranslate nohighlight">\(h^2/\mu\)</span>) and
+a constant angular rate (<span class="math notranslate nohighlight">\(\mu^2/h^3\)</span>) — a circle.</p>
+</section>
+<section id="open-orbits-e-1">
+<h2><span class="sectnum">4.2</span> Open Orbits <span class="math notranslate nohighlight">\((e &gt; 1)\)</span><a class="headerlink" href="#open-orbits-e-1" title="Permalink to this headline"></a></h2>
+<p>For other trajectories (<span class="math notranslate nohighlight">\(e \geqslant 1\)</span>), the domain of <span class="math notranslate nohighlight">\(\theta\)</span>
+is necessarily restricted to maintain physical meaning such that</p>
+<div class="math notranslate nohighlight">
+\[1 + e\cos\theta &gt; 0 \implies |\theta| &lt; \cos^{-1}(-e^{-1})\]</div>
+<p>With this restriction in mind, we can still use the same function
+<span class="math notranslate nohighlight">\(\chi_e\)</span> that was developed for closed orbits, though it would be
+convenient to rewrite it to make sense for <span class="math notranslate nohighlight">\(e \geqslant 1.\)</span></p>
+<div class="math notranslate nohighlight">
+\[\chi_e(\theta) = \frac{e\sin\theta}{(e^2 - 1)(1 + e\cos\theta)} - \frac{2}{(e^2 - 1)^{3/2}}\tanh^{-1}\left(\sqrt{\frac{e - 1}{e + 1}}\tan\frac{\theta}{2}\right)\]</div>
+<p>Similarly to the closed orbits, we can choose to define <span class="math notranslate nohighlight">\(\theta_0 = 0\)</span>
+at time <span class="math notranslate nohighlight">\(t_0 = 0\)</span> such that the motion obeys</p>
+<div class="math notranslate nohighlight">
+\[\chi_e(\theta) = \frac{\mu^2}{h^3} t.\]</div>
+<p>Since this really is the same function <span class="math notranslate nohighlight">\(\chi\)</span> that described closed
+orbits, <strong>the trajectory is spatially and temporally symmetric about the</strong> <span class="math notranslate nohighlight">\(x\)</span> <strong>axis.</strong>
+That said, it is still impossible to solve analytically for the angular
+coordinate as a function of time, even when <span class="math notranslate nohighlight">\(e\)</span> uniformly approaches
+unity.</p>
+<div class="math notranslate nohighlight">
+\[\lim_{e \to 1} \chi_e(\theta) = \frac{1}{12}\sec^3\frac{\theta}{2}\left(3\sin\frac{\theta}{2} + \sin\frac{3\theta}{2}\right)\]</div>
+<p>Note that since the trajectory is open, it takes <em>infinite</em> time to reach
+the maximum angle (corresponding to an infinite distance from the origin)
+starting from the <span class="math notranslate nohighlight">\(x\)</span> axis. <em>However,</em></p>
+<div class="math notranslate nohighlight">
+\[\lim_{e\to\infty}\chi_e(\theta) = 0.\]</div>
+<p>This means that as <span class="math notranslate nohighlight">\(e\)</span> gets very large, the elapsed time to cover the
+interval <span class="math notranslate nohighlight">\((-\pi/2, \pi/2)\)</span> is <em>nothing.</em> This happens because
+trajectories with finite <span class="math notranslate nohighlight">\(e\)</span> approach the maximum angles
+<em>asymptotically</em> whereas those with very large <span class="math notranslate nohighlight">\(e\)</span> basically start
+at one limit, <span class="math notranslate nohighlight">\(\theta = -\pi/2,\)</span> and pass through immediately to the
+other limit, <span class="math notranslate nohighlight">\(\theta = \pi/2.\)</span> Such a trajectory is characteristic of
+a <em>straight line along the</em> <span class="math notranslate nohighlight">\(y\)</span> <em>axis.</em> (Like having <span class="math notranslate nohighlight">\(h = 0\)</span>,
+this trajectory results in a collision — a finite-time singularity.)</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The trajectory of the reduced mass can be either <strong>closed</strong> or <strong>open</strong>
+depending on the (nonnegative) parameter <span class="math notranslate nohighlight">\(e = A/\mu.\)</span></p>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>Closed orbits occur when <span class="math notranslate nohighlight">\(e &lt; 1.\)</span></dt><dd><ol class="arabic simple">
+<li><p><strong>Period</strong>: <span class="math notranslate nohighlight">\(T = 2\pi h^3/\big(\mu^2(1 - e^2)^{3/2}\big)\)</span></p></li>
+<li><p><strong>Simplest</strong>: Circle</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Open orbits occur when <span class="math notranslate nohighlight">\(e \geqslant 1.\)</span></dt><dd><ol class="arabic simple">
+<li><p><strong>Period</strong>: <span class="math notranslate nohighlight">\(T = \infty\)</span> if <span class="math notranslate nohighlight">\(e &lt; \infty.\)</span> Otherwise, <span class="math notranslate nohighlight">\(T = 0.\)</span></p></li>
+<li><p><strong>Simplest</strong>: Straight line (collision)</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+</ol>
+<p>In both cases, we cannot obtain an analytical expression for
+<span class="math notranslate nohighlight">\(\theta = \theta(t),\)</span> but we can obtain an expression for
+<span class="math notranslate nohighlight">\(t = t(\theta).\)</span></p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="solution.html" class="btn btn-neutral float-left" title="3 Solution" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="orbital-elements.html" class="btn btn-neutral float-right" title="5 Orbital Elements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, The Multibody Astrodynamics Community.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

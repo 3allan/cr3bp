@@ -1,5 +1,5 @@
 .. sectnum::
-    :start: 4
+    :start: 5
 
 Orbital Elements
 ****************
@@ -31,21 +31,21 @@ according to
     A = \mu \sqrt{1 + \frac{2Eh^2}{\mu^2}}.
 
 We choose the positive branch (as opposed to the negative branch) of the
-square root since :math:`A = |\mathbf{A}|` --- an explicitly nonnegative
-quantity. For brevity, we write :math:`A = \mu e`, where
+square root since `A = |\mathbf{A}|` --- an explicitly nonnegative
+quantity. For brevity, we write `A = \mu e`, where
 
 .. math::
     e = \sqrt{1 + \frac{2Eh^2}{\mu^2}}.
 
-This quantity :math:`e` is called the orbital eccentricity.
+This quantity `e` is called the orbital eccentricity.
 
 .. important::
-    The orbital radius :math:`r` found directly from solving the governing
+    The orbital radius `r` found directly from solving the governing
     differential equation, utilizing the conservation of angular momentum
     and energy, and evaluating the two constants of integration yields
 
     .. math::
         r = \frac{h^2/\mu}{1 + e\cos\theta},
 
-    where :math:`e = A/\mu` is dependent upon the energy :math:`E` of
+    where `e = A/\mu` is dependent upon the energy `E` of
     the relative motion of the two bodies.
