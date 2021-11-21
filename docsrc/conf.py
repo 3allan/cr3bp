@@ -46,7 +46,8 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 html_theme = 'sphinx_rtd_theme'
 #html_theme = 'sphinxdoc' # Nice text size
 #html_theme = 'cloud' # Nice scrollbar
-
+#html_theme = 'sizzle'
+#html_theme = 'pydata_sphinx_theme'
 
 
 # Add any paths that contain custom static files (such as style sheets) here,

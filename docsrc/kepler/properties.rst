@@ -1,3 +1,5 @@
+.. default-role:: math
+
 .. sectnum::
     :start: 2
 
@@ -47,10 +49,10 @@ The equations of motion may be calculated directly since
     \ddot{\mathbf{r}} &= \ddot{\mathbf{r}}_2 - \ddot{\mathbf{r}}_1 \\
     &= -\frac{G(m_1 + m_2)}{r^3}\mathbf{r},
 
-where :math:`r = |\mathbf{r}|`.
+where `r = |\mathbf{r}|`.
 
 (The same result is achieved had we used Newton's 3\ :sup:`rd` law since
-:math:`m_1 \ddot{\mathbf{r}}_1 = -m_2\ddot{\mathbf{r}}_2`.)
+`m_1 \ddot{\mathbf{r}}_1 = -m_2\ddot{\mathbf{r}}_2`.)
 
 .. Important:: Doing this is beneficial because it exploits a symmetry in
     the full system of equations, essentially **halving** the number of
@@ -63,14 +65,14 @@ Linear Momentum
 ---------------
 .. admonition:: Recall
 
-    For any :math:`x_1, x_2 \in \mathbb{R}^3`, the center of mass for a
+    For any `x_1, x_2 \in \mathbb{R}^3`, the center of mass for a
     system of two particles with respect to an inertial coordinate system is
 
     .. math::
         x_{cm} \equiv \frac{m_1 x_1 + m_2 x_2}{m_1 + m_2},
 
-    where :math:`m_1` and :math:`m_2` are the masses of each body located
-    (instantaneously) at :math:`x_1` and :math:`x_2`, respectively.
+    where `m_1` and `m_2` are the masses of each body located
+    (instantaneously) at `x_1` and `x_2`, respectively.
 
 
 The two bodies are *isolated* -- that is, the center of mass satisfies
@@ -102,13 +104,13 @@ Angular Momentum
 ----------------
 .. admonition:: Recall
 
-    #.  For any :math:`x \in \mathbb{R}^3`, the cross-product of :math:`x`
+    #.  For any `x \in \mathbb{R}^3`, the cross-product of `x`
         with itself vanishes.
 
         .. math::
             x \times x \equiv 0
 
-    #.  For any :math:`x,y \in \mathbb{R}^3`, the cross-product is
+    #.  For any `x,y \in \mathbb{R}^3`, the cross-product is
         anticommutative.
 
         .. math::
@@ -130,7 +132,7 @@ lets us immediately show
     &= \frac{d}{dt}\underbrace{(\dot{\mathbf{r}} \times \mathbf{r})}_{-\mathbf{h}}.
 
 Consequently, we conclude that the (specific) angular momentum
-:math:`\mathbf{h}` is conserved under the dynamics of the 2-body problem.
+`\mathbf{h}` is conserved under the dynamics of the 2-body problem.
 
 .. math::
     \mathbf{h} = \mathbf{r} \times \dot{\mathbf{r}} \equiv \mathrm{const.}
@@ -142,13 +144,13 @@ The Laplace-Runge-Lenz Vector
 -----------------------------
 .. admonition:: Recall
 
-    For any :math:`x,y,z \in \mathbb{R}^3`, the vector triple product
+    For any `x,y,z \in \mathbb{R}^3`, the vector triple product
     satisfies
 
     .. math::
         x \times (y \times z) = (x \cdot z) y - (x \cdot y) z.
 
-Knowing that the angular momentum :math:`\mathbf{h}` is conserved, consider the
+Knowing that the angular momentum `\mathbf{h}` is conserved, consider the
 following.
 
 .. math::
@@ -163,7 +165,7 @@ following.
     &= \frac{d}{dt}\left(\frac{G(m_1 + m_2)}{r}\mathbf{r}\right).
 
 Finally, exploiting linearity of the differential operator provides the
-conserved quantity, :math:`\mathbf{A}`, referred to as the
+conserved quantity, `\mathbf{A}`, referred to as the
 Laplace-Runge-Lenz vector\ :sup:`[`\ [2]_:sup:`]`.
 
 .. math::
@@ -190,16 +192,16 @@ mechanical energy --- that is, the total mechanical energy per unit mass.
 .. math::
     E = \frac{v^2}{2} - \frac{G(m_1 + m_2)}{r} \equiv \mathrm{const.}
 
-Here, :math:`v = |\dot{\mathbf{r}}|` is the magnitude of the (inertial)
+Here, `v = |\dot{\mathbf{r}}|` is the magnitude of the (inertial)
 velocity.
 Note that the gravitational potential is appearing to come from a body of
-mass :math:`m_1 + m_2`.
+mass `m_1 + m_2`.
 
 .. important::
     The relative motion of the two bodies **must** be such that the relative
-    orbital velocity :math:`v` and relative orbital radius :math:`r`
+    orbital velocity `v` and relative orbital radius `r`
     interplay with an inverse relationship for a given, fixed energy
-    :math:`E`.
+    `E`.
 
 The Reduced Mass
 ================
@@ -209,8 +211,8 @@ The system :eq:`eq:relativeEOM` is writable as
     \underbrace{\frac{m_1 m_2}{m_1 + m_2}}_{\mu^*}\ddot{\mathbf{r}} = \underbrace{-\frac{G m_1 m_2}{r^3}\mathbf{r}}_{-\nabla V(r)},
 
 which is in the form of Newton's 2\ :sup:`nd` law for a **single** particle
-of mass :math:`\mu^*` being tracked in an inertial coordinate system with
-position :math:`\mathbf{r}` under the influence of a potential :math:`V`.
+of mass `\mu^*` being tracked in an inertial coordinate system with
+position `\mathbf{r}` under the influence of a potential `V`.
 More clearly, we can write
 
 .. math::
@@ -218,7 +220,7 @@ More clearly, we can write
 
 The 2-body system :eq:`eq:relativeEOM` *can* therefore be treated like it
 describes a **single** particle\ :sup:`[`\ [1]_:sup:`]`.
-(The quantity :math:`\mu^*` that makes this purely mathematical
+(The quantity `\mu^*` that makes this purely mathematical
 simplification possible is called the *reduced mass*.)
 
 .. figure:: ../../images/kepler_reduced_mass_system.svg
@@ -228,26 +230,26 @@ simplification possible is called the *reduced mass*.)
     :alt: Example of a trajectory taken by the reduced mass in a general, inertial coordinate system
     :align: center
 
-    A "trajectory" of the reduced mass :math:`\mu^*` in the presence of the
-    potential :math:`V`.
+    A "trajectory" of the reduced mass `\mu^*` in the presence of the
+    potential `V`.
 
 .. admonition:: Fact
 
-    For any :math:`m_1, m_2 > 0`,
+    For any `m_1, m_2 > 0`,
 
     .. math::
         \mu^* < m_1 + m_2.
 
     *Proof:* Suppose the opposite. Then
-    :math:`(m_1 + m_2)^2 = m_1^2 + 2m_1 m_2 + m_2^2 < m_1 m_2`, but this
-    means :math:`m_1^2 + m_2^2 < -m_1 m_2` --- a contradiction.
-    :math:`\blacksquare`
+    `(m_1 + m_2)^2 = m_1^2 + 2m_1 m_2 + m_2^2 < m_1 m_2`, but this
+    means `m_1^2 + m_2^2 < -m_1 m_2` --- a contradiction.
+    `\blacksquare`
 
 .. Important:: The resulting trajectory of a **single** body of mass
-    :math:`\mu^*` under the influence of the potential from a *static* body
-    of mass :math:`m_1 + m_2` is the **same** trajectory experienced by the
+    `\mu^*` under the influence of the potential from a *static* body
+    of mass `m_1 + m_2` is the **same** trajectory experienced by the
     **relative motion** of two bodies under mutual Newtonian gravitational
-    attraction. This trajectory for both cases is :math:`\mathbf{r}`.
+    attraction. This trajectory for both cases is `\mathbf{r}`.
 
 Standard Form
 =============
@@ -263,32 +265,32 @@ the other are
 .. math::
     \ddot{\mathbf{r}} = -\frac{\mu}{r^3}\mathbf{r}
 
-.. Important:: In astrophysical applications, :math:`\mu` can be viewed as
-    a quantity of two (generally) unknown parameters :math:`m_1` and
-    :math:`m_2` whose values are to be determined.
+.. Important:: In astrophysical applications, `\mu` can be viewed as
+    a quantity of two (generally) unknown parameters `m_1` and
+    `m_2` whose values are to be determined.
 
 .. Important:: In some dynamical astronomy and nearly all engineering
-    applications, :math:`\mu` can be easily regarded as being identified
+    applications, `\mu` can be easily regarded as being identified
     exactly with
 
     .. math::
         \mu = GM,
 
-    where :math:`M = m_1` is the mass of a central body much more massive
-    than the other, i.e. :math:`m_1 \ggg m_2`. (This is the case where
-    :math:`m_2` represents spacecraft, comets, etc.)
+    where `M = m_1` is the mass of a central body much more massive
+    than the other, i.e. `m_1 \ggg m_2`. (This is the case where
+    `m_2` represents spacecraft, comets, etc.)
 
-    The effective statement of taking :math:`\mu` this way is that the
-    central body of mass :math:`m_1` moves in a *straight line* (or not at
+    The effective statement of taking `\mu` this way is that the
+    central body of mass `m_1` moves in a *straight line* (or not at
     all) relative to the inertial frame (all in accordance with Newton's
     1\ :sup:`st` law), but the motion of the smaller body of mass
-    :math:`m_2` *is still affected by the presence of the central body*.
+    `m_2` *is still affected by the presence of the central body*.
     (This scenario **is** that of the reduced mass, where
-    :math:`\mu^* \approx m_2` is the mass of the particle in motion and
-    :math:`m_1 + m_2 \approx M` is the central body's mass.)
+    `\mu^* \approx m_2` is the mass of the particle in motion and
+    `m_1 + m_2 \approx M` is the central body's mass.)
 
 .. Warning:: Do **not** confuse the 2-body gravitational parameter
-    :math:`\mu` with the 3-body mass parameter :math:`\mu`.
+    `\mu` with the 3-body mass parameter `\mu`.
 
     .. centered::
         **These quantities, though sharing the same symbol, are different**.

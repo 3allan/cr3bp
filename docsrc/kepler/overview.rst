@@ -31,12 +31,12 @@ attraction with respect to an inertial frame.
     :align: center
 
     The most general setup of the Kepler (2-body) problem. The problem
-    consists of two masses, :math:`m_1` and :math:`m_2`, gravitationally
-    attracted to one another whose positions, :math:`\mathbf{r}_1` and
-    :math:`\mathbf{r}_2`, are tracked in an inertial coordinate system.
+    consists of two masses, `m_1` and `m_2`, gravitationally
+    attracted to one another whose positions, `\mathbf{r}_1` and
+    `\mathbf{r}_2`, are tracked in an inertial coordinate system.
 
-Here, :math:`m_1` and :math:`m_2` are the body masses and a general position
-vector :math:`\mathbf{r}` is represented
+Here, `m_1` and `m_2` are the body masses and a general position
+vector `\mathbf{r}` is represented
 
 .. math::
 
@@ -58,7 +58,7 @@ gravitational attraction directly provides
     \ddot{\mathbf{r}}_1 &= -\frac{G m_2}{|\mathbf{r}_1 - \mathbf{r}_2|^3}(\mathbf{r}_1 - \mathbf{r}_2) \\
     \ddot{\mathbf{r}}_2 &= -\frac{G m_1}{|\mathbf{r}_2 - \mathbf{r}_1|^3}(\mathbf{r}_2 - \mathbf{r}_1),
 
-where :math:`G` is the gravitational constant.
+where `G` is the gravitational constant.
 
 Lagrangian Function
 -------------------
@@ -70,9 +70,9 @@ Lagrangian Function
     .. math::
         \frac{d}{dt}\frac{\partial\mathcal{L}}{\partial \dot{q}} - \frac{\partial\mathcal{L}}{\partial q} = 0,
 
-    for generalized coordinates :math:`q \in \mathbb{R}^n`, where :math:`n`
+    for generalized coordinates `q \in \mathbb{R}^n`, where `n`
     is the number of degrees of freedom in the system. (Here,
-    :math:`n = 6`.)
+    `n = 6`.)
 
 We can write the system's Lagrangian as simply the difference between
 total kinetic energy and total potential energy.
@@ -97,7 +97,7 @@ provides
 .. math::
     \ddot{\mathbf{r}}_i = -\frac{G m_j}{|\mathbf{r}_i - \mathbf{r}_j|^3}(\mathbf{r}_i - \mathbf{r}_j).
 
-Applying :math:`i = 1,2` produces the equations of motion for each of the
+Applying `i = 1,2` produces the equations of motion for each of the
 two bodies.
 
 .. math::
@@ -116,9 +116,9 @@ Hamiltonian Function
     .. math::
         \dot{q} = +\frac{\partial\mathcal{H}}{\partial p} \qquad \text{and} \qquad \dot{p} = -\frac{\partial\mathcal{H}}{\partial q}
 
-    for generalized coordinates and momenta :math:`q,p \in \mathbb{R}^n`,
-    where :math:`n` is the number of degrees of freedom in the system.
-    (Here, :math:`n = 6`.)
+    for generalized coordinates and momenta `q,p \in \mathbb{R}^n`,
+    where `n` is the number of degrees of freedom in the system.
+    (Here, `n = 6`.)
 
 Using the Lagrangian :eq:`Lagrangian`, the Hamiltonian function is defined
 
@@ -127,9 +127,9 @@ Using the Lagrangian :eq:`Lagrangian`, the Hamiltonian function is defined
     &= \sum_{i = 1}^2 \frac{\mathbf{p}_i}{m_i} \cdot \mathbf{p}_i - \left[\frac{1}{2}\left(\frac{|\mathbf{p}_1|^2}{m_1} + \frac{|\mathbf{p}_2|^2}{m_2}\right) + \frac{G m_1 m_2}{|\mathbf{q}_2 - \mathbf{q}_1|}\right] \\
     &= \frac{1}{2}\left(\frac{|\mathbf{p}_1|^2}{m_1} + \frac{|\mathbf{p}_2|^2}{m_2}\right) - \frac{G m_1 m_2}{|\mathbf{q}_2 - \mathbf{q}_1|},
 
-where :math:`\mathbf{q}_i = \mathbf{r}_i` are the generalized coordinates
-and :math:`\mathbf{p}_i = m_i\dot{\mathbf{r}}_i` are the generalized momenta
-for each body (:math:`i = 1,2`).
+where `\mathbf{q}_i = \mathbf{r}_i` are the generalized coordinates
+and `\mathbf{p}_i = m_i\dot{\mathbf{r}}_i` are the generalized momenta
+for each body (`i = 1,2`).
 Hamilton's canonical equations (12 of them) then require
 
 .. math::
@@ -138,7 +138,7 @@ Hamilton's canonical equations (12 of them) then require
     \dot{\mathbf{q}}_i &= \frac{\mathbf{p}_i}{m_i} \\
     \dot{\mathbf{p}}_i &= -\frac{G m_1 m_2}{|\mathbf{q}_i - \mathbf{q}_j|^3} (\mathbf{q}_i - \mathbf{q}_j),
 
-for :math:`j \neq i = 1,2`.
+for `j \neq i = 1,2`.
 
 .. Note:: Hamilton's equations :eq:`Hamilton` are the first-order form of
     :eq:`Newton` and :eq:`Lagrange` as seen by
@@ -146,4 +146,4 @@ for :math:`j \neq i = 1,2`.
     .. math::
         \ddot{\mathbf{q}}_i = \frac{\dot{\mathbf{p}}_i}{m_i} = -\frac{G m_j}{|\mathbf{q}_i - \mathbf{q}_j|^3} (\mathbf{q}_i - \mathbf{q}_j),
 
-    where :math:`\mathbf{q}_i \equiv \mathbf{r}_i`.
+    where `\mathbf{q}_i \equiv \mathbf{r}_i`.

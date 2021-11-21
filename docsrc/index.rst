@@ -14,10 +14,17 @@ Links to various relevant topics are found below, beginning with the
 foundations and advancing towards applications and results.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: The Kepler (2-body) Problem
    
    kepler/overview
    kepler/properties
    kepler/solution
+   kepler/trajectory-geometry
    kepler/orbital-elements
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Multibody Dynamics
+
+   multibody/overview
