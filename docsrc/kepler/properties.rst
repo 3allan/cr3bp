@@ -105,13 +105,13 @@ Angular Momentum
         with itself vanishes.
 
         .. math::
-            \mathbf{x} \times \mathbf{x} \equiv 0
+            \mathbf{x} \times \mathbf{x} \equiv \mathbf{0}
 
     #.  For any `\mathbf{x},\mathbf{y} \in \mathbb{R}^3`, the cross-product is
         anticommutative.
 
         .. math::
-            \mathbf{x} \times \mathbf{y} + \mathbf{y} \times \mathbf{x} \equiv 0
+            \mathbf{x} \times \mathbf{y} = -(\mathbf{y} \times \mathbf{x})
 
 Rewriting the Kepler problem in a convenient form,
 
