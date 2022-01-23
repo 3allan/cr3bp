@@ -1,149 +1,68 @@
 .. default-role:: math
 
-.. sectnum::
-    :start: 1
 
-========
-Overview
-========
 
-:Author: M. Werner
-
-.. admonition:: Plan of Action
-
-    The equations of motion for the general 2-body problem are derived
-    using the Newtonian, Lagrangian, and Hamiltonian approaches, showing
-    that each method provides the same system using different methods.
-
+============
 Introduction
 ============
 
-The *Kepler* (2-body) problem is fundamental to the study of astrodynamics,
-especially so for analyzing the more general 3-body problem. It consists of
-determining the positions of 2 bodies under mutual Newtonian gravitational
-attraction with respect to an inertial frame.
+:Author: M. Werner
 
-.. figure:: ../../images/kepler_2_particles.svg
-    :width: 355px
-    :height: 209px
-    :scale: 150 %
-    :alt: Diagram of the 2-body problem with respect to a general, inertial coordinate system
-    :align: center
+What is gravity anyway?
+=======================
+**Gravity**, also called **gravitational acceleration** or **gravitational attraction**, in its
+*simplest* description is the attraction of two (or more) objects due to their **mass**.
 
-    The most general setup of the Kepler (2-body) problem. The problem
-    consists of two masses, `m_1` and `m_2`, gravitationally
-    attracted to one another whose positions, `\mathbf{r}_1` and
-    `\mathbf{r}_2`, are tracked in an inertial coordinate system.
-
-Here, `m_1` and `m_2` are the body masses and a general position
-vector `\mathbf{r}` is represented
+Sir Isaac Newton developed a **model** for the attraction of two such objects
+in his *Principia*. It says that two objects, one having mass `m_1` and the
+other mass `m_2`, separated by a distance `r` exert a **force** on each
+other. This force has a **magnitude** that can be written as
 
 .. math::
 
-    \mathbf{r} = \begin{pmatrix}X & Y & Z\end{pmatrix}^T
+    \frac{G m_1 m_2}{r^2},
 
-with basis elements provided by the inertial coordinate system.
+where `G` is the gravitational constant, an experimentally determined number
+that is true for *any* two objects being considered.
 
-Equations of Motion
-===================
+Theories of gravity have been floating around for centuries. This
+particular one was published in 1687; since then, it has been well-studied,
+tested, and developed into the modern day where it *still* serves as a
+workhorse for *many* astrodynamics applications.
 
-Newton's Laws
--------------
-Applying Newton's 2\ :sup:`nd` law to each body under mutual Newtonian
-gravitational attraction directly provides
+Einstein would like a word
+==========================
+Newton's description of gravity hung around for 230 years until it was
+seriously challenged. After all, Newton's gravity is **not** perfect; it
+simply offers a (very good) description of motion from a mechanical
+perspective.
 
-.. math::
-    :label: Newton
+The contender was Albert Einstein's general theory of relativity, which came
+to light in 1916. It not only describes the motion of objects that have
+mass (like Newton did), but it describes the motion of objects that have *a
+lot* of mass (black holes) and also objects that have *no* mass (photons).
 
-    \ddot{\mathbf{r}}_1 &= -\frac{G m_2}{|\mathbf{r}_1 - \mathbf{r}_2|^3}(\mathbf{r}_1 - \mathbf{r}_2) \\
-    \ddot{\mathbf{r}}_2 &= -\frac{G m_1}{|\mathbf{r}_2 - \mathbf{r}_1|^3}(\mathbf{r}_2 - \mathbf{r}_1),
+Newton's description of "motion" would be position as a function of time,
+but Einstein's description of "motion" includes position *and* time.
+One takeaway from GR is that space and time are actually interwoven.
+There is no such thing as absolute time, and there are no inertial
+reference frames (which are necessary to use Newton's laws).
 
-where `G` is the gravitational constant.
+The implications coming from general relativity were *shattering* to all of
+physics, but it since *vastly* improved our understanding and has not only
+stood, but *completely dominated* the tests of time.
 
-Lagrangian Function
--------------------
+So which one do we use?
+=======================
+General relativity is widely accepted as correct. However, it gets
+complicated *fast*. There aren't really that many analytic solutions, and
+integrating its equations of motion on a computer can be slow.
 
-.. admonition:: Recall
+**We use Newtonian gravity** despite it being fundamentally **wrong**!
+We do this because it's much easier than GR in terms of comprehension and
+computability, and it's "close enough" for almost *all* practical
+applications. Any spacecraft we launch will most likely not be interacting
+near black holes or travelling at any appreciable fraction of the
+speed of light.
 
-    Lagrange's (conservative) equations are
-
-    .. math::
-        \frac{d}{dt}\frac{\partial\mathcal{L}}{\partial \dot{q}} - \frac{\partial\mathcal{L}}{\partial q} = 0,
-
-    for generalized coordinates `q \in \mathbb{R}^n`, where `n`
-    is the number of degrees of freedom in the system. (Here,
-    `n = 6`.)
-
-We can write the system's Lagrangian as simply the difference between
-total kinetic energy and total potential energy.
-
-.. math::
-    :label: Lagrangian
-
-    \mathcal{L} &= T - V \\
-    &= \frac{1}{2}\left(m_1 |\dot{\mathbf{r}}_1|^2 + m_2|\dot{\mathbf{r}}_2|^2\right) + \frac{G m_1 m_2}{|\mathbf{r}_2 - \mathbf{r_1}|}
-
-Since gravity is conservative and the system is unconstrained, the
-corresponding Euler-Lagrange equations (6 of them) are written
-
-.. math::
-    \mathbf{0} &= \frac{d}{dt}\frac{\partial\mathcal{L}}{\partial\dot{\mathbf{r}}_i} - \frac{\partial\mathcal{L}}{\partial\mathbf{r}_i} && (i = 1,2) \\
-    &= \frac{d}{dt} (m_i \dot{\mathbf{r}}_i) - \frac{G m_1 m_2}{|\mathbf{r}_j - \mathbf{r}_i|^3} (\mathbf{r}_j - \mathbf{r}_i) \qquad\quad && (j \neq i) \\
-    &= m_i \ddot{\mathbf{r}}_i + \frac{G m_1 m_2}{|\mathbf{r}_i - \mathbf{r}_j|^3} (\mathbf{r}_i - \mathbf{r}_j).
-
-Writing the the above result of Lagrange's in their most compact form
-provides
-
-.. math::
-    \ddot{\mathbf{r}}_i = -\frac{G m_j}{|\mathbf{r}_i - \mathbf{r}_j|^3}(\mathbf{r}_i - \mathbf{r}_j).
-
-Applying `i = 1,2` produces the equations of motion for each of the
-two bodies.
-
-.. math::
-    :label: Lagrange
-
-    \ddot{\mathbf{r}}_1 &= -\frac{G m_2}{|\mathbf{r}_1 - \mathbf{r}_2|^3}(\mathbf{r}_1 - \mathbf{r}_2) \\
-    \ddot{\mathbf{r}}_2 &= -\frac{G m_1}{|\mathbf{r}_2 - \mathbf{r}_1|^3}(\mathbf{r}_2 - \mathbf{r}_1),
-
-Hamiltonian Function
---------------------
-
-.. admonition:: Recall
-
-    Hamilton's canonical equations are
-
-    .. math::
-        \dot{q} = +\frac{\partial\mathcal{H}}{\partial p} \qquad \text{and} \qquad \dot{p} = -\frac{\partial\mathcal{H}}{\partial q}
-
-    for generalized coordinates and momenta `q,p \in \mathbb{R}^n`,
-    where `n` is the number of degrees of freedom in the system.
-    (Here, `n = 6`.)
-
-Using the Lagrangian :eq:`Lagrangian`, the Hamiltonian function is defined
-
-.. math::
-    \mathcal{H} &= \sum_{i = 1}^2 \dot{\mathbf{q}}_i \cdot \mathbf{p}_i - \mathcal{L} \\
-    &= \sum_{i = 1}^2 \frac{\mathbf{p}_i}{m_i} \cdot \mathbf{p}_i - \left[\frac{1}{2}\left(\frac{|\mathbf{p}_1|^2}{m_1} + \frac{|\mathbf{p}_2|^2}{m_2}\right) + \frac{G m_1 m_2}{|\mathbf{q}_2 - \mathbf{q}_1|}\right] \\
-    &= \frac{1}{2}\left(\frac{|\mathbf{p}_1|^2}{m_1} + \frac{|\mathbf{p}_2|^2}{m_2}\right) - \frac{G m_1 m_2}{|\mathbf{q}_2 - \mathbf{q}_1|},
-
-where `\mathbf{q}_i = \mathbf{r}_i` are the generalized coordinates
-and `\mathbf{p}_i = m_i\dot{\mathbf{r}}_i` are the generalized momenta
-for each body (`i = 1,2`).
-Hamilton's canonical equations (12 of them) then require
-
-.. math::
-    :label: Hamilton
-
-    \dot{\mathbf{q}}_i &= \frac{\mathbf{p}_i}{m_i} \\
-    \dot{\mathbf{p}}_i &= -\frac{G m_1 m_2}{|\mathbf{q}_i - \mathbf{q}_j|^3} (\mathbf{q}_i - \mathbf{q}_j),
-
-for `j \neq i = 1,2`.
-
-.. Note:: Hamilton's equations :eq:`Hamilton` are the first-order form of
-    :eq:`Newton` and :eq:`Lagrange` as seen by
-
-    .. math::
-        \ddot{\mathbf{q}}_i = \frac{\dot{\mathbf{p}}_i}{m_i} = -\frac{G m_j}{|\mathbf{q}_i - \mathbf{q}_j|^3} (\mathbf{q}_i - \mathbf{q}_j),
-
-    where `\mathbf{q}_i \equiv \mathbf{r}_i`.
+With that, it's time to dive into orbital mechanics!

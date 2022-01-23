@@ -18,6 +18,7 @@ foundations and advancing towards applications and results.
    :caption: The Kepler (2-body) Problem
    
    kepler/overview
+   kepler/equations-of-motion
    kepler/properties
    kepler/solution
    kepler/trajectory-geometry

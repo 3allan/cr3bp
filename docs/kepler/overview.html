@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>1 Overview &mdash; CR3BP  documentation</title>
+  <title>Introduction &mdash; CR3BP  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/rtd_eq.css" type="text/css" />
@@ -22,7 +22,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2 Properties" href="properties.html" />
+    <link rel="next" title="1 The Two-Body World" href="equations-of-motion.html" />
     <link rel="prev" title="The Circular Restricted 3-Body Problem" href="../index.html" /> 
 </head>
 
@@ -43,16 +43,13 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">The Kepler (2-body) Problem</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="sectnum">1</span> Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#introduction"><span class="sectnum">1.1</span> Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#equations-of-motion"><span class="sectnum">1.2</span> Equations of Motion</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#newton-s-laws"><span class="sectnum">1.2.1</span> Newton’s Laws</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#lagrangian-function"><span class="sectnum">1.2.2</span> Lagrangian Function</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#hamiltonian-function"><span class="sectnum">1.2.3</span> Hamiltonian Function</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-gravity-anyway">What is gravity anyway?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#einstein-would-like-a-word">Einstein would like a word</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#so-which-one-do-we-use">So which one do we use?</a></li>
 </ul>
 </li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="equations-of-motion.html"><span class="sectnum">1</span> The Two-Body World</a></li>
 <li class="toctree-l1"><a class="reference internal" href="properties.html"><span class="sectnum">2</span> Properties</a></li>
 <li class="toctree-l1"><a class="reference internal" href="solution.html"><span class="sectnum">3</span> Solution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="trajectory-geometry.html"><span class="sectnum">4</span> Trajectory Geometry</a></li>
@@ -77,7 +74,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li><span class="sectnum">1</span> Overview</li>
+      <li>Introduction</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/kepler/overview.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -87,8 +84,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="overview">
-<h1><span class="sectnum">1</span> Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h1>
+  <section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">Author</dt>
 <dd class="field-odd"><ol class="upperalpha simple" start="13">
@@ -96,109 +93,54 @@
 </ol>
 </dd>
 </dl>
-<div class="admonition-plan-of-action admonition">
-<p class="admonition-title">Plan of Action</p>
-<p>The equations of motion for the general 2-body problem are derived
-using the Newtonian, Lagrangian, and Hamiltonian approaches, showing
-that each method provides the same system using different methods.</p>
-</div>
-<section id="introduction">
-<h2><span class="sectnum">1.1</span> Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
-<p>The <em>Kepler</em> (2-body) problem is fundamental to the study of astrodynamics,
-especially so for analyzing the more general 3-body problem. It consists of
-determining the positions of 2 bodies under mutual Newtonian gravitational
-attraction with respect to an inertial frame.</p>
-<figure class="align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/kepler_2_particles.svg"><img alt="Diagram of the 2-body problem with respect to a general, inertial coordinate system" height="313px" src="../_images/kepler_2_particles.svg" width="532px" /></a>
-<figcaption>
-<p><span class="caption-text">The most general setup of the Kepler (2-body) problem. The problem
-consists of two masses, <span class="math notranslate nohighlight">\(m_1\)</span> and <span class="math notranslate nohighlight">\(m_2\)</span>, gravitationally
-attracted to one another whose positions, <span class="math notranslate nohighlight">\(\mathbf{r}_1\)</span> and
-<span class="math notranslate nohighlight">\(\mathbf{r}_2\)</span>, are tracked in an inertial coordinate system.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
-</figcaption>
-</figure>
-<p>Here, <span class="math notranslate nohighlight">\(m_1\)</span> and <span class="math notranslate nohighlight">\(m_2\)</span> are the body masses and a general position
-vector <span class="math notranslate nohighlight">\(\mathbf{r}\)</span> is represented</p>
+<section id="what-is-gravity-anyway">
+<h2>What is gravity anyway?<a class="headerlink" href="#what-is-gravity-anyway" title="Permalink to this headline"></a></h2>
+<p><strong>Gravity</strong>, also called <strong>gravitational acceleration</strong> or <strong>gravitational attraction</strong>, in its
+<em>simplest</em> description is the attraction of two (or more) objects due to their <strong>mass</strong>.</p>
+<p>Sir Isaac Newton developed a <strong>model</strong> for the attraction of two such objects
+in his <em>Principia</em>. It says that two objects, one having mass <span class="math notranslate nohighlight">\(m_1\)</span> and the
+other mass <span class="math notranslate nohighlight">\(m_2\)</span>, separated by a distance <span class="math notranslate nohighlight">\(r\)</span> exert a <strong>force</strong> on each
+other. This force has a <strong>magnitude</strong> that can be written as</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{r} = \begin{pmatrix}X &amp; Y &amp; Z\end{pmatrix}^T\]</div>
-<p>with basis elements provided by the inertial coordinate system.</p>
+\[\frac{G m_1 m_2}{r^2},\]</div>
+<p>where <span class="math notranslate nohighlight">\(G\)</span> is the gravitational constant, an experimentally determined number
+that is true for <em>any</em> two objects being considered.</p>
+<p>Theories of gravity have been floating around for centuries. This
+particular one was published in 1687; since then, it has been well-studied,
+tested, and developed into the modern day where it <em>still</em> serves as a
+workhorse for <em>many</em> astrodynamics applications.</p>
 </section>
-<section id="equations-of-motion">
-<h2><span class="sectnum">1.2</span> Equations of Motion<a class="headerlink" href="#equations-of-motion" title="Permalink to this headline"></a></h2>
-<section id="newton-s-laws">
-<h3><span class="sectnum">1.2.1</span> Newton’s Laws<a class="headerlink" href="#newton-s-laws" title="Permalink to this headline"></a></h3>
-<p>Applying Newton’s 2<sup>nd</sup> law to each body under mutual Newtonian
-gravitational attraction directly provides</p>
-<div class="math notranslate nohighlight" id="equation-newton">
-<span class="eqno">(1)<a class="headerlink" href="#equation-newton" title="Permalink to this equation"></a></span>\[\begin{split}\ddot{\mathbf{r}}_1 &amp;= -\frac{G m_2}{|\mathbf{r}_1 - \mathbf{r}_2|^3}(\mathbf{r}_1 - \mathbf{r}_2) \\
-\ddot{\mathbf{r}}_2 &amp;= -\frac{G m_1}{|\mathbf{r}_2 - \mathbf{r}_1|^3}(\mathbf{r}_2 - \mathbf{r}_1),\end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(G\)</span> is the gravitational constant.</p>
+<section id="einstein-would-like-a-word">
+<h2>Einstein would like a word<a class="headerlink" href="#einstein-would-like-a-word" title="Permalink to this headline"></a></h2>
+<p>Newton’s description of gravity hung around for 230 years until it was
+seriously challenged. After all, Newton’s gravity is <strong>not</strong> perfect; it
+simply offers a (very good) description of motion from a mechanical
+perspective.</p>
+<p>The contender was Albert Einstein’s general theory of relativity, which came
+to light in 1916. It not only describes the motion of objects that have
+mass (like Newton did), but it describes the motion of objects that have <em>a
+lot</em> of mass (black holes) and also objects that have <em>no</em> mass (photons).</p>
+<p>Newton’s description of “motion” would be position as a function of time,
+but Einstein’s description of “motion” includes position <em>and</em> time.
+One takeaway from GR is that space and time are actually interwoven.
+There is no such thing as absolute time, and there are no inertial
+reference frames (which are necessary to use Newton’s laws).</p>
+<p>The implications coming from general relativity were <em>shattering</em> to all of
+physics, but it since <em>vastly</em> improved our understanding and has not only
+stood, but <em>completely dominated</em> the tests of time.</p>
 </section>
-<section id="lagrangian-function">
-<h3><span class="sectnum">1.2.2</span> Lagrangian Function<a class="headerlink" href="#lagrangian-function" title="Permalink to this headline"></a></h3>
-<div class="admonition-recall admonition">
-<p class="admonition-title">Recall</p>
-<p>Lagrange’s (conservative) equations are</p>
-<div class="math notranslate nohighlight">
-\[\frac{d}{dt}\frac{\partial\mathcal{L}}{\partial \dot{q}} - \frac{\partial\mathcal{L}}{\partial q} = 0,\]</div>
-<p>for generalized coordinates <span class="math notranslate nohighlight">\(q \in \mathbb{R}^n\)</span>, where <span class="math notranslate nohighlight">\(n\)</span>
-is the number of degrees of freedom in the system. (Here,
-<span class="math notranslate nohighlight">\(n = 6\)</span>.)</p>
-</div>
-<p>We can write the system’s Lagrangian as simply the difference between
-total kinetic energy and total potential energy.</p>
-<div class="math notranslate nohighlight" id="equation-lagrangian">
-<span class="eqno">(2)<a class="headerlink" href="#equation-lagrangian" title="Permalink to this equation"></a></span>\[\begin{split}\mathcal{L} &amp;= T - V \\
-&amp;= \frac{1}{2}\left(m_1 |\dot{\mathbf{r}}_1|^2 + m_2|\dot{\mathbf{r}}_2|^2\right) + \frac{G m_1 m_2}{|\mathbf{r}_2 - \mathbf{r_1}|}\end{split}\]</div>
-<p>Since gravity is conservative and the system is unconstrained, the
-corresponding Euler-Lagrange equations (6 of them) are written</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\mathbf{0} &amp;= \frac{d}{dt}\frac{\partial\mathcal{L}}{\partial\dot{\mathbf{r}}_i} - \frac{\partial\mathcal{L}}{\partial\mathbf{r}_i} &amp;&amp; (i = 1,2) \\
-&amp;= \frac{d}{dt} (m_i \dot{\mathbf{r}}_i) - \frac{G m_1 m_2}{|\mathbf{r}_j - \mathbf{r}_i|^3} (\mathbf{r}_j - \mathbf{r}_i) \qquad\quad &amp;&amp; (j \neq i) \\
-&amp;= m_i \ddot{\mathbf{r}}_i + \frac{G m_1 m_2}{|\mathbf{r}_i - \mathbf{r}_j|^3} (\mathbf{r}_i - \mathbf{r}_j).\end{split}\]</div>
-<p>Writing the the above result of Lagrange’s in their most compact form
-provides</p>
-<div class="math notranslate nohighlight">
-\[\ddot{\mathbf{r}}_i = -\frac{G m_j}{|\mathbf{r}_i - \mathbf{r}_j|^3}(\mathbf{r}_i - \mathbf{r}_j).\]</div>
-<p>Applying <span class="math notranslate nohighlight">\(i = 1,2\)</span> produces the equations of motion for each of the
-two bodies.</p>
-<div class="math notranslate nohighlight" id="equation-lagrange">
-<span class="eqno">(3)<a class="headerlink" href="#equation-lagrange" title="Permalink to this equation"></a></span>\[\begin{split}\ddot{\mathbf{r}}_1 &amp;= -\frac{G m_2}{|\mathbf{r}_1 - \mathbf{r}_2|^3}(\mathbf{r}_1 - \mathbf{r}_2) \\
-\ddot{\mathbf{r}}_2 &amp;= -\frac{G m_1}{|\mathbf{r}_2 - \mathbf{r}_1|^3}(\mathbf{r}_2 - \mathbf{r}_1),\end{split}\]</div>
-</section>
-<section id="hamiltonian-function">
-<h3><span class="sectnum">1.2.3</span> Hamiltonian Function<a class="headerlink" href="#hamiltonian-function" title="Permalink to this headline"></a></h3>
-<div class="admonition-recall admonition">
-<p class="admonition-title">Recall</p>
-<p>Hamilton’s canonical equations are</p>
-<div class="math notranslate nohighlight">
-\[\dot{q} = +\frac{\partial\mathcal{H}}{\partial p} \qquad \text{and} \qquad \dot{p} = -\frac{\partial\mathcal{H}}{\partial q}\]</div>
-<p>for generalized coordinates and momenta <span class="math notranslate nohighlight">\(q,p \in \mathbb{R}^n\)</span>,
-where <span class="math notranslate nohighlight">\(n\)</span> is the number of degrees of freedom in the system.
-(Here, <span class="math notranslate nohighlight">\(n = 6\)</span>.)</p>
-</div>
-<p>Using the Lagrangian <a class="reference internal" href="#equation-lagrangian">(2)</a>, the Hamiltonian function is defined</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\mathcal{H} &amp;= \sum_{i = 1}^2 \dot{\mathbf{q}}_i \cdot \mathbf{p}_i - \mathcal{L} \\
-&amp;= \sum_{i = 1}^2 \frac{\mathbf{p}_i}{m_i} \cdot \mathbf{p}_i - \left[\frac{1}{2}\left(\frac{|\mathbf{p}_1|^2}{m_1} + \frac{|\mathbf{p}_2|^2}{m_2}\right) + \frac{G m_1 m_2}{|\mathbf{q}_2 - \mathbf{q}_1|}\right] \\
-&amp;= \frac{1}{2}\left(\frac{|\mathbf{p}_1|^2}{m_1} + \frac{|\mathbf{p}_2|^2}{m_2}\right) - \frac{G m_1 m_2}{|\mathbf{q}_2 - \mathbf{q}_1|},\end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\mathbf{q}_i = \mathbf{r}_i\)</span> are the generalized coordinates
-and <span class="math notranslate nohighlight">\(\mathbf{p}_i = m_i\dot{\mathbf{r}}_i\)</span> are the generalized momenta
-for each body (<span class="math notranslate nohighlight">\(i = 1,2\)</span>).
-Hamilton’s canonical equations (12 of them) then require</p>
-<div class="math notranslate nohighlight" id="equation-hamilton">
-<span class="eqno">(4)<a class="headerlink" href="#equation-hamilton" title="Permalink to this equation"></a></span>\[\begin{split}\dot{\mathbf{q}}_i &amp;= \frac{\mathbf{p}_i}{m_i} \\
-\dot{\mathbf{p}}_i &amp;= -\frac{G m_1 m_2}{|\mathbf{q}_i - \mathbf{q}_j|^3} (\mathbf{q}_i - \mathbf{q}_j),\end{split}\]</div>
-<p>for <span class="math notranslate nohighlight">\(j \neq i = 1,2\)</span>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Hamilton’s equations <a class="reference internal" href="#equation-hamilton">(4)</a> are the first-order form of
-<a class="reference internal" href="#equation-newton">(1)</a> and <a class="reference internal" href="#equation-lagrange">(3)</a> as seen by</p>
-<div class="math notranslate nohighlight">
-\[\ddot{\mathbf{q}}_i = \frac{\dot{\mathbf{p}}_i}{m_i} = -\frac{G m_j}{|\mathbf{q}_i - \mathbf{q}_j|^3} (\mathbf{q}_i - \mathbf{q}_j),\]</div>
-<p>where <span class="math notranslate nohighlight">\(\mathbf{q}_i \equiv \mathbf{r}_i\)</span>.</p>
-</div>
-</section>
+<section id="so-which-one-do-we-use">
+<h2>So which one do we use?<a class="headerlink" href="#so-which-one-do-we-use" title="Permalink to this headline"></a></h2>
+<p>General relativity is widely accepted as correct. However, it gets
+complicated <em>fast</em>. There aren’t really that many analytic solutions, and
+integrating its equations of motion on a computer can be slow.</p>
+<p><strong>We use Newtonian gravity</strong> despite it being fundamentally <strong>wrong</strong>!
+We do this because it’s much easier than GR in terms of comprehension and
+computability, and it’s “close enough” for almost <em>all</em> practical
+applications. Any spacecraft we launch will most likely not be interacting
+near black holes or travelling at any appreciable fraction of the
+speed of light.</p>
+<p>With that, it’s time to dive into orbital mechanics!</p>
 </section>
 </section>
 
@@ -207,7 +149,7 @@ Hamilton’s canonical equations (12 of them) then require</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../index.html" class="btn btn-neutral float-left" title="The Circular Restricted 3-Body Problem" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="properties.html" class="btn btn-neutral float-right" title="2 Properties" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="equations-of-motion.html" class="btn btn-neutral float-right" title="1 The Two-Body World" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
