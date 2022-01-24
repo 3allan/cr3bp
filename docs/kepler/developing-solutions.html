@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5 Developing a General Solution &mdash; CR3BP Last commit: fa952a documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/rtd_eq.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6 Trajectory Geometry" href="trajectory-geometry.html" />
+    <link rel="prev" title="4 A Change of Perspective" href="polar-coordinates.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> CR3BP
+          </a>
+              <div class="version">
+                Last commit: fa952a
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The Kepler (2-body) Problem</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">1 Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="equations-of-motion.html">2 The Two-Body World</a></li>
+<li class="toctree-l1"><a class="reference internal" href="properties.html">3 Insights and Conserved Quantities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polar-coordinates.html">4 A Change of Perspective</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5 Developing a General Solution</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-orbital-radius">5.1 The orbital radius</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#from-the-lrl-vector">5.1.1 from the LRL vector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#from-the-ddot-r-ode">5.1.2 from the <span class="math notranslate nohighlight">\(\ddot{r}\)</span> ODE</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#the-orbital-angle-theta">5.2 The orbital angle <span class="math notranslate nohighlight">\(\theta\)</span></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#from-angular-momentum">5.2.1 from angular momentum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#from-the-ddot-theta-ode">5.2.2 from the <span class="math notranslate nohighlight">\(\ddot{\theta}\)</span> ODE</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#using-angular-momentum">5.2.2.1 using angular momentum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-a-total-derivative">5.2.2.2 using a total derivative</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#kepler-s-equation">5.2.3 Kepler’s equation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="trajectory-geometry.html">6 Trajectory Geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="orbital-elements.html">7 Orbital Elements</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Multibody Dynamics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../multibody/overview.html"><span class="sectnum">1</span> Overview</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CR3BP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><span class="section-number">5 </span>Developing a General Solution</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/kepler/developing-solutions.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="developing-a-general-solution">
+<h1><span class="section-number">5 </span>Developing a General Solution<a class="headerlink" href="#developing-a-general-solution" title="Permalink to this headline"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Author</dt>
+<dd class="field-odd"><ol class="upperalpha simple" start="13">
+<li><p>Werner</p></li>
+</ol>
+</dd>
+</dl>
+<section id="the-orbital-radius">
+<h2><span class="section-number">5.1 </span>The orbital radius<a class="headerlink" href="#the-orbital-radius" title="Permalink to this headline"></a></h2>
+<p>In this coordinate system with variables <span class="math notranslate nohighlight">\((x, y, z)\)</span>, the orbital
+radius <span class="math notranslate nohighlight">\(r\)</span> is obtainable using several different methods.
+In all cases, the orbital radius is</p>
+<div class="math notranslate nohighlight" id="equation-orbitalradius">
+<span class="eqno">(5.1.1)<a class="headerlink" href="#equation-orbitalradius" title="Permalink to this equation"></a></span>\[\boxed{r = \frac{h^2}{\mu + A\cos\theta}.}\]</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The radius <span class="math notranslate nohighlight">\(r\)</span> is a <strong>known</strong> function of the angle <span class="math notranslate nohighlight">\(\theta\)</span> and is
+parameterized by constants determined by the system (<span class="math notranslate nohighlight">\(\mu\)</span>) and
+initial conditions (<span class="math notranslate nohighlight">\(h\)</span> and <span class="math notranslate nohighlight">\(A\)</span>).</p>
+</div>
+<section id="from-the-lrl-vector">
+<h3><span class="section-number">5.1.1 </span>from the LRL vector<a class="headerlink" href="#from-the-lrl-vector" title="Permalink to this headline"></a></h3>
+<div class="admonition-recall admonition">
+<p class="admonition-title">Recall</p>
+<p>For any <span class="math notranslate nohighlight">\(x, y, z \in \mathbb{R}^3\)</span>, the scalar triple product
+satisfies</p>
+<div class="math notranslate nohighlight">
+\[x \cdot (y \times z) = y \cdot (z \times x) = z \cdot (x \times y).\]</div>
+</div>
+<p>The LRL vector can be used to obtain an expression for the
+orbital radius <span class="math notranslate nohighlight">\(r\)</span> as a function of the polar coordinate
+<span class="math notranslate nohighlight">\(\theta\)</span> <em>very</em> directly.</p>
+<p>Since <span class="math notranslate nohighlight">\(\theta\)</span> is measured from the <span class="math notranslate nohighlight">\(x\)</span> axis, which is aligned
+with the LRL vector <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{A} \cdot \mathbf{r} &amp;= \left(\dot{\mathbf{r}} \times \mathbf{h} - \frac{\mu}{r}\mathbf{r}\right) \cdot \mathbf{r} \\
+&amp;= (\dot{\mathbf{r}} \times \mathbf{h}) \cdot \mathbf{r} - \left(\frac{\mu}{r}\mathbf{r}\right) \cdot \mathbf{r} \\
+&amp;= \mathbf{r} \cdot (\dot{\mathbf{r}} \times \mathbf{h}) - \frac{\mu}{r} (\mathbf{r} \cdot \mathbf{r}) \\
+&amp;= \mathbf{h} \cdot (\mathbf{r} \times \dot{\mathbf{r}}) - \mu r \\
+&amp;= \mathbf{h} \cdot \mathbf{h} - \mu r \\
+&amp;= h^2 - \mu r \\
+&amp;= A r \cos\theta.\end{split}\]</div>
+<hr class="docutils" />
+<p>Alternatively, knowing <a class="reference internal" href="polar-coordinates.html#equation-amconservation">(4.2.3)</a> and combining it with <a class="reference internal" href="polar-coordinates.html#equation-laplacerungelenz">(4.2.4)</a>
+yields the radius <span class="math notranslate nohighlight">\(r\)</span> even more simply.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A\cos\theta &amp;= r^3\dot{\theta}^2 - \mu \\
+&amp;= \frac{h^2}{r} - \mu.\end{split}\]</div>
+<p>In either approach, the radius <span class="math notranslate nohighlight">\(r\)</span> is obtained as a function of the angle <span class="math notranslate nohighlight">\(\theta\)</span> in accordance with <a class="reference internal" href="#equation-orbitalradius">(5.1.1)</a>. <span class="math notranslate nohighlight">\(\blacksquare\)</span></p>
+</section>
+<section id="from-the-ddot-r-ode">
+<h3><span class="section-number">5.1.2 </span>from the <span class="math notranslate nohighlight">\(\ddot{r}\)</span> ODE<a class="headerlink" href="#from-the-ddot-r-ode" title="Permalink to this headline"></a></h3>
+<p>Combined with the conservation of angular momentum <a class="reference internal" href="polar-coordinates.html#equation-amconservation">(4.2.3)</a>, the <span class="math notranslate nohighlight">\(\ddot{r}\)</span> equation of motion <a class="reference internal" href="polar-coordinates.html#equation-polareom">(4.2.2)</a> provides</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\ddot{r} &amp;= r\dot{\theta}^2 - \frac{\mu}{r^2} \\
+&amp;= \frac{h^2}{r^3} - \frac{\mu}{r^2}.\end{split}\]</div>
+<p>We wish to convert the derivatives in time <span class="math notranslate nohighlight">\(t\)</span> to those in the angular
+coordinate <span class="math notranslate nohighlight">\(\theta\)</span> to understand the geometry of the trajectory in
+polar coordinates. Using the conservation of angular momentum <a class="reference internal" href="polar-coordinates.html#equation-amconservation">(4.2.3)</a> repeatedly, we see</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{d^2 r}{d\theta^2} &amp;= \frac{d}{d\theta}\left(\frac{dr}{d\theta}\right) \\
+&amp;= \frac{d}{d\theta}\left(\frac{\dot{r}}{\dot{\theta}}\right) \\
+&amp;= \frac{d}{d\theta}\left(\frac{r^2\dot{r}}{h}\right) \\
+&amp;= \frac{1}{\dot{\theta}}\frac{d}{dt}\left(\frac{r^2\dot{r}}{h}\right) \\
+&amp;= \frac{r^2}{h^2}(2r\dot{r}^2 + r^2 \ddot{r}) \\
+&amp;= \frac{r^2}{h^2}\left(2r\left(\frac{h}{r^2}\frac{dr}{d\theta}\right)^{\!2} + r^2 \left(\frac{h^2}{r^3} - \frac{\mu}{r^2}\right)\right) \\
+&amp;= \frac{r^2}{h^2}\left(2\frac{h^2}{r^3}\left(\frac{dr}{d\theta}\right)^{\!2} + \frac{h^2}{r} - \mu\right) \\
+&amp;= \frac{2}{r}\left(\frac{dr}{d\theta}\right)^{\!2} - \frac{\mu r^2}{h^2} + r.\end{split}\]</div>
+<p>Despite offering a description of the trajectory’s geometry in space as
+opposed to time, <em>this</em> differential equation still proves to be formidable
+in obtaining a solution. However, a final, clever change of variables <em>will</em>
+yield a useful relation by letting <span class="math notranslate nohighlight">\(\eta = 1/r\)</span>. In this case,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{d^2\eta}{d\theta^2} &amp;= \frac{d}{d\theta}\left(\frac{d\eta}{d\theta}\right) \\
+&amp;= \frac{d}{d\theta}\left(-\frac{1}{r^2}\frac{dr}{d\theta}\right) \\
+&amp;= -\frac{1}{h}\frac{d\dot{r}}{d\theta} \\
+&amp;= -\frac{1}{h}\frac{d}{d\theta}\left(\frac{dr}{d\theta}\dot{\theta}\right) \\
+&amp;= -\frac{1}{h}\frac{d}{d\theta}\left(\frac{dr}{d\theta}\frac{h}{r^2}\right) \\
+&amp;= -\frac{1}{r^2}\frac{d^2r}{d\theta^2} + \frac{2}{r^3}\left(\frac{dr}{d\theta}\right)^{\!2} \\
+&amp;= -\frac{1}{r^2}\left(\frac{2}{r}\left(\frac{dr}{d\theta}\right)^{\!2} - \frac{\mu r^2}{h^2} + r\right) + \frac{2}{r^3}\left(\frac{dr}{d\theta}\right)^{\!2} \\
+&amp;= \frac{\mu}{h^2} - \frac{1}{r} \\
+&amp;= \frac{\mu}{h^2} - \eta.\end{split}\]</div>
+<p>With this transformation, we see that we are offered something describing
+a linear oscillator,
+where both <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(h\)</span> are (positive) constants. We can
+therefore immediately write the general solution as</p>
+<div class="math notranslate nohighlight">
+\[\eta = \frac{\mu}{h^2} + C \cos(\theta - \omega),\]</div>
+<p>where both <span class="math notranslate nohighlight">\(C\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span> are constants of integration.
+Note that <span class="math notranslate nohighlight">\(C\)</span> represents an amplitude and, as such, satisfies
+<span class="math notranslate nohighlight">\(C \geqslant 0\)</span>.
+The orbital radius (<span class="math notranslate nohighlight">\(r = 1/\eta\)</span>) is then</p>
+<div class="math notranslate nohighlight">
+\[r = \frac{h^2}{\mu + (C/h^2) \cos(\theta - \omega)}.\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> already provides a constant direction in the
+orbital plane from which <span class="math notranslate nohighlight">\(\theta\)</span> is measured, we do not wish to
+shift the angle <span class="math notranslate nohighlight">\(\theta\)</span> to be measured with respect to anything else
+(yet). Thus, we can take</p>
+<div class="math notranslate nohighlight">
+\[\omega = 0\]</div>
+<p>without loss of generality in <em>this</em> coordinate frame.
+(This quantity <span class="math notranslate nohighlight">\(\omega\)</span> is called the <em>argument of periapsis</em>, which
+is naturally useful for the transformation between the <span class="math notranslate nohighlight">\((X, Y, Z)\)</span>
+and <span class="math notranslate nohighlight">\((x, y, z)\)</span> coordinate systems.)</p>
+<p>To determine the constant <span class="math notranslate nohighlight">\(C\)</span>, we can calculate the time derivative
+of the orbital radius exactly and then turn to the invariance of the
+LRL vector <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> <a class="reference internal" href="polar-coordinates.html#equation-laplacerungelenz">(4.2.4)</a> combined with
+conservation of angular momentum <a class="reference internal" href="polar-coordinates.html#equation-amconservation">(4.2.3)</a> to compare expressions
+for <span class="math notranslate nohighlight">\(\dot{r}.\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\dot{r} &amp;= \frac{C\sin\theta}{(\mu + (C/h^2) \cos\theta)^2}\dot{\theta} \\
+&amp;= \left(\frac{r^2}{h^4}C\sin\theta\right)\left(\frac{h}{r^2}\right) \\
+&amp;= \frac{C}{h^3}\sin\theta \\
+&amp;= \frac{A}{h}\sin\theta\end{split}\]</div>
+<p>We therefore immediately conclude that the integration constant <span class="math notranslate nohighlight">\(C\)</span>
+is expressed in terms of known quantities as</p>
+<div class="math notranslate nohighlight">
+\[C = A h^2.\]</div>
+<p>From an analysis of pure differential equations using only the conservation of momentum <a class="reference internal" href="polar-coordinates.html#equation-amconservation">(4.2.3)</a>, the orbital radius <span class="math notranslate nohighlight">\(r\)</span> is obtained as a function of the angle <span class="math notranslate nohighlight">\(\theta\)</span> in accordance with <a class="reference internal" href="#equation-orbitalradius">(5.1.1)</a>. <span class="math notranslate nohighlight">\(\blacksquare\)</span></p>
+</section>
+</section>
+<section id="the-orbital-angle-theta">
+<h2><span class="section-number">5.2 </span>The orbital angle <span class="math notranslate nohighlight">\(\theta\)</span><a class="headerlink" href="#the-orbital-angle-theta" title="Permalink to this headline"></a></h2>
+<p>Knowing the orbital radius <span class="math notranslate nohighlight">\(r\)</span> to be a function of <span class="math notranslate nohighlight">\(\theta\)</span>,
+we would most like to know the angular coordinate <span class="math notranslate nohighlight">\(\theta\)</span> as a
+function of time <span class="math notranslate nohighlight">\(t\)</span>. This would fully complete the parameterization
+as then <span class="math notranslate nohighlight">\(\mathbf{r} = \mathbf{r}(t)\)</span> would be a known function for all
+time.</p>
+<p>Like the orbital radius, the angular coordinate <span class="math notranslate nohighlight">\(\theta\)</span> is
+expressible using several different methods.
+However, unlike the orbital radius, these expressions prove to be
+difficult in obtaining <span class="math notranslate nohighlight">\(\theta = \theta(t).\)</span> Instead, we can obtain
+<span class="math notranslate nohighlight">\(t = t(\theta).\)</span>
+As we shall see, inverting this function <span class="math notranslate nohighlight">\(t\)</span> is, indeed, difficult.</p>
+<section id="from-angular-momentum">
+<h3><span class="section-number">5.2.1 </span>from angular momentum<a class="headerlink" href="#from-angular-momentum" title="Permalink to this headline"></a></h3>
+<p>The conservation of angular momentum states <span class="math notranslate nohighlight">\(r^2\dot{\theta} = h,\)</span>
+but the orbital radius <span class="math notranslate nohighlight">\(r\)</span> is now a <strong>known</strong> function of <strong>only</strong>
+<span class="math notranslate nohighlight">\(\theta.\)</span> Thus, we can write</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\dot{\theta} &amp;= \frac{h}{r^2} \\
+&amp;= \frac{(\mu + A\cos\theta)^2}{h^3},\end{split}\]</div>
+<p>which provides a separable equation for <span class="math notranslate nohighlight">\(\theta\)</span>.
+Naively integrating obtains</p>
+<div class="math notranslate nohighlight" id="equation-eq-naiveintegration">
+<span class="eqno">(5.2.1)<a class="headerlink" href="#equation-eq-naiveintegration" title="Permalink to this equation"></a></span>\[\int_{\theta_0}^\theta \frac{d\theta'}{(\mu + A\cos\theta')^2} = \frac{1}{h^3}\int_{t_0}^t dt',\]</div>
+<p>but this expression turns out <em>not</em> to be entirely true for <em>any</em> arbitrary
+<span class="math notranslate nohighlight">\(\theta\)</span> since we only know that <span class="math notranslate nohighlight">\(\mu, A \geqslant 0\)</span> (i.e. it is
+possible that <span class="math notranslate nohighlight">\(A \geqslant \mu,\)</span> in which case the integrand becomes
+periodically undefined).</p>
+<p>This relation is developed further when exploring the <a class="reference internal" href="trajectory-geometry.html#trajectory-geometry"><span class="std std-ref">trajectory’s geometry</span></a>.</p>
+</section>
+<section id="from-the-ddot-theta-ode">
+<h3><span class="section-number">5.2.2 </span>from the <span class="math notranslate nohighlight">\(\ddot{\theta}\)</span> ODE<a class="headerlink" href="#from-the-ddot-theta-ode" title="Permalink to this headline"></a></h3>
+<p>Equation <a class="reference internal" href="polar-coordinates.html#equation-polareom">(4.2.2)</a> provides several different ways to go about
+trying to obtain <span class="math notranslate nohighlight">\(\theta = \theta(t)\)</span>.</p>
+<section id="using-angular-momentum">
+<h4><span class="section-number">5.2.2.1 </span>using angular momentum<a class="headerlink" href="#using-angular-momentum" title="Permalink to this headline"></a></h4>
+</section>
+<section id="using-a-total-derivative">
+<h4><span class="section-number">5.2.2.2 </span>using a total derivative<a class="headerlink" href="#using-a-total-derivative" title="Permalink to this headline"></a></h4>
+<p>Using the known solution for the orbital radius <span class="math notranslate nohighlight">\(r\)</span> and the
+conservation of the LRL vector <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> along
+with the conservation of angular momentum, the
+<span class="math notranslate nohighlight">\(\ddot{\theta}\)</span> equation of motion provides</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}0 &amp;= \ddot{\theta} + 2\frac{\dot{r}}{r}\dot{\theta} \\
+&amp;= \ddot{\theta} + 2\frac{(A/h)\sin\theta}{h^2/(\mu + A\cos\theta)}\dot{\theta} \\
+&amp;= \ddot{\theta} + 2\frac{A}{h^3}(\mu + A\cos\theta)\sin\theta\dot{\theta} \\
+&amp;= \ddot{\theta} + 2\frac{\mu^2 e}{h^3}(1 + e\cos\theta)\sin\theta\dot{\theta} \\
+&amp;= \frac{d}{dt}\left(\dot{\theta} - 2\frac{\mu^2}{h^3}\left(e\cos\theta + \frac{e^2}{2}\cos^2\theta\right)\right).\end{split}\]</div>
+<p>We have effectively integrated the equation of motion once, picking up an
+integration constant <span class="math notranslate nohighlight">\(C,\)</span> which we can evaluate using the
+conservation of angular momentum or the conservation of energy.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\dot{\theta} &amp;= 2\frac{\mu^2}{h^3}\left(e\cos\theta + \frac{e^2}{2}\cos^2\theta\right) + C \\
+&amp;= \frac{h}{r^2} \\
+&amp;= \frac{\mu^2}{h^3}(1 + e\cos\theta)^2 \\
+&amp;= \frac{\mu^2}{h^3}(1 + 2e\cos\theta + e^2\cos^2\theta) \\
+&amp;= 2\frac{\mu^2}{h^3}\left(e\cos\theta + \frac{e^2}{2}\cos^2\theta\right) + \frac{\mu^2}{h^3}.\end{split}\]</div>
+<p>Thus, the constant is <span class="math notranslate nohighlight">\(C = \mu^2/h^3,\)</span> providing</p>
+<div class="math notranslate nohighlight">
+\[\dot{\theta} = \frac{\mu^2}{h^3}(1 + e\cos\theta)^2.\]</div>
+<p>The outcome is identical to that obtained from analyzing the conservation
+of angular momentum directly.</p>
+</section>
+</section>
+<section id="kepler-s-equation">
+<h3><span class="section-number">5.2.3 </span>Kepler’s equation<a class="headerlink" href="#kepler-s-equation" title="Permalink to this headline"></a></h3>
+<p>Unfortunately, we cannot express <span class="math notranslate nohighlight">\(\theta = \theta(t)\)</span> analytically
+for any general <span class="math notranslate nohighlight">\(e\)</span> analyzing conserved quantities and the governing
+differential equation. We are therefore forced to turn to other methods.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="polar-coordinates.html" class="btn btn-neutral float-left" title="4 A Change of Perspective" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="trajectory-geometry.html" class="btn btn-neutral float-right" title="6 Trajectory Geometry" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, The Multibody Astrodynamics Community.
+      <span class="lastupdated">Last updated on Jan 23, 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,10 +1,7 @@
 .. default-role:: math
 
-
-
-============
 Introduction
-============
+************
 
 :Author: M. Werner
 

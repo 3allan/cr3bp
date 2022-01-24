@@ -1,7 +1,7 @@
 \documentclass[crop,tikz]{standalone}
 \usepackage{tikz-3dplot}
 \makeatletter
-\usetikzlibrary{3d}
+\usetikzlibrary{3d, arrows.meta, bending}
 \begin{document}
 
 
@@ -131,6 +131,56 @@
   \end{tikzpicture}
 
 
+% Kepler coordinate rotation v2
+\tdplotsetmaincoords{70}{110}
+\begin{tikzpicture}[scale=2.8, tdplot_main_coords]
+  	\coordinate (O) at (0,0,0);
+    \draw[thick] (-1.5,0,0) -- (O);
+    \draw[thick] (0,-1,0) -- (O);
+    \draw[thick] (0,0,-0.75) -- (O);
+    \draw[->, >=latex, thick] (O) -- (1.5,0,0) node[anchor=north east, yshift=1mm]{$X$};
+    \draw[->, >=latex, thick] (O) -- (0,1,0) node[right]{$Y$};
+    \draw[->, >=latex, thick] (O) -- (0,0,0.75) node[left]{$Z$};
+    
+	\pgfmathsetmacro{\moveRight}{1.2}
+    \pgfmathsetmacro{\lengthArrow}{0.54}
+    \begin{scope}[shift={({(-0.45/1.25)*\moveRight},\moveRight,0)}]
+		\coordinate (O) at (0,0,0);
+		\pgfmathsetmacro{\makeArrowStraight}{-0.36*\lengthArrow}
+		\draw[->, -{Latex[scale=1]}, very thick, black] (O) -- (\makeArrowStraight, \lengthArrow) node[pos=0.5, above]{\scalebox{1}{$\mathbf{R}$}};
+	\end{scope}
+    
+    	\begin{scope}[shift={(-1.08,3,0)}]
+    		\coordinate (O) at (0,0,0);
+    		\draw[thick, black!25] (-1.5,0,0) -- (O);
+	    \draw[thick, black!25] (0,-1,0) -- (O);
+	    \draw[thick, black!25] (0,0,-0.75) -- (O);
+    		\draw[->, >=latex, thick, black!25] (0,0,0) -- (1.5,0,0) node[anchor=north east, yshift=1mm]{$X$};
+    		\draw[->, >=latex, thick, black!25] (O) -- (0,1,0) node[right]{$Y$};
+	    \draw[->, >=latex, thick, black!25] (O) -- (0,0,0.75) node[left]{$Z$};
+	    
+	    \tdplotsetrotatedcoords{60}{-20}{-90}
+	    \tdplotsetrotatedcoords{120}{-30}{-35}%
+	    \tdplotsetrotatedcoords{-55}{40}{-15}
+	    \begin{scope}[tdplot_rotated_coords]
+	    		\begin{scope}[canvas is xy plane at z=0]
+	    			\fill[blue!25,fill opacity=0.3] (-1.4,-1.2) rectangle (1.2,1.2);
+	    			\node[black, transform shape, scale=0.425, yscale=-1, xscale=-1] at (-0.85,-1) {orbital plane};
+	    		\end{scope}
+	    		% Draw rotated coordinates
+	    		\draw[->, >=latex, thick] (0,0,0) -- (1,0,0) node[left, yshift=-0.5mm]{$x$};
+	    		\draw[->, >=latex, thick] (O) -- (0,1,0) node[right]{$y$};
+		    \draw[->, >=latex, thick] (O) -- (0,0,0.75) node[anchor=south west, xshift=-1mm]{$z$};
+		    
+		    % Notes on the directions of x and z
+		    \node[align=center] at (0.7,-0.8,1) {Direction of \\ angular momentum};
+		    \node[align=center] at (1.5,0,0.2) {Direction of \\ LRL vector};
+	    \end{scope}
+	    
+	    \tdplotcalctransformrotmain
+    \end{scope}
+\end{tikzpicture}
+
 
 \newpage
 % Kepler coordinate rotation
@@ -205,6 +255,42 @@
   	\node at (O) [anchor=south east, xshift=-1mm, rotate=-6]{$m_1 + m_2$};
     \node at (M) [right]{$\mu^*$};
   \end{tikzpicture}
+  
+  
+  
+  
+% Polar coordinate system
+\begin{tikzpicture}[scale=4]
+% Draw the polar axes
+\pgfmathsetmacro{\radius}{1.3}
+\pgfmathsetmacro{\th}{50}
+\begin{scope}[rotate=\th]
+% Draw the object at (x,y)
+\node at (\radius,0) [circle,fill,inner sep=1pt]{};
+\node at (\radius, 0)[right]{$(x,y)$};
+\draw[thin, dashed] (0,0) -- (\radius,0) node[pos=0.92, left, xshift=-1mm]{$r$};
+\draw[->, >=latex, thick] (0,0) -- (1,0) node[anchor=north west]{$\mathbf{e}_r$};
+\draw[->, >=latex, thick] (0,0) -- (0,1) node[left]{$\mathbf{e}_\theta$};
+\end{scope}
+
+% Draw the angle theta
+\pgfmathsetmacro{\rArc}{0.6}
+\draw[thick, -{stealth[black]}, black, shorten >=0.5pt] (\rArc,0) arc (0:\th:\rArc) node[pos=0.5, right, black]{$\theta$};
+%\draw[thick, path fading=south, shorten >=2pt] (\rArc,0) arc (0:\th:\rArc);
+
+% Draw the normal (x, y) axes
+\draw[->, >=latex, thick, black!25] (0,0) -- (1,0) node[right]{$\mathbf{e}_x$};
+\draw[->, >=latex, thick, black!25] (0,0) -- (0,1) node[left]{$\mathbf{e}_y$};
+\node at (0,0) [circle,fill,inner sep=1.5pt]{};
+\node at (0,0) [anchor=north east]{$\mathbf{e}_z$};
+
+% Draw angular velocity
+\pgfmathsetmacro{\OmegaArc}{0.075}
+\pgfmathsetmacro{\OmegaStartAng}{-20}
+\pgfmathsetmacro{\OmegaTotalAng}{-70}
+\pgfmathsetmacro{\OmegaAng}{\OmegaStartAng+\OmegaTotalAng}
+\draw[thick, -{stealth[bend, red!65]}, red!65] ({\OmegaArc*cos(\OmegaStartAng)},{\OmegaArc*sin(\OmegaStartAng)}) arc (\OmegaStartAng:\OmegaAng:\OmegaArc) node[black, pos=0.8, right, xshift=1mm, yshift=-0.5mm]{$\dot{\theta}$};
+\end{tikzpicture}
 \end{document}
 
 % GRAVEYARD
@@ -290,3 +376,34 @@
 %    \draw[->, >=latex, thick] (0,0) -- (\cost,\sint) node[anchor=south west, yshift=0mm]{$\hat{\mathbf{e}}_r$};
 %    \draw[->, >=latex, thick] (0,0) -- (-\sint,\cost) node[left]{$\hat{\mathbf{e}}_\theta$};
 %\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+%\newpage
+%% Kepler coordinate rotation
+%\tdplotsetmaincoords{70}{110}
+%  \begin{tikzpicture}[scale=4, tdplot_main_coords]
+%  	\coordinate (O) at (0,0,0);
+%    \draw[thick] (-1.5,0,0) -- (O);
+%    \draw[thick] (0,-1,0) -- (O);
+%    \draw[thick] (0,0,-0.75) -- (O);
+%    \draw[->, >=latex, thick] (O) -- (1.5,0,0) node[anchor=north east, yshift=1mm]{$X$};
+%    \draw[->, >=latex, thick] (O) -- (0,1,0) node[right]{$Y$};
+%    \draw[->, >=latex, thick] (O) -- (0,0,0.75) node[left]{$Z$};
+%    
+%    	\tdplotsetrotatedcoords{60}{-20}{-90}
+%    \begin{scope}[tdplot_rotated_coords]
+%%    		\draw[thick, black!50] (-1.5,0,0) -- (O);
+%%	    \draw[thick, black!50] (0,-1,0) -- (O);
+%%	    \draw[thick, black!50] (0,0,-0.75) -- (O);
+%    		\draw[->, >=latex, thick, black!50] (O) -- (1,0,0) node[anchor=north east, yshift=1mm]{$x$};
+%    		\draw[->, >=latex, thick, black!50] (O) -- (0,1,0) node[right]{$y$};
+%	    \draw[->, >=latex, thick, black!50] (O) -- (0,0,1) node[left]{$z$};
+%    \end{scope}
+%  \end{tikzpicture}

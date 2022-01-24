@@ -1,10 +1,9 @@
 .. default-role:: math
 
-.. sectnum::
-    :start: 4
-
 Trajectory Geometry
-===================
+*******************
+
+:Author: M. Werner
 
 Closed Orbits `(0 \leqslant e < 1)`
 -----------------------------------

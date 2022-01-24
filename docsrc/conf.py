@@ -15,14 +15,24 @@
 # sys.path.insert(0, os.path.abspath('.'))
 #import sphinx_rtd_theme
 
+import time
+import git # from the package gitpython
+repo = git.Repo(search_parent_directories=True)
+sha = repo.head.object.hexsha
+
 # -- Project information -----------------------------------------------------
 
 project = 'CR3BP'
-copyright = '2021, The Multibody Astrodynamics Community'
+copyright = '2022, The Multibody Astrodynamics Community'
 author = 'Matt Werner'
+version = 'Last commit: ' + sha[0:6]
+release = version
 
 
 # -- General configuration ---------------------------------------------------
+
+# IGNORE DUPLICATE LABEL ENTRIES
+suppress_warnings = ['epub.duplicated_toc_entry']
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
@@ -37,6 +47,18 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
+add_function_parentheses = True
+
+numfig = True
+today = time.strftime('%b %d, %Y')
+
+numfig_secnum_depth = 2
+
+
+# Math options
+math_eqref_format = '({number})'
+math_numfig = True # Default is true
+
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -48,6 +70,41 @@ html_theme = 'sphinx_rtd_theme'
 #html_theme = 'cloud' # Nice scrollbar
 #html_theme = 'sizzle'
 #html_theme = 'pydata_sphinx_theme'
+
+
+# Add logo (when I have one)
+html_logo = None
+html_favicon = None
+
+# Last updated in footer
+html_last_updated_fmt = today
+
+# Permalinks
+html_permalinks = True
+html_permalinks_icon = 'Some sample text'
+html_show_sphinx = True
+html_secnumber_suffix = " "
+
+# LaTeX
+latex_engine = 'pdflatex'
+latex_show_pagerefs = True
+latex_elements = {
+    # The paper size ('letterpaper' or 'a4paper').
+    #
+    # 'papersize': 'letterpaper',
+
+    # The font size ('10pt', '11pt' or '12pt').
+    #
+    # 'pointsize': '10pt',
+
+    # Additional stuff for the LaTeX preamble.
+    #
+    # 'preamble': '',
+
+    # Latex figure (float) alignment
+    #
+    # 'figure_align': 'htbp',
+}
 
 
 # Add any paths that contain custom static files (such as style sheets) here,

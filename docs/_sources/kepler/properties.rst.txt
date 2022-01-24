@@ -1,11 +1,7 @@
 .. default-role:: math
 
-.. sectnum::
-    :start: 2
-
-=================================
 Insights and Conserved Quantities
-=================================
+*********************************
 
 :Author: M. Werner
 
@@ -30,7 +26,7 @@ coordinate system.
 Amazingly, this general system :eq:`general2bp` has a closed-form solution.
 Obtaining this solution, however, is made significantly easier once several properties are known.
 
-Relative Form
+Relative form
 =============
 To reduce the complexity of :eq:`general2bp` (as we will see), we can
 define the **relative** distance between each body as
@@ -54,9 +50,9 @@ where `r = |\mathbf{r}|` is the distance between the two particles.
     the full system of equations, essentially **halving** the number of
     equations to be solved in order to obtain *any* information.
 
-Conserved Quantities
+Conserved quantities
 ====================
-Linear Momentum
+Linear momentum
 ---------------
 .. admonition:: Recall
 
@@ -97,7 +93,7 @@ You can validate this for yourself!
     have to be solved with :eq:`eq:relativeEOM`, but now *all* information about
     *both* bodies is known.
 
-Angular Momentum
+Angular momentum
 ----------------
 .. admonition:: Recall
 
@@ -134,9 +130,9 @@ We conclude that the (specific) angular momentum `\mathbf{h}` is conserved under
     \mathbf{h} = \mathbf{r} \times \dot{\mathbf{r}} \equiv \mathrm{const.}
 
 .. Important::
-    **The motion of the two bodies must be planar!**
+    **The motion of the two bodies must be planar, and the angular momentum is perpendicular to this plane!**
 
-The Laplace-Runge-Lenz Vector
+The Laplace-Runge-Lenz vector
 -----------------------------
 .. admonition:: Recall
 
@@ -198,7 +194,7 @@ mass `m_1 + m_2`.
     interplay with an inverse relationship for a given, fixed energy
     `E`.
 
-The Reduced Mass
+The reduced mass
 ================
 The system :eq:`eq:relativeEOM` is writable as
 
@@ -240,7 +236,7 @@ Facts about the reduced mass system
 **Fact:** `\mu^* < m_1 + m_2` for any `m_1, m_2 > 0`.
 
 **Proof:** Suppose the opposite. Then `(m_1 + m_2)^2 = m_1^2 + 2m_1 m_2 + m_2^2 < m_1 m_2`,
-but this means `m_1^2 + m_2^2 < -m_1 m_2` --- a contradiction. `\square`
+but this means `m_1^2 + m_2^2 < -m_1 m_2`, therefore a contradiction. `\square`
 
 - This means that it's fair to imagine the smaller body simply flying around
   the larger body.
@@ -253,7 +249,7 @@ but this means `m_1^2 + m_2^2 < -m_1 m_2` --- a contradiction. `\square`
   actually resembles the relative system. That is, `m_1` is nearly sitting
   at the origin and `m_2` is flying around it.
 
-Standard Form
+Standard form
 =============
 The standard form of the 2-body problem is achieved after defining the
 **gravitational parameter**

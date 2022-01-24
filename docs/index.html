@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Circular Restricted 3-Body Problem &mdash; CR3BP  documentation</title>
+  <title>The Circular Restricted 3-Body Problem &mdash; CR3BP Last commit: fa952a documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/rtd_eq.css" type="text/css" />
@@ -20,7 +20,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Introduction" href="kepler/overview.html" /> 
+    <link rel="next" title="1 Introduction" href="kepler/overview.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -30,6 +30,9 @@
         <div class="wy-side-nav-search" >
             <a href="#" class="icon icon-home"> CR3BP
           </a>
+              <div class="version">
+                Last commit: fa952a
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -39,13 +42,15 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">The Kepler (2-body) Problem</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="kepler/overview.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kepler/equations-of-motion.html"><span class="sectnum">1</span> The Two-Body World</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kepler/properties.html"><span class="sectnum">2</span> Insights and Conserved Quantities</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kepler/solution.html"><span class="sectnum">3</span> Solution</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kepler/trajectory-geometry.html"><span class="sectnum">4</span> Trajectory Geometry</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kepler/orbital-elements.html"><span class="sectnum">5</span> Orbital Elements</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kepler/overview.html">1 Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kepler/equations-of-motion.html">2 The Two-Body World</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kepler/properties.html">3 Insights and Conserved Quantities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kepler/polar-coordinates.html">4 A Change of Perspective</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kepler/developing-solutions.html">5 Developing a General Solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kepler/trajectory-geometry.html">6 Trajectory Geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kepler/orbital-elements.html">7 Orbital Elements</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Multibody Dynamics</span></p>
 <ul>
@@ -82,15 +87,17 @@
 solution space provided by the circular restricted 3-body problem (CR3BP).</p>
 <p>Links to various relevant topics are found below, beginning with the
 foundations and advancing towards applications and results.</p>
-<div class="toctree-wrapper compound">
+<div class="toctree-wrapper compound" id="introduction-to-astrodynamics">
 <p class="caption" role="heading"><span class="caption-text">The Kepler (2-body) Problem</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="kepler/overview.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kepler/equations-of-motion.html"><span class="sectnum">1</span> The Two-Body World</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kepler/properties.html"><span class="sectnum">2</span> Insights and Conserved Quantities</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kepler/solution.html"><span class="sectnum">3</span> Solution</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kepler/trajectory-geometry.html"><span class="sectnum">4</span> Trajectory Geometry</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kepler/orbital-elements.html"><span class="sectnum">5</span> Orbital Elements</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kepler/overview.html">1 Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kepler/equations-of-motion.html">2 The Two-Body World</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kepler/properties.html">3 Insights and Conserved Quantities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kepler/polar-coordinates.html">4 A Change of Perspective</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kepler/developing-solutions.html">5 Developing a General Solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kepler/trajectory-geometry.html">6 Trajectory Geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kepler/orbital-elements.html">7 Orbital Elements</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -105,13 +112,15 @@ foundations and advancing towards applications and results.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="kepler/overview.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="kepler/overview.html" class="btn btn-neutral float-right" title="1 Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, The Multibody Astrodynamics Community.</p>
+    <p>&#169; Copyright 2022, The Multibody Astrodynamics Community.
+      <span class="lastupdated">Last updated on Jan 23, 2022.
+      </span></p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

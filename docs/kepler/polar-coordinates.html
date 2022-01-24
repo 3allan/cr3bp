@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4 A Change of Perspective &mdash; CR3BP Last commit: fa952a documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/rtd_eq.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5 Developing a General Solution" href="developing-solutions.html" />
+    <link rel="prev" title="3 Insights and Conserved Quantities" href="properties.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> CR3BP
+          </a>
+              <div class="version">
+                Last commit: fa952a
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The Kepler (2-body) Problem</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">1 Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="equations-of-motion.html">2 The Two-Body World</a></li>
+<li class="toctree-l1"><a class="reference internal" href="properties.html">3 Insights and Conserved Quantities</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4 A Change of Perspective</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#reorienting-the-coordinate-system">4.1 Reorienting the coordinate system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#switching-into-polar-coordinates">4.2 Switching into polar coordinates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#developing-new-equations-of-motion">4.2.1 Developing new equations of motion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rewriting-the-conserved-quantities">4.2.2 Rewriting the conserved quantities</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#angular-momentum">4.2.2.1 Angular momentum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lrl-vector">4.2.2.2 LRL vector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#energy">4.2.2.3 Energy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developing-solutions.html">5 Developing a General Solution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trajectory-geometry.html">6 Trajectory Geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="orbital-elements.html">7 Orbital Elements</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Multibody Dynamics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../multibody/overview.html"><span class="sectnum">1</span> Overview</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CR3BP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><span class="section-number">4 </span>A Change of Perspective</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/kepler/polar-coordinates.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="a-change-of-perspective">
+<h1><span class="section-number">4 </span>A Change of Perspective<a class="headerlink" href="#a-change-of-perspective" title="Permalink to this headline"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Author</dt>
+<dd class="field-odd"><ol class="upperalpha simple" start="13">
+<li><p>Werner</p></li>
+</ol>
+</dd>
+</dl>
+<div class="admonition-plan-of-action admonition">
+<p class="admonition-title">Plan of Action</p>
+<p>The solution of the <em>general</em> 2-body problem is developed several
+different ways utilizing the now known special
+<a class="reference internal" href="properties.html#insights-and-conserved-quantities"><span class="std std-ref">properties</span></a> admitted by the system.</p>
+</div>
+<section id="reorienting-the-coordinate-system">
+<h2><span class="section-number">4.1 </span>Reorienting the coordinate system<a class="headerlink" href="#reorienting-the-coordinate-system" title="Permalink to this headline"></a></h2>
+<p>Knowing that the motion <strong>must</strong> be 2-dimensional, we can choose a more
+convenient reference frame using a coordinate rotation. Let this rotation
+be denoted <span class="math notranslate nohighlight">\(\mathbf{R} \in \mathrm{SO}(3)\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}x \\ y \\ z\end{pmatrix} = \mathbf{R} \begin{pmatrix}X \\ Y \\ Z\end{pmatrix}.\end{split}\]</div>
+<p>Although they look different, <span class="math notranslate nohighlight">\((x, y, z)\)</span> and <span class="math notranslate nohighlight">\((X, Y, Z)\)</span> both represent the <strong>same</strong> object.</p>
+<p>It’s very convenient to utilize the conservation of angular momentum and
+the Laplace-Runge-Lenz (LRL) vector to define the precise action of
+<span class="math notranslate nohighlight">\(\mathbf{R}\)</span> on the two coordinate systems.
+<strong>We choose to orient the</strong> <span class="math notranslate nohighlight">\(z\)</span> <strong>axis in the direction of the angular momentum</strong>
+<strong>and the</strong> <span class="math notranslate nohighlight">\(x\)</span> <strong>axis in the direction of the LRL vector.</strong></p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/kepler_rotation_into_orbital_plane_v2.svg"><img alt="Rotating coordinates into a reference frame that is aligned with the orbital plane." height="526px" src="../_images/kepler_rotation_into_orbital_plane_v2.svg" width="1052px" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.1.1 </span><span class="caption-text">The result of applying the rotation matrix <span class="math notranslate nohighlight">\(\mathbf{R}\)</span> to the original
+coordinates <span class="math notranslate nohighlight">\((X, Y, Z)\)</span> is to rotate its coordinate directions. These
+new coordinates are labelled <span class="math notranslate nohighlight">\((x, y, z)\)</span>; the motion of the two particles
+occurs entirely in the <span class="math notranslate nohighlight">\(xy\)</span> plane, called the <strong>orbital plane.</strong></span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>This rotation is <strong>not</strong> time-dependent — that is, <span class="math notranslate nohighlight">\(\mathbf{R}\)</span> is
+a constant matrix representing a rotation between the two coordinate systems.</p>
+<p>The standard form of the equations of motion is consequently <em>unchanged</em>.</p>
+</section>
+<section id="switching-into-polar-coordinates">
+<h2><span class="section-number">4.2 </span>Switching into polar coordinates<a class="headerlink" href="#switching-into-polar-coordinates" title="Permalink to this headline"></a></h2>
+<p>By choosing this new coordinate system, we have reduced the problem to
+determining just 2 unknown quantities — the parameterizations of polar coordinates,</p>
+<div class="math notranslate nohighlight" id="equation-polarcoordinates">
+<span class="eqno">(4.2.1)<a class="headerlink" href="#equation-polarcoordinates" title="Permalink to this equation"></a></span>\[\begin{split}x &amp;= r \cos\theta \\
+y &amp;= r \sin\theta \\
+z &amp;= 0,\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(r = |\mathbf{r}|\)</span> as usual and <span class="math notranslate nohighlight">\(\theta\)</span> is the angle made
+between the reduced mass particle and the <span class="math notranslate nohighlight">\(x\)</span> axis.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/kepler_coordinate_rotation.svg"><img alt="Example of a planar trajectory taken by the reduced mass in an inertial, but specially chosen, coordinate system." height="310px" src="../_images/kepler_coordinate_rotation.svg" width="543px" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.2.1 </span><span class="caption-text">A “trajectory” in the new coordinates utilizing polar
+coordinates <span class="math notranslate nohighlight">\((r,\theta)\)</span>. Note that this trajectory is actually
+<strong>impossible</strong> since there is a change in the sign of angular momentum, a
+constant of motion.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The relative motion of the two bodies (<span class="math notranslate nohighlight">\(\mathbf{r}\)</span>)
+<em>in the orbital plane</em> is fully determined by the set of polar coordinates
+<span class="math notranslate nohighlight">\((r, \theta)\)</span>. <strong>The 2-body problem has been reduced from determining all 6 variables to only 2.</strong></p>
+</div>
+<section id="developing-new-equations-of-motion">
+<h3><span class="section-number">4.2.1 </span>Developing new equations of motion<a class="headerlink" href="#developing-new-equations-of-motion" title="Permalink to this headline"></a></h3>
+<div class="admonition-recall admonition">
+<p class="admonition-title">Recall</p>
+<p>The time rates of change of a vector <span class="math notranslate nohighlight">\(\mathbf{x} \in \mathbb{R}^3\)</span> that’s
+expressed in a coordinate system <span class="math notranslate nohighlight">\(\mathcal{B}\)</span> rotating with
+angular velocity <span class="math notranslate nohighlight">\(\mathbf{\Omega} \in \mathbb{R}^3\)</span> relative to another coordinate system
+<span class="math notranslate nohighlight">\(\mathcal{A}\)</span> follow</p>
+<div class="math notranslate nohighlight">
+\[\sideset{}{^{\!\mathcal{A}}}{\left(\frac{d\mathbf{x}}{dt}\right)} = \sideset{}{^{\!\mathcal{B}}}{\left(\frac{d\mathbf{x}}{dt}\right)} + \ \mathbf{\Omega} \times \mathbf{x}^\mathcal{B}\]</div>
+</div>
+<p>With polar coordinates being used to describe position, it’s extremely
+convenient to change our reference frame again by switching into the (noninertial) cylindrical coordinate system.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../_images/kepler_cylindrical_coordinate_system_v5.svg"><img alt="Cylindrical frame rotating with respect to the inertial frame." height="261px" src="../_images/kepler_cylindrical_coordinate_system_v5.svg" width="439px" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.2.2 </span><span class="caption-text">The cylindrical reference frame <span class="math notranslate nohighlight">\(\{\mathbf{e}_r,\mathbf{e}_\theta, \mathbf{e}_z\}\)</span>
+rotates with respect to the inertial reference frame <span class="math notranslate nohighlight">\(\{\mathbf{e}_x,\mathbf{e}_y, \mathbf{e}_z\}\)</span>
+at an angular velocity <span class="math notranslate nohighlight">\(\dot{\theta}\,\mathbf{e}_z\)</span>.
+Note that at the instant shown, <span class="math notranslate nohighlight">\(\dot{\theta} &lt; 0\)</span>, but this is actually <strong>impossible</strong>.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>This transformation is especially useful as the expression for the relative position simplifies dramatically to</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{r} = r\,\mathbf{e}_r.\]</div>
+<p>From this, we need to calculate the <strong>inertial</strong> velocity and acceleration before continuing.
+These expressions are given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\dot{\mathbf{r}} &amp;= \dot{r}\,\mathbf{e}_r + r \dot{\theta}\,\mathbf{e}_\theta \\
+\ddot{\mathbf{r}} &amp;= (\ddot{r} - r\dot{\theta}^2)\mathbf{e}_r + (r\ddot{\theta} + 2\dot{r}\dot{\theta})\mathbf{e}_\theta.\end{split}\]</div>
+<p>Simply inserting these back into the standard form of the 2-body problem
+gives us a new set of differential equations in terms of <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-polareom">
+<span class="eqno">(4.2.2)<a class="headerlink" href="#equation-polareom" title="Permalink to this equation"></a></span>\[\begin{split}\ddot{r} - r\dot{\theta}^2 &amp;= -\frac{\mu}{r^2} \\
+r\ddot{\theta} + 2\dot{r}\dot{\theta} &amp;= 0\end{split}\]</div>
+</section>
+<section id="rewriting-the-conserved-quantities">
+<h3><span class="section-number">4.2.2 </span>Rewriting the conserved quantities<a class="headerlink" href="#rewriting-the-conserved-quantities" title="Permalink to this headline"></a></h3>
+<section id="angular-momentum">
+<h4><span class="section-number">4.2.2.1 </span>Angular momentum<a class="headerlink" href="#angular-momentum" title="Permalink to this headline"></a></h4>
+<p>The angular momentum <span class="math notranslate nohighlight">\(\mathbf{h}\)</span> expressed in polar coordinates is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{h} &amp;= \mathbf{r} \times \dot{\mathbf{r}} \\
+&amp;= \left(r\,\mathbf{e}_r\right) \times \left(\dot{r}\,\mathbf{e}_r + r \dot{\theta}\,\mathbf{e}_\theta\right) \\
+&amp;= r\dot{r} (\mathbf{e}_r \times \mathbf{e}_r) + r^2\dot{\theta} (\mathbf{e}_r \times \mathbf{e}_\theta) \\
+&amp;= r^2\dot{\theta}\,\mathbf{e}_z.\end{split}\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\mathbf{h} = h \mathbf{e}_z\)</span> too by construction of <span class="math notranslate nohighlight">\(\mathbf{R}\)</span> (where <span class="math notranslate nohighlight">\(h = |\mathbf{h}|\)</span> is a constant of motion), the conservation of angular momentum provides</p>
+<div class="math notranslate nohighlight" id="equation-amconservation">
+<span class="eqno">(4.2.3)<a class="headerlink" href="#equation-amconservation" title="Permalink to this equation"></a></span>\[\boxed{r^2\dot{\theta} = h.}\]</div>
+<p>This simple equation proves to be <strong>very</strong> useful, and we’re even able to get
+some information out of it (since we know that <span class="math notranslate nohighlight">\(h \geqslant 0\)</span> and <span class="math notranslate nohighlight">\(r &gt; 0\)</span>).</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ol class="arabic">
+<li><p><strong>The trajectory always goes in the counterclockwise direction!</strong> (<span class="math notranslate nohighlight">\(\dot{\theta} \geqslant 0\)</span>)</p></li>
+<li><p>A <strong>collision</strong> will occur if there’s no angular momentum.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>This happens since <span class="math notranslate nohighlight">\(\ddot{r} &lt; 0\)</span>, which eventually drives <span class="math notranslate nohighlight">\(r \to 0\)</span> in <strong>finite time.</strong></p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</section>
+<section id="lrl-vector">
+<h4><span class="section-number">4.2.2.2 </span>LRL vector<a class="headerlink" href="#lrl-vector" title="Permalink to this headline"></a></h4>
+<p>The LRL vector <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> expressed in polar
+coordinates is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{A} &amp;= \dot{\mathbf{r}} \times \mathbf{h} - \frac{\mu}{r}\mathbf{r} \\
+&amp;= (\dot{r}\,\mathbf{e}_r + r\dot{\theta}\,\mathbf{e}_\theta) \times (r^2\dot{\theta}\,\mathbf{e}_z) - \frac{\mu}{r} (r \,\mathbf{e}_r) \\
+&amp;= r^2\dot{r}\dot{\theta}(\mathbf{e}_r \times \mathbf{e}_z) + r^3\dot{\theta}^2(\mathbf{e}_\theta \times \mathbf{e}_z) - \mu\,\mathbf{e}_r \\
+&amp;= r^2\dot{r}\dot{\theta}(-\mathbf{e}_\theta) + r^3\dot{\theta}^2(\mathbf{e}_r) - \mu\,\mathbf{e}_r \\
+&amp;= (r^3\dot{\theta}^2 - \mu)\mathbf{e}_r - r^2\dot{r}\dot{\theta}\,\mathbf{e}_\theta \\
+&amp;= A \underbrace{(\cos\theta\,\mathbf{e}_r - \sin\theta\,\mathbf{e}_\theta)}_{\mathbf{e}_x}.\end{split}\]</div>
+<p>(The last equality holds by construction of <span class="math notranslate nohighlight">\(\mathbf{R}\)</span>.)</p>
+<p>To summarize, we get two scalar equations from the invariance of the LRL vector.</p>
+<div class="math notranslate nohighlight" id="equation-laplacerungelenz">
+<span class="eqno">(4.2.4)<a class="headerlink" href="#equation-laplacerungelenz" title="Permalink to this equation"></a></span>\[\begin{split}r^2\dot{r}\dot{\theta} &amp;= A\sin\theta \\
+r^3\dot{\theta}^2 - \mu &amp;= A\cos\theta\end{split}\]</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Combined with angular momentum, we can get expressions of</strong> <span class="math notranslate nohighlight">\(r(\theta)\)</span> <strong>and</strong> <span class="math notranslate nohighlight">\(\dot{r}(\theta)\)</span> <strong>very quickly!</strong></p>
+</div>
+</section>
+<section id="energy">
+<h4><span class="section-number">4.2.2.3 </span>Energy<a class="headerlink" href="#energy" title="Permalink to this headline"></a></h4>
+<p>The energy <span class="math notranslate nohighlight">\(E\)</span> expressed in polar coordinates is</p>
+<div class="math notranslate nohighlight" id="equation-eq-energy">
+<span class="eqno">(4.2.5)<a class="headerlink" href="#equation-eq-energy" title="Permalink to this equation"></a></span>\[E = \frac{1}{2}\underbrace{(\dot{r}^2 + r^2\dot{\theta}^2)}_{v^2 = \dot{\mathbf{r}} \cdot \dot{\mathbf{r}}} - \frac{\mu}{r}.\]</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="simple">
+<li><p>Paired with angular momentum, this expression “integrates” the
+<span class="math notranslate nohighlight">\(\ddot{r}\)</span> equation of motion with integration constant
+<span class="math notranslate nohighlight">\(2E\)</span>.</p></li>
+<li><p>Similarly, this relation provides another expression for
+<span class="math notranslate nohighlight">\(\dot{\theta}\)</span> in addition to that from the conservation of
+angular momentum using the knowledge that <span class="math notranslate nohighlight">\(\dot{\theta} &gt; 0\)</span>
+for interesting motion.</p></li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="properties.html" class="btn btn-neutral float-left" title="3 Insights and Conserved Quantities" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="developing-solutions.html" class="btn btn-neutral float-right" title="5 Developing a General Solution" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, The Multibody Astrodynamics Community.
+      <span class="lastupdated">Last updated on Jan 23, 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

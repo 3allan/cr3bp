@@ -14,18 +14,22 @@ Links to various relevant topics are found below, beginning with the
 foundations and advancing towards applications and results.
 
 .. toctree::
-   :maxdepth: 1
-   :caption: The Kepler (2-body) Problem
-   
-   kepler/overview
-   kepler/equations-of-motion
-   kepler/properties
-   kepler/solution
-   kepler/trajectory-geometry
-   kepler/orbital-elements
+    :maxdepth: 1
+    :name: Introduction to astrodynamics
+    :caption: The Kepler (2-body) Problem
+    :numbered:
+
+    Home <self>
+    kepler/overview
+    kepler/equations-of-motion
+    kepler/properties
+    kepler/polar-coordinates
+    kepler/developing-solutions
+    kepler/trajectory-geometry
+    kepler/orbital-elements
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Multibody Dynamics
+    :maxdepth: 2
+    :caption: Multibody Dynamics
 
-   multibody/overview
+    multibody/overview

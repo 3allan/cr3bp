@@ -1,11 +1,7 @@
 .. default-role:: math
 
-.. sectnum::
-    :start: 1
-
-==================
 The Two-Body World
-==================
+******************
 
 :Author: M. Werner
 
@@ -44,7 +40,7 @@ vector `\mathbf{r}` is represented
 
 with basis elements provided by the inertial coordinate system.
 
-Equations of Motion
+Equations of motion
 ===================
 
 using Newton's laws
