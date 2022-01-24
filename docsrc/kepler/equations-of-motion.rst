@@ -62,9 +62,9 @@ using the Lagrangian
     Lagrange's (conservative) equations are
 
     .. math::
-        \frac{d}{dt}\frac{\partial L}{\partial \dot{q}} - \frac{\partial L}{\partial q} = 0,
+        \frac{d}{dt}\frac{\partial L}{\partial \dot{\mathbf{q}}} - \frac{\partial L}{\partial \mathbf{q}} = 0,
 
-    for generalized coordinates `q \in \mathbb{R}^n`, where `L \in \mathbb{R}` is the Lagrangian
+    for generalized coordinates `\mathbf{q} \in \mathbb{R}^n`, where `L \in \mathbb{R}` is the Lagrangian
     and `n` is the number of degrees of freedom in the system.
 
 We can write the system's Lagrangian as simply the difference between
@@ -102,9 +102,9 @@ using the Hamiltonian
     Hamilton's canonical equations are
 
     .. math::
-        \dot{q} = +\frac{\partial H}{\partial p} \qquad \text{and} \qquad \dot{p} = -\frac{\partial H}{\partial q}
+        \dot{\mathbf{q}} = +\frac{\partial H}{\partial \mathbf{p}} \qquad \text{and} \qquad \dot{\mathbf{p}} = -\frac{\partial H}{\partial \mathbf{q}}
 
-    for generalized coordinates and momenta `q,p \in \mathbb{R}^n`,
+    for generalized coordinates and momenta `\mathbf{q},\mathbf{p} \in \mathbb{R}^n`,
     where `H \in \mathbb{R}` is the Hamiltonian and `n` is the number of degrees of freedom in the system.
 
 Using the Lagrangian :eq:`Lagrangian`, the Hamiltonian is defined
