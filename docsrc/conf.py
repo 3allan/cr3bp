@@ -15,18 +15,17 @@
 # sys.path.insert(0, os.path.abspath('.'))
 #import sphinx_rtd_theme
 
-import time
-import git # from the package gitpython
-repo = git.Repo(search_parent_directories=True)
-sha = repo.head.object.hexsha
+#import git # from the package gitpython
+#repo = git.Repo(search_parent_directories=True)
+#sha = repo.head.object.hexsha
 
 # -- Project information -----------------------------------------------------
 
 project = 'CR3BP'
-copyright = '2022, The Multibody Astrodynamics Community'
+copyright = '2021-2022, The Multibody Astrodynamics Community'
 author = 'Matt Werner'
-version = 'Last commit: ' + sha[0:6]
-release = version
+#version = 'Last commit: ' + sha[0:6]
+#release = version
 
 
 # -- General configuration ---------------------------------------------------
@@ -50,7 +49,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 add_function_parentheses = True
 
 numfig = True
-today = time.strftime('%b %d, %Y')
+today_fmt = '%b %d, %Y'
 
 numfig_secnum_depth = 2
 
@@ -77,7 +76,7 @@ html_logo = None
 html_favicon = None
 
 # Last updated in footer
-html_last_updated_fmt = today
+html_last_updated_fmt = today_fmt
 
 # Permalinks
 html_permalinks = True
