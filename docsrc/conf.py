@@ -113,5 +113,11 @@ html_static_path = ['_static']
 
 
 def setup(app):
-    app.add_css_file('rtd_eq.css')
+	# Right-align equation numbers in RTD (otherwise they're overhead...)
+	app.add_css_file('rtd_eq.css')
+    # Google analytics
+	app.add_js_file("https://www.googletagmanager.com/gtag/js?id=G-DLCCJ41JJ8")
+	app.add_js_file("google_analytics_tracker.js")
+    
+    
 
