@@ -5,31 +5,64 @@ Developing a General Solution
 
 :Author: M. Werner
 
-The orbital radius
-==================
-In this coordinate system with variables `(x, y, z)`, the orbital
-radius `r` is obtainable using several different methods.
-In all cases, the orbital radius is
+.. admonition:: Plan of Action
+
+    Write down the **solution** to the 2-body problem in terms of `r` and
+    `\theta` using the previously developed properties of the system.
+
+Summary of the main results
+===========================
+
+We're finally ready to solve the 2-body problem! Well, kind of...
+
+A full solution of the radius `r = r(\theta)` is achievable, but
+we fall *just* short of knowing `\theta(t).` The grim reality of the problem
+is that the angle `\theta` has to be calculated **numerically**.
+
+The results are summarized below.
+
+----
+
+**The radius** `r` **is a known function of the angle** `\theta` **and is**
+**parameterized by the system's characterization** (`\mu = \mathrm{const.}`) **and**
+**initial conditions** (`h = \mathrm{const.}` and `A = \mathrm{const.}`).
 
 .. math::
     :label: orbitalRadius
 
-    \boxed{r = \frac{h^2}{\mu + A\cos\theta}.}
+    r = \frac{h^2}{\mu + A\cos\theta}
 
-.. important::
-    The radius `r` is a **known** function of the angle `\theta` and is
-    parameterized by constants determined by the system (`\mu`) and
-    initial conditions (`h` and `A`).
+
+
+**The angle** `\theta`` **is NOT a known function of time.**
+**It must be obtained numerically (generally) and depends on the system's**
+**characterization and initial conditions as well as time** (`t`).
+
+.. math::
+    :label: orbitalAngle
+
+    \tan\frac{\theta}{2} = \sqrt{\frac{\mu + A}{\mu - A}} \tan\frac{E}{2}
+    \qquad \text{with} \qquad
+    M = E - \frac{A}{\mu} \sin E
+
+----
+
+Note two things:
+    1. New symbols `M` and `E` have been introduced and will be explained later.
+    2. `r` and `\theta` can be slightly more simplified, but we won't touch on this until the next page.
+
+Deriving the radius
+===================
 
 from the LRL vector
-----------------------------------
+-------------------
 .. admonition:: Recall
 
-    For any `x, y, z \in \mathbb{R}^3`, the scalar triple product
+    For any `\mathbf{x}, \mathbf{y}, \mathbf{z} \in \mathbb{R}^3`, the scalar triple product
     satisfies
 
     .. math::
-        x \cdot (y \times z) = y \cdot (z \times x) = z \cdot (x \times y).
+        \mathbf{x} \cdot (\mathbf{y} \times \mathbf{z}) = \mathbf{y} \cdot (\mathbf{z} \times \mathbf{x}) = \mathbf{z} \cdot (\mathbf{x} \times \mathbf{y}).
 
 The LRL vector can be used to obtain an expression for the
 orbital radius `r` as a function of the polar coordinate
@@ -58,8 +91,8 @@ yields the radius `r` even more simply.
 
 In either approach, the radius `r` is obtained as a function of the angle `\theta` in accordance with :eq:`orbitalRadius`. `\blacksquare`
 
-from the `\ddot{r}` ODE
-----------------------------
+from the radial dynamics
+------------------------
 Combined with the conservation of angular momentum :eq:`AMconservation`, the `\ddot{r}` equation of motion :eq:`polarEOM` provides
 
 .. math::
@@ -144,7 +177,7 @@ is expressed in terms of known quantities as
 
 From an analysis of pure differential equations using only the conservation of momentum :eq:`AMconservation`, the orbital radius `r` is obtained as a function of the angle `\theta` in accordance with :eq:`orbitalRadius`. `\blacksquare`
 
-The orbital angle `\theta`
+Trying to derive the angle
 ==========================
 Knowing the orbital radius `r` to be a function of `\theta`,
 we would most like to know the angular coordinate `\theta` as a
@@ -184,8 +217,8 @@ periodically undefined).
 
 This relation is developed further when exploring the :ref:`trajectory's geometry <Trajectory Geometry>`.
 
-from the `\ddot{\theta}` ODE
---------------------------------------
+from the angular dynamics
+-------------------------
 Equation :eq:`polarEOM` provides several different ways to go about
 trying to obtain `\theta = \theta(t)`.
 

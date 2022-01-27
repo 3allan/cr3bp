@@ -111,7 +111,7 @@ Using the Lagrangian :eq:`Lagrangian`, the Hamiltonian is defined
 
 .. math::
     H &\equiv \sum_{i = 1}^2 \dot{\mathbf{q}}_i \cdot \mathbf{p}_i - L \\
-    &= \frac{1}{2}\left(\frac{|\mathbf{p}_1|^2}{m_1} + \frac{|\mathbf{p}_2|^2}{m_2}\right) - \frac{G m_1 m_2}{|\mathbf{q}_2 - \mathbf{q}_1|},
+    &= \underbrace{\frac{1}{2}\left(\frac{|\mathbf{p}_1|^2}{m_1} + \frac{|\mathbf{p}_2|^2}{m_2}\right)}_{\text{kinetic}} - \underbrace{\frac{G m_1 m_2}{|\mathbf{q}_2 - \mathbf{q}_1|}}_{-\text{potential}},
 
 where `\mathbf{q}_i = \mathbf{r}_i` are the generalized coordinates
 and `\mathbf{p}_i = m_i\dot{\mathbf{r}}_i` are the generalized momenta

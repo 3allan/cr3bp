@@ -52,8 +52,9 @@
 <li class="toctree-l1"><a class="reference internal" href="polar-coordinates.html">4 A Change of Perspective</a></li>
 <li class="toctree-l1"><a class="reference internal" href="developing-solutions.html">5 Developing a General Solution</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">6 Trajectory Geometry</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#closed-orbits-0-leqslant-e-1">6.1 Closed Orbits <span class="math notranslate nohighlight">\((0 \leqslant e &lt; 1)\)</span></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#open-orbits-e-1">6.2 Open Orbits <span class="math notranslate nohighlight">\((e &gt; 1)\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#why-define-another-new-variable-and-why-e">6.1 Why define another new variable, and why <span class="math notranslate nohighlight">\(e\)</span>?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#closed-orbits-0-leqslant-e-1">6.2 Closed Orbits <span class="math notranslate nohighlight">\((0 \leqslant e &lt; 1)\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#open-orbits-e-1">6.3 Open Orbits <span class="math notranslate nohighlight">\((e &gt; 1)\)</span></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="orbital-elements.html">7 Orbital Elements</a></li>
@@ -96,8 +97,35 @@
 </ol>
 </dd>
 </dl>
+<p><span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span> can be slightly more simplified if we define <span class="math notranslate nohighlight">\(e = A/\mu.\)</span></p>
+<section id="why-define-another-new-variable-and-why-e">
+<h2><span class="section-number">6.1 </span>Why define another new variable, and why <span class="math notranslate nohighlight">\(e\)</span>?<a class="headerlink" href="#why-define-another-new-variable-and-why-e" title="Permalink to this headline"></a></h2>
+<p>To answer the first question, we want to consider a more mathematical approach.
+From a dynamicist’s perspective, it’s useful to define <span class="math notranslate nohighlight">\(e\)</span> because it reduces
+the amount of parameters needed to study <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span> from two (<span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(A\)</span>) to one (<span class="math notranslate nohighlight">\(e\)</span>).
+<strong>This means that by studying</strong> <span class="math notranslate nohighlight">\(e\)</span> <strong>from, say, 0 to 1, we’re actually studying</strong>
+<strong>all systems</strong> <span class="math notranslate nohighlight">\(\mu\)</span> <strong>and initial conditions</strong> <span class="math notranslate nohighlight">\(A\)</span> <strong>such that</strong> <span class="math notranslate nohighlight">\(\mu/A = e.\)</span></p>
+<ul class="simple">
+<li><p>For example, if we picked a value of <span class="math notranslate nohighlight">\(e\)</span>, say <span class="math notranslate nohighlight">\(e = 0.1\)</span>, and study <span class="math notranslate nohighlight">\(A/\mu = 0.1\)</span>,
+then we’re also studying all the other systems that have <span class="math notranslate nohighlight">\(kA/k\mu = 0.1\)</span>
+where <span class="math notranslate nohighlight">\(k &gt; 0\)</span> is just some constant.</p></li>
+</ul>
+<p>We call this quantity <span class="math notranslate nohighlight">\(e\)</span> because it’s short for <strong>eccentricity.</strong>
+As we will see in the next section, the radius <span class="math notranslate nohighlight">\(r\)</span> traces out an ellipse
+on the orbital plane; <span class="math notranslate nohighlight">\(e\)</span> is a parameter that determines the shape of the
+ellipse.</p>
+<p>With the eccentricity defined, the radius and angle take on the following
+forms.</p>
+<div class="math notranslate nohighlight" id="equation-orbitalradiuswithe">
+<span class="eqno">(6.1.1)<a class="headerlink" href="#equation-orbitalradiuswithe" title="Permalink to this equation"></a></span>\[r = \frac{h^2/\mu}{1 + e\cos\theta}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight" id="equation-orbitalanglewithe">
+<span class="eqno">(6.1.2)<a class="headerlink" href="#equation-orbitalanglewithe" title="Permalink to this equation"></a></span>\[\tan\frac{\theta}{2} = \sqrt{\frac{1 + e}{1 - e}} \tan\frac{E}{2}
+\qquad \text{with} \qquad
+M = E - e \sin E\]</div>
+</section>
 <section id="closed-orbits-0-leqslant-e-1">
-<h2><span class="section-number">6.1 </span>Closed Orbits <span class="math notranslate nohighlight">\((0 \leqslant e &lt; 1)\)</span><a class="headerlink" href="#closed-orbits-0-leqslant-e-1" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">6.2 </span>Closed Orbits <span class="math notranslate nohighlight">\((0 \leqslant e &lt; 1)\)</span><a class="headerlink" href="#closed-orbits-0-leqslant-e-1" title="Permalink to this headline"></a></h2>
 <p>With this restriction in mind (<span class="math notranslate nohighlight">\(e &lt; 1\)</span>), we can evaluate this integral
 in terms of elementary functions.</p>
 <div class="math notranslate nohighlight">
@@ -131,7 +159,7 @@ The motion in this case has a constant radius (<span class="math notranslate noh
 a constant angular rate (<span class="math notranslate nohighlight">\(\mu^2/h^3\)</span>) — a circle.</p>
 </section>
 <section id="open-orbits-e-1">
-<h2><span class="section-number">6.2 </span>Open Orbits <span class="math notranslate nohighlight">\((e &gt; 1)\)</span><a class="headerlink" href="#open-orbits-e-1" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">6.3 </span>Open Orbits <span class="math notranslate nohighlight">\((e &gt; 1)\)</span><a class="headerlink" href="#open-orbits-e-1" title="Permalink to this headline"></a></h2>
 <p>For other trajectories (<span class="math notranslate nohighlight">\(e \geqslant 1\)</span>), the domain of <span class="math notranslate nohighlight">\(\theta\)</span>
 is necessarily restricted to maintain physical meaning such that</p>
 <div class="math notranslate nohighlight">
@@ -206,7 +234,7 @@ depending on the (nonnegative) parameter <span class="math notranslate nohighlig
 
   <div role="contentinfo">
     <p>&#169; Copyright 2021-2022, The Multibody Astrodynamics Community.
-      <span class="lastupdated">Last updated on Jan 24, 2022.
+      <span class="lastupdated">Last updated on Jan 26, 2022.
       </span></p>
   </div>
 
@@ -224,7 +252,18 @@ depending on the (nonnegative) parameter <span class="math notranslate nohighlig
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DLCCJ41JJ8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-DLCCJ41JJ8', {
+          'anonymize_ip': true,
+      });
+    </script> 
 
 </body>
 </html>

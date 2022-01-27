@@ -51,19 +51,20 @@
 <li class="toctree-l1"><a class="reference internal" href="properties.html">3 Insights and Conserved Quantities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="polar-coordinates.html">4 A Change of Perspective</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">5 Developing a General Solution</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#the-orbital-radius">5.1 The orbital radius</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#from-the-lrl-vector">5.1.1 from the LRL vector</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#from-the-ddot-r-ode">5.1.2 from the <span class="math notranslate nohighlight">\(\ddot{r}\)</span> ODE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#summary-of-the-main-results">5.1 Summary of the main results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deriving-the-radius">5.2 Deriving the radius</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#from-the-lrl-vector">5.2.1 from the LRL vector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#from-the-radial-dynamics">5.2.2 from the radial dynamics</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#the-orbital-angle-theta">5.2 The orbital angle <span class="math notranslate nohighlight">\(\theta\)</span></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#from-angular-momentum">5.2.1 from angular momentum</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#from-the-ddot-theta-ode">5.2.2 from the <span class="math notranslate nohighlight">\(\ddot{\theta}\)</span> ODE</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#using-angular-momentum">5.2.2.1 using angular momentum</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#using-a-total-derivative">5.2.2.2 using a total derivative</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trying-to-derive-the-angle">5.3 Trying to derive the angle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#from-angular-momentum">5.3.1 from angular momentum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#from-the-angular-dynamics">5.3.2 from the angular dynamics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#using-angular-momentum">5.3.2.1 using angular momentum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-a-total-derivative">5.3.2.2 using a total derivative</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#kepler-s-equation">5.2.3 Kepler’s equation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#kepler-s-equation">5.3.3 Kepler’s equation</a></li>
 </ul>
 </li>
 </ul>
@@ -109,27 +110,50 @@
 </ol>
 </dd>
 </dl>
-<section id="the-orbital-radius">
-<h2><span class="section-number">5.1 </span>The orbital radius<a class="headerlink" href="#the-orbital-radius" title="Permalink to this headline"></a></h2>
-<p>In this coordinate system with variables <span class="math notranslate nohighlight">\((x, y, z)\)</span>, the orbital
-radius <span class="math notranslate nohighlight">\(r\)</span> is obtainable using several different methods.
-In all cases, the orbital radius is</p>
-<div class="math notranslate nohighlight" id="equation-orbitalradius">
-<span class="eqno">(5.1.1)<a class="headerlink" href="#equation-orbitalradius" title="Permalink to this equation"></a></span>\[\boxed{r = \frac{h^2}{\mu + A\cos\theta}.}\]</div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>The radius <span class="math notranslate nohighlight">\(r\)</span> is a <strong>known</strong> function of the angle <span class="math notranslate nohighlight">\(\theta\)</span> and is
-parameterized by constants determined by the system (<span class="math notranslate nohighlight">\(\mu\)</span>) and
-initial conditions (<span class="math notranslate nohighlight">\(h\)</span> and <span class="math notranslate nohighlight">\(A\)</span>).</p>
+<div class="admonition-plan-of-action admonition">
+<p class="admonition-title">Plan of Action</p>
+<p>Write down the <strong>solution</strong> to the 2-body problem in terms of <span class="math notranslate nohighlight">\(r\)</span> and
+<span class="math notranslate nohighlight">\(\theta\)</span> using the previously developed properties of the system.</p>
 </div>
+<section id="summary-of-the-main-results">
+<h2><span class="section-number">5.1 </span>Summary of the main results<a class="headerlink" href="#summary-of-the-main-results" title="Permalink to this headline"></a></h2>
+<p>We’re finally ready to solve the 2-body problem! Well, kind of…</p>
+<p>A full solution of the radius <span class="math notranslate nohighlight">\(r = r(\theta)\)</span> is achievable, but
+we fall <em>just</em> short of knowing <span class="math notranslate nohighlight">\(\theta(t).\)</span> The grim reality of the problem
+is that the angle <span class="math notranslate nohighlight">\(\theta\)</span> has to be calculated <strong>numerically</strong>.</p>
+<p>The results are summarized below.</p>
+<hr class="docutils" />
+<p><strong>The radius</strong> <span class="math notranslate nohighlight">\(r\)</span> <strong>is a known function of the angle</strong> <span class="math notranslate nohighlight">\(\theta\)</span> <strong>and is</strong>
+<strong>parameterized by the system’s characterization</strong> (<span class="math notranslate nohighlight">\(\mu = \mathrm{const.}\)</span>) <strong>and</strong>
+<strong>initial conditions</strong> (<span class="math notranslate nohighlight">\(h = \mathrm{const.}\)</span> and <span class="math notranslate nohighlight">\(A = \mathrm{const.}\)</span>).</p>
+<div class="math notranslate nohighlight" id="equation-orbitalradius">
+<span class="eqno">(5.1.1)<a class="headerlink" href="#equation-orbitalradius" title="Permalink to this equation"></a></span>\[r = \frac{h^2}{\mu + A\cos\theta}\]</div>
+<p><strong>The angle</strong> <span class="math notranslate nohighlight">\(\theta\)</span> <strong>is NOT a known function of time.</strong>
+<strong>It must be obtained numerically (generally) and depends on the system’s</strong>
+<strong>characterization and initial conditions as well as time</strong> (<span class="math notranslate nohighlight">\(t\)</span>).</p>
+<div class="math notranslate nohighlight" id="equation-orbitalangle">
+<span class="eqno">(5.1.2)<a class="headerlink" href="#equation-orbitalangle" title="Permalink to this equation"></a></span>\[\tan\frac{\theta}{2} = \sqrt{\frac{\mu + A}{\mu - A}} \tan\frac{E}{2}
+\qquad \text{with} \qquad
+M = E - \frac{A}{\mu} \sin E\]</div>
+<hr class="docutils" />
+<dl class="simple">
+<dt>Note two things:</dt><dd><ol class="arabic simple">
+<li><p>New symbols <span class="math notranslate nohighlight">\(M\)</span> and <span class="math notranslate nohighlight">\(E\)</span> have been introduced and will be explained later.</p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span> can be slightly more simplified, but we won’t touch on this until the next page.</p></li>
+</ol>
+</dd>
+</dl>
+</section>
+<section id="deriving-the-radius">
+<h2><span class="section-number">5.2 </span>Deriving the radius<a class="headerlink" href="#deriving-the-radius" title="Permalink to this headline"></a></h2>
 <section id="from-the-lrl-vector">
-<h3><span class="section-number">5.1.1 </span>from the LRL vector<a class="headerlink" href="#from-the-lrl-vector" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">5.2.1 </span>from the LRL vector<a class="headerlink" href="#from-the-lrl-vector" title="Permalink to this headline"></a></h3>
 <div class="admonition-recall admonition">
 <p class="admonition-title">Recall</p>
-<p>For any <span class="math notranslate nohighlight">\(x, y, z \in \mathbb{R}^3\)</span>, the scalar triple product
+<p>For any <span class="math notranslate nohighlight">\(\mathbf{x}, \mathbf{y}, \mathbf{z} \in \mathbb{R}^3\)</span>, the scalar triple product
 satisfies</p>
 <div class="math notranslate nohighlight">
-\[x \cdot (y \times z) = y \cdot (z \times x) = z \cdot (x \times y).\]</div>
+\[\mathbf{x} \cdot (\mathbf{y} \times \mathbf{z}) = \mathbf{y} \cdot (\mathbf{z} \times \mathbf{x}) = \mathbf{z} \cdot (\mathbf{x} \times \mathbf{y}).\]</div>
 </div>
 <p>The LRL vector can be used to obtain an expression for the
 orbital radius <span class="math notranslate nohighlight">\(r\)</span> as a function of the polar coordinate
@@ -152,8 +176,8 @@ yields the radius <span class="math notranslate nohighlight">\(r\)</span> even m
 &amp;= \frac{h^2}{r} - \mu.\end{split}\]</div>
 <p>In either approach, the radius <span class="math notranslate nohighlight">\(r\)</span> is obtained as a function of the angle <span class="math notranslate nohighlight">\(\theta\)</span> in accordance with <a class="reference internal" href="#equation-orbitalradius">(5.1.1)</a>. <span class="math notranslate nohighlight">\(\blacksquare\)</span></p>
 </section>
-<section id="from-the-ddot-r-ode">
-<h3><span class="section-number">5.1.2 </span>from the <span class="math notranslate nohighlight">\(\ddot{r}\)</span> ODE<a class="headerlink" href="#from-the-ddot-r-ode" title="Permalink to this headline"></a></h3>
+<section id="from-the-radial-dynamics">
+<h3><span class="section-number">5.2.2 </span>from the radial dynamics<a class="headerlink" href="#from-the-radial-dynamics" title="Permalink to this headline"></a></h3>
 <p>Combined with the conservation of angular momentum <a class="reference internal" href="polar-coordinates.html#equation-amconservation">(4.2.3)</a>, the <span class="math notranslate nohighlight">\(\ddot{r}\)</span> equation of motion <a class="reference internal" href="polar-coordinates.html#equation-polareom">(4.2.2)</a> provides</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\ddot{r} &amp;= r\dot{\theta}^2 - \frac{\mu}{r^2} \\
@@ -223,8 +247,8 @@ is expressed in terms of known quantities as</p>
 <p>From an analysis of pure differential equations using only the conservation of momentum <a class="reference internal" href="polar-coordinates.html#equation-amconservation">(4.2.3)</a>, the orbital radius <span class="math notranslate nohighlight">\(r\)</span> is obtained as a function of the angle <span class="math notranslate nohighlight">\(\theta\)</span> in accordance with <a class="reference internal" href="#equation-orbitalradius">(5.1.1)</a>. <span class="math notranslate nohighlight">\(\blacksquare\)</span></p>
 </section>
 </section>
-<section id="the-orbital-angle-theta">
-<h2><span class="section-number">5.2 </span>The orbital angle <span class="math notranslate nohighlight">\(\theta\)</span><a class="headerlink" href="#the-orbital-angle-theta" title="Permalink to this headline"></a></h2>
+<section id="trying-to-derive-the-angle">
+<h2><span class="section-number">5.3 </span>Trying to derive the angle<a class="headerlink" href="#trying-to-derive-the-angle" title="Permalink to this headline"></a></h2>
 <p>Knowing the orbital radius <span class="math notranslate nohighlight">\(r\)</span> to be a function of <span class="math notranslate nohighlight">\(\theta\)</span>,
 we would most like to know the angular coordinate <span class="math notranslate nohighlight">\(\theta\)</span> as a
 function of time <span class="math notranslate nohighlight">\(t\)</span>. This would fully complete the parameterization
@@ -237,7 +261,7 @@ difficult in obtaining <span class="math notranslate nohighlight">\(\theta = \th
 <span class="math notranslate nohighlight">\(t = t(\theta).\)</span>
 As we shall see, inverting this function <span class="math notranslate nohighlight">\(t\)</span> is, indeed, difficult.</p>
 <section id="from-angular-momentum">
-<h3><span class="section-number">5.2.1 </span>from angular momentum<a class="headerlink" href="#from-angular-momentum" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">5.3.1 </span>from angular momentum<a class="headerlink" href="#from-angular-momentum" title="Permalink to this headline"></a></h3>
 <p>The conservation of angular momentum states <span class="math notranslate nohighlight">\(r^2\dot{\theta} = h,\)</span>
 but the orbital radius <span class="math notranslate nohighlight">\(r\)</span> is now a <strong>known</strong> function of <strong>only</strong>
 <span class="math notranslate nohighlight">\(\theta.\)</span> Thus, we can write</p>
@@ -247,22 +271,22 @@ but the orbital radius <span class="math notranslate nohighlight">\(r\)</span> i
 <p>which provides a separable equation for <span class="math notranslate nohighlight">\(\theta\)</span>.
 Naively integrating obtains</p>
 <div class="math notranslate nohighlight" id="equation-eq-naiveintegration">
-<span class="eqno">(5.2.1)<a class="headerlink" href="#equation-eq-naiveintegration" title="Permalink to this equation"></a></span>\[\int_{\theta_0}^\theta \frac{d\theta'}{(\mu + A\cos\theta')^2} = \frac{1}{h^3}\int_{t_0}^t dt',\]</div>
+<span class="eqno">(5.3.1)<a class="headerlink" href="#equation-eq-naiveintegration" title="Permalink to this equation"></a></span>\[\int_{\theta_0}^\theta \frac{d\theta'}{(\mu + A\cos\theta')^2} = \frac{1}{h^3}\int_{t_0}^t dt',\]</div>
 <p>but this expression turns out <em>not</em> to be entirely true for <em>any</em> arbitrary
 <span class="math notranslate nohighlight">\(\theta\)</span> since we only know that <span class="math notranslate nohighlight">\(\mu, A \geqslant 0\)</span> (i.e. it is
 possible that <span class="math notranslate nohighlight">\(A \geqslant \mu,\)</span> in which case the integrand becomes
 periodically undefined).</p>
 <p>This relation is developed further when exploring the <a class="reference internal" href="trajectory-geometry.html#trajectory-geometry"><span class="std std-ref">trajectory’s geometry</span></a>.</p>
 </section>
-<section id="from-the-ddot-theta-ode">
-<h3><span class="section-number">5.2.2 </span>from the <span class="math notranslate nohighlight">\(\ddot{\theta}\)</span> ODE<a class="headerlink" href="#from-the-ddot-theta-ode" title="Permalink to this headline"></a></h3>
+<section id="from-the-angular-dynamics">
+<h3><span class="section-number">5.3.2 </span>from the angular dynamics<a class="headerlink" href="#from-the-angular-dynamics" title="Permalink to this headline"></a></h3>
 <p>Equation <a class="reference internal" href="polar-coordinates.html#equation-polareom">(4.2.2)</a> provides several different ways to go about
 trying to obtain <span class="math notranslate nohighlight">\(\theta = \theta(t)\)</span>.</p>
 <section id="using-angular-momentum">
-<h4><span class="section-number">5.2.2.1 </span>using angular momentum<a class="headerlink" href="#using-angular-momentum" title="Permalink to this headline"></a></h4>
+<h4><span class="section-number">5.3.2.1 </span>using angular momentum<a class="headerlink" href="#using-angular-momentum" title="Permalink to this headline"></a></h4>
 </section>
 <section id="using-a-total-derivative">
-<h4><span class="section-number">5.2.2.2 </span>using a total derivative<a class="headerlink" href="#using-a-total-derivative" title="Permalink to this headline"></a></h4>
+<h4><span class="section-number">5.3.2.2 </span>using a total derivative<a class="headerlink" href="#using-a-total-derivative" title="Permalink to this headline"></a></h4>
 <p>Using the known solution for the orbital radius <span class="math notranslate nohighlight">\(r\)</span> and the
 conservation of the LRL vector <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> along
 with the conservation of angular momentum, the
@@ -290,7 +314,7 @@ of angular momentum directly.</p>
 </section>
 </section>
 <section id="kepler-s-equation">
-<h3><span class="section-number">5.2.3 </span>Kepler’s equation<a class="headerlink" href="#kepler-s-equation" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">5.3.3 </span>Kepler’s equation<a class="headerlink" href="#kepler-s-equation" title="Permalink to this headline"></a></h3>
 <p>Unfortunately, we cannot express <span class="math notranslate nohighlight">\(\theta = \theta(t)\)</span> analytically
 for any general <span class="math notranslate nohighlight">\(e\)</span> analyzing conserved quantities and the governing
 differential equation. We are therefore forced to turn to other methods.</p>
@@ -310,7 +334,7 @@ differential equation. We are therefore forced to turn to other methods.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2021-2022, The Multibody Astrodynamics Community.
-      <span class="lastupdated">Last updated on Jan 24, 2022.
+      <span class="lastupdated">Last updated on Jan 27, 2022.
       </span></p>
   </div>
 
@@ -328,7 +352,18 @@ differential equation. We are therefore forced to turn to other methods.</p>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DLCCJ41JJ8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-DLCCJ41JJ8', {
+          'anonymize_ip': true,
+      });
+    </script> 
 
 </body>
 </html>
