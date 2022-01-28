@@ -10,10 +10,9 @@ Developing a General Solution
     Write down the **solution** to the 2-body problem in terms of `r` and
     `\theta` using the previously developed properties of the system.
 
-Summary of the main results
-===========================
 
 We're finally ready to solve the 2-body problem! Well, kind of...
+==================================================================
 
 A full solution of the radius `r = r(\theta)` is achievable, but
 we fall *just* short of knowing `\theta(t).` The grim reality of the problem
@@ -32,11 +31,12 @@ The results are summarized below.
 
     r = \frac{h^2}{\mu + A\cos\theta}
 
+- We know exactly what path the reduced mass must trace out
 
 
 **The angle** `\theta`` **is NOT a known function of time.**
-**It must be obtained numerically (generally) and depends on the system's**
-**characterization and initial conditions as well as time** (`t`).
+**It must be obtained numerically and depends on the system's**
+**characterization and initial conditions as well as time.**
 
 .. math::
     :label: orbitalAngle
@@ -44,6 +44,8 @@ The results are summarized below.
     \tan\frac{\theta}{2} = \sqrt{\frac{\mu + A}{\mu - A}} \tan\frac{E}{2}
     \qquad \text{with} \qquad
     M = E - \frac{A}{\mu} \sin E
+
+- We don't know *exactly* where the reduced mass is in its trajectory at any given time `t` (but we will be able to get "close enough").
 
 ----
 
@@ -89,18 +91,18 @@ yields the radius `r` even more simply.
     A\cos\theta &= r^3\dot{\theta}^2 - \mu \\
     &= \frac{h^2}{r} - \mu.
 
-In either approach, the radius `r` is obtained as a function of the angle `\theta` in accordance with :eq:`orbitalRadius`. `\blacksquare`
+In either approach, the radius `r` is obtained as a function of the angle `\theta` written as :eq:`orbitalRadius`. `\blacksquare`
 
 from the radial dynamics
 ------------------------
-Combined with the conservation of angular momentum :eq:`AMconservation`, the `\ddot{r}` equation of motion :eq:`polarEOM` provides
+The `\ddot{r}` equation of motion :eq:`polarEOM` combined with the conservation of angular momentum :eq:`AMconservation` is
 
 .. math::
     \ddot{r} &= r\dot{\theta}^2 - \frac{\mu}{r^2} \\
     &= \frac{h^2}{r^3} - \frac{\mu}{r^2}.
 
-We wish to convert the derivatives in time `t` to those in the angular
-coordinate `\theta` to understand the geometry of the trajectory in
+We can convert the derivatives in time `t` to those in the angle
+`\theta` to understand the geometry of the trajectory in
 polar coordinates. Using the conservation of angular momentum :eq:`AMconservation` repeatedly, we see
 
 .. math::
@@ -113,55 +115,39 @@ polar coordinates. Using the conservation of angular momentum :eq:`AMconservatio
     &= \frac{r^2}{h^2}\left(2\frac{h^2}{r^3}\left(\frac{dr}{d\theta}\right)^{\!2} + \frac{h^2}{r} - \mu\right) \\
     &= \frac{2}{r}\left(\frac{dr}{d\theta}\right)^{\!2} - \frac{\mu r^2}{h^2} + r.
 
-Despite offering a description of the trajectory's geometry in space as
-opposed to time, *this* differential equation still proves to be formidable
-in obtaining a solution. However, a final, clever change of variables *will*
+This equation still proves to be formidable in obtaining a solution. However, a final, clever change of variables *will*
 yield a useful relation by letting `\eta = 1/r`. In this case,
 
 .. math::
     \frac{d^2\eta}{d\theta^2} &= \frac{d}{d\theta}\left(\frac{d\eta}{d\theta}\right) \\
     &= \frac{d}{d\theta}\left(-\frac{1}{r^2}\frac{dr}{d\theta}\right) \\
-    &= -\frac{1}{h}\frac{d\dot{r}}{d\theta} \\
-    &= -\frac{1}{h}\frac{d}{d\theta}\left(\frac{dr}{d\theta}\dot{\theta}\right) \\
-    &= -\frac{1}{h}\frac{d}{d\theta}\left(\frac{dr}{d\theta}\frac{h}{r^2}\right) \\
     &= -\frac{1}{r^2}\frac{d^2r}{d\theta^2} + \frac{2}{r^3}\left(\frac{dr}{d\theta}\right)^{\!2} \\
     &= -\frac{1}{r^2}\left(\frac{2}{r}\left(\frac{dr}{d\theta}\right)^{\!2} - \frac{\mu r^2}{h^2} + r\right) + \frac{2}{r^3}\left(\frac{dr}{d\theta}\right)^{\!2} \\
-    &= \frac{\mu}{h^2} - \frac{1}{r} \\
     &= \frac{\mu}{h^2} - \eta.
 
-With this transformation, we see that we are offered something describing
-a linear oscillator,
-where both `\mu` and `h` are (positive) constants. We can
-therefore immediately write the general solution as
+**This is a linear oscillator with constant forcing**,
+where both `\mu` and `h` are (positive) constants.
+We can therefore immediately write the general solution as
 
-.. math:: \eta = \frac{\mu}{h^2} + C \cos(\theta - \omega),
+.. math:: \eta = \frac{\mu}{h^2} + C \cos(\theta - \phi),
 
-where both `C` and `\omega` are constants of integration.
+where both `C` and `\phi` are constants of integration.
 Note that `C` represents an amplitude and, as such, satisfies
 `C \geqslant 0`.
 The orbital radius (`r = 1/\eta`) is then
 
 .. math::
-    r = \frac{h^2}{\mu + (C/h^2) \cos(\theta - \omega)}.
+    r = \frac{h^2}{\mu + (C/h^2) \cos(\theta - \phi)}.
 
 Since `\mathbf{A}` already provides a constant direction in the
 orbital plane from which `\theta` is measured, we do not wish to
 shift the angle `\theta` to be measured with respect to anything else
-(yet). Thus, we can take
+(yet). Thus, without loss of generality in *this* coordinate frame, we can set
+`\phi = 0.`
 
-.. math::
-    \omega = 0
-
-without loss of generality in *this* coordinate frame.
-(This quantity `\omega` is called the *argument of periapsis*, which
-is naturally useful for the transformation between the `(X, Y, Z)`
-and `(x, y, z)` coordinate systems.)
-
-To determine the constant `C`, we can calculate the time derivative
-of the orbital radius exactly and then turn to the invariance of the
-LRL vector `\mathbf{A}` :eq:`LaplaceRungeLenz` combined with
-conservation of angular momentum :eq:`AMconservation` to compare expressions
-for `\dot{r}.`
+To determine the constant `C`, we can calculate `\dot{r}` exactly and then
+use the conservation of angular momentum :eq:`AMconservation` and the
+LRL vector :eq:`LaplaceRungeLenz` to compare expressions.
 
 .. math::
     \dot{r} &= \frac{C\sin\theta}{(\mu + (C/h^2) \cos\theta)^2}\dot{\theta} \\
@@ -169,23 +155,19 @@ for `\dot{r}.`
     &= \frac{C}{h^3}\sin\theta \\
     &= \frac{A}{h}\sin\theta
 
-We therefore immediately conclude that the integration constant `C`
-is expressed in terms of known quantities as
+From this, we obtain that the integration constant `C` is given in terms of known quantities as `C = A h^2.`
 
-.. math::
-    C = A h^2.
-
-From an analysis of pure differential equations using only the conservation of momentum :eq:`AMconservation`, the orbital radius `r` is obtained as a function of the angle `\theta` in accordance with :eq:`orbitalRadius`. `\blacksquare`
+The final form of `r` is :eq:`orbitalRadius`. `\blacksquare`
 
 Trying to derive the angle
 ==========================
 Knowing the orbital radius `r` to be a function of `\theta`,
-we would most like to know the angular coordinate `\theta` as a
+we would most like to know the angle `\theta` as a
 function of time `t`. This would fully complete the parameterization
 as then `\mathbf{r} = \mathbf{r}(t)` would be a known function for all
 time.
 
-Like the orbital radius, the angular coordinate `\theta` is
+Like the orbital radius, the angle `\theta` is
 expressible using several different methods.
 However, unlike the orbital radius, these expressions prove to be
 difficult in obtaining `\theta = \theta(t).` Instead, we can obtain
