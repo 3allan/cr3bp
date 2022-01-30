@@ -9,6 +9,7 @@
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/rtd_eq.css" type="text/css" />
       <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -25,7 +26,20 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="5 Developing a General Solution" href="developing-solutions.html" />
-    <link rel="prev" title="3 Insights and Conserved Quantities" href="properties.html" /> 
+    <link rel="prev" title="3 Insights and Conserved Quantities" href="properties.html" />
+ <script type="text/javascript">
+    $(document).ready(function() {
+        //
+        //
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+</script>
+
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -181,7 +195,8 @@ convenient to change our reference frame again by switching into the (noninertia
 <p><span class="caption-number">Fig. 4.2.2 </span><span class="caption-text">The cylindrical reference frame <span class="math notranslate nohighlight">\(\{\mathbf{e}_r,\mathbf{e}_\theta, \mathbf{e}_z\}\)</span>
 rotates with respect to the inertial reference frame <span class="math notranslate nohighlight">\(\{\mathbf{e}_x,\mathbf{e}_y, \mathbf{e}_z\}\)</span>
 at an angular velocity <span class="math notranslate nohighlight">\(\dot{\theta}\,\mathbf{e}_z\)</span>.
-Note that at the instant shown, <span class="math notranslate nohighlight">\(\dot{\theta} &lt; 0\)</span>, but this is actually <strong>impossible</strong>.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+Note that at the instant shown, <span class="math notranslate nohighlight">\(\dot{\theta} &lt; 0\)</span>, but this is actually <strong>impossible</strong> since
+<a class="reference internal" href="#equation-amconservation">(4.2.3)</a> requires <span class="math notranslate nohighlight">\(\dot{\theta} \geqslant 0.\)</span></span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>This transformation is especially useful as the expression for the relative position simplifies dramatically to</p>
@@ -282,7 +297,7 @@ for interesting motion.</p></li>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2021-2022, The Multibody Astrodynamics Community.
-      <span class="lastupdated">Last updated on Jan 27, 2022.
+      <span class="lastupdated">Last updated on Jan 30, 2022.
       </span></p>
   </div>
 

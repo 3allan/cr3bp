@@ -1,0 +1,24 @@
+/*
+Create a toggleable admonition
+
+Taken from:
+https://stackoverflow.com/questions/59679797/show-hide-part-of-text-question-answer-in-sphinx-file
+*/
+.toggle {
+    background: none repeat scroll 0 0 #e7f2fa;
+}
+
+.toggle .admonition-title {
+    display: block;
+    clear: both;
+}
+
+.toggle .admonition-title:after {
+    content: " ▼";
+    float: right;
+}
+
+.toggle .admonition-title.open:after {
+    content: " ▲";
+    float: right;
+}

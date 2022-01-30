@@ -103,7 +103,8 @@ convenient to change our reference frame again by switching into the (noninertia
     The cylindrical reference frame `\{\mathbf{e}_r,\mathbf{e}_\theta, \mathbf{e}_z\}`
     rotates with respect to the inertial reference frame `\{\mathbf{e}_x,\mathbf{e}_y, \mathbf{e}_z\}`
     at an angular velocity `\dot{\theta}\,\mathbf{e}_z`.
-    Note that at the instant shown, `\dot{\theta} < 0`, but this is actually **impossible**.
+    Note that at the instant shown, `\dot{\theta} < 0`, but this is actually **impossible** since
+    :eq:`AMconservation` requires `\dot{\theta} \geqslant 0.`
 
 This transformation is especially useful as the expression for the relative position simplifies dramatically to
 

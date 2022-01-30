@@ -5,44 +5,19 @@ Trajectory Geometry
 
 :Author: M. Werner
 
+.. admonition:: Plan of Action
 
-`r` and `\theta` can be slightly more simplified if we define `e = A/\mu.`
-
-Why define another new variable, and why `e`?
----------------------------------------------
-
-To answer the first question, we want to consider a more mathematical approach.
-From a dynamicist's perspective, it's useful to define `e` because it reduces
-the amount of parameters needed to study `r` and `\theta` from two (`\mu` and `A`) to one (`e`).
-**This means that by studying** `e` **from, say, 0 to 1, we're actually studying**
-**all systems** `\mu` **and initial conditions** `A` **such that** `\mu/A = e.`
-
-- For example, if we picked a value of `e`, say `e = 0.1`, and study `A/\mu = 0.1`,
-  then we're also studying all the other systems that have `kA/k\mu = 0.1`
-  where `k > 0` is just some constant.
+    Explore the behavior of the trajectory `r(\theta)` given by :eq:`orbitalRadius`.
 
 
-We call this quantity `e` because it's short for **eccentricity.**
-As we will see in the next section, the radius `r` traces out an ellipse
-on the orbital plane; `e` is a parameter that determines the shape of the
-ellipse.
 
-With the eccentricity defined, the radius and angle take on the following
-forms.
+..
 
-.. math::
-    :label: orbitalRadiusWithe
-
-    r = \frac{h^2/\mu}{1 + e\cos\theta}
-
-and
-
-.. math::
-    :label: orbitalAngleWithe
-
-    \tan\frac{\theta}{2} = \sqrt{\frac{1 + e}{1 - e}} \tan\frac{E}{2}
-    \qquad \text{with} \qquad
-    M = E - e \sin E
+    Kepler's equation
+    -----------------
+    Unfortunately, we cannot express `\theta = \theta(t)` analytically
+    for any general `e` analyzing conserved quantities and the governing
+    differential equation. We are therefore forced to turn to other methods.
 
 
 Closed Orbits `(0 \leqslant e < 1)`

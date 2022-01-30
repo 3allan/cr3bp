@@ -9,6 +9,7 @@
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/rtd_eq.css" type="text/css" />
       <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -25,7 +26,20 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="4 A Change of Perspective" href="polar-coordinates.html" />
-    <link rel="prev" title="2 The Two-Body World" href="equations-of-motion.html" /> 
+    <link rel="prev" title="2 The Two-Body World" href="equations-of-motion.html" />
+ <script type="text/javascript">
+    $(document).ready(function() {
+        //
+        //
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+</script>
+
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -368,7 +382,7 @@ such that <span class="math notranslate nohighlight">\(m_1 \gg m_2.\)</span></p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2021-2022, The Multibody Astrodynamics Community.
-      <span class="lastupdated">Last updated on Jan 27, 2022.
+      <span class="lastupdated">Last updated on Jan 30, 2022.
       </span></p>
   </div>
 

@@ -1,7 +1,30 @@
 \documentclass[crop,tikz]{standalone}
 \usepackage{tikz-3dplot}
+\usepackage{pgfplots}
 \makeatletter
-\usetikzlibrary{3d, arrows.meta, bending}
+\usetikzlibrary{3d, arrows.meta, bending, decorations.markings}
+\usepgfplotslibrary{polar}
+\pgfplotsset{compat=newest}
+
+
+\makeatletter \newcommand{\pgfplotsdrawaxis}{\pgfplots@draw@axis} \makeatother
+
+\pgfplotsset{axis line on top/.style={
+  axis line style=transparent,
+  ticklabel style=transparent,
+  tick style=transparent,
+  axis on top=false,
+  after end axis/.append code={
+    \pgfplotsset{axis line style=opaque,
+      ticklabel style=opaque,
+      tick style=opaque,
+      grid=none}
+    \pgfplotsdrawaxis}
+  }
+}
+
+
+
 \begin{document}
 
 
@@ -291,6 +314,49 @@
 \pgfmathsetmacro{\OmegaAng}{\OmegaStartAng+\OmegaTotalAng}
 \draw[thick, -{stealth[bend, red!65]}, red!65] ({\OmegaArc*cos(\OmegaStartAng)},{\OmegaArc*sin(\OmegaStartAng)}) arc (\OmegaStartAng:\OmegaAng:\OmegaArc) node[black, pos=0.8, right, xshift=1mm, yshift=-0.5mm]{$\dot{\theta}$};
 \end{tikzpicture}
+
+
+\begin{tikzpicture}
+\begin{axis}[width=14cm,
+			axis lines=middle,
+            axis equal image,
+            grid=major,
+            xmin=-10, xmax=2,
+            ymin=-3, ymax=3,
+            xlabel=$x$, xlabel style={right},
+            ylabel=$y$, ylabel style={above},
+            tick style={thick},
+            ticklabel style={font=\normalsize},
+            xtick={1,0,...,-20}, extra x ticks={-5}, extra x tick style={grid=none},
+            ytick={-5,-4,...,5}, minor ytick={-1,1,...,4},extra y ticks={-2}, extra y tick style={grid=none},
+            %xmajorticks=false,
+            ymajorticks=false,
+            %legend entries={0.5x},
+            %        legend style={
+            %    at={(0.8,0.937)},
+            %    anchor=north,
+            %    legend columns=1},
+            %    legend cell align={left}
+            axis line on top,
+        ]
+\addplot[data cs=polar,red,domain=0:360,samples=360,smooth] (x, {1/(1 + 0.000*cos(x)))}) node[pos=0.142, right, rotate=0, black]{$0$};
+\addplot[data cs=polar,red,domain=0:360,samples=500,smooth] (x, {1/(1 + 0.500*cos(x)))}) node[pos=0.45, left, rotate=0, black]{$0.5$};
+\addplot[data cs=polar,red,domain=0:360,samples=500,smooth] (x, {1/(1 + 0.700*cos(x)))}) node[pos=0.465, left, rotate=0, black]{$0.7$};
+\addplot[data cs=polar,red,domain=0:360,samples=500,smooth] (x, {1/(1 + 0.8*cos(x)))}) node[pos=0.48, left, rotate=0, black]{$0.8$};
+\addplot[data cs=polar,red,domain=0:360,samples=750,smooth] (x, {1/(1 + 0.9*cos(x)))}) node[pos=0.441, left, rotate=0, black, xshift=-1mm]{$0.9$};
+\addplot[data cs=polar,red,domain=0:360,samples=360,smooth] (x, {1/(1 + 0.995*cos(x)))}) node[pos=0.9853, above, rotate=0, black, xshift=-3mm]{$0.995$};
+
+
+
+\addplot[data cs=polar,green,domain={-acos(-1/1.2)*0.999}:{acos(-1/1.2)*0.999},samples=360,smooth] (x, {1/(1 + 1.2*cos(x)))})  node[pos=0.5000, left, rotate=0, black, xshift=-1mm]{$1.2$};
+\addplot[data cs=polar,green,domain={-acos(-1/2)*0.999}:{acos(-1/2)*0.999},samples=360,smooth] (x, {1/(1 + 2*cos(x)))})  node[pos=0.5098, left, rotate=0, black]{$2$};
+\addplot[data cs=polar,green,domain={-acos(-1/5)*0.999}:{acos(-1/5)*0.999},samples=360,smooth] (x, {1/(1 + 5*cos(x)))})  node[pos=0.4875, right, rotate=0, black, yshift=-0.25mm]{$5$};
+        
+%\legend{$f(x)=\sqrt{x} \; {,} \; x \geq 0$ , $g(x)=0.5x$}
+\end{axis}
+\end{tikzpicture}
+
+
 \end{document}
 
 % GRAVEYARD
