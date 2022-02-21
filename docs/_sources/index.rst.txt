@@ -25,8 +25,6 @@ foundations and advancing towards applications and results.
     kepler/properties
     kepler/polar-coordinates
     kepler/developing-solutions
-    kepler/trajectory-geometry
-    kepler/orbital-elements
 
 .. toctree::
     :maxdepth: 2

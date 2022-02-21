@@ -98,8 +98,8 @@ html_favicon = None
 html_last_updated_fmt = today_fmt
 
 # Permalinks
-html_permalinks = True
-html_permalinks_icon = 'Some sample text'
+html_permalinks = False
+#html_permalinks_icon = 'Some sample text'
 html_show_sphinx = True
 html_secnumber_suffix = " "
 

@@ -339,22 +339,301 @@
             %    legend cell align={left}
             axis line on top,
         ]
-\addplot[data cs=polar,red,domain=0:360,samples=360,smooth] (x, {1/(1 + 0.000*cos(x)))}) node[pos=0.142, right, rotate=0, black]{$0$};
-\addplot[data cs=polar,red,domain=0:360,samples=500,smooth] (x, {1/(1 + 0.500*cos(x)))}) node[pos=0.45, left, rotate=0, black]{$0.5$};
-\addplot[data cs=polar,red,domain=0:360,samples=500,smooth] (x, {1/(1 + 0.700*cos(x)))}) node[pos=0.465, left, rotate=0, black]{$0.7$};
-\addplot[data cs=polar,red,domain=0:360,samples=500,smooth] (x, {1/(1 + 0.8*cos(x)))}) node[pos=0.48, left, rotate=0, black]{$0.8$};
+\addplot[data cs=polar,red,domain=0:360,samples=360,smooth] (x, {1/(1 + 0.000*cos(x)))}) node[pos=0.5, anchor = south east, rotate=0, black]{$0$};
+\addplot[data cs=polar,red,domain=0:360,samples=500,smooth] (x, {1/(1 + 0.500*cos(x)))}) node[pos=0.5, anchor = south east, rotate=0, black]{$0.5$};
+\addplot[data cs=polar,red,domain=0:360,samples=500,smooth] (x, {1/(1 + 0.700*cos(x)))}) node[pos=0.5, anchor = south east, rotate=0, black]{$0.7$};
+\addplot[data cs=polar,red,domain=0:360,samples=500,smooth] (x, {1/(1 + 0.8*cos(x)))}) node[pos=0.5, anchor = south east, rotate=0, black]{$0.8$};
 \addplot[data cs=polar,red,domain=0:360,samples=750,smooth] (x, {1/(1 + 0.9*cos(x)))}) node[pos=0.441, left, rotate=0, black, xshift=-1mm]{$0.9$};
-\addplot[data cs=polar,red,domain=0:360,samples=360,smooth] (x, {1/(1 + 0.995*cos(x)))}) node[pos=0.9853, above, rotate=0, black, xshift=-3mm]{$0.995$};
+%\addplot[data cs=polar,red,domain=0:360,samples=360,smooth] (x, {1/(1 + 0.995*cos(x)))}) node[pos=0.9853, above, rotate=0, black, xshift=-3mm]{$0.995$};
 
+\addplot[data cs=polar,black,domain={-acos(-1/1.2)*0.999}:{acos(-1/1.2)*0.999},samples=360,smooth] (x, {1/(1 + cos(x)))}) node[pos=0.07, anchor = south east, rotate=0, black, xshift=1.6mm]{$1$};
 
-
-\addplot[data cs=polar,green,domain={-acos(-1/1.2)*0.999}:{acos(-1/1.2)*0.999},samples=360,smooth] (x, {1/(1 + 1.2*cos(x)))})  node[pos=0.5000, left, rotate=0, black, xshift=-1mm]{$1.2$};
-\addplot[data cs=polar,green,domain={-acos(-1/2)*0.999}:{acos(-1/2)*0.999},samples=360,smooth] (x, {1/(1 + 2*cos(x)))})  node[pos=0.5098, left, rotate=0, black]{$2$};
-\addplot[data cs=polar,green,domain={-acos(-1/5)*0.999}:{acos(-1/5)*0.999},samples=360,smooth] (x, {1/(1 + 5*cos(x)))})  node[pos=0.4875, right, rotate=0, black, yshift=-0.25mm]{$5$};
+%\addplot[data cs=polar,green!50!black,domain={-acos(-1/1.25)*0.999}:{acos(-1/1.25)*0.999},samples=360,smooth] (x, {1/(1 + 1.25*cos(x)))})  node[left, rotate=0, black, yshift=2.2mm] at (axis cs: -2, -3) {$1.25$};
+\addplot[data cs=polar,green!50!black,domain={-acos(-1/1.5)*0.999}:{acos(-1/1.5)*0.999},samples=360,smooth] (x, {1/(1 + 1.5*cos(x)))})  node[left, rotate=0, black, yshift=2.2mm] at (axis cs: -1.45, -3) {$1.5$};
+\addplot[data cs=polar,green!50!black,domain={-acos(-1/5)*0.999}:{acos(-1/5)*0.999},samples=360,smooth] (x, {1/(1 + 5*cos(x)))})  node[pos=0.4875, left, rotate=0, black, yshift=0.02mm]{$5$};
         
 %\legend{$f(x)=\sqrt{x} \; {,} \; x \geq 0$ , $g(x)=0.5x$}
 \end{axis}
 \end{tikzpicture}
+
+
+
+\begin{tikzpicture}
+\begin{axis}[width=14cm,
+			axis lines=middle,
+            axis equal image,
+            grid=major,
+            xmin=-10, xmax=2,
+            ymin=-3, ymax=3,
+            xlabel=$x$, xlabel style={right},
+            ylabel=$y$, ylabel style={above},
+            tick style={thick},
+            ticklabel style={font=\normalsize},
+            xtick={1,0,...,-20}, extra x ticks={-5}, extra x tick style={grid=none},
+            ytick={-5,-4,...,5}, minor ytick={-1,1,...,4},extra y ticks={-2}, extra y tick style={grid=none},
+            %xmajorticks=false,
+            ymajorticks=false,
+            %legend entries={0.5x},
+            %        legend style={
+            %    at={(0.8,0.937)},
+            %    anchor=north,
+            %    legend columns=1},
+            %    legend cell align={left}
+            axis line on top,
+        ]
+\addplot[data cs=polar,red,domain=0:360,samples=360,smooth] (x, {1/(1 + 0.000*cos(x)))}) node[pos=0.5, anchor = south east, rotate=0, black]{$0$};
+\addplot[scatter, only marks, draw=black,] coordinates {
+    (-1.0000,   -0.0000)
+  (-0.5403,   -0.8415)
+  (0.4161,   -0.9093)
+  (0.9900,   -0.1411)
+  (0.6536,    0.7568)
+  (-0.2837,    0.9589)
+  (-0.9602,    0.2794)
+  };
+  
+\addplot[data cs=polar,red,domain=0:360,samples=500,smooth] (x, {1/(1 + 0.500*cos(x)))}) node[pos=0.5, anchor = south east, rotate=0, black]{$0.5$};
+\addplot[scatter, only marks, draw=black,] coordinates {
+  (-2.0000,   -0.0000)
+   (-1.8743,   -0.4893)
+   (-1.4896,   -0.9085)
+   (-0.8246,   -1.1466)
+    (0.1086,   -0.9395)
+    (0.6372,    0.2412)
+   (-0.2161,    1.0868)
+   (-1.0739,    1.0995)
+   (-1.6448,    0.7847)
+   (-1.9431,    0.3336)
+  };
+
+\addplot[data cs=polar,red,domain=0:360,samples=500,smooth] (x, {1/(1 + 0.700*cos(x)))}) node[pos=0.5, anchor = south east, rotate=0, black]{$0.7$};
+\addplot[scatter, only marks, draw=black,] coordinates {
+  (-3.3333,   -0.0000)
+   (-3.2882,   -0.2986)
+   (-3.1515,   -0.5889)
+   (-2.9189,   -0.8610)
+   (-2.5822,   -1.1020)
+   (-2.1283,   -1.2921)
+   (-1.5353,   -1.3954)
+   (-0.7695,   -1.3324)
+    (0.1843,   -0.8512)
+    (0.4139,    0.5772)
+   (-0.5451,    1.2695)
+   (-1.3607,    1.4003)
+   (-1.9934,    1.3282)
+   (-2.4798,    1.1556)
+   (-2.8444,    0.9251)
+   (-3.1023,    0.6594)
+   (-3.2626,    0.3727)
+%   (-3.3305,    0.0754)
+  };
+   
+   
+\addplot[data cs=polar,red,domain=0:360,samples=500,smooth] (x, {1/(1 + 0.8*cos(x)))}) node[pos=0.5, anchor = south east, rotate=0, black]{$0.8$};
+
+\addplot[scatter, only marks, draw=black,] coordinates {
+   (-4.9800,   -0.1997)
+   (-4.9197,   -0.3978)
+   (-4.8185,   -0.5926)
+   (-4.6751,   -0.7822)
+   (-4.4877,   -0.9644)
+   (-4.2539,   -1.1366)
+   (-3.9701,   -1.2954)
+   (-3.6317,   -1.4362)
+   (-3.2320,   -1.5526)
+   (-2.7620,   -1.6349)
+   (-2.2077,   -1.6666)
+   (-1.5481,   -1.6168)
+   (-0.7492,   -1.4130)
+   (0.2104,  -0.8046)
+    (0.2946,    0.7053)
+   (-0.6700,    1.3822)
+   (-1.4834,    1.6066)
+   (-2.1538,    1.6662)
+   (-2.7164,    1.6401)
+   (-3.1933,    1.5615)
+   (-3.5988,    1.4476)
+   (-3.9423,    1.3087)
+   (-4.2307,    1.1513)
+   (-4.4689,    0.9802)
+   (-4.6602,    0.7987)
+   (-4.8075,    0.6097)
+   (-4.9124,    0.4153)
+   (-4.9763,    0.2174)
+   (-4.9998,    0.0178)
+  };
+   
+   
+\addplot[data cs=polar,red,domain=0:360,samples=750,smooth] (x, {1/(1 + 0.9*cos(x)))}) node[pos=0.441, left, rotate=0, black, xshift=-1mm]{$0.9$};
+\addplot[scatter, only marks, draw=black,] coordinates {
+   (-9.9950,   -0.1000)
+   (-9.9800,   -0.1999)
+   (-9.9549,   -0.2995)
+   (-9.9198,   -0.3989)
+   (-9.8746,   -0.4979)
+   (-9.8191,   -0.5964)
+   (-9.7533,   -0.6942)
+   (-9.6770,   -0.7913)
+   (-9.5902,   -0.8875)
+   (-9.4927,   -0.9827)
+   (-9.3842,   -1.0768)
+   (-9.2646,   -1.1696)
+   (-9.1336,   -1.2610)
+   (-8.9910,   -1.3508)
+   (-8.8364,   -1.4387)
+   (-8.6695,   -1.5247)
+   (-8.4898,   -1.6084)
+   (-8.2970,   -1.6897)
+   (-8.0905,   -1.7681)
+   (-7.8698,   -1.8434)
+   (-7.6342,   -1.9153)
+   (-7.3829,   -1.9832)
+   (-7.1150,   -2.0466)
+   (-6.8296,   -2.1050)
+   (-6.5255,   -2.1576)
+   (-6.2013,   -2.2036)
+   (-5.8552,   -2.2418)
+   (-5.4854,   -2.2708)
+   (-5.0893,   -2.2890)
+   (-4.6639,   -2.2939)
+   (-4.2051,   -2.2824)
+   (-3.7078,   -2.2499)
+   (-3.1648,   -2.1894)
+   (-2.5658,   -2.0899)
+   (-1.8953,   -1.9311)
+   (-1.1276,   -1.6698)
+   (-0.2227,   -1.1796)
+    (0.5183,    0.1263)
+   (-0.3527,    1.2694)
+   (-1.2371,    1.7135)
+   (-1.9898,    1.9569)
+   (-2.6496,    2.1060)
+   (-3.2403,    2.1995)
+   (-3.7767,    2.2557)
+   (-4.2685,    2.2851)
+   (-4.7226,    2.2941)
+   (-5.1439,    2.2873)
+   (-5.5363,    2.2675)
+   (-5.9028,    2.2372)
+   (-6.2458,    2.1978)
+   (-6.5673,    2.1509)
+   (-6.8688,    2.0975)
+   (-7.1518,    2.0384)
+   (-7.4174,    1.9743)
+   (-7.6665,    1.9059)
+   (-7.9001,    1.8336)
+   (-8.1189,    1.7578)
+   (-8.3235,    1.6790)
+   (-8.5146,    1.5974)
+   (-8.6925,    1.5133)
+   (-8.8577,    1.4271)
+   (-9.0107,    1.3389)
+   (-9.1518,    1.2489)
+   (-9.2812,    1.1573)
+   (-9.3994,    1.0643)
+   (-9.5063,    0.9701)
+   (-9.6024,    0.8747)
+   (-9.6878,    0.7783)
+   (-9.7627,    0.6812)
+   (-9.8271,    0.5832)
+   (-9.8812,    0.4847)
+   (-9.9251,    0.3857)
+   (-9.9589,    0.2862)
+   (-9.9826,    0.1865)
+   (-9.9962,    0.0866)
+   (-10, 0)
+  };
+
+\addplot[data cs=polar,black,domain={-acos(-1/1.2)*0.999}:{acos(-1/1.2)*0.999},samples=360,smooth] (x, {1/(1 + cos(x)))}) node[pos=0.07, anchor = south east, rotate=0, black, xshift=1.6mm]{$1$};
+\addplot[scatter, only marks, draw=black,] coordinates {
+   (-6.2031,   -3.6736)
+   (-5.6848,   -3.5278)
+   (-5.1476,   -3.3702)
+   (-4.5881,   -3.1981)
+   (-4.0023,   -3.0074)
+   (-3.3844,   -2.7926)
+   (-2.7261,   -2.5441)
+   (-2.0145,   -2.2453)
+   (-1.2282,   -1.8606)
+   (-0.3297,   -1.2886)
+   (0.4998,         0)
+   (-0.3297,    1.2886)
+   (-1.2282,    1.8606)
+   (-2.0145,    2.2453)
+   (-2.7261,    2.5441)
+   (-3.3844,    2.7926)
+   (-4.0023,    3.0074)
+   (-4.5881,    3.1981)
+   (-5.1476,    3.3702)
+   (-5.6848,    3.5278)
+   (-6.2031,    3.6736)
+  };
+
+%\addplot[data cs=polar,green!50!black,domain={-acos(-1/1.25)*0.999}:{acos(-1/1.25)*0.999},samples=360,smooth] (x, {1/(1 + 1.25*cos(x)))})  node[left, rotate=0, black, yshift=2.2mm] at (axis cs: -2, -3) {$1.25$};
+\addplot[data cs=polar,green!50!black,domain={-acos(-1/1.5)*0.999}:{acos(-1/1.5)*0.999},samples=360,smooth] (x, {1/(1 + 1.5*cos(x)))})  node[left, rotate=0, black, yshift=2.2mm] at (axis cs: -1.45, -3) {$1.5$};
+\addplot[scatter, only marks, draw=black,] coordinates {
+   (-7.9573,  -10.1991)
+   (-7.1670,   -9.3117)
+   (-6.3721,   -8.4185)
+   (-5.5719,   -7.5182)
+   (-4.7648,   -6.6086)
+   (-3.9488,   -5.6866)
+   (-3.1207,   -4.7471)
+   (-2.2752,   -3.7811)
+   (-1.4024,   -2.7687)
+   (-0.4803,   -1.6521)
+   (0.4000,         0)
+   (-0.4803,    1.6521)
+   (-1.4024,    2.7687)
+   (-2.2752,    3.7811)
+   (-3.1207,    4.7471)
+   (-3.9488,    5.6866)
+   (-4.7648,    6.6086)
+   (-5.5719,    7.5182)
+   (-6.3721,    8.4185)
+   (-7.1670,    9.3117)
+   (-7.9573,   10.1991)
+  };
+
+\addplot[data cs=polar,green!50!black,domain={-acos(-1/5)*0.999}:{acos(-1/5)*0.999},samples=360,smooth] (x, {1/(1 + 5*cos(x)))})  node[pos=0.4875, left, rotate=0, black, yshift=0.02mm]{$5$};
+\addplot[scatter, only marks, draw=black,] coordinates {     
+	(-1.7897,  -9.7863)
+   (-0.8047 ,  -4.9586)
+	(0.1667,         0)
+   (-0.8047,    4.9586)
+   (-1.7897,    9.7863)
+  }; 
+        
+%\legend{$f(x)=\sqrt{x} \; {,} \; x \geq 0$ , $g(x)=0.5x$}
+\end{axis}
+\end{tikzpicture}
+
+
+\begin{tikzpicture}
+\begin{axis}[width=14cm,
+			axis lines=middle,
+			x axis line style={-},
+            %axis equal image,
+            grid=major,
+            xmin=0, xmax=1,
+            ymin=0, ymax=100,
+            xlabel=$e$,
+            ylabel=$\displaystyle\frac{T}{h^3/\mu^2}$, 
+            x label style={at={(axis description cs:0.5,-0.05)},anchor=north},
+		    y label style={at={(axis description cs:-0.115,.5)},rotate=0,anchor=south},
+		    tick style={thick},
+            ticklabel style={font=\normalsize},
+            xtick={0,0.1,...,1}, extra x ticks={0,1}, extra x tick style={grid=none},
+            ytick={0,10,...,100}, extra y ticks={0}, %minor ytick={-1,1,...,4}, extra y tick style={grid=none},
+            axis line on top,
+            label style={font=\large}
+        ]
+\addplot[black,domain=0:0.95,samples=360,smooth]{2*pi/(1 - x^2)^1.5} node[pos=0.5, anchor = south east, rotate=0, black]{$0$};
+\draw [dashed] (1,0) -- (1,100);
+\node[below left] at (axis cs:0,0) {$0$};
+\end{axis}
+\end{tikzpicture}
+
 
 
 \end{document}

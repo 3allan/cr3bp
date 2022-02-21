@@ -169,7 +169,7 @@ we can easily visualize what the trajectory will do as the parameter `e` is vari
 
 - We do **not** need to vary the angular momentum `h` in this case because the behavior is simply scaled by `h^2/\mu.`
 
-.. figure:: ../../images/kepler_trajectories_in_e.svg
+.. figure:: ../../images/kepler_trajectories_in_e_v2.svg
     :width: 471px
     :height: 237px
     :scale: 150 %
@@ -179,6 +179,7 @@ we can easily visualize what the trajectory will do as the parameter `e` is vari
     Variation of trajectories in the orbital plane;
     each curve is labelled with its corresponding eccentricity value `e.`
     **Closed trajectories (red) are ellipses and open trajectories (green) are hyperbolas.**
+    **The trajectory separating the two cases is shown in black.**
 
 The above plot can shortly be summarized by the following table.
 
@@ -215,10 +216,13 @@ Instead, we can obtain `t = t(\theta),` but inverting this function `t` is diffi
 **Fact:** The time since the reduced mass crossed the `x` axis (`\theta = 0`) is
 
 .. math::
+    :label: orbitTime
 
     t = \frac{h^3}{\mu^2}\left(\frac{2}{(1 - e^2)^{3/2}}\,\tan^{-1}\!\left(\sqrt{\frac{1 - e}{1 + e}}\tan\frac{\theta}{2}\right) - \frac{e\sin\theta}{(1 - e^2)(1 + e\cos\theta)}\right)
 
-where `\theta` is limited according to the parameters `\mu` and `A`.
+where `\theta` is limited according to the parameter `e.`
+
+- This result is written for `e < 1,` but it is **still valid** when `e \geqslant 1` (where equality is taken in the sense of a limit).
 
 
 
@@ -243,5 +247,66 @@ where `\theta` is limited according to the parameters `\mu` and `A`.
 
     Taking `t_0 = \theta_0 = 0` yields the above result. `\square`
 
-SEQUENCE OF PLOTS HERE
+The orbital period
+------------------
 
+Looking closer at :eq:`orbitTime` shows that the time `t` is **odd** in the angle `\theta.`
+(That is, `t(-\theta) = -t(\theta).`) This is useful because we can (more) easily calculate the
+**period** (`T`) for a **closed** trajectory.
+(An open trajectory can't have a period since it simply doesn't repeat itself.)
+The period is
+
+.. math::
+
+    T = 2\pi \frac{h^3/\mu^2}{(1 - e^2)^{3/2}}, \qquad (e < 1).
+
+..  admonition:: Proof
+    :class: toggle
+
+    Assume `e < 1` (so that a period exists). Using the fact that `t` is odd, calculate
+
+    .. math::
+        T &= \lim_{\theta\to\pi^-}t - \lim_{\theta\to-\pi^+}t \\
+          &= 2\lim_{\theta\to\pi^-}t.
+
+    The result comes out directly. `\square`
+
+The (normalized) orbital period is plotted below as a function of the eccentricity `e.`
+
+.. figure:: ../../images/kepler_trajectories_period_in_e.svg
+    :width: 522px
+    :height: 414px
+    :scale: 100 %
+    :alt: Variation of trajectory times of flight in the orbital plane as `e` varies.
+    :align: center
+
+    The orbital period `T` (scaled to a constant) of varying **closed** orbit trajectories characterized by eccentricity.
+
+- **A circular orbit has (constant) angular velocity** `h^3/\mu^2.`
+
+- The period is valid over one cycle of the orbit, but `t(\theta = 0) = 0` and
+  `|\theta| < \pi.`
+
+  - **We say the time over an orbit occurs between** `-T/2 < t < T/2.`
+
+Plotting the time of flight
+---------------------------
+Using modern computational tools makes it "easy" to visualize what a typical
+flight path looks like for any given eccentricity `e` as seen below.
+
+- We do **not** need to know what `h^3/\mu^2` is since this is simply a
+  constant that scales the actual behavior that we're interested in.
+
+.. figure:: ../../images/kepler_trajectories_in_e_v2_dt=1.svg
+    :width: 471px
+    :height: 237px
+    :scale: 150 %
+    :alt: Variation of trajectory times of flight in the orbital plane as `e` varies.
+    :align: center
+
+    Plotting position on the orbit in equal timesteps of `\Delta t = 1.`
+    **The motion is slowest at the furthest distances and fastest at the closest distances.**
+    Note that the hyperbolic trajectory with `e=5` is moving so fast that it only shows 1 data point - the next is already out of frame.
+
+This plot is obtained using **numerical root-finding** to determine the angle
+`\theta` given equally spaced times `t.`
