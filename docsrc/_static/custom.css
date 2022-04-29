@@ -14,11 +14,11 @@ https://stackoverflow.com/questions/59679797/show-hide-part-of-text-question-ans
 }
 
 .toggle .admonition-title:after {
-    content: " ▼";
+    content: "[show]";
     float: right;
 }
 
 .toggle .admonition-title.open:after {
-    content: " ▲";
+    content: "[hide]";
     float: right;
 }

@@ -169,7 +169,7 @@ we can easily visualize what the trajectory will do as the parameter `e` is vari
 
 - We do **not** need to vary the angular momentum `h` in this case because the behavior is simply scaled by `h^2/\mu.`
 
-.. figure:: ../../images/kepler_trajectories_in_e_v2.svg
+.. figure:: ../../images/kepler_trajectories_in_e_v4.svg
     :width: 471px
     :height: 237px
     :scale: 150 %
@@ -263,24 +263,26 @@ The period is
 ..  admonition:: Proof
     :class: toggle
 
-    Assume `e < 1` (so that a period exists). Using the fact that `t` is odd, calculate
+    Assume `e < 1` (so that a period exists). Using the previous proof, calculate
 
     .. math::
-        T &= \lim_{\theta\to\pi^-}t - \lim_{\theta\to-\pi^+}t \\
-          &= 2\lim_{\theta\to\pi^-}t.
+        T &= \int_0^T dt \\
+          &= \int_0^{2\pi} \frac{h^3}{\mu^2} \frac{d\theta}{(1 + e\cos\theta)^2} \\
+          &= \int_0^\pi 2\frac{h^3}{\mu^2}  \frac{d\theta}{(1 + e\cos\theta)^2} \\
+          &= 2\pi\frac{h^3/\mu^2}{(1 - e^2)^{3/2}}.
 
-    The result comes out directly. `\square`
+    Of course, the time has already been calculated by :eq:`orbitTime`, so plugging in limits works just as well -- the result comes out directly. `\square`
 
 The (normalized) orbital period is plotted below as a function of the eccentricity `e.`
 
-.. figure:: ../../images/kepler_trajectories_period_in_e.svg
+.. figure:: ../../images/kepler_trajectories_period_in_e_v3.svg
     :width: 522px
     :height: 414px
     :scale: 100 %
     :alt: Variation of trajectory times of flight in the orbital plane as `e` varies.
     :align: center
 
-    The orbital period `T` (scaled to a constant) of varying **closed** orbit trajectories characterized by eccentricity.
+    The orbital period `T` (scaled to a constant) of varying **closed** orbit trajectories characterized by eccentricity. The period lengthens as the orbit becomes more eccentric, approaching infinity when parabolic.
 
 - **A circular orbit has (constant) angular velocity** `h^3/\mu^2.`
 
@@ -295,18 +297,20 @@ Using modern computational tools makes it "easy" to visualize what a typical
 flight path looks like for any given eccentricity `e` as seen below.
 
 - We do **not** need to know what `h^3/\mu^2` is since this is simply a
-  constant that scales the actual behavior that we're interested in.
+  constant that scales the actual behavior we're interested in.
 
-.. figure:: ../../images/kepler_trajectories_in_e_v2_dt=1.svg
+.. figure:: ../../images/kepler_trajectories_timed_in_e_v4.svg
     :width: 471px
     :height: 237px
     :scale: 150 %
     :alt: Variation of trajectory times of flight in the orbital plane as `e` varies.
     :align: center
 
-    Plotting position on the orbit in equal timesteps of `\Delta t = 1.`
-    **The motion is slowest at the furthest distances and fastest at the closest distances.**
-    Note that the hyperbolic trajectory with `e=5` is moving so fast that it only shows 1 data point - the next is already out of frame.
+    Position on the orbit in equal timesteps.
+    The timesteps were chosen such that they fall on the `x` axis and `(0,1)`.
+
+- The circular orbit (`e = 0`) has equally spaced time steps (as we expected)
+- **The motion is slowest at the furthest distances and fastest at the closest distances.**
 
 This plot is obtained using **numerical root-finding** to determine the angle
 `\theta` given equally spaced times `t.`

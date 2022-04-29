@@ -213,7 +213,7 @@ More clearly, we can write
 The quantity `\mu^*` that makes this purely mathematical
 simplification possible is called the **reduced mass**.
 
-.. figure:: ../../images/kepler_reduced_mass_system.svg
+.. figure:: ../../images/kepler_reduced_mass_system_v2.svg
     :width: 299px
     :height: 221px
     :scale: 150 %

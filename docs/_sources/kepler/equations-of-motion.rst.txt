@@ -19,7 +19,7 @@ especially so for analyzing the more general 3-body problem. It consists of
 determining the positions of 2 bodies under mutual Newtonian gravitational
 attraction.
 
-.. figure:: ../../images/kepler_2_particles.svg
+.. figure:: ../../images/kepler_2_particles_v2.svg
     :width: 355px
     :height: 209px
     :scale: 150 %

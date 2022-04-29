@@ -343,7 +343,7 @@ Doing this allows us to write the radius <a class="reference internal" href="#eq
 <li><p>We do <strong>not</strong> need to vary the angular momentum <span class="math notranslate nohighlight">\(h\)</span> in this case because the behavior is simply scaled by <span class="math notranslate nohighlight">\(h^2/\mu.\)</span></p></li>
 </ul>
 <div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/kepler_trajectories_in_e_v2.svg"><img alt="Variation of trajectories in the orbital plane as `e` varies." height="355px" src="../_images/kepler_trajectories_in_e_v2.svg" width="706px" /></a>
+<a class="reference internal image-reference" href="../_images/kepler_trajectories_in_e_v4.svg"><img alt="Variation of trajectories in the orbital plane as `e` varies." height="355px" src="../_images/kepler_trajectories_in_e_v4.svg" width="706px" /></a>
 <p class="caption"><span class="caption-number">Fig. 5.2.1 </span><span class="caption-text">Variation of trajectories in the orbital plane;
 each curve is labelled with its corresponding eccentricity value <span class="math notranslate nohighlight">\(e.\)</span>
 <strong>Closed trajectories (red) are ellipses and open trajectories (green) are hyperbolas.</strong>
@@ -421,16 +421,18 @@ The period is</p>
 \[T = 2\pi \frac{h^3/\mu^2}{(1 - e^2)^{3/2}}, \qquad (e &lt; 1).\]</div>
 <div class="toggle admonition">
 <p class="admonition-title">Proof</p>
-<p>Assume <span class="math notranslate nohighlight">\(e &lt; 1\)</span> (so that a period exists). Using the fact that <span class="math notranslate nohighlight">\(t\)</span> is odd, calculate</p>
+<p>Assume <span class="math notranslate nohighlight">\(e &lt; 1\)</span> (so that a period exists). Using the previous proof, calculate</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}T &amp;= \lim_{\theta\to\pi^-}t - \lim_{\theta\to-\pi^+}t \\
-  &amp;= 2\lim_{\theta\to\pi^-}t.\end{split}\]</div>
-<p>The result comes out directly. <span class="math notranslate nohighlight">\(\square\)</span></p>
+\[\begin{split}T &amp;= \int_0^T dt \\
+  &amp;= \int_0^{2\pi} \frac{h^3}{\mu^2} \frac{d\theta}{(1 + e\cos\theta)^2} \\
+  &amp;= \int_0^\pi 2\frac{h^3}{\mu^2}  \frac{d\theta}{(1 + e\cos\theta)^2} \\
+  &amp;= 2\pi\frac{h^3/\mu^2}{(1 - e^2)^{3/2}}.\end{split}\]</div>
+<p>Of course, the time has already been calculated by <a class="reference internal" href="#equation-orbittime">(5.3.1)</a>, so plugging in limits works just as well – the result comes out directly. <span class="math notranslate nohighlight">\(\square\)</span></p>
 </div>
 <p>The (normalized) orbital period is plotted below as a function of the eccentricity <span class="math notranslate nohighlight">\(e.\)</span></p>
 <div class="figure align-center" id="id3">
-<a class="reference internal image-reference" href="../_images/kepler_trajectories_period_in_e.svg"><img alt="Variation of trajectory times of flight in the orbital plane as `e` varies." height="414px" src="../_images/kepler_trajectories_period_in_e.svg" width="522px" /></a>
-<p class="caption"><span class="caption-number">Fig. 5.3.1 </span><span class="caption-text">The orbital period <span class="math notranslate nohighlight">\(T\)</span> (scaled to a constant) of varying <strong>closed</strong> orbit trajectories characterized by eccentricity.</span></p>
+<a class="reference internal image-reference" href="../_images/kepler_trajectories_period_in_e_v3.svg"><img alt="Variation of trajectory times of flight in the orbital plane as `e` varies." height="414px" src="../_images/kepler_trajectories_period_in_e_v3.svg" width="522px" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.3.1 </span><span class="caption-text">The orbital period <span class="math notranslate nohighlight">\(T\)</span> (scaled to a constant) of varying <strong>closed</strong> orbit trajectories characterized by eccentricity. The period lengthens as the orbit becomes more eccentric, approaching infinity when parabolic.</span></p>
 </div>
 <ul class="simple">
 <li><p><strong>A circular orbit has (constant) angular velocity</strong> <span class="math notranslate nohighlight">\(h^3/\mu^2.\)</span></p></li>
@@ -448,14 +450,17 @@ The period is</p>
 flight path looks like for any given eccentricity <span class="math notranslate nohighlight">\(e\)</span> as seen below.</p>
 <ul class="simple">
 <li><p>We do <strong>not</strong> need to know what <span class="math notranslate nohighlight">\(h^3/\mu^2\)</span> is since this is simply a
-constant that scales the actual behavior that we’re interested in.</p></li>
+constant that scales the actual behavior we’re interested in.</p></li>
 </ul>
 <div class="figure align-center" id="id4">
-<a class="reference internal image-reference" href="../_images/kepler_trajectories_in_e_v2_dt=1.svg"><img alt="Variation of trajectory times of flight in the orbital plane as `e` varies." height="355px" src="../_images/kepler_trajectories_in_e_v2_dt=1.svg" width="706px" /></a>
-<p class="caption"><span class="caption-number">Fig. 5.3.2 </span><span class="caption-text">Plotting position on the orbit in equal timesteps of <span class="math notranslate nohighlight">\(\Delta t = 1.\)</span>
-<strong>The motion is slowest at the furthest distances and fastest at the closest distances.</strong>
-Note that the hyperbolic trajectory with <span class="math notranslate nohighlight">\(e=5\)</span> is moving so fast that it only shows 1 data point - the next is already out of frame.</span></p>
+<a class="reference internal image-reference" href="../_images/kepler_trajectories_timed_in_e_v4.svg"><img alt="Variation of trajectory times of flight in the orbital plane as `e` varies." height="355px" src="../_images/kepler_trajectories_timed_in_e_v4.svg" width="706px" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.3.2 </span><span class="caption-text">Position on the orbit in equal timesteps.
+The timesteps were chosen such that they fall on the <span class="math notranslate nohighlight">\(x\)</span> axis and <span class="math notranslate nohighlight">\((0,1)\)</span>.</span></p>
 </div>
+<ul class="simple">
+<li><p>The circular orbit (<span class="math notranslate nohighlight">\(e = 0\)</span>) has equally spaced time steps (as we expected)</p></li>
+<li><p><strong>The motion is slowest at the furthest distances and fastest at the closest distances.</strong></p></li>
+</ul>
 <p>This plot is obtained using <strong>numerical root-finding</strong> to determine the angle
 <span class="math notranslate nohighlight">\(\theta\)</span> given equally spaced times <span class="math notranslate nohighlight">\(t.\)</span></p>
 </div>
@@ -478,7 +483,7 @@ Note that the hyperbolic trajectory with <span class="math notranslate nohighlig
     <p>
         &#169; Copyright 2021-2022, The Multibody Astrodynamics Community.
       <span class="lastupdated">
-        Last updated on Feb 21, 2022.
+        Last updated on Apr 23, 2022.
       </span>
 
     </p>
