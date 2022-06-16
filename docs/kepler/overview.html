@@ -1,55 +1,51 @@
 
-
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>1 Introduction &mdash; CR3BP  documentation</title>
-  
 
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/rtd_eq.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/style.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction &#8212; CR3BP  documentation</title>
     
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="https://www.googletagmanager.com/gtag/js?id=G-DLCCJ41JJ8"></script>
-        <script src="../_static/google_analytics_tracker.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/rtd_eq.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="https://www.googletagmanager.com/gtag/js?id=G-DLCCJ41JJ8"></script>
+    <script src="../_static/google_analytics_tracker.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <link rel="canonical" href="https://cr3bp.com/kepler/overview.html" />
+    <link rel="shortcut icon" href="../_static/favicon-horseshoe.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2 The Two-Body World" href="equations-of-motion.html" />
-    <link rel="prev" title="The Circular Restricted 3-Body Problem" href="../index.html" />
+    <link rel="next" title="1 The Two-Body World" href="equations-of-motion.html" />
+    <link rel="prev" title="Home" href="../index.html" />
  <script type="text/javascript">
     $(document).ready(function() {
         //
@@ -63,145 +59,374 @@
     });
 </script>
 
-</head>
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
 
-<body class="wy-body-for-nav">
-
-   
-  <div class="wy-grid-for-nav">
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-          
+    <div class="container-fluid" id="banner"></div>
 
-          
-            <a href="../index.html" class="icon icon-home"> CR3BP
-          
+    
 
+    <div class="container-xl">
+      <div class="row">
           
-          </a>
-
-          
-            
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption" role="heading"><span class="caption-text">The Kepler (2-body) Problem</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">1 Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#what-is-gravity-anyway">1.1 What is gravity anyway?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#einstein-would-like-a-word">1.2 Einstein would like a word</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#so-which-one-do-we-use">1.3 So which one do we use?</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="equations-of-motion.html">2 The Two-Body World</a></li>
-<li class="toctree-l1"><a class="reference internal" href="properties.html">3 Insights and Conserved Quantities</a></li>
-<li class="toctree-l1"><a class="reference internal" href="polar-coordinates.html">4 A Change of Perspective</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developing-solutions.html">5 Developing a General Solution</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Multibody Dynamics</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../multibody/overview.html"><span class="sectnum">1</span> Overview</a></li>
-</ul>
-
-            
-          
-        </div>
-        
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
-      <nav class="wy-nav-top" aria-label="top navigation">
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">CR3BP</a>
-        
-      </nav>
+      
+      
+      <img src="../_static/icon-horseshoe.svg" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Preliminaries
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  2-Body Dynamics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="equations-of-motion.html">
+   1 The Two-Body World
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="simplifying-the-equations.html">
+   2 Simplifying the Equations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="properties.html">
+   3 Constants of Motion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="polar-coordinates.html">
+   4 The Orbital Plane
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="developing-solutions.html">
+   5 Developing a General Solution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="trajectory-geometry.html">
+   6 Standard Orbital Elements of Elliptical Trajectories
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Multibody Dynamics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../multibody/overview.html">
+   <span class="sectnum">
+    1
+   </span>
+   Overview
+  </a>
+ </li>
+</ul>
 
-
-      <div class="wy-nav-content">
-        
-        <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
-  <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-      <li><span class="section-number">1 </span>Introduction</li>
-    
-    
-      <li class="wy-breadcrumbs-aside">
-        
-          
-            <a href="../_sources/kepler/overview.rst.txt" rel="nofollow"> View page source</a>
-          
-        
-      </li>
-    
-  </ul>
-
-  
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/3allan/cr3bp"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/3allan/cr3bp/issues/new?title=Issue%20on%20page%20%2Fkepler/overview.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/3allan/cr3bp/edit/2bp/docs/kepler/overview.rst"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/kepler/overview.rst"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-gravity-anyway">
+   What is gravity anyway?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#einstein-would-like-a-word">
+   Einstein would like a word
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#so-which-one-do-we-use">
+   So which one do we use?
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-gravity-anyway">
+   What is gravity anyway?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#einstein-would-like-a-word">
+   Einstein would like a word
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#so-which-one-do-we-use">
+   So which one do we use?
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
   <div class="section" id="introduction">
-<h1><span class="section-number">1 </span>Introduction</h1>
+<h1 class="sd-d-none">Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">@</a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">Author</dt>
-<dd class="field-odd"><ol class="upperalpha simple" start="13">
-<li><p>Werner</p></li>
-</ol>
+<dd class="field-odd"><p>Matt Werner</p>
 </dd>
 </dl>
 <div class="section" id="what-is-gravity-anyway">
-<h2><span class="section-number">1.1 </span>What is gravity anyway?</h2>
+<h2>What is gravity anyway?<a class="headerlink" href="#what-is-gravity-anyway" title="Permalink to this headline">@</a></h2>
 <p><strong>Gravity</strong>, also called <strong>gravitational acceleration</strong> or <strong>gravitational attraction</strong>, in its
 <em>simplest</em> description is the attraction of two (or more) objects due to their <strong>mass</strong>.</p>
 <p>Sir Isaac Newton developed a <strong>model</strong> for the attraction of two such objects
@@ -218,103 +443,85 @@ tested, and developed into the modern day where it <em>still</em> serves as a
 workhorse for <em>many</em> astrodynamics applications.</p>
 </div>
 <div class="section" id="einstein-would-like-a-word">
-<h2><span class="section-number">1.2 </span>Einstein would like a word</h2>
+<h2>Einstein would like a word<a class="headerlink" href="#einstein-would-like-a-word" title="Permalink to this headline">@</a></h2>
 <p>Newton’s description of gravity hung around for 230 years until it was
-seriously challenged. After all, Newton’s gravity is <strong>not</strong> perfect; it
+seriously challenged. After all, Newtonian gravity is <strong>not</strong> perfect; it
 simply offers a (very good) description of motion from a mechanical
 perspective.</p>
 <p>The contender was Albert Einstein’s general theory of relativity, which came
-to light in 1916. It not only describes the motion of objects that have
+to light in 1916. His theory not only describes the motion of objects that have
 mass (like Newton did), but it describes the motion of objects that have <em>a
 lot</em> of mass (black holes) and also objects that have <em>no</em> mass (photons).</p>
 <p>Newton’s description of “motion” would be position as a function of time,
 but Einstein’s description of “motion” includes position <em>and</em> time.
-One takeaway from GR is that space and time are actually interwoven.
-There is no such thing as absolute time, and there are no inertial
+That is, one takeaway from general relativity is that space and time are actually part of the same thing – spacetime.
+There is <strong>no</strong> such thing as absolute time, and there are <strong>no</strong> inertial
 reference frames (which are necessary to use Newton’s laws).</p>
 <p>The implications coming from general relativity were <em>shattering</em> to all of
 physics, but it since <em>vastly</em> improved our understanding and has not only
 stood, but <em>completely dominated</em> the tests of time.</p>
 </div>
 <div class="section" id="so-which-one-do-we-use">
-<h2><span class="section-number">1.3 </span>So which one do we use?</h2>
-<p>General relativity is widely accepted as correct. However, it gets
+<h2>So which one do we use?<a class="headerlink" href="#so-which-one-do-we-use" title="Permalink to this headline">@</a></h2>
+<p>General relativity is widely accepted as correct. But it gets
 complicated <em>fast</em>. There aren’t really that many analytic solutions, and
 integrating its equations of motion on a computer can be slow.</p>
 <p><strong>We use Newtonian gravity</strong> despite it being fundamentally <strong>wrong</strong>!
-We do this because it’s much easier than GR in terms of comprehension and
-computability, and it’s “close enough” for almost <em>all</em> practical
-applications. Any spacecraft we launch will most likely not be interacting
+We do this because it’s much easier than general relativity in terms of comprehension and
+computability, and it’s “close enough” for nearly <em>all</em> practical
+applications. That is, any spacecraft we launch and most celestial bodies (stars, planets, moons) will most likely not be interacting
 near black holes or travelling at any appreciable fraction of the
-speed of light.</p>
+speed of light, so this choice is well-justified.</p>
 <p>With that, it’s time to dive into orbital mechanics!</p>
 </div>
 </div>
 
 
-           </div>
-           
-          </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="equations-of-motion.html" class="btn btn-neutral float-right" title="2 The Two-Body World" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="../index.html" class="btn btn-neutral float-left" title="The Circular Restricted 3-Body Problem" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021-2022, The Multibody Astrodynamics Community.
-      <span class="lastupdated">
-        Last updated on Apr 22, 2022.
-      </span>
-
-    </p>
-  </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
-
-</footer>
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Home</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="equations-of-motion.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1 </span>The Two-Body World</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Matt Werner<br/>
+  
+      &copy; Copyright 2021-2022, Matt Werner and contributors.<br/>
+    Last updated on Jun 16, 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
       </div>
-
-    </section>
-
-  </div>
+    </div>
   
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
 
-  
-  
-    
-    <!-- Theme Analytics -->
-    <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'G-DLCCJ41JJ8', 'auto');
-    
-    ga('set', 'anonymizeIp', true);
-    
-    ga('send', 'pageview');
-    </script>
-
-    
-   
-
-</body>
+  </body>
 </html>

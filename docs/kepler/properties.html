@@ -1,55 +1,51 @@
 
-
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>3 Insights and Conserved Quantities &mdash; CR3BP  documentation</title>
-  
 
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/rtd_eq.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/style.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3 Constants of Motion &#8212; CR3BP  documentation</title>
     
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="https://www.googletagmanager.com/gtag/js?id=G-DLCCJ41JJ8"></script>
-        <script src="../_static/google_analytics_tracker.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/rtd_eq.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="https://www.googletagmanager.com/gtag/js?id=G-DLCCJ41JJ8"></script>
+    <script src="../_static/google_analytics_tracker.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <link rel="canonical" href="https://cr3bp.com/kepler/properties.html" />
+    <link rel="shortcut icon" href="../_static/favicon-horseshoe.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4 A Change of Perspective" href="polar-coordinates.html" />
-    <link rel="prev" title="2 The Two-Body World" href="equations-of-motion.html" />
+    <link rel="next" title="4 The Orbital Plane" href="polar-coordinates.html" />
+    <link rel="prev" title="2 Simplifying the Equations" href="simplifying-the-equations.html" />
  <script type="text/javascript">
     $(document).ready(function() {
         //
@@ -63,238 +59,394 @@
     });
 </script>
 
-</head>
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
 
-<body class="wy-body-for-nav">
-
-   
-  <div class="wy-grid-for-nav">
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-          
+    <div class="container-fluid" id="banner"></div>
 
-          
-            <a href="../index.html" class="icon icon-home"> CR3BP
-          
+    
 
+    <div class="container-xl">
+      <div class="row">
           
-          </a>
-
-          
-            
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption" role="heading"><span class="caption-text">The Kepler (2-body) Problem</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">1 Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="equations-of-motion.html">2 The Two-Body World</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">3 Insights and Conserved Quantities</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#relative-form">3.1 Relative form</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#conserved-quantities">3.2 Conserved quantities</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#linear-momentum">3.2.1 Linear momentum</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#angular-momentum">3.2.2 Angular momentum</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#the-laplace-runge-lenz-vector">3.2.3 The Laplace-Runge-Lenz vector</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#energy">3.2.4 Energy</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#the-reduced-mass">3.3 The reduced mass</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#facts-about-the-reduced-mass-system">3.3.1 Facts about the reduced mass system</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#standard-form">3.4 Standard form</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="polar-coordinates.html">4 A Change of Perspective</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developing-solutions.html">5 Developing a General Solution</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Multibody Dynamics</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../multibody/overview.html"><span class="sectnum">1</span> Overview</a></li>
-</ul>
-
-            
-          
-        </div>
-        
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
-      <nav class="wy-nav-top" aria-label="top navigation">
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">CR3BP</a>
-        
-      </nav>
+      
+      
+      <img src="../_static/icon-horseshoe.svg" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Preliminaries
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  2-Body Dynamics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="equations-of-motion.html">
+   1 The Two-Body World
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="simplifying-the-equations.html">
+   2 Simplifying the Equations
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3 Constants of Motion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="polar-coordinates.html">
+   4 The Orbital Plane
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="developing-solutions.html">
+   5 Developing a General Solution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="trajectory-geometry.html">
+   6 Standard Orbital Elements of Elliptical Trajectories
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Multibody Dynamics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../multibody/overview.html">
+   <span class="sectnum">
+    1
+   </span>
+   Overview
+  </a>
+ </li>
+</ul>
 
-
-      <div class="wy-nav-content">
-        
-        <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
-  <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-      <li><span class="section-number">3 </span>Insights and Conserved Quantities</li>
-    
-    
-      <li class="wy-breadcrumbs-aside">
-        
-          
-            <a href="../_sources/kepler/properties.rst.txt" rel="nofollow"> View page source</a>
-          
-        
-      </li>
-    
-  </ul>
-
-  
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-  <div class="section" id="insights-and-conserved-quantities">
-<h1><span class="section-number">3 </span>Insights and Conserved Quantities</h1>
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/3allan/cr3bp"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/3allan/cr3bp/issues/new?title=Issue%20on%20page%20%2Fkepler/properties.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/3allan/cr3bp/edit/2bp/docs/kepler/properties.rst"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/kepler/properties.rst"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#angular-momentum">
+   3.1 Angular momentum
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#laplace-s-vector">
+   3.2 Laplace’s vector
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#energy">
+   3.3 Energy
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Constants of Motion</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#angular-momentum">
+   3.1 Angular momentum
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#laplace-s-vector">
+   3.2 Laplace’s vector
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#energy">
+   3.3 Energy
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="section" id="constants-of-motion">
+<h1 class="sd-d-none"><span class="section-number">3 </span>Constants of Motion<a class="headerlink" href="#constants-of-motion" title="Permalink to this headline">@</a></h1>
 <dl class="field-list simple">
+<dt class="field-odd">Info</dt>
+<dd class="field-odd"><p><strong>Insights and Conserved Quantities:</strong> The general 2-body problem may be simplified greatly by utilizing several special properties admitted by the system. These properties <em>will</em> enable a full solution of the general problem to be determined analytically.</p>
+</dd>
+<dt class="field-even">Description</dt>
+<dd class="field-even"><p>Develop the two-body problem’s constants of motion (<span class="math notranslate nohighlight">\(\mathbf{h}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>, and <span class="math notranslate nohighlight">\(E\)</span>).</p>
+</dd>
 <dt class="field-odd">Author</dt>
-<dd class="field-odd"><ol class="upperalpha simple" start="13">
-<li><p>Werner</p></li>
-</ol>
+<dd class="field-odd"><p>Matt Werner</p>
 </dd>
 </dl>
-<div class="admonition-plan-of-action admonition">
-<p class="admonition-title">Plan of Action</p>
-<p>The general 2-body problem may be simplified greatly by utilizing
-several special properties admitted by the system. These properties
-<em>will</em> enable a full solution of the general problem to be determined
-analytically.</p>
-</div>
-<p>The Newtonian, Lagrangian, and Hamiltonian formalisms all provide the same
-system of equations for the motion of two particles under
-mutual Newtonian gravitational attraction with respect to the origin of an inertial
-coordinate system.</p>
-<div class="math notranslate nohighlight" id="equation-general2bp">
-<span class="eqno">(3.1)</span>\[\begin{split}\ddot{\mathbf{r}}_1 &amp;= -\frac{G m_2}{|\mathbf{r}_1 - \mathbf{r}_2|^3}(\mathbf{r}_1 - \mathbf{r}_2) \\
-\ddot{\mathbf{r}}_2 &amp;= -\frac{G m_1}{|\mathbf{r}_2 - \mathbf{r}_1|^3}(\mathbf{r}_2 - \mathbf{r}_1)\end{split}\]</div>
-<p>Amazingly, this general system <a class="reference internal" href="#equation-general2bp">(3.1)</a> has a closed-form solution.
-Obtaining this solution, however, is made significantly easier once several properties are known.</p>
-<div class="section" id="relative-form">
-<h2><span class="section-number">3.1 </span>Relative form</h2>
-<p>To reduce the complexity of <a class="reference internal" href="#equation-general2bp">(3.1)</a> (as we will see), we can
-define the <strong>relative</strong> distance between each body as</p>
-<div class="math notranslate nohighlight" id="equation-relative">
-<span class="eqno">(3.1.1)</span>\[\mathbf{r} = \mathbf{r}_2 - \mathbf{r}_1.\]</div>
-<p>The equations of motion may be calculated directly since</p>
-<div class="math notranslate nohighlight" id="equation-eq-relativeeom">
-<span class="eqno">(3.1.2)</span>\[\begin{split}\ddot{\mathbf{r}} &amp;= \ddot{\mathbf{r}}_2 - \ddot{\mathbf{r}}_1 \\
-&amp;= -\frac{G(m_1 + m_2)}{r^3}\mathbf{r},\end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(r = |\mathbf{r}|\)</span> is the distance between the two particles.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Doing this is beneficial because it exploits a symmetry in
-the full system of equations, essentially <strong>halving</strong> the number of
-equations to be solved in order to obtain <em>any</em> information.</p>
-</div>
-</div>
-<div class="section" id="conserved-quantities">
-<h2><span class="section-number">3.2 </span>Conserved quantities</h2>
-<div class="section" id="linear-momentum">
-<h3><span class="section-number">3.2.1 </span>Linear momentum</h3>
-<div class="admonition-recall admonition">
-<p class="admonition-title">Recall</p>
-<p>For any <span class="math notranslate nohighlight">\(\mathbf{x}_1, \mathbf{x}_2 \in \mathbb{R}^3\)</span>, the center of mass for a
-system of two particles with respect to an inertial coordinate system is</p>
-<div class="math notranslate nohighlight">
-\[\mathbf{x}_{cm} \equiv \frac{m_1 \mathbf{x}_1 + m_2 \mathbf{x}_2}{m_1 + m_2},\]</div>
-<p>where <span class="math notranslate nohighlight">\(m_1\)</span> and <span class="math notranslate nohighlight">\(m_2\)</span> are the masses of each body located
-(instantaneously) at <span class="math notranslate nohighlight">\(\mathbf{x}_1\)</span> and <span class="math notranslate nohighlight">\(\mathbf{x}_2\)</span>.</p>
-</div>
-<p>The two bodies are <strong>isolated</strong> — that is, the center of mass satisfies</p>
-<div class="math notranslate nohighlight">
-\[\mathbf{r}_{cm}(t) = \mathbf{r}_{cm}(0) + \dot{\mathbf{r}}_{cm}(0) t,\]</div>
-<p>since there is no external forcing to the system.
-As such, the center of mass moves in a straight line (or not at all) in
-accordance with Newton’s 1<sup>st</sup> law. Further, we have <strong>explicitly</strong>
-that</p>
-<div class="math notranslate nohighlight" id="equation-positionsfromcenterofmass">
-<span class="eqno">(3.2.1)</span>\[\mathbf{r}_1 = \mathbf{r}_{cm} - \frac{m_2}{m_1 + m_2}\mathbf{r} \qquad \text{and} \qquad \mathbf{r}_2 = \mathbf{r}_{cm} + \frac{m_1}{m_1 + m_2}\mathbf{r}.\]</div>
-<p>You can validate this for yourself!</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p><a class="reference internal" href="#equation-relative">(3.1.1)</a> provides <strong>direct</strong>
-information of both bodies (relative to each other) through
-<a class="reference internal" href="#equation-eq-relativeeom">(3.1.2)</a> <em>and</em> enables the inertial positions of both bodies to
-be <em>calculated</em> from <a class="reference internal" href="#equation-positionsfromcenterofmass">(3.2.1)</a> rather than directly
-solved from <a class="reference internal" href="#equation-general2bp">(3.1)</a>.</p>
-<p>This solidifies the idea that only half of the amount of equations
-have to be solved with <a class="reference internal" href="#equation-eq-relativeeom">(3.1.2)</a>, but now <em>all</em> information about
-<em>both</em> bodies is known.</p>
-</div>
-</div>
 <div class="section" id="angular-momentum">
-<h3><span class="section-number">3.2.2 </span>Angular momentum</h3>
+<h2><span class="section-number">3.1 </span>Angular momentum<a class="headerlink" href="#angular-momentum" title="Permalink to this headline">@</a></h2>
 <div class="admonition-recall admonition">
 <p class="admonition-title">Recall</p>
-<ol class="arabic">
+<ol class="arabic simple">
 <li><p>For any <span class="math notranslate nohighlight">\(\mathbf{x} \in \mathbb{R}^3\)</span>, the cross-product of <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>
-with itself vanishes.</p>
+with itself vanishes.</p></li>
+</ol>
 <div class="math notranslate nohighlight">
 \[\mathbf{x} \times \mathbf{x} \equiv \mathbf{0}\]</div>
-</li>
+<ol class="arabic simple">
 <li><p>For any <span class="math notranslate nohighlight">\(\mathbf{x},\mathbf{y} \in \mathbb{R}^3\)</span>, the cross-product is
-anticommutative.</p>
+anticommutative.</p></li>
+</ol>
 <div class="math notranslate nohighlight">
 \[\mathbf{x} \times \mathbf{y} = -(\mathbf{y} \times \mathbf{x})\]</div>
-</li>
-</ol>
 </div>
 <p>Rewriting the Kepler problem in a convenient form,</p>
 <div class="math notranslate nohighlight">
@@ -308,21 +460,27 @@ anticommutative.</p>
 &amp;= \ddot{\mathbf{r}} \times \mathbf{r} + \dot{\mathbf{r}} \times \dot{\mathbf{r}} \\
 &amp;= \frac{d}{dt}\underbrace{(\dot{\mathbf{r}} \times \mathbf{r})}_{-\mathbf{h}}.\end{split}\]</div>
 <p>We conclude that the (specific) angular momentum <span class="math notranslate nohighlight">\(\mathbf{h}\)</span> is conserved under the dynamics of the 2-body problem.</p>
-<div class="math notranslate nohighlight">
-\[\mathbf{h} = \mathbf{r} \times \dot{\mathbf{r}} \equiv \mathrm{const.}\]</div>
+<div class="math notranslate nohighlight" id="equation-angularmomentum">
+<span class="eqno">(3.1.1)<a class="headerlink" href="#equation-angularmomentum" title="Permalink to this equation">@</a></span>\[\mathbf{h} = \mathbf{r} \times \dot{\mathbf{r}} \equiv \mathrm{const.}\]</div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p><strong>The motion of the two bodies must be planar, and the angular momentum is perpendicular to this plane!</strong></p>
 </div>
 </div>
-<div class="section" id="the-laplace-runge-lenz-vector">
-<h3><span class="section-number">3.2.3 </span>The Laplace-Runge-Lenz vector</h3>
+<div class="section" id="laplace-s-vector">
+<h2><span class="section-number">3.2 </span>Laplace’s vector<a class="headerlink" href="#laplace-s-vector" title="Permalink to this headline">@</a></h2>
 <div class="admonition-recall admonition">
 <p class="admonition-title">Recall</p>
-<p>For any <span class="math notranslate nohighlight">\(\mathbf{x},\mathbf{y},\mathbf{z} \in \mathbb{R}^3\)</span>, the vector triple product
-satisfies</p>
+<ol class="arabic simple">
+<li><p>For any <span class="math notranslate nohighlight">\(\mathbf{x},\mathbf{y},\mathbf{z} \in \mathbb{R}^3\)</span>, the vector triple product satisfies</p></li>
+</ol>
 <div class="math notranslate nohighlight">
 \[\mathbf{x} \times (\mathbf{y} \times \mathbf{z}) = (\mathbf{x} \cdot \mathbf{z}) \mathbf{y} - (\mathbf{x} \cdot \mathbf{y}) \mathbf{z}.\]</div>
+<ol class="arabic simple">
+<li><p>For any <span class="math notranslate nohighlight">\(\mathbf{x},\mathbf{y} \in \mathbb{R}^3\)</span>, the dot product is commutative.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\mathbf{x}\cdot\mathbf{y} = \mathbf{y}\cdot\mathbf{x}\]</div>
 </div>
 <p>Knowing that the angular momentum <span class="math notranslate nohighlight">\(\mathbf{h}\)</span> is conserved, we can do the following calculation.</p>
 <div class="math notranslate nohighlight">
@@ -335,9 +493,7 @@ satisfies</p>
 &amp;= G(m_1 + m_2) \left(\frac{r \dot{\mathbf{r}} - \dot{r} \mathbf{r}}{r^2}\right) \\
 &amp;= G(m_1 + m_2) \frac{d}{dt}\left(\frac{\mathbf{r}}{r}\right) \\
 &amp;= \frac{d}{dt}\left(\frac{G(m_1 + m_2)}{r}\mathbf{r}\right).\end{split}\]</div>
-<p>Finally, we can combine the first and last expressions since the derivative is a linear operation.
-This provides the conserved quantity <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>, the so-called
-Laplace-Runge-Lenz vector<sup>[</sup><a class="footnote-reference brackets" href="#id4" id="id1">2</a><sup>]</sup>.</p>
+<p>Finally, we can combine the first and last expressions since the derivative is a linear operation. This provides the conserved quantity <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>, the so-called <strong>Laplace-Runge-Lenz</strong> (or simply <strong>Laplace</strong>) <strong>vector</strong><a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{A} = \dot{\mathbf{r}} \times \mathbf{h} - \frac{G(m_1 + m_2)}{r}\mathbf{r} \equiv \mathrm{const.}\]</div>
 <div class="admonition important">
@@ -346,111 +502,27 @@ Laplace-Runge-Lenz vector<sup>[</sup><a class="footnote-reference brackets" href
 </div>
 </div>
 <div class="section" id="energy">
-<h3><span class="section-number">3.2.4 </span>Energy</h3>
-<p>Manipulating the relative form of the equations of motion provides</p>
+<h2><span class="section-number">3.3 </span>Energy<a class="headerlink" href="#energy" title="Permalink to this headline">@</a></h2>
+<p>We can
+Manipulating the relative form of the equations of motion provides</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\mathbf{0} &amp;= \left(\ddot{\mathbf{r}} + \frac{G(m_1 + m_2)}{r^3}\mathbf{r}\right) \cdot \dot{\mathbf{r}} \\
+\[\begin{split}0 &amp;= \left(\ddot{\mathbf{r}} + \frac{G(m_1 + m_2)}{r^3}\mathbf{r}\right) \cdot \dot{\mathbf{r}} \\
 &amp;= \ddot{\mathbf{r}} \cdot \dot{\mathbf{r}} + \left(\frac{G(m_1 + m_2)}{r^3}\mathbf{r}\right) \cdot \dot{\mathbf{r}} \\
 &amp;= \frac{1}{2}\frac{d}{dt}(\dot{\mathbf{r}} \cdot \dot{\mathbf{r}}) + \frac{G(m_1 + m_2)}{r^3}(\mathbf{r} \cdot \dot{\mathbf{r}}) \\
 &amp;= \frac{1}{2}\frac{d}{dt}(\dot{\mathbf{r}} \cdot \dot{\mathbf{r}}) + \frac{G(m_1 + m_2)}{r^2}\dot{r} &amp;&amp; \quad \left(\mathbf{r} \cdot \dot{\mathbf{r}} = r\dot{r}\right) \\
 &amp;= \frac{1}{2}\frac{d}{dt}(\dot{\mathbf{r}} \cdot \dot{\mathbf{r}}) + \frac{d}{dt}\left(-\frac{G(m_1 + m_2)}{r}\right) \\
 &amp;= \frac{d}{dt}\left(\frac{\dot{\mathbf{r}} \cdot \dot{\mathbf{r}}}{2} - \frac{G(m_1 + m_2)}{r}\right).\end{split}\]</div>
-<p>This quantity can be easily identified as a sort of total specific
-mechanical energy — that is, the total mechanical energy per unit mass.</p>
+<p>This quantity can be easily identified as a sort of total specific mechanical energy — that is, the total mechanical energy per unit mass.</p>
 <div class="math notranslate nohighlight">
 \[E = \frac{v^2}{2} - \frac{G(m_1 + m_2)}{r} \equiv \mathrm{const.}\]</div>
-<p>Here, <span class="math notranslate nohighlight">\(v = |\dot{\mathbf{r}}|\)</span> is the magnitude of the (inertial)
-velocity.
-Note that the gravitational potential is appearing to come from a body of
-mass <span class="math notranslate nohighlight">\(m_1 + m_2\)</span>.</p>
+<p>Here, <span class="math notranslate nohighlight">\(v = |\dot{\mathbf{r}}|\)</span> is the magnitude of the (inertial) velocity. Note that the gravitational potential is appearing to come from a body of mass <span class="math notranslate nohighlight">\(m_1 + m_2\)</span>.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>The relative motion of the two bodies <strong>must</strong> be such that the relative
-orbital velocity <span class="math notranslate nohighlight">\(v\)</span> and relative orbital radius <span class="math notranslate nohighlight">\(r\)</span>
-interplay with an inverse relationship for a given, fixed energy
-<span class="math notranslate nohighlight">\(E\)</span>.</p>
+<p>The relative motion of the two bodies <strong>must</strong> be such that the relative orbital velocity <span class="math notranslate nohighlight">\(v\)</span> and relative orbital radius <span class="math notranslate nohighlight">\(r\)</span> interplay with an inverse relationship for a given, fixed energy <span class="math notranslate nohighlight">\(E\)</span>.</p>
 </div>
-</div>
-</div>
-<div class="section" id="the-reduced-mass">
-<h2><span class="section-number">3.3 </span>The reduced mass</h2>
-<p>The system <a class="reference internal" href="#equation-eq-relativeeom">(3.1.2)</a> is writable as</p>
-<div class="math notranslate nohighlight">
-\[\underbrace{\frac{m_1 m_2}{m_1 + m_2}}_{\mu^*}\ddot{\mathbf{r}} = \underbrace{-\frac{G m_1 m_2}{r^3}\mathbf{r}}_{-\nabla V},\]</div>
-<p>which is in the form of Newton’s 2<sup>nd</sup> law for a <strong>single</strong> particle
-of mass <span class="math notranslate nohighlight">\(\mu^*\)</span> being tracked in an inertial coordinate system with
-position <span class="math notranslate nohighlight">\(\mathbf{r}\)</span> under the influence of a potential <span class="math notranslate nohighlight">\(V\)</span>.
-More clearly, we can write</p>
-<div class="math notranslate nohighlight">
-\[\mu^* \ddot{\mathbf{r}} = -\frac{G(m_1 + m_2)\mu^*}{r^3}\mathbf{r}\]</div>
-<p><strong>The 2-body system</strong> <a class="reference internal" href="#equation-eq-relativeeom">(3.1.2)</a> <strong>can therefore be treated like it describes a single particle</strong><sup>[</sup><a class="footnote-reference brackets" href="#id3" id="id2">1</a><sup>]</sup>.
-The quantity <span class="math notranslate nohighlight">\(\mu^*\)</span> that makes this purely mathematical
-simplification possible is called the <strong>reduced mass</strong>.</p>
-<div class="figure align-center" id="id5">
-<a class="reference internal image-reference" href="../_images/kepler_reduced_mass_system_v2.svg"><img alt="Example of a trajectory taken by the reduced mass in a general, inertial coordinate system" height="331px" src="../_images/kepler_reduced_mass_system_v2.svg" width="448px" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.3.1 </span><span class="caption-text">A “trajectory” of the reduced mass <span class="math notranslate nohighlight">\(\mu^*\)</span> in the presence of the
-potential <span class="math notranslate nohighlight">\(V\)</span>.</span></p>
-</div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p><strong>The trajectory of a single body of mass</strong>
-<span class="math notranslate nohighlight">\(\mu^*\)</span> <strong>under the influence of the potential from a static body</strong>
-<strong>of mass</strong> <span class="math notranslate nohighlight">\(m_1 + m_2\)</span> <strong>is the SAME trajectory experienced by the</strong>
-<strong>relative motion of two bodies under mutual Newtonian gravitational</strong>
-<strong>attraction!</strong> This trajectory for both cases is <span class="math notranslate nohighlight">\(\mathbf{r}\)</span>.</p>
-</div>
-<div class="section" id="facts-about-the-reduced-mass-system">
-<h3><span class="section-number">3.3.1 </span>Facts about the reduced mass system</h3>
-<p><strong>Fact:</strong> <span class="math notranslate nohighlight">\(\mu^* &lt; m_1 + m_2\)</span> for any <span class="math notranslate nohighlight">\(m_1, m_2 &gt; 0\)</span>.</p>
-<p><strong>Proof:</strong> Suppose the opposite. Then <span class="math notranslate nohighlight">\((m_1 + m_2)^2 = m_1^2 + 2m_1 m_2 + m_2^2 &lt; m_1 m_2\)</span>,
-but this means <span class="math notranslate nohighlight">\(m_1^2 + m_2^2 &lt; -m_1 m_2\)</span>, therefore a contradiction. <span class="math notranslate nohighlight">\(\square\)</span></p>
-<ul class="simple">
-<li><p>This means that it’s fair to imagine the smaller body simply flying around
-the larger body.</p></li>
-</ul>
-<p><strong>Fact:</strong> <span class="math notranslate nohighlight">\(\mu^* \to m_2\)</span> when <span class="math notranslate nohighlight">\(m_1 \gg m_2.\)</span></p>
-<p><strong>Proof:</strong> Take <span class="math notranslate nohighlight">\(m_1 = k m_2\)</span> and let <span class="math notranslate nohighlight">\(k \to \infty\)</span>. <span class="math notranslate nohighlight">\(\square\)</span></p>
-<ul class="simple">
-<li><p>This means that when the reduced mass is very small, then this system
-actually resembles the relative system. That is, <span class="math notranslate nohighlight">\(m_1\)</span> is nearly sitting
-at the origin and <span class="math notranslate nohighlight">\(m_2\)</span> is flying around it.</p></li>
-</ul>
-</div>
-</div>
-<div class="section" id="standard-form">
-<h2><span class="section-number">3.4 </span>Standard form</h2>
-<p>The standard form of the 2-body problem is achieved after defining the
-<strong>gravitational parameter</strong></p>
-<div class="math notranslate nohighlight">
-\[\mu = G(m_1 + m_2)\]</div>
-<p>such that the equations of motion for the relative motion of one body about
-the other are</p>
-<div class="math notranslate nohighlight">
-\[\ddot{\mathbf{r}} = -\frac{\mu}{r^3}\mathbf{r}.\]</div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>In our solar system, the gravitational parameter can be easily regarded as</p>
-<div class="math notranslate nohighlight">
-\[\mu \approx G m_1.\]</div>
-<p>This is the case where <span class="math notranslate nohighlight">\(m_2\)</span> represents spacecraft/moons/comets
-such that <span class="math notranslate nohighlight">\(m_1 \gg m_2.\)</span></p>
-<p><strong>The effective statement of taking</strong> <span class="math notranslate nohighlight">\(\mu\)</span> <strong>this way is that the</strong>
-<strong>central body of mass</strong> <span class="math notranslate nohighlight">\(m_1\)</span> <strong>moves in a straight line (or not at</strong>
-<strong>all) relative to the inertial frame but the motion of the smaller body of mass</strong>
-<span class="math notranslate nohighlight">\(m_2\)</span> <strong>is still affected by the presence of the central body.</strong></p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Do <strong>not</strong> confuse the 2-body gravitational parameter
-<span class="math notranslate nohighlight">\(\mu\)</span> with the 3-body mass parameter <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
-<p class="centered">
-<strong><strong>These quantities, though sharing the same symbol, are completely different</strong>.</strong></p></div>
 <hr class="docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
-<dd><p><a class="reference download external" download="" href="http://web.physics.ucsb.edu/~fratus/phys103/LN/TBP.pdf"><code class="xref download docutils literal notranslate"><span class="pre">The</span> <span class="pre">Two-Body</span> <span class="pre">Problem</span> <span class="pre">-</span> <span class="pre">UCSB</span> <span class="pre">Physics</span></code></a></p>
-</dd>
-<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id1">2</a></span></dt>
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>Goldstein, Poole, Safko. Classical Mechanics, 3rd Edition. Pgs. 102-103</p>
 </dd>
 </dl>
@@ -458,69 +530,51 @@ such that <span class="math notranslate nohighlight">\(m_1 \gg m_2.\)</span></p>
 </div>
 
 
-           </div>
-           
-          </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="polar-coordinates.html" class="btn btn-neutral float-right" title="4 A Change of Perspective" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="equations-of-motion.html" class="btn btn-neutral float-left" title="2 The Two-Body World" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021-2022, The Multibody Astrodynamics Community.
-      <span class="lastupdated">
-        Last updated on Apr 23, 2022.
-      </span>
-
-    </p>
-  </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
-
-</footer>
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="simplifying-the-equations.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2 </span>Simplifying the Equations</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="polar-coordinates.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4 </span>The Orbital Plane</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Matt Werner<br/>
+  
+      &copy; Copyright 2021-2022, Matt Werner and contributors.<br/>
+    Last updated on Jun 16, 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
       </div>
-
-    </section>
-
-  </div>
+    </div>
   
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
 
-  
-  
-    
-    <!-- Theme Analytics -->
-    <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'G-DLCCJ41JJ8', 'auto');
-    
-    ga('set', 'anonymizeIp', true);
-    
-    ga('send', 'pageview');
-    </script>
-
-    
-   
-
-</body>
+  </body>
 </html>

@@ -23,11 +23,19 @@ directive, add the following lines:" */
     text-align: center;
 }
 
-/* Example of how to change sphinxdoc sidebar
+
+/* Control how wide the text section is */
+.wy-nav-content {
+    max-width: 800px;
+    /* Center the content */
+    /* margin: auto */
+}
+
+/* Example of how to change sphinxdoc sidebar */ 
 div.sphinxsidebar {
 	float: right
 }
-*/
+
 
 code.literal {
     color: #404040 !important;
